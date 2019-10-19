@@ -10,6 +10,11 @@ Run this in the vivaldi console and it will output an HTML file of the current i
 A description of the `vivaldi.*` api namespace. View at [api.html](api.html)
 
 ## TODOs
+
+`vivaldi.*` API:
 * Some functions do not have correctly annotated arguments
 * some functions crash vivaldi when you call them (notably `exit()`), so the script has special cases to avoid them
 * Callbacks have specific arguments but I don't yet know of a way to easily get at them
+
+Other APIs:
+* each `chrome.Tab` has an `extData` object which vivaldi uses for things like stacks and tiling. this needs a public reference
