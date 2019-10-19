@@ -1,0 +1,2162 @@
+<html>
+
+<head>
+    <style type="text/css">
+        * {
+            font-family: sans-serif
+        }
+
+        h1,
+        h2,
+        h3 {
+            display: inline-block;
+        }
+
+        h3 {
+            margin: auto;
+        }
+
+        details,
+        details div {
+            margin-left: 4px;
+            border-left: 4px solid #ccc;
+            padding-left: 4px;
+        }
+
+        details:hover,
+        details div:hover {
+            border-left-color: #999;
+        }
+
+        .type {
+            color: blue;
+            font-family: monospace;
+        }
+
+        .listener:before {
+            content: '📣 Listener';
+            background: green;
+            color: white;
+            padding: 4px;
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+
+        .enum:before {
+            content: '🚥 Enum';
+            background: yellow;
+            color: black;
+            padding: 4px;
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <title>Vivaldi API Reference</title>
+</head>
+
+<body>
+    <h1>Vivaldi Modders API Reference</h1>
+    <button>Expand/Collapse all (for searching with ctrl+f)</button>
+    <script type="text/javascript">
+        document.querySelector("button").addEventListener("click", e => {
+            const allDetails = Array.from(document.querySelectorAll("details"));
+            e.target.className = e.target.className === "open" ? "" : "open";
+            allDetails.forEach(d => d.open = e.target.className);
+        });
+    </script>
+    <details>
+        <summary>
+            <h2 id="listenerHelp">Listeners</h2>
+        </summary>
+        <p>Each listener method has the same functions, used for each listener API in the same way:</p>
+        <div class="method">
+            <h3>.addListener()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">listener</span></li>
+            </ul>
+            <p>Adds a function to a listener for an event</p>
+        </div>
+        <div class="method">
+            <h3>.removeListener()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">listener</span></li>
+            </ul>
+            <p>Removes a function to a listener for an event</p>
+        </div>
+        <div class="method">
+            <h3>.hasListener()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">listener</span></li>
+            </ul>
+            <p>Returns a boolean if a function is attached to a listener for an event</p>
+        </div>
+        <div class="method">
+            <h3>.hasListeners()</h3>
+            <p>Returns a boolean if a listener has any attached functions</p>
+        </div>
+        <div class="method">
+            <h3>.dispatch()</h3>
+            <p>Returns array of promises dispatched to the listener</p>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>accessKeys</h2>
+        </summary>
+        <div class="method">
+            <h3>vivaldi.accessKeys.action()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.accessKeys.getAccessKeysForPage()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>autoUpdate</h2>
+        </summary>
+        <div class="method">
+            <h3>vivaldi.autoUpdate.checkForUpdates()</h3>
+            <ul>
+                <li><span class="type">boolean</span><span> </span><span class="name">withUi</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.autoUpdate.disableUpdateNotifier()</h3>
+            <ul>
+                <li>Unknow arguments</li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.autoUpdate.enableUpdateNotifier()</h3>
+            <ul>
+                <li>Unknow arguments</li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.autoUpdate.isUpdateNotifierEnabled()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>bookmarkContextMenu</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.bookmarkContextMenu.onClose</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.bookmarkContextMenu.onOpen</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.bookmarkContextMenu.show()</h3>
+            <ul>
+                <li><span class="type">object</span><span> </span><span class="name">properties</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.bookmarkContextMenu.SortField</h3>
+            <ul>
+                <li>DATEADDED</li>
+                <li>DESCRIPTION</li>
+                <li>NICKNAME</li>
+                <li>TITLE</li>
+                <li>URL</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.bookmarkContextMenu.SortOrder</h3>
+            <ul>
+                <li>ASCENDING</li>
+                <li>DESCENDING</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>bookmarksPrivate</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.bookmarksPrivate.onMetaInfoChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.bookmarksPrivate.onFaviconChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.bookmarksPrivate.emptyTrash()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.bookmarksPrivate.isCustomThumbnail()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">bookmarkId</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.bookmarksPrivate.updateSpeedDialsForWindowsJumplist()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">speedDials</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.bookmarksPrivate.upgradePartner()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">object</span><span> </span><span class="name">changes</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>calendar</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.calendar.onCalendarChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.calendar.onCalendarRemoved</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.calendar.onCalendarCreated</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.calendar.onEventTypeChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.calendar.onEventTypeRemoved</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.calendar.onEventTypeCreated</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.calendar.onEventChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.calendar.onEventRemoved</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.calendar.onEventCreated</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.create()</h3>
+            <ul>
+                <li><span class="type">calendar.CreateCalendarDetails</span><span> </span><span
+                        class="name">calendar</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.createEventException()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">parent_event_id</span></li>
+                <li><span class="type">optional string</span><span> </span><span class="name">exception_event_id</span>
+                </li>
+                <li><span class="type">boolean</span><span> </span><span class="name">cancelled</span></li>
+                <li><span class="type">optional number</span><span> </span><span class="name">date</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.delete()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span>
+                    <span class="name">id</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.deleteEvent()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.deleteEventType()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.eventCreate()</h3>
+            <ul>
+                <li><span class="type">calendar.CreateDetails</span><span> </span><span class="name">event</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.eventTypeCreate()</h3>
+            <ul>
+                <li><span class="type">calendar.CreateEventType</span><span> </span><span class="name">event</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.eventTypeUpdate()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">object</span><span> </span><span class="name">changes</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.eventsCreate()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">eventsList</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.getAll()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.getAllEventTypes()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.getAllEvents()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.update()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">object</span><span> </span><span class="name">changes</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.calendar.updateEvent()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">object</span><span> </span><span class="name">changes</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.calendar.OccurrenceFrequency</h3>
+            <ul>
+                <li></li>
+                <li>DAYS</li>
+                <li>MONTHS</li>
+                <li>WEEKS</li>
+                <li>YEARS</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>contacts</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.contacts.onContactChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.contacts.onContactRemoved</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.contacts.onContactCreated</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.contacts.addEmailAddress()</h3>
+            <ul>
+                <li><span class="type">contacts.EmailAddressAddUpdate</span><span> </span><span
+                        class="name">emailToAdd</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.contacts.addPropertyItem()</h3>
+            <ul>
+                <li><span class="type">contacts.AddPropertyDetails</span><span> </span><span
+                        class="name">propertyToAdd</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.contacts.create()</h3>
+            <ul>
+                <li><span class="type">contacts.CreateUpdateDetails</span><span> </span><span
+                        class="name">contact</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.contacts.createMany()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">contactList</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.contacts.delete()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.contacts.getAll()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.contacts.getAllEmailAddresses()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.contacts.removePropertyItem()</h3>
+            <ul>
+                <li><span class="type">contacts.RemovePropertyDetails</span><span> </span><span
+                        class="name">propertyToRemove</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.contacts.update()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">contacts.CreateUpdateDetails</span><span> </span><span
+                        class="name">changes</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.contacts.updateEmailAddress()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">emailAddressId</span></li>
+                <li><span class="type">contacts.EmailAddressAddUpdate</span><span> </span><span
+                        class="name">emailToUpdate</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.contacts.updatePropertyItem()</h3>
+            <ul>
+                <li><span class="type">contacts.UpdatePropertyDetails</span><span> </span><span
+                        class="name">propertyToUpdate</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.contacts.ContactPropertyName</h3>
+            <ul>
+                <li>PHONE_NUMBER</li>
+                <li>POSTAL_ADDRESS</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>contextMenu</h2>
+        </summary>
+        <div class="method">
+            <h3>vivaldi.contextMenu.show()</h3>
+            <ul>
+                <li><span class="type">object</span><span> </span><span class="name">properties</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.contextMenu.ExpandType</h3>
+            <ul>
+                <li>PWA</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.contextMenu.Origin</h3>
+            <ul>
+                <li>BOTTOM_LEFT</li>
+                <li>BOTTOM_RIGHT</li>
+                <li>POINTER</li>
+                <li>TOP_LEFT</li>
+                <li>TOP_RIGHT</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>devtoolsPrivate</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.devtoolsPrivate.onDevtoolsUndocked</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.devtoolsPrivate.onClosed</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.devtoolsPrivate.onDockingSizesChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.devtoolsPrivate.onDockingStateChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.devtoolsPrivate.closeDevtools()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">optional integer</span><span> </span><span class="name">windowId</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.devtoolsPrivate.getDockingStateSizes()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.devtoolsPrivate.toggleDevtools()</h3>
+            <ul>
+                <li><span class="type">devtoolsPrivate.PanelType</span><span> </span><span class="name">panelType</span>
+                </li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.devtoolsPrivate.PanelType</h3>
+            <ul>
+                <li>CONSOLE</li>
+                <li>DEFAULT</li>
+                <li>INSPECT</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>extensionActionUtils</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.extensionActionUtils.onIconLoaded</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.extensionActionUtils.onCommandRemoved</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.extensionActionUtils.onCommandAdded</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.extensionActionUtils.onUpdated</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.extensionActionUtils.onRemoved</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.extensionActionUtils.onAdded</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.extensionActionUtils.executeExtensionAction()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">extensionId</span></li>
+                <li><span class="type">integer</span><span> </span><span class="name">windowId</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">showPopup</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.extensionActionUtils.getToolbarExtensions()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.extensionActionUtils.removeExtension()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">extensionId</span></li>
+                <li><span class="type">integer</span><span> </span><span class="name">windowId</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.extensionActionUtils.showExtensionOptions()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">extensionId</span></li>
+                <li><span class="type">integer</span><span> </span><span class="name">windowId</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.extensionActionUtils.toggleBrowserActionVisibility()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">extensionId</span></li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.extensionActionUtils.ActionType</h3>
+            <ul>
+                <li>BROWSER</li>
+                <li>PAGE</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.extensionActionUtils.ExtensionType</h3>
+            <ul>
+                <li>COMPONENT_ACTION</li>
+                <li>EXTENSION_ACTION</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>historyPrivate</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.historyPrivate.onVisitModified</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.historyPrivate.dbSearch()</h3>
+            <ul>
+                <li><span class="type">object</span><span> </span><span class="name">query</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.historyPrivate.deleteAllSearchTermsForKeyword()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">keywordId</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.historyPrivate.deleteVisits()</h3>
+            <ul>
+                <li><span class="type">object</span><span> </span><span class="name">details</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.historyPrivate.getTopUrlsPerDay()</h3>
+            <ul>
+                <li><span class="type">number</span><span> </span><span class="name">maxTopUrlResults</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.historyPrivate.getTypedHistory()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">query</span></li>
+                <li><span class="type">integer</span><span> </span><span class="name">prefixKeywordId</span></li>
+                <li><span class="type">integer</span><span> </span>
+                    <span class="name">max_results</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.historyPrivate.migrateOldTypedUrl()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">url</span></li>
+                <li><span class="type">number</span><span> </span><span class="name">time</span></li>
+                <li><span class="type">historyPrivate.TransitionType</span><span> </span><span
+                        class="name">transitionType</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.historyPrivate.search()</h3>
+            <ul>
+                <li><span class="type">object</span><span> </span><span class="name">query</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.historyPrivate.setKeywordSearchTermsForURL()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">url</span></li>
+                <li><span class="type">integer</span><span> </span><span class="name">keywordId</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">searchTerms</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.historyPrivate.visitSearch()</h3>
+            <ul>
+                <li><span class="type">object</span><span> </span><span class="name">query</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.historyPrivate.HistoryResultSetGrouping</h3>
+            <ul>
+                <li>KEEP_ALL_DUPLICATES</li>
+                <li>REMOVE_ALL_DUPLICATES</li>
+                <li>REMOVE_DUPLICATES_PER_DAY</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.historyPrivate.TransitionType</h3>
+            <ul>
+                <li>AUTO_BOOKMARK</li>
+                <li>AUTO_SUBFRAME</li>
+                <li>AUTO_TOPLEVEL</li>
+                <li>FORM_SUBMIT</li>
+                <li>GENERATED</li>
+                <li>KEYWORD</li>
+                <li>KEYWORD_GENERATED</li>
+                <li>LINK</li>
+                <li>MANUAL_SUBFRAME</li>
+                <li>RELOAD</li>
+                <li>TYPED</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>importData</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.importData.onImportItemFailed</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.importData.onImportItemEnded</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.importData.onImportItemStarted</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.importData.onImportEnded</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.importData.onImportStarted</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.importData.getProfiles()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.importData.startImport()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">itemsToImport</span></li>
+                <li><span class="type">optional string</span><span> </span><span class="name">masterPassword</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>infobars</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.infobars.onInfobarRemoved</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.infobars.onInfobarCreated</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.infobars.sendButtonAction()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">integer</span><span> </span><span class="name">identifier</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">action</span></li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.infobars.ButtonAction</h3>
+            <ul>
+                <li>ACCEPT</li>
+                <li>CANCEL</li>
+                <li>DISMISS</li>
+                <li>LINK</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>mailPrivate</h2>
+        </summary>
+        <div class="method">
+            <h3>vivaldi.mailPrivate.createDataDirectory()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">hashedAccountId</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.mailPrivate.delete()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">paths</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">fileName</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.mailPrivate.getDataDirectory()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">hashedAccountId</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.mailPrivate.getPaths()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">paths</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.mailPrivate.read()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">paths</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">fileName</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.mailPrivate.readBuffer()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">paths</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">fileName</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.mailPrivate.readFile()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">path</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.mailPrivate.rename()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">paths</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">fileName</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">newFileName</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.mailPrivate.save()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">paths</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">fileName</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">raw</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.mailPrivate.saveBuffer()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">paths</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">fileName</span></li>
+                <li><span class="type">binary</span><span> </span><span class="name">raw</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>menubar</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.menubar.onActivated</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.menubar.setup()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">items</span></li>
+                <li><span class="type">menubar.Mode</span><span> </span><span class="name">mode</span></li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.menubar.Mode</h3>
+            <ul>
+                <li>ALL</li>
+                <li>TABS</li>
+                <li>UPDATE</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>menubarMenu</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.menubarMenu.onError</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.menubarMenu.onHover</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.menubarMenu.onBookmarkAction</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.menubarMenu.onOpenBookmark</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.menubarMenu.onAction</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.menubarMenu.onClose</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.menubarMenu.onOpen</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.menubarMenu.show()</h3>
+            <ul>
+                <li><span class="type">object</span><span> </span><span class="name">properties</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.menubarMenu.BookmarkCommand</h3>
+            <ul>
+                <li>ADDACTIVETAB</li>
+                <li>ADDBOOKMARK</li>
+                <li>ADDFOLDER</li>
+                <li>COPY</li>
+                <li>CUT</li>
+                <li>EDIT</li>
+                <li>PASTE</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.menubarMenu.ContainerType</h3>
+            <ul>
+                <li>BOOKMARKS</li>
+                <li>HISTORY</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.menubarMenu.Disposition</h3>
+            <ul>
+                <li>CURRENT</li>
+                <li>NEW_PRIVATE_WINDOW</li>
+                <li>NEW_TAB</li>
+                <li>NEW_WINDOW</li>
+                <li>SETTING</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.menubarMenu.ItemType</h3>
+            <ul>
+                <li>CHECKBOX</li>
+                <li>NORMAL</li>
+                <li>RADIOBUTTON</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.menubarMenu.SortField</h3>
+            <ul>
+                <li>DATEADDED</li>
+                <li>DESCRIPTION</li>
+                <li>NICKNAME</li>
+                <li>TITLE</li>
+                <li>URL</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.menubarMenu.SortOrder</h3>
+            <ul>
+                <li>ASCENDING</li>
+                <li>DESCENDING</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>notes</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.notes.onImportEnded</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.notes.onImportBegan</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.notes.onMoved</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.notes.onChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.notes.onRemoved</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.notes.onCreated</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.notes.create()</h3>
+            <ul>
+                <li><span class="type">notes.CreateDetails</span><span> </span><span class="name">note</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.notes.emptyTrash()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.notes.get()</h3>
+            <ul>
+                <li><span class="type">[string|array]</span><span> </span><span class="name">idOrIdList</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.notes.getTree()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.notes.move()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">object</span><span> </span><span class="name">destination</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.notes.remove()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.notes.search()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">query</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.notes.update()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">object</span><span> </span><span class="name">changes</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>prefs</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.prefs.onChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.prefs.get()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">path</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.prefs.getForCache()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">paths</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.prefs.reset()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">path</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.prefs.set()</h3>
+            <ul>
+                <li><span class="type">prefs.PreferenceValue</span><span> </span><span class="name">newValue</span></li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>runtimePrivate</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.runtimePrivate.onProfilesUpdated</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.closeActiveProfile()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.closeGuestSession()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.createProfile()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">name</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">avatarUrl</span></li>
+                <li><span class="type">boolean</span><span> </span><span class="name">createDesktopIcon</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.deleteProfile()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">profilePath</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.exit()</h3>
+            <ul>Quits Vivaldi</ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.getAllFeatureFlags()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.getProfileDefaults()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.getProfileStatistics()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">profilePath</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.getUserProfileImages()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.getUserProfiles()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">avatarWidth</span></li>
+                <li><span class="type">integer</span><span> </span><span class="name">avatarHeight</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.hasDesktopShortcut()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.hasGuestSession()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.isGuestSession()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.openNamedProfile()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">profilePath</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.openProfileSelectionWindow()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.setFeatureEnabled()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">featureName</span></li>
+                <li><span class="type">boolean</span><span> </span><span class="name">enable</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.switchToGuestSession()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.runtimePrivate.updateActiveProfile()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">name</span></li>
+                <li><span class="type">integer</span><span> </span><span class="name">avatarIndex</span></li>
+                <li><span class="type">optional boolean</span><span> </span><span class="name">createDesktopIcon</span>
+                </li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>savedpasswords</h2>
+        </summary>
+        <div class="method">
+            <h3>vivaldi.savedpasswords.add()</h3>
+            <ul>
+                <li><span class="type">boolean</span><span> </span><span class="name">isExplicit</span></li>
+                <li><span class="type">savedpasswords.PasswordForm</span><span> </span><span
+                        class="name">passwordForm</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.savedpasswords.authenticate()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.savedpasswords.delete()</h3>
+            <ul>
+                <li><span class="type">boolean</span><span> </span><span class="name">isExplicit</span></li>
+                <li><span class="type">savedpasswords.PasswordForm</span><span> </span><span
+                        class="name">passwordForm</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.savedpasswords.get()</h3>
+            <ul>
+                <li><span class="type">boolean</span><span> </span><span class="name">isExplicit</span></li>
+                <li><span class="type">savedpasswords.PasswordForm</span><span> </span><span
+                        class="name">passwordForm</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.savedpasswords.getList()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.savedpasswords.remove()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">id</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>sessionsPrivate</h2>
+        </summary>
+        <div class="method">
+            <h3>vivaldi.sessionsPrivate.delete()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">name</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sessionsPrivate.getAll()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sessionsPrivate.open()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">name</span></li>
+                <li><span class="type">optional sessionsPrivate.SessionOpenOptions</span><span> </span><span
+                        class="name">options</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sessionsPrivate.saveOpenTabs()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">name</span></li>
+                <li><span class="type">sessionsPrivate.SessionSaveOptions</span><span> </span><span
+                        class="name">options</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>settings</h2>
+        </summary>
+        <div class="method">
+            <h3>vivaldi.settings.setContentSetting()</h3>
+            <ul>
+                <li><span class="type">settings.ContentSettingItem</span><span> </span><span
+                        class="name">settingsItem</span></li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.settings.ContentSettingEnum</h3>
+            <ul>
+                <li>ALLOW</li>
+                <li>ASK</li>
+                <li>BLOCK</li>
+                <li>DETECT_IMPORTANT_CONTENT</li>
+                <li>NUM_SETTINGS</li>
+                <li>SESSION_ONLY</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.settings.ContentSettingsTypeEnum</h3>
+            <ul>
+                <li>GEOLOCATION</li>
+                <li>NOTIFICATIONS</li>
+                <li>PLUGINS</li>
+                <li>POPUPS</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>sync</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.sync.onCycleCompleted</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.sync.onEngineStateChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sync.clearData()</h3>
+            <ul>
+                <li>Unknow arguments</li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sync.getDefaultSessionName()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sync.getEngineState()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sync.getLastCycleState()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sync.notificationReceived()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">client_id</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">notification_type</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">version</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sync.setEncryptionPassword()</h3>
+            <ul>
+                <li><span class="type">optional string</span><span> </span><span class="name">password</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sync.setTypes()</h3>
+            <ul>
+                <li><span class="type">boolean</span><span> </span><span class="name">syncEverything</span></li>
+                <li><span class="type">array</span><span> </span><span class="name">types</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sync.setupComplete()</h3>
+            <ul>
+                <li>Unknow arguments</li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sync.start()</h3>
+            <ul>
+                <li>Unknow arguments</li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sync.stop()</h3>
+            <ul>
+                <li>Unknow arguments</li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.sync.updateNotificationClientStatus()</h3>
+            <ul>
+                <li><span class="type">sync.SyncNotificationClientStatus</span><span> </span><span
+                        class="name">status</span></li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.sync.ClientAction</h3>
+            <ul>
+                <li>DISABLE_SYNC_ON_CLIENT</li>
+                <li>RESET_LOCAL_SYNC_DATA</li>
+                <li>STOP_SYNC_FOR_DISABLED_ACCOUNT</li>
+                <li>UNKNOWN</li>
+                <li>UPGRADE_CLIENT</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.sync.DataType</h3>
+            <ul>
+                <li>AUTOFILL</li>
+                <li>BOOKMARKS</li>
+                <li>EXTENSIONS</li>
+                <li>NOTES</li>
+                <li>PASSWORDS</li>
+                <li>PREFERENCES</li>
+                <li>TYPED_URLS</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.sync.DisableReason</h3>
+            <ul>
+                <li>ENTERPRISE_POLICY</li>
+                <li>FLAG</li>
+                <li>NOT_SIGNED_IN</li>
+                <li>PLATFORM_OVERRIDE</li>
+                <li>UNRECOVERABLE_ERROR</li>
+                <li>USER_CHOICE</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.sync.EngineState</h3>
+            <ul>
+                <li>CLEARING_DATA</li>
+                <li>CONFIGURATION_PENDING</li>
+                <li>FAILED</li>
+                <li>STARTED</li>
+                <li>STARTING</li>
+                <li>STARTING_SERVER_ERROR</li>
+                <li>STOPPED</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.sync.ProtocolErrorType</h3>
+            <ul>
+                <li>CLEAR_PENDING</li>
+                <li>CLIENT_DATA_OBSOLETE</li>
+                <li>DISABLED_BY_ADMIN</li>
+                <li>MIGRATION_DONE</li>
+                <li>NOT_MY_BIRTHDAY</li>
+                <li>PARTIAL_FAILURE</li>
+                <li>SUCCESS</li>
+                <li>THROTTLED</li>
+                <li>TRANSIENT_ERROR</li>
+                <li>UNKNOWN</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.sync.SyncNotificationClientStatus</h3>
+            <ul>
+                <li>CONNECTED</li>
+                <li>DISCONNECTED</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.sync.SyncerError</h3>
+            <ul>
+                <li>CANNOT_DO_WORK</li>
+                <li>DATATYPE_TRIGGERED_RETRY</li>
+                <li>NETWORK_CONNECTION_UNAVAILABLE</li>
+                <li>NETWORK_IO_ERROR</li>
+                <li>SERVER_MORE_TO_DOWNLOAD</li>
+                <li>SERVER_RESPONSE_VALIDATION_FAILED</li>
+                <li>SERVER_RETURN_CLEAR_PENDING</li>
+                <li>SERVER_RETURN_CLIENT_DATA_OBSOLETE</li>
+                <li>SERVER_RETURN_CONFLICT</li>
+                <li>SERVER_RETURN_DISABLED_BY_ADMIN</li>
+                <li>SERVER_RETURN_INVALID_CREDENTIAL</li>
+                <li>SERVER_RETURN_MIGRATION_DONE</li>
+                <li>SERVER_RETURN_NOT_MY_BIRTHDAY</li>
+                <li>SERVER_RETURN_PARTIAL_FAILURE</li>
+                <li>SERVER_RETURN_THROTTLED</li>
+                <li>SERVER_RETURN_TRANSIENT_ERROR</li>
+                <li>SERVER_RETURN_UNKNOWN_ERROR</li>
+                <li>SERVER_RETURN_USER_ROLLBACK</li>
+                <li>SYNC_AUTH_ERROR</li>
+                <li>SYNC_SERVER_ERROR</li>
+                <li>SYNCER_OK</li>
+                <li>UNSET</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>tabsPrivate</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onPageZoom</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onWebviewClickCheck</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onRockerGesture</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onTabSwitchEnd</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onMouseGesture</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onMouseGestureDetection</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onTabIsAttached</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onTabIsDetached</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onKeyboardShortcut</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onKeyboardChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onPermissionAccessed</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onDragEnd</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onTabUpdated</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onThemeColorChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.tabsPrivate.onMediaStateChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.tabsPrivate.get()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.tabsPrivate.insertText()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">text</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.tabsPrivate.scrollPage()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">scrollType</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.tabsPrivate.startDrag()</h3>
+            <ul>
+                <li><span class="type">tabsPrivate.DragData</span><span> </span><span class="name">dragData</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.tabsPrivate.update()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">tabsPrivate.UpdateTabInfo</span><span> </span><span class="name">tabInfo</span>
+                </li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.tabsPrivate.MediaType</h3>
+            <ul>
+                <li>BLUETOOTH</li>
+                <li>CAPTURING</li>
+                <li>DESKTOP_CAPTURING</li>
+                <li>EMPTY</li>
+                <li>MUTING</li>
+                <li>PIP</li>
+                <li>PLAYING</li>
+                <li>RECORDING</li>
+                <li>SERIAL_CONNECTED</li>
+                <li>USB</li>
+                <li>VR_PRESENTING_IN_HEADSET</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>thumbnails</h2>
+        </summary>
+        <div class="method">
+            <h3>vivaldi.thumbnails.captureTab()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">thumbnails.CaptureTabParams</span><span> </span><span class="name">params</span>
+                </li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.thumbnails.captureUI()</h3>
+            <ul>
+                <li><span class="type">thumbnails.CaptureUIParams</span><span> </span><span class="name">params</span>
+                </li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.thumbnails.captureUrl()</h3>
+            <ul>
+                <li><span class="type">thumbnails.CaptureUrlParams</span><span> </span><span class="name">params</span>
+                </li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>utilities</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.utilities.onRazerChromaReady</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.utilities.onDownloadManagerReady</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.utilities.onPasswordIconStatusChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.utilities.onResume</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.utilities.onSuspend</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.utilities.onSharedDataUpdated</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.utilities.onScroll</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.canShowWelcomePage()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.canShowWhatsNewPage()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.clearAllRecentlyClosedSessions()</h3>
+            <ul>
+                <li>Unknow arguments</li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.getBlockThirdPartyCookies()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">blockThirdParty</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.getDefaultContentSettings()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">contentSetting</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.getLanguage()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.getSelectedText()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.getSharedData()</h3>
+            <ul>
+                <li><span class="type">utilities.SharedDataValue</span><span> </span><span
+                        class="name">keyValuePair</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.getStartupAction()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.getSystemDateFormat()</h3>
+            <ul>
+                <li>Unknow arguments</li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.getUniqueUserId()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">legacyUserId</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.getVersion()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.isDownloadManagerReady()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.isRazerChromaAvailable()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.isRazerChromaReady()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.isTabInLastSession()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.isUrlValid()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">url</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.isVivaldiDefaultBrowser()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.launchNetworkSettings()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.openPage()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.openTaskManager()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.print()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">tabId</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.savePage()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.selectFile()</h3>
+            <ul>
+                <li><span class="type">optional array</span><span> </span><span class="name">accepts</span></li>
+                <li><span class="type">optional string</span><span> </span><span class="name">title</span></li>
+                <li><span class="type">utilities.SelectFileDialogType</span><span> </span><span class="name">type</span>
+                </li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.selectLocalImage()</h3>
+            <ul>
+                <li><span class="type">utilities.SelectLocalImageParams</span><span> </span><span
+                        class="name">params</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.setBlockThirdPartyCookies()</h3>
+            <ul>
+                <li><span class="type">boolean</span><span> </span><span class="name">block3rdParty</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.setDefaultContentSettings()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">contentSetting</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">value</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.setDialogPosition()</h3>
+            <ul>
+                <li><span class="type">utilities.DialogName</span><span> </span><span class="name">dialogName</span>
+                </li>
+                <li><span class="type">integer</span><span> </span><span class="name">windowId</span></li>
+                <li><span class="type">object</span><span> </span><span class="name">position</span></li>
+                <li><span class="type">utilities.FlowDirection</span><span> </span><span
+                        class="name">flowDirection</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.setLanguage()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">locale</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.setRazerChromaColor()</h3>
+            <ul>
+                <li><span class="type">array</span><span> </span><span class="name">colors</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.setSharedData()</h3>
+            <ul>
+                <li><span class="type">utilities.SharedDataValue</span><span> </span><span
+                        class="name">keyValuePair</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.setStartupAction()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">startup</span></li>
+                <li><span class="type">array</span><span> </span><span class="name">urls</span></li>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.setVivaldiAsDefaultBrowser()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.utilities.showPasswordDialog()</h3>
+            <ul>Invokes OS Password Authenticator</ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.utilities.DialogName</h3>
+            <ul>
+                <li>CHROMECAST</li>
+                <li>PASSWORD</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.utilities.FlowDirection</h3>
+            <ul>
+                <li>DOWN</li>
+                <li>UP</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.utilities.SelectFileDialogType</h3>
+            <ul>
+                <li>FILE</li>
+                <li>FOLDER</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>vivaldiAccount</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.vivaldiAccount.onAccountStateChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.vivaldiAccount.getState()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.vivaldiAccount.login()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">username</span></li>
+                <li><span class="type">string</span><span> </span><span class="name">password</span></li>
+                <li><span class="type">boolean</span><span> </span><span class="name">savePassword</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.vivaldiAccount.logout()</h3>
+            <ul>
+                <li>Unknow arguments</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.vivaldiAccount.FetchErrorType</h3>
+            <ul>
+                <li>INVALID_CREDENTIALS</li>
+                <li>NETWORK_ERROR</li>
+                <li>NO_ERROR</li>
+                <li>SERVER_ERROR</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>windowPrivate</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.windowPrivate.onActiveTabStatusText</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.windowPrivate.onWindowClosed</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.windowPrivate.onWindowCreated</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.windowPrivate.onBeforeUnloadDialogOpened</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.windowPrivate.onWindowCloseCancelled</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.windowPrivate.onFullscreenMenubarChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.windowPrivate.onFullscreen</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.windowPrivate.onActivated</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.windowPrivate.onPositionChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.windowPrivate.onMaximized</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.windowPrivate.onMinimized</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.windowPrivate.create()</h3>
+            <ul>
+                <li><span class="type">string</span><span> </span><span class="name">url</span></li>
+                <li><span class="type">windowPrivate.CreateWindowOptions</span><span> </span><span
+                        class="name">options</span></li>
+                <li><span class="type">optional windowPrivate.WindowType</span><span> </span><span
+                        class="name">type</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.windowPrivate.getCurrentId()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.windowPrivate.setState()</h3>
+            <ul>
+                <li><span class="type">integer</span><span> </span><span class="name">windowId</span></li>
+                <li><span class="type">windowPrivate.WindowState</span><span> </span><span class="name">state</span>
+                </li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.windowPrivate.WindowState</h3>
+            <ul>
+                <li>FULLSCREEN</li>
+                <li>MAXIMIZED</li>
+                <li>MINIMIZED</li>
+                <li>NORMAL</li>
+            </ul>
+        </div>
+        <div class="enum">
+            <h3>vivaldi.windowPrivate.WindowType</h3>
+            <ul>
+                <li>NORMAL</li>
+                <li>SETTINGS</li>
+            </ul>
+        </div>
+    </details>
+    <details>
+        <summary>
+            <h2>zoom</h2>
+        </summary>
+        <div class="listener">
+            <h3>vivaldi.zoom.onUIZoomChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="listener">
+            <h3>vivaldi.zoom.onDefaultZoomChanged</h3>
+            <ul></ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.zoom.getDefaultZoom()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">zoomLevel</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.zoom.getVivaldiUIZoom()</h3>
+            <ul>
+                <li><span class="type">function</span><span> </span><span class="name">zoomLevel</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.zoom.setDefaultZoom()</h3>
+            <ul>
+                <li><span class="type">number</span><span> </span><span class="name">zoomFactor</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+        <div class="method">
+            <h3>vivaldi.zoom.setVivaldiUIZoom()</h3>
+            <ul>
+                <li><span class="type">number</span><span> </span><span class="name">zoomFactor</span></li>
+                <li><span class="type">optional function</span><span> </span><span class="name">callback</span></li>
+            </ul>
+        </div>
+    </details>
+</body>
+
+</html>
