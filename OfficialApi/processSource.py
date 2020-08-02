@@ -28,12 +28,13 @@ def processApiDef(filename):
                 print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagh!")
                 raise e
 
-def getDescription(name, typeDict):
+def getDescription(name, typeDict, paragraph=True):
+    para = '<p>' if paragraph else ''
     if 'description' in typeDict:
-        return '<p>' + str(typeDict['description'])
+        return para + str(typeDict['description'])
     else:
         print("WARNING: No description for "+name)
-        return "<p> ⚠ NO DESCRIPTION PROVIDED"
+        return para + " ⚠ NO DESCRIPTION PROVIDED"
 
 def optional(typeDict):
     return '(optional) ' if 'optional' in typeDict and typeDict['optional'] else ''
@@ -46,7 +47,10 @@ def typeToHtml(name, prop, makeTopLevel=False):
         out += optional(prop)
         out += getDescription(name, prop)
         for enum in prop['enum']:
-            out += f'''<li>{enum}'''
+            if type(enum) is str:
+                out += f'''<li>{enum}'''
+            else:
+                out += f'''<li>{enum['name']}: {getDescription(enum['name'], enum, False)}'''
         out += '''</ul></dd></dl>'''
     elif '$ref' in prop: # referenced to a special vType
         out += f'''<dl><dt>{name}</dt><dd>'''
@@ -108,7 +112,7 @@ def typeToHtml(name, prop, makeTopLevel=False):
             for param in prop['parameters']:
                 out += typeToHtml(param['name'], param)
         if not makeTopLevel:
-            out += '<dd></dl>'
+            out += '</dd></dl>'
     else:
         raise Exception('BAD vTYPE PROP TYPE '+prop['type'])
     return out
@@ -119,8 +123,7 @@ def convertVivaldiTypeToHtml(api):
     out += f'''<h3 id='{api['id']}'><a href='#{api['id']}'>#</a>{api['id']}</h3>'''
     if 'properties' in api:
         out += getDescription(api['id'], api)
-        out += '''<p>Properties:
-        <div class='vType'><dl>'''
+        out += '''<p>Properties:<dl>'''
         for id, val in api['properties'].items():
             out += typeToHtml(id, val)
         out+='</dl>'
@@ -208,6 +211,32 @@ def convertDefsToHtml(api, sidebar):
     if len(listeners) > 0:
         out += f'''
         <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
         '''
         for vlist in listeners:
             out += convertListenerToHtml(vlist)

@@ -30,4 +30,30 @@
     <ul></ul></nav>
     
         <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
         <h3 id='onVideoElementCreated'><a href='#onVideoElementCreated'>#</a>onVideoElementCreated</h3><p>Fired when a video element has been created.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>Tab id for the video element created event.</dd></dl>

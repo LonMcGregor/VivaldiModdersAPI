@@ -30,13 +30,37 @@
     <ul><li><a href='#getProfiles'>getProfiles</a><li><a href='#startImport'>startImport</a></ul></nav>
     
         <h2>Types</h2>
-        <h3 id='UserProfileItem'><a href='#UserProfileItem'>#</a>UserProfileItem</h3><p>UserProfileItem. Contains info for userprofile<p>Properties:
-        <div class='vType'><dl><dl><dt>profileDisplayName</dt><dd><pre>string</pre><p>The profile display name.</dd></dl><dl><dt>profileName</dt><dd><pre>string</pre><p>The profile name.</dd></dl></dl><h3 id='ProfileItem'><a href='#ProfileItem'>#</a>ProfileItem</h3><p>ProfileItem.<p>Properties:
-        <div class='vType'><dl><dl><dt>name</dt><dd><pre>string</pre><p>Import item name.</dd></dl><dl><dt>index</dt><dd><pre>integer</pre><p>The profile item index.</dd></dl><dl><dt>history</dt><dd><pre>boolean</pre><p>Does profile support history.</dd></dl><dl><dt>favorites</dt><dd><pre>boolean</pre><p>Does profile support favorites.</dd></dl><dl><dt>passwords</dt><dd><pre>boolean</pre><p>Does profile support passwords.</dd></dl><dl><dt>supportsMasterPassword</dt><dd><pre>boolean</pre><p>Does profile support a master password to decode passwords.</dd></dl><dl><dt>search</dt><dd><pre>boolean</pre><p>Does profile support search.</dd></dl><dl><dt>speeddial</dt><dd><pre>boolean</pre><p>Does profile support Speed Dial.</dd></dl><dl><dt>notes</dt><dd><pre>boolean</pre><p>Does profile support notes.</dd></dl><dl><dt>supportsStandaloneImport</dt><dd><pre>boolean</pre><p>Does profile support standalone import with a dialog.</dd></dl><dl><dt>hasDefaultInstall</dt><dd><pre>boolean</pre><p>Is a default installation detected (for Opera 12 and Vivaldi).</dd></dl><dl><dt>willShowDialogType</dt><dd><pre>string</pre><p>When import starts and custom profile or file import is selected, this returns what dialog will be shown, if any. Possible values are 'file', 'folder' and 'none'.</dd></dl><dl><dt>profilePath</dt><dd><pre>string</pre><p>Is the path on disk to the detected profile</dd></dl><dl><dt>UserProfiles</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <h3 id='UserProfileItem'><a href='#UserProfileItem'>#</a>UserProfileItem</h3><p>UserProfileItem. Contains info for userprofile<p>Properties:<dl><dl><dt>profileDisplayName</dt><dd><pre>string</pre><p>The profile display name.</dd></dl><dl><dt>profileName</dt><dd><pre>string</pre><p>The profile name.</dd></dl></dl><h3 id='ProfileItem'><a href='#ProfileItem'>#</a>ProfileItem</h3><p>ProfileItem.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Import item name.</dd></dl><dl><dt>index</dt><dd><pre>integer</pre><p>The profile item index.</dd></dl><dl><dt>history</dt><dd><pre>boolean</pre><p>Does profile support history.</dd></dl><dl><dt>favorites</dt><dd><pre>boolean</pre><p>Does profile support favorites.</dd></dl><dl><dt>passwords</dt><dd><pre>boolean</pre><p>Does profile support passwords.</dd></dl><dl><dt>supportsMasterPassword</dt><dd><pre>boolean</pre><p>Does profile support a master password to decode passwords.</dd></dl><dl><dt>search</dt><dd><pre>boolean</pre><p>Does profile support search.</dd></dl><dl><dt>speeddial</dt><dd><pre>boolean</pre><p>Does profile support Speed Dial.</dd></dl><dl><dt>notes</dt><dd><pre>boolean</pre><p>Does profile support notes.</dd></dl><dl><dt>supportsStandaloneImport</dt><dd><pre>boolean</pre><p>Does profile support standalone import with a dialog.</dd></dl><dl><dt>hasDefaultInstall</dt><dd><pre>boolean</pre><p>Is a default installation detected (for Opera 12 and Vivaldi).</dd></dl><dl><dt>willShowDialogType</dt><dd><pre>string</pre><p>When import starts and custom profile or file import is selected, this returns what dialog will be shown, if any. Possible values are 'file', 'folder' and 'none'.</dd></dl><dl><dt>profilePath</dt><dd><pre>string</pre><p>Is the path on disk to the detected profile</dd></dl><dl><dt>UserProfiles</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>UserProfileItem</ul></dd></dl></dl>
         <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
         <h3 id='onImportStarted'><a href='#onImportStarted'>#</a>onImportStarted</h3><p>Fired when a import session has started.<h3 id='onImportEnded'><a href='#onImportEnded'>#</a>onImportEnded</h3><p>Fired when a import session has ended.<p>Parameters:<dl><dt>error_count</dt><dd><pre>integer</pre><p>Number of data types that failed to import.</dd></dl><h3 id='onImportItemStarted'><a href='#onImportItemStarted'>#</a>onImportItemStarted</h3><p>Fired when a import session for a data type has started.<p>Parameters:<dl><dt>item</dt><dd><pre>string</pre><p>Name of data type.</dd></dl><h3 id='onImportItemEnded'><a href='#onImportItemEnded'>#</a>onImportItemEnded</h3><p>Fired when a import session for a data type has ended.<p>Parameters:<dl><dt>item</dt><dd><pre>string</pre><p>Name of data type.</dd></dl><h3 id='onImportItemFailed'><a href='#onImportItemFailed'>#</a>onImportItemFailed</h3><p>Fired when a import session for a data type has failed.<p>Parameters:<dl><dt>item</dt><dd><pre>string</pre><p>Name of data type.</dd></dl><dl><dt>error</dt><dd><pre>string</pre><p>Error message that can be shown to the user.</dd></dl>
         <h2>Methods</h2>
         <h3 id='getProfiles'><a href='#getProfiles'>#</a>getProfiles</h3><p>Retrieves import data profiles.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>results</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
-        <ul><li>ProfileItem</ul></dd></dl><dd></dl><h3 id='startImport'><a href='#startImport'>#</a>startImport</h3><p>Start import process.<p>Parameters:<dl><dt>itemsToImport</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
-        <ul><li>string<li>int64</ul></dd></dl><dl><dt>masterPassword</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl><dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl><dd></dl>
+        <ul><li>ProfileItem</ul></dd></dl></dd></dl><h3 id='startImport'><a href='#startImport'>#</a>startImport</h3><p>Start import process.<p>Parameters:<dl><dt>itemsToImport</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>string<li>int64</ul></dd></dl><dl><dt>masterPassword</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl><dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl></dd></dl>

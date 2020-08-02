@@ -30,12 +30,36 @@
     <ul><li><a href='#show'>show</a></ul></nav>
     
         <h2>Types</h2>
-        <h3 id='Rect'><a href='#Rect'>#</a>Rect</h3><p>Position and size of element in menu bar.<p>Properties:
-        <div class='vType'><dl><dl><dt>x</dt><dd><pre>integer</pre><p>Left position of item that opens menu, screen coordinates.</dd></dl><dl><dt>y</dt><dd><pre>integer</pre><p>Top position of item that opens menu, screen coordinates.</dd></dl><dl><dt>width</dt><dd><pre>integer</pre><p>Width of item that opens menu.</dd></dl><dl><dt>height</dt><dd><pre>integer</pre><p>Height of item that opens menu.</dd></dl></dl><h3 id='FolderEntry'><a href='#FolderEntry'>#</a>FolderEntry</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:
-        <div class='vType'><dl><dl><dt>id</dt><dd><pre>string</pre><p>Bookmark folder id.</dd></dl><dl><dt>offset</dt><dd><pre>integer</pre><p>Offset into folder.</dd></dl><dl><dt>folderGroup</dt><dd><pre>boolean</pre><p>When true, sorted content will have folders first or last in list.</dd></dl><dl><dt>rect</dt><dd><pre><a href="#Rect">Rect</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl></dl><h3 id='SortOrder'><a href='#SortOrder'>#</a>SortOrder</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines how to sort container items.<li>ascending<li>descending</ul></dd></dl><h3 id='SortField'><a href='#SortField'>#</a>SortField</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines what element to use as sort key<li>title<li>url<li>nickname<li>description<li>dateadded</ul></dd></dl><h3 id='Edge'><a href='#Edge'>#</a>Edge</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines position of menu items added in chrome code wrt bookmark items.<li>above<li>below<li>off</ul></dd></dl><h3 id='Icons'><a href='#Icons'>#</a>Icons</h3><dl><dt>Icons</dt><dd><p>Icons encoded as base64<p><code>Array</code> of:
+        <h3 id='Rect'><a href='#Rect'>#</a>Rect</h3><p>Position and size of element in menu bar.<p>Properties:<dl><dl><dt>x</dt><dd><pre>integer</pre><p>Left position of item that opens menu, screen coordinates.</dd></dl><dl><dt>y</dt><dd><pre>integer</pre><p>Top position of item that opens menu, screen coordinates.</dd></dl><dl><dt>width</dt><dd><pre>integer</pre><p>Width of item that opens menu.</dd></dl><dl><dt>height</dt><dd><pre>integer</pre><p>Height of item that opens menu.</dd></dl></dl><h3 id='FolderEntry'><a href='#FolderEntry'>#</a>FolderEntry</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>Bookmark folder id.</dd></dl><dl><dt>offset</dt><dd><pre>integer</pre><p>Offset into folder.</dd></dl><dl><dt>folderGroup</dt><dd><pre>boolean</pre><p>When true, sorted content will have folders first or last in list.</dd></dl><dl><dt>rect</dt><dd><pre><a href="#Rect">Rect</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl></dl><h3 id='SortOrder'><a href='#SortOrder'>#</a>SortOrder</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines how to sort container items.<li>ascending<li>descending</ul></dd></dl><h3 id='SortField'><a href='#SortField'>#</a>SortField</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines what element to use as sort key<li>title<li>url<li>nickname<li>description<li>dateadded</ul></dd></dl><h3 id='Edge'><a href='#Edge'>#</a>Edge</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines position of menu items added in chrome code wrt bookmark items.<li>above<li>below<li>off</ul></dd></dl><h3 id='Icons'><a href='#Icons'>#</a>Icons</h3><dl><dt>Icons</dt><dd><p>Icons encoded as base64<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
         <h3 id='onOpen'><a href='#onOpen'>#</a>onOpen</h3><p>Fires before menu opens.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Menu id, same as the bookmark folder to be shown.</dd></dl><h3 id='onClose'><a href='#onClose'>#</a>onClose</h3><p>Fires before menu closes.
         <h2>Methods</h2>
         <h3 id='show'><a href='#show'>#</a>show</h3><p>Shows a context menu.<p>Parameters:<dl><dt>properties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>siblings</dt><dd><p>List of menu entries.<p><code>Array</code> of:
-        <ul><li>FolderEntry</ul></dd></dl><dl><dt>id</dt><dd><pre>string</pre><p>Bookmark folder id. Must match an id in the sibling list.</dd></dl><dl><dt>edge</dt><dd>(optional) <pre><a href="#Edge">Edge</a></pre><p>Where to place extra menu items</dd></dl><dl><dt>sortField</dt><dd>(optional) <pre><a href="#SortField">SortField</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl><dl><dt>sortOrder</dt><dd>(optional) <pre><a href="#SortOrder">SortOrder</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl><dl><dt>icons</dt><dd><pre><a href="#Icons">Icons</a></pre><p>Default and folder icons.</dd></dl></dd></dl><dl><dt>callback</dt><dd><p>Notifies caller that menu has closed.<dd></dl>
+        <ul><li>FolderEntry</ul></dd></dl><dl><dt>id</dt><dd><pre>string</pre><p>Bookmark folder id. Must match an id in the sibling list.</dd></dl><dl><dt>edge</dt><dd>(optional) <pre><a href="#Edge">Edge</a></pre><p>Where to place extra menu items</dd></dl><dl><dt>sortField</dt><dd>(optional) <pre><a href="#SortField">SortField</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl><dl><dt>sortOrder</dt><dd>(optional) <pre><a href="#SortOrder">SortOrder</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl><dl><dt>icons</dt><dd><pre><a href="#Icons">Icons</a></pre><p>Default and folder icons.</dd></dl></dd></dl><dl><dt>callback</dt><dd><p>Notifies caller that menu has closed.</dd></dl>

@@ -30,11 +30,35 @@
     <ul><li><a href='#sendButtonAction'>sendButtonAction</a></ul></nav>
     
         <h2>Types</h2>
-        <h3 id='ButtonAction'><a href='#ButtonAction'>#</a>ButtonAction</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>accept<li>cancel<li>link<li>dismiss</ul></dd></dl><h3 id='InfobarButton'><a href='#InfobarButton'>#</a>InfobarButton</h3><p>Button to be shown in the infobar.<p>Properties:
-        <div class='vType'><dl><dl><dt>text</dt><dd><pre>string</pre><p>Text to be shown in the button.</dd></dl><dl><dt>action</dt><dd><pre><a href="#ButtonAction">ButtonAction</a></pre><p>The action to be performed when clicking this button.</dd></dl><dl><dt>prominent</dt><dd><pre>boolean</pre><p>This is the prominent button and should receive styling accordingly.</dd></dl><dl><dt>triggersUACPrompt</dt><dd><pre>boolean</pre><p>Will this trigger a UAC prompt on Windows.</dd></dl></dl><h3 id='Infobar'><a href='#Infobar'>#</a>Infobar</h3><p>Object passed to the onInfobarCreated event.<p>Properties:
-        <div class='vType'><dl><dl><dt>tabId</dt><dd><pre>integer</pre><p>The tabId this infobar is associated with.</dd></dl><dl><dt>identifier</dt><dd><pre>integer</pre><p>The identifier used to identify this infobar. It is only unique in combination with |tabId|.</dd></dl><dl><dt>messageText</dt><dd><pre>string</pre><p>The message text to be shown in the infobar.</dd></dl><dl><dt>buttons</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <h3 id='ButtonAction'><a href='#ButtonAction'>#</a>ButtonAction</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>accept<li>cancel<li>link<li>dismiss</ul></dd></dl><h3 id='InfobarButton'><a href='#InfobarButton'>#</a>InfobarButton</h3><p>Button to be shown in the infobar.<p>Properties:<dl><dl><dt>text</dt><dd><pre>string</pre><p>Text to be shown in the button.</dd></dl><dl><dt>action</dt><dd><pre><a href="#ButtonAction">ButtonAction</a></pre><p>The action to be performed when clicking this button.</dd></dl><dl><dt>prominent</dt><dd><pre>boolean</pre><p>This is the prominent button and should receive styling accordingly.</dd></dl><dl><dt>triggersUACPrompt</dt><dd><pre>boolean</pre><p>Will this trigger a UAC prompt on Windows.</dd></dl></dl><h3 id='Infobar'><a href='#Infobar'>#</a>Infobar</h3><p>Object passed to the onInfobarCreated event.<p>Properties:<dl><dl><dt>tabId</dt><dd><pre>integer</pre><p>The tabId this infobar is associated with.</dd></dl><dl><dt>identifier</dt><dd><pre>integer</pre><p>The identifier used to identify this infobar. It is only unique in combination with |tabId|.</dd></dl><dl><dt>messageText</dt><dd><pre>string</pre><p>The message text to be shown in the infobar.</dd></dl><dl><dt>buttons</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>InfobarButton</ul></dd></dl><dl><dt>linkText</dt><dd><pre>string</pre><p>The text associated with a link to be shown in the infobar.</dd></dl></dl>
         <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
         <h3 id='onInfobarCreated'><a href='#onInfobarCreated'>#</a>onInfobarCreated</h3><p>Fired when a infobar has been created and should be shown.<p>Parameters:<dl><dt>params</dt><dd><pre><a href="#Infobar">Infobar</a></pre><p>Information about the infobar.</dd></dl><h3 id='onInfobarRemoved'><a href='#onInfobarRemoved'>#</a>onInfobarRemoved</h3><p>Fired when a infobar has been removed and should no longer be visible.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tabId this infobar is associated with.</dd></dl><dl><dt>identifier</dt><dd><pre>integer</pre><p>The identifier used to identify this infobar. It is only unique in combination with |tabId|.</dd></dl>
         <h2>Methods</h2>
         <h3 id='sendButtonAction'><a href='#sendButtonAction'>#</a>sendButtonAction</h3><p>Send the action defined on the clicked button.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tabId this infobar is associated with.</dd></dl><dl><dt>identifier</dt><dd><pre>integer</pre><p>The identifier used to identify this infobar. It is only unique in combination with |tabId|.</dd></dl><dl><dt>action</dt><dd><pre>string</pre><p>The click action for this button. This must be the same as defined in the |InfoBarButton| type for this button.</dd></dl>

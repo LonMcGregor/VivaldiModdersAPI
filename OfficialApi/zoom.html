@@ -30,6 +30,32 @@
     <ul><li><a href='#setVivaldiUIZoom'>setVivaldiUIZoom</a><li><a href='#getVivaldiUIZoom'>getVivaldiUIZoom</a><li><a href='#setDefaultZoom'>setDefaultZoom</a><li><a href='#getDefaultZoom'>getDefaultZoom</a></ul></nav>
     
         <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
         <h3 id='onDefaultZoomChanged'><a href='#onDefaultZoomChanged'>#</a>onDefaultZoomChanged</h3><p>Fired when the default zoom changes.<p>Parameters:<dl><dt>zoomlevel</dt><dd><pre>number</pre><p>The new zoom level</dd></dl><h3 id='onUIZoomChanged'><a href='#onUIZoomChanged'>#</a>onUIZoomChanged</h3><p>Fired when the UI zoom changes.<p>Parameters:<dl><dt>zoomlevel</dt><dd><pre>number</pre><p>The new UI zoom level</dd></dl>
         <h2>Methods</h2>
-        <h3 id='setVivaldiUIZoom'><a href='#setVivaldiUIZoom'>#</a>setVivaldiUIZoom</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>zoomFactor</dt><dd><pre>number</pre><p>The new value for Vivaldi UI zoom factor.</dd></dl><dl><dt>callback</dt><dd><p>Called after the zoom message has been sent to the guest process.<dd></dl><h3 id='getVivaldiUIZoom'><a href='#getVivaldiUIZoom'>#</a>getVivaldiUIZoom</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>zoomLevel</dt><dd><p>The zoom level.<p>Parameters:<dl><dt>zoomlevel</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl><dd></dl><h3 id='setDefaultZoom'><a href='#setDefaultZoom'>#</a>setDefaultZoom</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>zoomFactor</dt><dd><pre>number</pre><p>The new Vivaldi default global zoom factor.</dd></dl><dl><dt>callback</dt><dd><p>Called after the zoom message has been sent to the guest process.<dd></dl><h3 id='getDefaultZoom'><a href='#getDefaultZoom'>#</a>getDefaultZoom</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>zoomLevel</dt><dd><p>The zoom level.<p>Parameters:<dl><dt>zoomlevel</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl><dd></dl>
+        <h3 id='setVivaldiUIZoom'><a href='#setVivaldiUIZoom'>#</a>setVivaldiUIZoom</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>zoomFactor</dt><dd><pre>number</pre><p>The new value for Vivaldi UI zoom factor.</dd></dl><dl><dt>callback</dt><dd><p>Called after the zoom message has been sent to the guest process.</dd></dl><h3 id='getVivaldiUIZoom'><a href='#getVivaldiUIZoom'>#</a>getVivaldiUIZoom</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>zoomLevel</dt><dd><p>The zoom level.<p>Parameters:<dl><dt>zoomlevel</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl></dd></dl><h3 id='setDefaultZoom'><a href='#setDefaultZoom'>#</a>setDefaultZoom</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>zoomFactor</dt><dd><pre>number</pre><p>The new Vivaldi default global zoom factor.</dd></dl><dl><dt>callback</dt><dd><p>Called after the zoom message has been sent to the guest process.</dd></dl><h3 id='getDefaultZoom'><a href='#getDefaultZoom'>#</a>getDefaultZoom</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>zoomLevel</dt><dd><p>The zoom level.<p>Parameters:<dl><dt>zoomlevel</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl></dd></dl>
