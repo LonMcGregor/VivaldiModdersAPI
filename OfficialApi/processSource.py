@@ -1,8 +1,10 @@
-import json, glob
+import json, glob, os
 from json import JSONDecodeError
 
+SOURCE_PATH = 'C:/Users/L/Downloads/vivaldi-source/'
+
 def getAllApiDefsInSourceBundle():
-    return glob.glob('C:/Users/L/Downloads/vivaldi-source/extensions/schema/*.json')
+    return glob.glob(os.path.join(SOURCE_PATH, 'extensions/schema/*.json'))
 
 def processApiDef(filename):
     try:
@@ -151,14 +153,15 @@ def makeNav(apis):
     <br /><ul>'''
     for api in apis:
         out += f'''<li><a href="{api['namespace']}.html">{api['namespace']}</a></li>'''
-    out += '''</ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
+    out += '''<li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
+    </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
     <p>Version 3.1, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>'''
     return out
 
 def makeContents(types, listeners, methods):
-    out = '''<nav class='contents'>
+    out = '''<nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
     <ul>'''
@@ -198,6 +201,7 @@ def convertDefsToHtml(api, sidebar):
     <body>
     {sidebar}
     <main>
+    <a id="backToTop" href="#top">Go back to top</a>
     <h1>vivaldi.{apiname} Modders API Reference</h1>
     <p>{api['description']}
     {makeContents(types, listeners, methods)}
@@ -246,8 +250,82 @@ def convertDefsToHtml(api, sidebar):
         '''
         for vmeth in methods:
             out += convertMethodToHtml(vmeth)
-
+    out += '</main></body></html>'
     return out
+
+def prefContents(data):
+    out = '''<nav class='contents' id='top'><h2>Navigation</h2><ul>'''
+    for k, v in data['vivaldi'].items():
+        out += f'''<li><a href='#{k}'>{k}</a>'''
+    out += '''<li><a href="#cprefs">Chromium Prefs</a></li></ul></nav>'''
+    return out
+
+def doAPref(path, k, v, out):
+    out.write(f'''<dl id="{path[:-1]}"><dt><a href="#{path[:-1]}">#</a>{path[:-1]}</dt><dd>''') # trim off the trailing path dot
+    out.write(getDescription(path, v))
+    out.write(f'''<pre>`{v['type']}`</pre>''')
+    if v['type'] == 'enum':
+        out.write('<ul>')
+        for ek, ev in v['enum_values'].items():
+            out.write(f'''<li>{ek}{' (Default)' if ek == v['default'] else ''}</li>''')
+    elif v['type'] == 'dictionary':
+        out.write('<p>Default: %s\n' % str(v['default']))
+    elif v['type'] in ['string', 'integer', 'boolean', 'double', 'list', 'file_path']:
+        if v['default'] == '':
+            out.write('''<p>Default: ''\n''')
+        else:
+            out.write('<p>Default: %s\n' % v['default'])
+    else:
+        print("WARNING! unknown type: %s" % v['type'])
+        out.write("⚠ WARNING! unknown type: %s" % v['type'])
+    out.write('</dd></dl>')
+
+def doAChromePref(k, v, out):
+    out.write(f'''<dl><dt>{v['path']}</dt><dd>''')
+    out.write(f'''<pre>`{v['type']}`</pre>''')
+    out.write(f'''<p>Internal key: {k}</dd></dl>''')
+
+def doPrefs(path, k, v, out, depth=0):
+    if depth == 0:
+        out.write(f'''<h3 id="{k}"><a href="#{k}">#</a>{k}</h3>''')
+    if 'type' in v:
+        doAPref(path, k, v, out)
+    else:
+        for subk, subv in v.items():
+            doPrefs(path + subk + '.', subk, subv, out, depth+1)
+
+def processPreferences(sidebar):
+    prefDefs = json.load(open(os.path.join(SOURCE_PATH, 'vivapp/src/prefs_definitions.json'), 'r'))
+    with open('preferenceDefinitions.html', 'w', encoding='utf-8') as out:
+        out.write(f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>vivaldi preferences</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="IDR_PRODUCT_LOGO.png" rel="icon">
+        </head>
+        <body>
+        {sidebar}
+        <main>
+        <a id="backToTop" href="#top">Go back to top</a>
+        <h1>vivaldi preferences Modders API Reference</h1>
+        {prefContents(prefDefs)}
+        ''')
+
+        out.write('<h2 id="vprefs">Vivaldi Prefs</h2>')
+        for k, v in prefDefs['vivaldi'].items():
+            doPrefs('vivaldi.'+k+'.', k, v, out)
+
+        out.write('<h2 id="cprefs">Chromium Prefs</h2>')
+        for k, v in prefDefs['chromium'].items():
+            doAChromePref(k, v, out)
+        for k, v in prefDefs['chromium_local'].items():
+            doAChromePref(k, v, out)
+
+        out.write('</main></body></html>')
 
 def writeAllToFile():
     files = getAllApiDefsInSourceBundle()
@@ -261,5 +339,6 @@ def writeAllToFile():
     for api in extractedApiDefs:
         with open(api['namespace']+'.html', "w", encoding='utf-8') as outfile:
             outfile.write(convertDefsToHtml(api, sidebar))
+    processPreferences(sidebar)
 
 writeAllToFile()
