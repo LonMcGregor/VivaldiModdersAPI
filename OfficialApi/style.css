@@ -1,0 +1,57 @@
+
+body {
+    display: flex;
+    margin: 0;
+}
+
+nav.side, main {
+    height:  100vh;
+    overflow-y:  scroll;
+}
+
+/* nav sidebar */
+nav.side {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    margin: 0px 20px 0px 20px;
+}
+
+nav.side footer {
+    font-size: small;
+}
+
+nav.side img {
+    margin: 0 auto;
+}
+
+/* docs */
+main {
+    flex-grow: 1;
+}
+
+nav.contents {
+    border: 1px solid black;
+    width: fit-content;
+    padding: 10px;
+    margin: 0px 10px
+}
+
+nav.contents h2, h3 {
+    width: min-content;
+    margin-top: 0px;
+}
+
+h3 > a {
+    margin-right: 5px;
+}
+
+dl {
+    border-left: 10px solid aliceblue;
+    padding-left: 10px;
+}
+
+dt {
+    background: aliceblue;
+    padding: 4px;
+}

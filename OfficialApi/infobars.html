@@ -1,0 +1,40 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vivaldi.infobars</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="IDR_PRODUCT_LOGO.png" rel="icon">
+    </head>
+    <body>
+    <nav class='side'>
+    <img src="IDR_PRODUCT_LOGO.png">
+    <p>Vivaldi Modders API
+    <br />Internal Documentation
+    <br /><ul><li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li></ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
+    <p>Version 3.1, by LonMcGregor.
+    <p>This website is not affiliated with vivaldi.
+    <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
+    <main>
+    <h1>vivaldi.infobars Modders API Reference</h1>
+    <p>Use the <code>vivaldi.infobars</code> API to interact with infobars.
+    <nav class='contents'>
+    <h2>Navigation</h2>
+    <h3>Types</h3>
+    <ul><li><a href='#ButtonAction'>ButtonAction</a><li><a href='#InfobarButton'>InfobarButton</a><li><a href='#Infobar'>Infobar</a></ul>
+    <h3>Listeners</h3>
+    <ul><li><a href='#onInfobarCreated'>onInfobarCreated</a><li><a href='#onInfobarRemoved'>onInfobarRemoved</a></ul>
+    <h3>Methods</h3>
+    <ul><li><a href='#sendButtonAction'>sendButtonAction</a></ul></nav>
+    
+        <h2>Types</h2>
+        <h3 id='ButtonAction'><a href='#ButtonAction'>#</a>ButtonAction</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>accept<li>cancel<li>link<li>dismiss</ul></dd></dl><h3 id='InfobarButton'><a href='#InfobarButton'>#</a>InfobarButton</h3><p>Button to be shown in the infobar.<p>Properties:
+        <div class='vType'><dl><dl><dt>text</dt><dd><pre>string</pre><p>Text to be shown in the button.</dd></dl><dl><dt>action</dt><dd><pre><a href="#ButtonAction">ButtonAction</a></pre><p>The action to be performed when clicking this button.</dd></dl><dl><dt>prominent</dt><dd><pre>boolean</pre><p>This is the prominent button and should receive styling accordingly.</dd></dl><dl><dt>triggersUACPrompt</dt><dd><pre>boolean</pre><p>Will this trigger a UAC prompt on Windows.</dd></dl></dl><h3 id='Infobar'><a href='#Infobar'>#</a>Infobar</h3><p>Object passed to the onInfobarCreated event.<p>Properties:
+        <div class='vType'><dl><dl><dt>tabId</dt><dd><pre>integer</pre><p>The tabId this infobar is associated with.</dd></dl><dl><dt>identifier</dt><dd><pre>integer</pre><p>The identifier used to identify this infobar. It is only unique in combination with |tabId|.</dd></dl><dl><dt>messageText</dt><dd><pre>string</pre><p>The message text to be shown in the infobar.</dd></dl><dl><dt>buttons</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>InfobarButton</ul></dd></dl><dl><dt>linkText</dt><dd><pre>string</pre><p>The text associated with a link to be shown in the infobar.</dd></dl></dl>
+        <h2>Listeners</h2>
+        <h3 id='onInfobarCreated'><a href='#onInfobarCreated'>#</a>onInfobarCreated</h3><p>Fired when a infobar has been created and should be shown.<p>Parameters:<dl><dt>params</dt><dd><pre><a href="#Infobar">Infobar</a></pre><p>Information about the infobar.</dd></dl><h3 id='onInfobarRemoved'><a href='#onInfobarRemoved'>#</a>onInfobarRemoved</h3><p>Fired when a infobar has been removed and should no longer be visible.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tabId this infobar is associated with.</dd></dl><dl><dt>identifier</dt><dd><pre>integer</pre><p>The identifier used to identify this infobar. It is only unique in combination with |tabId|.</dd></dl>
+        <h2>Methods</h2>
+        <h3 id='sendButtonAction'><a href='#sendButtonAction'>#</a>sendButtonAction</h3><p>Send the action defined on the clicked button.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tabId this infobar is associated with.</dd></dl><dl><dt>identifier</dt><dd><pre>integer</pre><p>The identifier used to identify this infobar. It is only unique in combination with |tabId|.</dd></dl><dl><dt>action</dt><dd><pre>string</pre><p>The click action for this button. This must be the same as defined in the |InfoBarButton| type for this button.</dd></dl>

@@ -1,0 +1,40 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vivaldi.sessionsPrivate</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="IDR_PRODUCT_LOGO.png" rel="icon">
+    </head>
+    <body>
+    <nav class='side'>
+    <img src="IDR_PRODUCT_LOGO.png">
+    <p>Vivaldi Modders API
+    <br />Internal Documentation
+    <br /><ul><li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li></ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
+    <p>Version 3.1, by LonMcGregor.
+    <p>This website is not affiliated with vivaldi.
+    <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
+    <main>
+    <h1>vivaldi.sessionsPrivate Modders API Reference</h1>
+    <p>Vivaldi sessions support api.
+    <nav class='contents'>
+    <h2>Navigation</h2>
+    <h3>Types</h3>
+    <ul><li><a href='#SessionItem'>SessionItem</a><li><a href='#SessionOpenOptions'>SessionOpenOptions</a><li><a href='#SessionSaveOptions'>SessionSaveOptions</a></ul>
+    <h3>Listeners</h3>
+    <ul></ul>
+    <h3>Methods</h3>
+    <ul><li><a href='#getAll'>getAll</a><li><a href='#saveOpenTabs'>saveOpenTabs</a><li><a href='#open'>open</a><li><a href='#delete'>delete</a></ul></nav>
+    
+        <h2>Types</h2>
+        <h3 id='SessionItem'><a href='#SessionItem'>#</a>SessionItem</h3><p>Object that holds all information about a single session.<p>Properties:
+        <div class='vType'><dl><dl><dt>name</dt><dd><pre>string</pre><p>Session display name created from the filename</dd></dl><dl><dt>createDateJS</dt><dd><pre>number</pre><p>Session save date in JS format.</dd></dl><dl><dt>windows</dt><dd><pre>number</pre><p>Number of windows in this session.</dd></dl><dl><dt>tabs</dt><dd><pre>number</pre><p>Number of tabs in this session.</dd></dl></dl><h3 id='SessionOpenOptions'><a href='#SessionOpenOptions'>#</a>SessionOpenOptions</h3><p>Options for opening the session.<p>Properties:
+        <div class='vType'><dl><dl><dt>openInNewWindow</dt><dd><pre>boolean</pre><p>The session will open in a new window.</dd></dl></dl><h3 id='SessionSaveOptions'><a href='#SessionSaveOptions'>#</a>SessionSaveOptions</h3><p>Options for saving the session.<p>Properties:
+        <div class='vType'><dl><dl><dt>saveOnlyWindowId</dt><dd><pre>integer</pre><p>Save only the given window.</dd></dl><dl><dt>ids</dt><dd>(optional) <p>List of tab identifiers to be saved.<p><code>Array</code> of:
+        <ul><li>integer</ul></dd></dl></dl>
+        <h2>Methods</h2>
+        <h3 id='getAll'><a href='#getAll'>#</a>getAll</h3><p>Returns all previously saved sessions stored on disk.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>sessions</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>SessionItem</ul></dd></dl><dd></dl><h3 id='saveOpenTabs'><a href='#saveOpenTabs'>#</a>saveOpenTabs</h3><p>Saves all open tabs to the named session.<p>Parameters:<dl><dt>name</dt><dd><pre>string</pre><p>Name of the session to save to.</dd></dl><dl><dt>options</dt><dd><pre><a href="#SessionSaveOptions">SessionSaveOptions</a></pre><p>Session save options.</dd></dl><dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>status</dt><dd><pre>integer</pre><p>0 for success, error code for any error.</dd></dl><dd></dl><h3 id='open'><a href='#open'>#</a>open</h3><p>Open a specific named session.<p>Parameters:<dl><dt>name</dt><dd><pre>string</pre><p>Name of the session to open.</dd></dl><dl><dt>options</dt><dd>(optional) <pre><a href="#SessionOpenOptions">SessionOpenOptions</a></pre><p>Session open options.</dd></dl><dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>status</dt><dd><pre>integer</pre><p>0 for success, error code for any error.</dd></dl><dd></dl><h3 id='delete'><a href='#delete'>#</a>delete</h3><p>Deletes the named session.<p>Parameters:<dl><dt>name</dt><dd><pre>string</pre><p>Name of the session to delete.</dd></dl><dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>status</dt><dd><pre>integer</pre><p>0 for success, error code for any error.</dd></dl><dd></dl>
