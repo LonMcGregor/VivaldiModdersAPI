@@ -53,13 +53,15 @@ def typeToHtml(name, prop, makeTopLevel=False):
                 out += f'''<li>{enum}'''
             else:
                 out += f'''<li>{enum['name']}: {getDescription(enum['name'], enum, False)}'''
-        out += '''</ul></dd></dl>'''
+        out += '''</ul></dd></dl>
+        '''
     elif '$ref' in prop: # referenced to a special vType
         out += f'''<dl><dt>{name}</dt><dd>'''
         out += optional(prop)
         out += f'''<pre><a href="#{prop['$ref']}">{prop['$ref']}</a></pre>'''
         out += getDescription(name, prop)
-        out += '''</dd></dl>'''
+        out += '''</dd></dl>
+        '''
     elif 'choices' in prop: # ?
         out += f'''<dl><dt>{name}</dt><dd>'''
         out += optional(prop)
@@ -67,13 +69,15 @@ def typeToHtml(name, prop, makeTopLevel=False):
         print("WARNING: Strange 'choices' construct in " + name)
         out += getDescription(name, prop)
         out += str(prop['choices'])
-        out += '''</dd></dl>'''
+        out += '''</dd></dl>
+        '''
     elif prop['type'] in ['number', 'integer', 'string', 'boolean', 'any', 'binary']:
         out += f'''<dl><dt>{name}</dt><dd>'''
         out += optional(prop)
         out += f'''<pre>{prop['type']}</pre>'''
         out += getDescription(name, prop)
-        out += '''</dd></dl>'''
+        out += '''</dd></dl>
+        '''
     elif prop['type'] == 'array':
         out += f'''<dl><dt>{name}</dt><dd>'''
         out += optional(prop)
@@ -86,7 +90,8 @@ def typeToHtml(name, prop, makeTopLevel=False):
             out += 'Minimum items: ' + str(prop['minItems'])
         if 'maxItems' in prop:
             out += 'Maximum items: ' + str(prop['maxItems'])
-        out += '''</ul></dd></dl>'''
+        out += '''</ul></dd></dl>
+        '''
     elif prop['type'] == 'object':
         out += f'''<dl><dt>{name}</dt><dd>'''
         out += optional(prop)
@@ -102,7 +107,8 @@ def typeToHtml(name, prop, makeTopLevel=False):
         else:
             for key, val in prop['properties'].items():
                 out += typeToHtml(key, val)
-        out += '</dd></dl>'
+        out += '''</dd></dl>
+        '''
     elif prop['type'] == 'function':
         if makeTopLevel:
             out += f'''<h3 id='{name}'><a href='#{name}'>#</a>{name}</h3>'''
@@ -114,7 +120,8 @@ def typeToHtml(name, prop, makeTopLevel=False):
             for param in prop['parameters']:
                 out += typeToHtml(param['name'], param)
         if not makeTopLevel:
-            out += '</dd></dl>'
+            out += '''</dd></dl>
+            '''
     else:
         raise Exception('BAD vTYPE PROP TYPE '+prop['type'])
     return out
@@ -128,7 +135,8 @@ def convertVivaldiTypeToHtml(api):
         out += '''<p>Properties:<dl>'''
         for id, val in api['properties'].items():
             out += typeToHtml(id, val)
-        out+='</dl>'
+        out+='''</dl>
+        '''
     else:
         out += typeToHtml(api['id'], api)
     return out
@@ -136,13 +144,13 @@ def convertVivaldiTypeToHtml(api):
 def convertListenerToHtml(api):
     if 'type' not in api or api['type'] != 'function':
         print("WARNING! Listener is not a function type: " + api['name'])
-        return "<dl><dt>api['name']</dt><dd>⚠ WARNING! Failed to get info as type not provided</dd></dl>"
+        return "<dl><dt>api['name']</dt><dd>⚠ WARNING! Failed to get info as type not provided</dd></dl>\n"
     return typeToHtml(api['name'], api, True)
 
 def convertMethodToHtml(api):
     if 'type' not in api or api['type'] != 'function':
         print("WARNING! Method is not a function type: " + api['name'])
-        return "<dl><dt>api['name']</dt><dd>⚠ WARNING! Failed to get info as type not provided</dd></dl>"
+        return "<dl><dt>api['name']</dt><dd>⚠ WARNING! Failed to get info as type not provided</dd></dl>\n"
     return typeToHtml(api['name'], api, True)
 
 def makeNav(apis):
@@ -150,14 +158,16 @@ def makeNav(apis):
     <img src="IDR_PRODUCT_LOGO.png">
     <p>Vivaldi Modders API
     <br />Internal Documentation
-    <br /><ul>'''
+    <br /><ul>
+    '''
     for api in apis:
         out += f'''<li><a href="{api['namespace']}.html">{api['namespace']}</a></li>'''
-    out += '''<li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
+    out += f'''<li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.1, by LonMcGregor.
+    <p>Version {version()}, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
-    <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>'''
+    <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
+    '''
     return out
 
 def makeContents(types, listeners, methods):
@@ -340,5 +350,11 @@ def writeAllToFile():
         with open(api['namespace']+'.html', "w", encoding='utf-8') as outfile:
             outfile.write(convertDefsToHtml(api, sidebar))
     processPreferences(sidebar)
+
+def version():
+    with open(os.path.join(SOURCE_PATH, 'VIVALDI_VERSION'), 'r') as f:
+        major = f.readline()[len('VIVALDI_MAJOR='):].strip()
+        minor = f.readline()[len('VIVALDI_MINOR='):].strip()
+    return str(major)+'.'+str(minor)
 
 writeAllToFile()
