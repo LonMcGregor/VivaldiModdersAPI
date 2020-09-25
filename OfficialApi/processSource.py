@@ -1,4 +1,4 @@
-import json, glob, os
+import json, glob, os, re
 from json import JSONDecodeError
 
 SOURCE_PATH = 'C:/Users/L/Downloads/vivaldi-source/'
@@ -163,6 +163,7 @@ def makeNav(apis):
     for api in apis:
         out += f'''<li><a href="{api['namespace']}.html">{api['namespace']}</a></li>'''
     out += f'''<li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
+    <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
     <p>Version {version()}, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
@@ -337,6 +338,34 @@ def processPreferences(sidebar):
 
         out.write('</main></body></html>')
 
+def prepareEverythingFile(sidebar):
+    everythingfile = open('everything.html', 'w', encoding='utf-8')
+    everythingfile.write(f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search whole Vivaldi API</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="IDR_PRODUCT_LOGO.png" rel="icon">
+        </head>
+        <body>
+        {sidebar}
+        <main>
+        <a id="backToTop" href="#top">Go back to top</a>''')
+    return everythingfile
+
+def getContentOnlyForEverythingFile(deftoHtml, apiname):
+    start = deftoHtml.find('</ul></nav>')+len('</ul></nav>')
+    end = deftoHtml.find('</main>')
+    content = deftoHtml[start:end]
+    anchorre = '''<a href='#(\w+)'>'''
+    anchorsub = f'''<a href='{apiname}.html#\\1'>'''
+    resetAnchors = re.sub(anchorre, anchorsub, content)
+    wholefile = f'''<h1><a href='{apiname}.html'>{apiname}</a></h1>\n''' + resetAnchors
+    return wholefile
+
 def writeAllToFile():
     files = getAllApiDefsInSourceBundle()
     apiDefs = [processApiDef(file) for file in files]
@@ -346,10 +375,20 @@ def writeAllToFile():
         for api in apis:
             extractedApiDefs.append(api)
     sidebar = makeNav(extractedApiDefs)
+    everythingfile = prepareEverythingFile(sidebar)
     for api in extractedApiDefs:
         with open(api['namespace']+'.html', "w", encoding='utf-8') as outfile:
-            outfile.write(convertDefsToHtml(api, sidebar))
+            defToHtml = convertDefsToHtml(api, sidebar)
+            outfile.write(defToHtml)
+            everythingContent = getContentOnlyForEverythingFile(defToHtml, api['namespace'])
+            everythingfile.write(everythingContent)
     processPreferences(sidebar)
+    with open('preferenceDefinitions.html', 'r', encoding='utf-8') as prefsfile:
+        prefscontent = prefsfile.read()
+        everythingContent = getContentOnlyForEverythingFile(defToHtml, 'preferenceDefinitions')
+        everythingfile.write(everythingContent)
+    everythingfile.write('''</main></body></html>''')
+    everythingfile.close()
 
 def version():
     with open(os.path.join(SOURCE_PATH, 'VIVALDI_VERSION'), 'r') as f:
