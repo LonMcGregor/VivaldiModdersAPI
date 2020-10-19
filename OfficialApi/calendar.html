@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.2, by LonMcGregor.
+    <p>Version 3.4, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -41,11 +41,7 @@
         <dl><dt>exception_event_id</dt><dd>(optional) <pre>string</pre><p>The id of the event that serves as exception to the event in a recurrence series.</dd></dl>
         <dl><dt>parent_event_id</dt><dd>(optional) <pre>string</pre><p>The id of the event that is parent to all the others events in the recurrence series.</dd></dl>
         </dl>
-        <h3 id='EventException'><a href='#EventException'>#</a>EventException</h3><p>A pattern describing how a event exception occurs. Used during import and create.<p>Properties:<dl><dl><dt>title</dt><dd>(optional) <pre>string</pre><p>Title of event.</dd></dl>
-        <dl><dt>description</dt><dd>(optional) <pre>string</pre><p>The event description.</dd></dl>
-        <dl><dt>start</dt><dd>(optional) <pre>number</pre><p>When this event starts, in milliseconds since the epoch.</dd></dl>
-        <dl><dt>end</dt><dd>(optional) <pre>number</pre><p>When this event ends, in milliseconds since the epoch.</dd></dl>
-        <dl><dt>exceptionDate</dt><dd>(optional) <pre>number</pre><p>The date an exception should be added to. In milliseconds since the epoch.</dd></dl>
+        <h3 id='EventException'><a href='#EventException'>#</a>EventException</h3><p>A pattern describing how a event exception occurs. Used during import and create.<p>Properties:<dl><dl><dt>exceptionDate</dt><dd>(optional) <pre>number</pre><p>The date an exception should be added to. In milliseconds since the epoch.</dd></dl>
         <dl><dt>cancelled</dt><dd>(optional) <pre>boolean</pre><p>If a certain instance of recurring event is cancelled.</dd></dl>
         </dl>
         <h3 id='CreateNotificationRow'><a href='#CreateNotificationRow'>#</a>CreateNotificationRow</h3><p>An object describing notification to be created during event creation.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Name of the notification.</dd></dl>
@@ -125,7 +121,7 @@
         <dl><dt>eventTypeId</dt><dd>(optional) <pre>string</pre><p>The event type id of the event.</dd></dl>
         <dl><dt>organizer</dt><dd>(optional) <pre>string</pre><p>The organizer of the event.</dd></dl>
         <dl><dt>eventExceptions</dt><dd>(optional) <p>List of recurrence exceptions.<p><code>Array</code> of:
-        <ul><li>EventException</ul></dd></dl>
+        <ul><li>object<li>{'exception': {'$ref': 'EventException'}, 'exception_event': {'optional': True, '$ref': 'CreateDetails'}}</ul></dd></dl>
         <dl><dt>notifications</dt><dd>(optional) <p>List of notifications to create.<p><code>Array</code> of:
         <ul><li>CreateNotificationRow</ul></dd></dl>
         <dl><dt>invites</dt><dd>(optional) <p>List of invites to create.<p><code>Array</code> of:
@@ -314,7 +310,7 @@
         <dl><dt>exception_event_id</dt><dd>(optional) <pre>string</pre><p>The id of the event that serves as exception to the event in a recurrence series.</dd></dl>
         <dl><dt>cancelled</dt><dd><pre>boolean</pre><p>Cancel this instance of recurring event.</dd></dl>
         <dl><dt>date</dt><dd>(optional) <pre>number</pre><p>When the exception should happen. In milliseconds since the epoch.</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#CalendarEvent">CalendarEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
             <h3 id='createNotification'><a href='#createNotification'>#</a>createNotification</h3><p>Creates a notification.<p>Parameters:<dl><dt>createNotification</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>event_id</dt><dd>(optional) <pre>string</pre><p>The event id of the event to create the notification for.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>The name of the notification.</dd></dl>

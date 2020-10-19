@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.2, by LonMcGregor.
+    <p>Version 3.4, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -45,6 +45,42 @@
         <h1><a href='autoUpdate.html'>autoUpdate</a></h1>
 
     
+        <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
+        <h3 id='onDidFindValidUpdate'><a href='autoUpdate.html#onDidFindValidUpdate'>#</a>onDidFindValidUpdate</h3><p>Fired when a valid update is found.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>releaseNotesUrl</dt><dd><pre>string</pre><p>URL of the release notes of the update.</dd></dl>
+        <h3 id='onWillDownloadUpdate'><a href='autoUpdate.html#onWillDownloadUpdate'>#</a>onWillDownloadUpdate</h3><p>Fired when an update will be downloaded.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onDidDownloadUpdate'><a href='autoUpdate.html#onDidDownloadUpdate'>#</a>onDidDownloadUpdate</h3><p>Fired when an update has been downloaded.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onWillInstallUpdateOnQuit'><a href='autoUpdate.html#onWillInstallUpdateOnQuit'>#</a>onWillInstallUpdateOnQuit</h3><p>Fired when an update will be installed on restart or quit.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onUpdaterWillRelaunchApplication'><a href='autoUpdate.html#onUpdaterWillRelaunchApplication'>#</a>onUpdaterWillRelaunchApplication</h3><p>Fired just before the updater restarts the application.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onUpdaterDidRelaunchApplication'><a href='autoUpdate.html#onUpdaterDidRelaunchApplication'>#</a>onUpdaterDidRelaunchApplication</h3><p>Fired when an application has been restarted due to an update.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onDidAbortWithError'><a href='autoUpdate.html#onDidAbortWithError'>#</a>onDidAbortWithError</h3><p>Fired when an update fails.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        
         <h2>Methods</h2>
         <h3 id='checkForUpdates'><a href='autoUpdate.html#checkForUpdates'>#</a>checkForUpdates</h3><p>Check for Vivaldi browser updates.<p>Parameters:<dl><dt>withUi</dt><dd><pre>boolean</pre><p>Indicates whether we want the auto-update ui to appear.</dd></dl>
         <h3 id='isUpdateNotifierEnabled'><a href='autoUpdate.html#isUpdateNotifierEnabled'>#</a>isUpdateNotifierEnabled</h3><p>Checks whether the update notifier is set to run on startup.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -295,11 +331,7 @@
         <dl><dt>exception_event_id</dt><dd>(optional) <pre>string</pre><p>The id of the event that serves as exception to the event in a recurrence series.</dd></dl>
         <dl><dt>parent_event_id</dt><dd>(optional) <pre>string</pre><p>The id of the event that is parent to all the others events in the recurrence series.</dd></dl>
         </dl>
-        <h3 id='EventException'><a href='calendar.html#EventException'>#</a>EventException</h3><p>A pattern describing how a event exception occurs. Used during import and create.<p>Properties:<dl><dl><dt>title</dt><dd>(optional) <pre>string</pre><p>Title of event.</dd></dl>
-        <dl><dt>description</dt><dd>(optional) <pre>string</pre><p>The event description.</dd></dl>
-        <dl><dt>start</dt><dd>(optional) <pre>number</pre><p>When this event starts, in milliseconds since the epoch.</dd></dl>
-        <dl><dt>end</dt><dd>(optional) <pre>number</pre><p>When this event ends, in milliseconds since the epoch.</dd></dl>
-        <dl><dt>exceptionDate</dt><dd>(optional) <pre>number</pre><p>The date an exception should be added to. In milliseconds since the epoch.</dd></dl>
+        <h3 id='EventException'><a href='calendar.html#EventException'>#</a>EventException</h3><p>A pattern describing how a event exception occurs. Used during import and create.<p>Properties:<dl><dl><dt>exceptionDate</dt><dd>(optional) <pre>number</pre><p>The date an exception should be added to. In milliseconds since the epoch.</dd></dl>
         <dl><dt>cancelled</dt><dd>(optional) <pre>boolean</pre><p>If a certain instance of recurring event is cancelled.</dd></dl>
         </dl>
         <h3 id='CreateNotificationRow'><a href='calendar.html#CreateNotificationRow'>#</a>CreateNotificationRow</h3><p>An object describing notification to be created during event creation.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Name of the notification.</dd></dl>
@@ -379,7 +411,7 @@
         <dl><dt>eventTypeId</dt><dd>(optional) <pre>string</pre><p>The event type id of the event.</dd></dl>
         <dl><dt>organizer</dt><dd>(optional) <pre>string</pre><p>The organizer of the event.</dd></dl>
         <dl><dt>eventExceptions</dt><dd>(optional) <p>List of recurrence exceptions.<p><code>Array</code> of:
-        <ul><li>EventException</ul></dd></dl>
+        <ul><li>object<li>{'exception': {'$ref': 'EventException'}, 'exception_event': {'optional': True, '$ref': 'CreateDetails'}}</ul></dd></dl>
         <dl><dt>notifications</dt><dd>(optional) <p>List of notifications to create.<p><code>Array</code> of:
         <ul><li>CreateNotificationRow</ul></dd></dl>
         <dl><dt>invites</dt><dd>(optional) <p>List of invites to create.<p><code>Array</code> of:
@@ -568,7 +600,7 @@
         <dl><dt>exception_event_id</dt><dd>(optional) <pre>string</pre><p>The id of the event that serves as exception to the event in a recurrence series.</dd></dl>
         <dl><dt>cancelled</dt><dd><pre>boolean</pre><p>Cancel this instance of recurring event.</dd></dl>
         <dl><dt>date</dt><dd>(optional) <pre>number</pre><p>When the exception should happen. In milliseconds since the epoch.</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#CalendarEvent">CalendarEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
             <h3 id='createNotification'><a href='calendar.html#createNotification'>#</a>createNotification</h3><p>Creates a notification.<p>Parameters:<dl><dt>createNotification</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>event_id</dt><dd>(optional) <pre>string</pre><p>The event id of the event to create the notification for.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>The name of the notification.</dd></dl>
@@ -945,30 +977,40 @@
         <dl><dt>height</dt><dd><pre>number</pre><p>Height of item that opens menu.</dd></dl>
         </dl>
         <h3 id='Origin'><a href='contextMenu.html#Origin'>#</a>Origin</h3><dl><dt><code>ENUM</code></dt><dd><p>Menu location with respect to rectangle. With pointer the size and height is ignored.<li>pointer<li>topLeft<li>bottomLeft<li>topRight<li>bottomRight</ul></dd></dl>
-        <h3 id='ExpandType'><a href='contextMenu.html#ExpandType'>#</a>ExpandType</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines functionality to set up on the C++ side. One or more menu items may be created.<li>pwa</ul></dd></dl>
-        <h3 id='MenuItem'><a href='contextMenu.html#MenuItem'>#</a>MenuItem</h3><p>One menu item.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Text in item.</dd></dl>
+        <h3 id='ItemType'><a href='contextMenu.html#ItemType'>#</a>ItemType</h3><dl><dt><code>ENUM</code></dt><dd><p>What kind of item.<li>command<li>checkbox<li>radiobutton<li>folder</ul></dd></dl>
+        <h3 id='Icons'><a href='contextMenu.html#Icons'>#</a>Icons</h3><dl><dt>Icons</dt><dd><p>Icons encoded as base64.<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        <h3 id='ContainerMode'><a href='contextMenu.html#ContainerMode'>#</a>ContainerMode</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines container layouts.<li>inline<li>folder</ul></dd></dl>
+        <h3 id='ContainerContent'><a href='contextMenu.html#ContainerContent'>#</a>ContainerContent</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines functionality to set up on the C++ side. One or more menu items may be created.<li>pwa</ul></dd></dl>
+        <h3 id='Item'><a href='contextMenu.html#Item'>#</a>Item</h3><p>One menu item.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Text in item.</dd></dl>
         <dl><dt>id</dt><dd><pre>integer</pre><p>The unique id of item.</dd></dl>
-        <dl><dt>items</dt><dd>(optional) <p>Child menu items.<p><code>Array</code> of:
-        <ul><li>MenuItem</ul></dd></dl>
-        <dl><dt>type</dt><dd><pre>string</pre><p>'normal' or 'checkbox'. Defaults to 'normal'.</dd></dl>
+        <dl><dt>type</dt><dd><pre><a href="#ItemType">ItemType</a></pre><p>The kind of menu element</dd></dl>
         <dl><dt>radiogroup</dt><dd>(optional) <pre>integer</pre><p>The radiobutton group this item belongs to.</dd></dl>
         <dl><dt>checked</dt><dd>(optional) <pre>boolean</pre><p>true if the checkbox is checked, otherwise false. Only applies for type='checkbox'.</dd></dl>
-        <dl><dt>disabled</dt><dd>(optional) <pre>boolean</pre><p>true if the item should appear as grayed out.</dd></dl>
-        <dl><dt>emphasized</dt><dd>(optional) <pre>boolean</pre><p>true if the item should appear in an emphasized style (typically bold).</dd></dl>
-        <dl><dt>shortcut</dt><dd>(optional) <pre>string</pre><p>String which illustrates a shortcut. The presence of a string will not execute menu action.</dd></dl>
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p>Url that can be used to determine a corresponding icon.</dd></dl>
-        <dl><dt>parameter</dt><dd>(optional) <pre>string</pre><p>Parameter to command. Sent back unaltered.</dd></dl>
-        <dl><dt>expand</dt><dd>(optional) <pre><a href="#ExpandType">ExpandType</a></pre><p>Specifies an element to expand in C++ to one or more elements. How it is expanded is implementation specific.</dd></dl>
-        <dl><dt>index</dt><dd>(optional) <pre>integer</pre><p>Index in menu list. Can only be used insert into an existing list</dd></dl>
-        <dl><dt>icon</dt><dd>(optional) <pre>string</pre><p>Icon in PNG format encoded as base64.</dd></dl>
+        <dl><dt>icons</dt><dd>(optional) <pre><a href="#Icons">Icons</a></pre><p>Icon in PNG format encoded as base64.</dd></dl>
+        </dl>
+        <h3 id='Container'><a href='contextMenu.html#Container'>#</a>Container</h3><p>Container to expand<p>Properties:<dl><dl><dt>id</dt><dd><pre>integer</pre><p>The unique id of item.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>Text in item when mode is folder</dd></dl>
+        <dl><dt>content</dt><dd><pre><a href="#ContainerContent">ContainerContent</a></pre><p>Specifies an element to expand in C++ to one or more elements. How it is expanded is implementation specific.</dd></dl>
+        <dl><dt>mode</dt><dd><pre><a href="#ContainerMode">ContainerMode</a></pre><p>Container content format</dd></dl>
+        </dl>
+        <h3 id='Separator'><a href='contextMenu.html#Separator'>#</a>Separator</h3><p>One separator<p>Properties:<dl><dl><dt>label</dt><dd>(optional) <pre>string</pre><p>Text in item.</dd></dl>
+        </dl>
+        <h3 id='Element'><a href='contextMenu.html#Element'>#</a>Element</h3><p>One element in menu. All optional, but one and only one of 'item', 'separator' or 'container' should be set. 'children' is only considered when 'item' is set.<p>Properties:<dl><dl><dt>item</dt><dd>(optional) <pre><a href="#Item">Item</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>container</dt><dd>(optional) <pre><a href="#Container">Container</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>separator</dt><dd>(optional) <pre><a href="#Separator">Separator</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>children</dt><dd>(optional) <p>Child menu items.<p><code>Array</code> of:
+        <ul><li>Element</ul></dd></dl>
         </dl>
         
         <h2>Methods</h2>
-        <h3 id='show'><a href='contextMenu.html#show'>#</a>show</h3><p>Shows a new context menu.<p>Parameters:<dl><dt>properties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>items</dt><dd><p>List of menu entries.<p><code>Array</code> of:
-        <ul><li>MenuItem</ul></dd></dl>
+        <h3 id='show'><a href='contextMenu.html#show'>#</a>show</h3><p>Shows a new context menu.<p>Parameters:<dl><dt>properties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>children</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>Element</ul></dd></dl>
         <dl><dt>rect</dt><dd><pre><a href="#Rect">Rect</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>origin</dt><dd><pre><a href="#Origin">Origin</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>icons</dt><dd><pre><a href="#Icons">Icons</a></pre><p>Default and folder icons.</dd></dl>
         </dd></dl>
         <dl><dt>callback</dt><dd><p>Notifies caller that menu has closed.</dd></dl>
             <h1><a href='devtoolsPrivate.html'>devtoolsPrivate</a></h1>
@@ -1495,7 +1537,7 @@
     
         <h2>Types</h2>
         <h3 id='NodeType'><a href='menuContent.html#NodeType'>#</a>NodeType</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines supported nodes<li>menu<li>command<li>checkbox<li>radio<li>folder<li>separator<li>container</ul></dd></dl>
-        <h3 id='Role'><a href='menuContent.html#Role'>#</a>Role</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines menu type.<li>horizontal<li>vertical<li>mac</ul></dd></dl>
+        <h3 id='Role'><a href='menuContent.html#Role'>#</a>Role</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines menu type.<li>horizontal<li>vertical<li>mac<li>context</ul></dd></dl>
         <h3 id='ContainerMode'><a href='menuContent.html#ContainerMode'>#</a>ContainerMode</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines container layouts.<li>inline<li>folder</ul></dd></dl>
         <h3 id='ContainerEdge'><a href='menuContent.html#ContainerEdge'>#</a>ContainerEdge</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines on what edge of a container additional items can be added.<li>above<li>below<li>off</ul></dd></dl>
         <h3 id='MenuTreeNode'><a href='menuContent.html#MenuTreeNode'>#</a>MenuTreeNode</h3><p>A node (folder or menu entry) in the menu tree. Child nodes are ordered within their parent folder.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>Unique identifier.</dd></dl>
@@ -1506,6 +1548,7 @@
         <dl><dt>radiogroup</dt><dd>(optional) <pre>string</pre><p>Mandatory for radio elements.</dd></dl>
         <dl><dt>containermode</dt><dd>(optional) <pre><a href="#ContainerMode">ContainerMode</a></pre><p>Mandatory for container elements.</dd></dl>
         <dl><dt>containeredge</dt><dd>(optional) <pre><a href="#ContainerEdge">ContainerEdge</a></pre><p>Mandatory for container elements.</dd></dl>
+        <dl><dt>parameter</dt><dd>(optional) <pre>string</pre><p>Free form parameter. Format varies with action.</dd></dl>
         <dl><dt>children</dt><dd>(optional) <p>An ordered list of children of this node.<p><code>Array</code> of:
         <ul><li>MenuTreeNode</ul></dd></dl>
         </dl>
@@ -1550,11 +1593,6 @@
         <dl><dt>result</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>MenuTreeNode</ul></dd></dl>
         </dd></dl>
-            <h3 id='set'><a href='menuContent.html#set'>#</a>set</h3><p>Saves a named menu.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>items</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
-        <ul><li>MenuTreeNode</ul></dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
             <h3 id='move'><a href='menuContent.html#move'>#</a>move</h3><p>Moves one or more items within a named menu.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>ids</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
@@ -1579,6 +1617,7 @@
             <h3 id='update'><a href='menuContent.html#update'>#</a>update</h3><p>Updates the properties of a node.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>changes</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>title</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>parameter</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>containerMode</dt><dd>(optional) <pre><a href="#ContainerMode">ContainerMode</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>containerEdge</dt><dd>(optional) <pre><a href="#ContainerEdge">ContainerEdge</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
@@ -1809,6 +1848,7 @@
         <dl><dt>image</dt><dd><pre>string</pre><p>base64 encoded data url with the image to use for this profile. Empty for Guest profile.</dd></dl>
         <dl><dt>imageIndex</dt><dd><pre>integer</pre><p>The index into our array of default images this user is using. Corrensponds to |UserProfileImage| index value. Not valid for guest profiles.</dd></dl>
         <dl><dt>guest</dt><dd><pre>boolean</pre><p>true if this is the guest profile, otherwise false. </dd></dl>
+        <dl><dt>customAvatar</dt><dd><pre>string</pre><p>Link to a HTTP-loadble custom avatar, if available.</dd></dl>
         </dl>
         <h3 id='UserProfileImage'><a href='runtimePrivate.html#UserProfileImage'>#</a>UserProfileImage</h3><p>Object returned from the |getUserProfileImages|.<p>Properties:<dl><dl><dt>index</dt><dd><pre>integer</pre><p>Index of this user profile image in the table of available images.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>Name of this user profile image.</dd></dl>
@@ -1864,8 +1904,7 @@
         </dd></dl>
             <h3 id='openProfileSelectionWindow'><a href='runtimePrivate.html#openProfileSelectionWindow'>#</a>openProfileSelectionWindow</h3><p>Open window for profile management.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>true if success, otherwise false.</dd></dl>
         </dd></dl>
-            <h3 id='getUserProfiles'><a href='runtimePrivate.html#getUserProfiles'>#</a>getUserProfiles</h3><p>Get all registered user profiles.<p>Parameters:<dl><dt>avatarWidth</dt><dd><pre>integer</pre><p>Width to scale the avatar image to. 0 for no scaling.</dd></dl>
-        <dl><dt>avatarHeight</dt><dd><pre>integer</pre><p>Height to scale the avatar image to. 0 for no scaling</dd></dl>
+            <h3 id='getUserProfiles'><a href='runtimePrivate.html#getUserProfiles'>#</a>getUserProfiles</h3><p>Get all or just the active registered user profile(s).<p>Parameters:<dl><dt>activeOnly</dt><dd>(optional) <pre>boolean</pre><p>If true, only return the active profile.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>profiles</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>UserProfile</ul></dd></dl>
         </dd></dl>
@@ -2014,6 +2053,12 @@
         <h2>Methods</h2>
         <h3 id='start'><a href='sync.html#start'>#</a>start</h3><p>Starts up sync. Feedback about the startup process can be obtained by listening to onEngineStateChanged.<h3 id='stop'><a href='sync.html#stop'>#</a>stop</h3><p>Shuts sync down.<h3 id='setEncryptionPassword'><a href='sync.html#setEncryptionPassword'>#</a>setEncryptionPassword</h3><p>Sets the password to use for encryption/decryption of Sync data. If an empty password is supplied, the password supplied when logging in will be used.<p>Parameters:<dl><dt>password</dt><dd>(optional) <pre>string</pre><p>The encryption password to use. If not specified, We will attempt to use the currently stored login password instead.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>accepted</dt><dd><pre>boolean</pre><p>Whether the password was accepted. This will be false if we have data to decrypt and the password doesn't allow to decrypt them or if we already had a password set.</dd></dl>
+        </dd></dl>
+            <h3 id='backupEncryptionToken'><a href='sync.html#backupEncryptionToken'>#</a>backupEncryptionToken</h3><p>Saves the token derived from the encryption password to a file<p>Parameters:<dl><dt>target_file</dt><dd><pre>string</pre><p>The file to which the token should be saved</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+            <h3 id='restoreEncryptionToken'><a href='sync.html#restoreEncryptionToken'>#</a>restoreEncryptionToken</h3><p>Uses a previously backed-up token to set up encryption<p>Parameters:<dl><dt>source_file</dt><dd><pre>string</pre><p>The file from which the token should be recovered</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p>Whether the file was read successfully. Failure may still occur if the retrieved token is incorrect.</dd></dl>
         </dd></dl>
             <h3 id='getDefaultSessionName'><a href='sync.html#getDefaultSessionName'>#</a>getDefaultSessionName</h3><p>Returns the device name as determined by the OS.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
@@ -2172,12 +2217,8 @@
 
     
         <h2>Types</h2>
-        <h3 id='CaptureUrlParams'><a href='thumbnails.html#CaptureUrlParams'>#</a>CaptureUrlParams</h3><p>A structure containing parameters for the captureUrl call.<p>Properties:<dl><dl><dt>bookmarkId</dt><dd><pre>string</pre><p>Bookmark id to associate the captured thumbnail with.</dd></dl>
+        <h3 id='CaptureBookmarkParams'><a href='thumbnails.html#CaptureBookmarkParams'>#</a>CaptureBookmarkParams</h3><p>A structure containing parameters for the captureUrl call.<p>Properties:<dl><dl><dt>bookmarkId</dt><dd><pre>string</pre><p>Bookmark id to associate the captured thumbnail with.</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p>url to load and generate thumbnail for.</dd></dl>
-        <dl><dt>width</dt><dd><pre>integer</pre><p>Width of viewport hosting the loaded page.</dd></dl>
-        <dl><dt>height</dt><dd><pre>integer</pre><p>Height of viewport hosting the loaded page.</dd></dl>
-        <dl><dt>scaledWidth</dt><dd><pre>integer</pre><p>Scaled width of the thumbnail.</dd></dl>
-        <dl><dt>scaledHeight</dt><dd><pre>integer</pre><p>Scaled height of the thumbnail.</dd></dl>
         </dl>
         <h3 id='CaptureUIParams'><a href='thumbnails.html#CaptureUIParams'>#</a>CaptureUIParams</h3><p>A structure containing parameters for the captureUI call.<p>Properties:<dl><dl><dt>posX</dt><dd><pre>number</pre><p>X offset inside the given app window in the UI coordinates.</dd></dl>
         <dl><dt>posY</dt><dd><pre>number</pre><p>Y offset inside the given app window in the UI coordinates.</dd></dl>
@@ -2212,12 +2253,12 @@
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>true if the image was succesfully captured</dd></dl>
         <dl><dt>image</dt><dd><pre>string</pre><p>base64-encoded of the captured image if any.</dd></dl>
         </dd></dl>
-            <h3 id='captureTab'><a href='thumbnails.html#captureTab'>#</a>captureTab</h3><p>Captures the contents of a tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id to capture.</dd></dl>
+            <h3 id='captureTab'><a href='thumbnails.html#captureTab'>#</a>captureTab</h3><p>Captures the contents of a tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id to capture. 0 to capture the current active tab.</dd></dl>
         <dl><dt>params</dt><dd><pre><a href="#CaptureTabParams">CaptureTabParams</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>true if the image was succesfully captured</dd></dl>
         <dl><dt>image</dt><dd><pre>string</pre><p>base64-encoded of the captured image if any.</dd></dl>
         </dd></dl>
-            <h3 id='captureUrl'><a href='thumbnails.html#captureUrl'>#</a>captureUrl</h3><p>Loads a url then captures the contents of it and attached it to a bookmark.<p>Parameters:<dl><dt>params</dt><dd><pre><a href="#CaptureUrlParams">CaptureUrlParams</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+            <h3 id='captureBookmark'><a href='thumbnails.html#captureBookmark'>#</a>captureBookmark</h3><p>Loads a url then captures the contents of it and attached it to a bookmark.<p>Parameters:<dl><dt>params</dt><dd><pre><a href="#CaptureBookmarkParams">CaptureBookmarkParams</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>True if the thumbnail was successfully generated and stored in the bookmark.</dd></dl>
         </dd></dl>
             <h1><a href='vivaldiAccount.html'>vivaldiAccount</a></h1>
@@ -2327,12 +2368,27 @@
         <dl><dt>normalizedUrl</dt><dd><pre>string</pre><p>Returns the raw spec, i.e., the full text of the URL, in canonical UTF-8, if the URL is valid.</dd></dl>
         <dl><dt>externalHandler</dt><dd><pre>boolean</pre><p>The protocol scheme will be passed to a confirmation and run in an external protocol handler.</dd></dl>
         </dl>
+        <h3 id='UrlFragment'><a href='utilities.html#UrlFragment'>#</a>UrlFragment</h3><p>To be used in context of UrlFragments below. A fragment should be considered not present if 'begin' and 'end' are both 0.<p>Properties:<dl><dl><dt>fragment</dt><dd><pre>string</pre><p>The URL fragment.</dd></dl>
+        <dl><dt>begin</dt><dd><pre>integer</pre><p>Start offset of the fragment within the URL.</dd></dl>
+        <dl><dt>end</dt><dd><pre>integer</pre><p>End offset of the fragment within the URL.</dd></dl>
+        </dl>
+        <h3 id='UrlFragments'><a href='utilities.html#UrlFragments'>#</a>UrlFragments</h3><p>Object with url fragments, including top level domain which is eTLD aware.<p>Properties:<dl><dl><dt>scheme</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>username</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>password</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>host</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>port</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>path</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>query</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>ref</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>tld</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
         <h3 id='FileExtension'><a href='utilities.html#FileExtension'>#</a>FileExtension</h3><p>A single extension item used for filtering <p>Properties:<dl><dl><dt>ext</dt><dd><pre>string</pre><p>Extension ending, eg. 'jpg'</dd></dl>
         </dl>
         <h3 id='SelectFileDialogType'><a href='utilities.html#SelectFileDialogType'>#</a>SelectFileDialogType</h3><dl><dt><code>ENUM</code></dt><dd><p>The type of selectfile dialog to show.<li>file: This is a file select dialog.<li>folder: This is a folder select dialog.</ul></dd></dl>
         <h3 id='SelectLocalImageParams'><a href='utilities.html#SelectLocalImageParams'>#</a>SelectLocalImageParams</h3><p>Option object for selectLocalImage.<p>Properties:<dl><dl><dt>title</dt><dd><pre>string</pre><p>Title for the file selection dialog.</dd></dl>
         <dl><dt>preferencePath</dt><dd>(optional) <pre>string</pre><p>The preference where to place the result.</dd></dl>
         <dl><dt>thumbnailBookmarkId</dt><dd>(optional) <pre>string</pre><p>The bookmark id where to store the selected local path.</dd></dl>
+        <dl><dt>setPathInPrefs</dt><dd>(optional) <pre>boolean</pre><p>If true, set the actual path in the given |preferencesPath| and do not create a mapping.</dd></dl>
         </dl>
         <h3 id='SharedDataValue'><a href='utilities.html#SharedDataValue'>#</a>SharedDataValue</h3><p>Data key+value pair.<p>Properties:<dl><dl><dt>key</dt><dd><pre>string</pre><p>The data key.</dd></dl>
         <dl><dt>value</dt><dd><pre>any</pre><p>The data value.</dd></dl>
@@ -2385,6 +2441,10 @@
         </dd></dl>
             <h3 id='isUrlValid'><a href='utilities.html#isUrlValid'>#</a>isUrlValid</h3><p>Validates given URL. Returns UrlValidResults with the results.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to validate</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>results</dt><dd><pre><a href="#UrlValidResults">UrlValidResults</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+            <h3 id='getUrlFragments'><a href='utilities.html#getUrlFragments'>#</a>getUrlFragments</h3><p>Splits given URL. Returns UrlFragments including top level domain which is eTLD aware.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to process.</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>valid</dt><dd><pre>boolean</pre><p>If false the supplied URL could not be parsed as such, otherwise true.</dd></dl>
+        <dl><dt>fragments</dt><dd><pre><a href="#UrlFragments">UrlFragments</a></pre><p>The URL split up in fragments.</dd></dl>
         </dd></dl>
             <h3 id='getSelectedText'><a href='utilities.html#getSelectedText'>#</a>getSelectedText</h3><p>Returns selected text in page with given id<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The page to examine</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>text</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2480,7 +2540,9 @@
             <h3 id='focusDialog'><a href='utilities.html#focusDialog'>#</a>focusDialog</h3><p>Focus the named dialog so keyboard navigation within it is available.<p>Parameters:<dl><dt>dialogName</dt><dd><pre><a href="#DialogName">DialogName</a></pre><p>Dialog name to check for visibility.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>wasFocused</dt><dd><pre>boolean</pre><p>true if the dialog was focused, otherwise false.</dd></dl>
         </dd></dl>
-            <h3 id='startChromecast'><a href='utilities.html#startChromecast'>#</a>startChromecast</h3><p>Shows the Chromecast dialog.<h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
+            <h3 id='startChromecast'><a href='utilities.html#startChromecast'>#</a>startChromecast</h3><p>Shows the Chromecast dialog.<h3 id='isFirstRun'><a href='utilities.html#isFirstRun'>#</a>isFirstRun</h3><p>chrome::IsChromeFirstRun()<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+            <h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
 
     
         <h2>Types</h2>
@@ -2503,7 +2565,7 @@
         <dl><dt>skipWindowState</dt><dd><pre>boolean</pre><p>Skip restoring window after webview is restored.</dd></dl>
         <h3 id='getPageHistory'><a href='webViewPrivate.html#getPageHistory'>#</a>getPageHistory</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p>The instance ID of the guest <webview> process.</dd></dl>
         <dl><dt>callback</dt><dd><p>Called when history .<p>Parameters:<dl><dt>currentEntryIndex</dt><dd><pre>integer</pre><p>The current index.</dd></dl>
-        <dl><dt>pageHistory</dt><dd>(optional) <p>Array of history items with name and index.<p><code>Array</code> of:
+        <dl><dt>pageHistory</dt><dd><p>Array of history items with name and index.<p><code>Array</code> of:
         <ul><li>object<li>{'name': {'type': 'string', 'description': 'Title for the page.'}, 'url': {'type': 'string', 'description': 'URL for the entry.'}, 'index': {'type': 'integer', 'description': 'Relative history index. This can be used in <webview>.go(|index|).'}}</ul></dd></dl>
         </dd></dl>
             <h3 id='allowBlockedInsecureContent'><a href='webViewPrivate.html#allowBlockedInsecureContent'>#</a>allowBlockedInsecureContent</h3><p>Will load all blocked content in a page.<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2585,6 +2647,7 @@
         <h3 id='onActiveTabStatusText'><a href='windowPrivate.html#onActiveTabStatusText'>#</a>onActiveTabStatusText</h3><p>Fired when the active tab has new loadstate text. Will reset to <empty> string<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>statusText</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onCloseAllTabsDone'><a href='windowPrivate.html#onCloseAllTabsDone'>#</a>onCloseAllTabsDone</h3><p><p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Id of the Vivaldi window where the tabstrip is empty.</dd></dl>
+        <h3 id='onWebContentsDidStartNavigation'><a href='windowPrivate.html#onWebContentsDidStartNavigation'>#</a>onWebContentsDidStartNavigation</h3><p>Fired when the webcontents mainframe embedded by the VivaldiBrowserWindow start loading. Happens reloaded and first load.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='create'><a href='windowPrivate.html#create'>#</a>create</h3><p>Create a window with additional Vivaldi specific properties.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>Url to page to show as the full window UI of the new window.</dd></dl>
