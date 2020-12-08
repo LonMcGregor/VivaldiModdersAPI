@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.4, by LonMcGregor.
+    <p>Version 3.5, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -28,11 +28,11 @@
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul><li><a href='#AccountType'>AccountType</a><li><a href='#RecurrenceException'>RecurrenceException</a><li><a href='#EventException'>EventException</a><li><a href='#CreateNotificationRow'>CreateNotificationRow</a><li><a href='#CreateInviteRow'>CreateInviteRow</a><li><a href='#Notification'>Notification</a><li><a href='#Invite'>Invite</a><li><a href='#CalendarEvent'>CalendarEvent</a><li><a href='#CreateDetails'>CreateDetails</a><li><a href='#EventType'>EventType</a><li><a href='#CreateEventType'>CreateEventType</a><li><a href='#CreateEventsResults'>CreateEventsResults</a><li><a href='#CreateCalendarDetails'>CreateCalendarDetails</a><li><a href='#Calendar'>Calendar</a><li><a href='#updateCalendar'>updateCalendar</a><li><a href='#updatedAccount'>updatedAccount</a><li><a href='#createdAccount'>createdAccount</a><li><a href='#Account'>Account</a></ul>
+    <ul><li><a href='#AccountType'>AccountType</a><li><a href='#RecurrenceException'>RecurrenceException</a><li><a href='#EventException'>EventException</a><li><a href='#CreateNotificationRow'>CreateNotificationRow</a><li><a href='#CreateInviteRow'>CreateInviteRow</a><li><a href='#SupportedCalendarComponents'>SupportedCalendarComponents</a><li><a href='#Notification'>Notification</a><li><a href='#Invite'>Invite</a><li><a href='#CalendarEvent'>CalendarEvent</a><li><a href='#CreateDetails'>CreateDetails</a><li><a href='#EventType'>EventType</a><li><a href='#CreateEventType'>CreateEventType</a><li><a href='#CreateEventsResults'>CreateEventsResults</a><li><a href='#CreateCalendarDetails'>CreateCalendarDetails</a><li><a href='#Calendar'>Calendar</a><li><a href='#updateCalendar'>updateCalendar</a><li><a href='#updatedAccount'>updatedAccount</a><li><a href='#createdAccount'>createdAccount</a><li><a href='#Account'>Account</a></ul>
     <h3>Listeners</h3>
     <ul><li><a href='#onEventCreated'>onEventCreated</a><li><a href='#onEventRemoved'>onEventRemoved</a><li><a href='#onEventChanged'>onEventChanged</a><li><a href='#onEventTypeCreated'>onEventTypeCreated</a><li><a href='#onEventTypeRemoved'>onEventTypeRemoved</a><li><a href='#onEventTypeChanged'>onEventTypeChanged</a><li><a href='#onCalendarCreated'>onCalendarCreated</a><li><a href='#onCalendarRemoved'>onCalendarRemoved</a><li><a href='#onCalendarChanged'>onCalendarChanged</a><li><a href='#onNotificationChanged'>onNotificationChanged</a><li><a href='#onCalendarDataChanged'>onCalendarDataChanged</a></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#getAllEvents'>getAllEvents</a><li><a href='#getAllEventTypes'>getAllEventTypes</a><li><a href='#getAllNotifications'>getAllNotifications</a><li><a href='#eventCreate'>eventCreate</a><li><a href='#eventsCreate'>eventsCreate</a><li><a href='#deleteEvent'>deleteEvent</a><li><a href='#updateEvent'>updateEvent</a><li><a href='#create'>create</a><li><a href='#getAll'>getAll</a><li><a href='#delete'>delete</a><li><a href='#update'>update</a><li><a href='#eventTypeCreate'>eventTypeCreate</a><li><a href='#eventTypeUpdate'>eventTypeUpdate</a><li><a href='#deleteEventType'>deleteEventType</a><li><a href='#createEventException'>createEventException</a><li><a href='#createNotification'>createNotification</a><li><a href='#deleteNotification'>deleteNotification</a><li><a href='#createInvite'>createInvite</a><li><a href='#deleteInvite'>deleteInvite</a><li><a href='#updateInvite'>updateInvite</a><li><a href='#getAllAccounts'>getAllAccounts</a><li><a href='#createAccount'>createAccount</a><li><a href='#updateAccount'>updateAccount</a><li><a href='#deleteAccount'>deleteAccount</a><li><a href='#getAllEventTemplates'>getAllEventTemplates</a></ul></nav>
+    <ul><li><a href='#getAllEvents'>getAllEvents</a><li><a href='#getAllEventTypes'>getAllEventTypes</a><li><a href='#getAllNotifications'>getAllNotifications</a><li><a href='#eventCreate'>eventCreate</a><li><a href='#eventsCreate'>eventsCreate</a><li><a href='#deleteEvent'>deleteEvent</a><li><a href='#updateEvent'>updateEvent</a><li><a href='#create'>create</a><li><a href='#getAll'>getAll</a><li><a href='#delete'>delete</a><li><a href='#update'>update</a><li><a href='#eventTypeCreate'>eventTypeCreate</a><li><a href='#eventTypeUpdate'>eventTypeUpdate</a><li><a href='#deleteEventType'>deleteEventType</a><li><a href='#createEventException'>createEventException</a><li><a href='#createNotification'>createNotification</a><li><a href='#updateNotification'>updateNotification</a><li><a href='#deleteNotification'>deleteNotification</a><li><a href='#createInvite'>createInvite</a><li><a href='#deleteInvite'>deleteInvite</a><li><a href='#updateInvite'>updateInvite</a><li><a href='#getAllAccounts'>getAllAccounts</a><li><a href='#createAccount'>createAccount</a><li><a href='#updateAccount'>updateAccount</a><li><a href='#deleteAccount'>deleteAccount</a><li><a href='#getAllEventTemplates'>getAllEventTemplates</a></ul></nav>
     
         <h2>Types</h2>
         <h3 id='AccountType'><a href='#AccountType'>#</a>AccountType</h3><dl><dt><code>ENUM</code></dt><dd><p>The account type. Maps to int in db: 0: Local. 1: Vivaldi.net calendar. 2: Google Calendar. 3: CalDAV.  4: Read only iCal.<li>local<li>vivaldi<li>google<li>caldav<li>ical</ul></dd></dl>
@@ -50,6 +50,10 @@
         <h3 id='CreateInviteRow'><a href='#CreateInviteRow'>#</a>CreateInviteRow</h3><p>An object describing invite to be created during event creation.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Name of the invite.</dd></dl>
         <dl><dt>address</dt><dd><pre>string</pre><p>The invite address.</dd></dl>
         <dl><dt>partstat</dt><dd><pre>string</pre><p>The participation status for the event invite.</dd></dl>
+        </dl>
+        <h3 id='SupportedCalendarComponents'><a href='#SupportedCalendarComponents'>#</a>SupportedCalendarComponents</h3><p>An object describing supported calendar component set.<p>Properties:<dl><dl><dt>vevent</dt><dd><pre>boolean</pre><p>Does the calendar support vevent.</dd></dl>
+        <dl><dt>vtodo</dt><dd><pre>boolean</pre><p>Does the calendar support vtodo.</dd></dl>
+        <dl><dt>vjournal</dt><dd><pre>boolean</pre><p>Does the calendar support vjournal.</dd></dl>
         </dl>
         <h3 id='Notification'><a href='#Notification'>#</a>Notification</h3><p>An object describing notification.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the notification. IDs are unique within the current profile, and they remain valid even after the browser is restarted.</dd></dl>
         <dl><dt>event_id</dt><dd>(optional) <pre>string</pre><p>The event id this notification applies to.</dd></dl>
@@ -98,6 +102,14 @@
         <dl><dt>invites</dt><dd>(optional) <p>List of invites.<p><code>Array</code> of:
         <ul><li>Invite</ul></dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the event.</dd></dl>
+        <dl><dt>due</dt><dd>(optional) <pre>number</pre><p>The date and time that a to-do is expected to be completed.</dd></dl>
+        <dl><dt>priority</dt><dd>(optional) <pre>integer</pre><p>Priority of event or task. Must be in the range [0..9]. 0 is equivalent of no priority.</dd></dl>
+        <dl><dt>status</dt><dd>(optional) <pre>string</pre><p>The overall status or confirmation for the event or todo.</dd></dl>
+        <dl><dt>percentage_complete</dt><dd>(optional) <pre>integer</pre><p>The percent completion of a todo to the organizer.</dd></dl>
+        <dl><dt>categories</dt><dd>(optional) <pre>string</pre><p>Event or todo categories. A comma separated list.</dd></dl>
+        <dl><dt>component_class</dt><dd>(optional) <pre>string</pre><p>Access classification for a event or todo.</dd></dl>
+        <dl><dt>attachment</dt><dd>(optional) <pre>string</pre><p>Document object for a event or todo.</dd></dl>
+        <dl><dt>completed</dt><dd>(optional) <pre>number</pre><p>The date and time that a todo was actually completed.</dd></dl>
         </dl>
         <h3 id='CreateDetails'><a href='#CreateDetails'>#</a>CreateDetails</h3><p>Object passed to the create() function.<p>Properties:<dl><dl><dt>title</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>description</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -128,6 +140,14 @@
         <ul><li>CreateInviteRow</ul></dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the event to create.</dd></dl>
         <dl><dt>is_template</dt><dd><pre>boolean</pre><p>Is  the event a template or not.</dd></dl>
+        <dl><dt>due</dt><dd>(optional) <pre>number</pre><p>The date and time that a to-do is expected to be completed.</dd></dl>
+        <dl><dt>priority</dt><dd>(optional) <pre>integer</pre><p>Priority of event or task. Must be in the range [0..9]. 0 is equivalent of no priority.</dd></dl>
+        <dl><dt>status</dt><dd>(optional) <pre>string</pre><p>The overall status or confirmation for the event or todo.</dd></dl>
+        <dl><dt>percentage_complete</dt><dd>(optional) <pre>integer</pre><p>The percent completion of a todo to the organizer.</dd></dl>
+        <dl><dt>categories</dt><dd>(optional) <pre>string</pre><p>Event or todo categories. A comma separated list.</dd></dl>
+        <dl><dt>component_class</dt><dd>(optional) <pre>string</pre><p>Access classification for a event or todo.</dd></dl>
+        <dl><dt>attachment</dt><dd>(optional) <pre>string</pre><p>Document object for a event or todo.</dd></dl>
+        <dl><dt>completed</dt><dd>(optional) <pre>number</pre><p>The date and time that a todo was actually completed.</dd></dl>
         </dl>
         <h3 id='EventType'><a href='#EventType'>#</a>EventType</h3><p>A event type.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the event type. IDs are unique within the current profile, and they remain valid even after the browser is restarted.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>The event type name.</dd></dl>
@@ -151,6 +171,8 @@
         <dl><dt>active</dt><dd>(optional) <pre>boolean</pre><p>If this CalDAV calendar should be polled.</dd></dl>
         <dl><dt>lastChecked</dt><dd>(optional) <pre>number</pre><p>When this calendar last checked for updates.  In milliseconds since the epoch.</dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the calendar.</dd></dl>
+        <dl><dt>ctag</dt><dd>(optional) <pre>string</pre><p>The ctag field of the CalDAV calendar.</dd></dl>
+        <dl><dt>supportedCalendarComponent</dt><dd>(optional) <pre><a href="#SupportedCalendarComponents">SupportedCalendarComponents</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='Calendar'><a href='#Calendar'>#</a>Calendar</h3><p>Calendar that owns events.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the calendar. IDs are unique within the current profile, and they remain valid even after the browser is restarted.</dd></dl>
         <dl><dt>accountId</dt><dd><pre>string</pre><p>The id of the account the calendar belongs to.</dd></dl>
@@ -164,6 +186,7 @@
         <dl><dt>ctag</dt><dd>(optional) <pre>string</pre><p>The ctag field of the CalDAV calendar.</dd></dl>
         <dl><dt>lastChecked</dt><dd>(optional) <pre>number</pre><p>When this calendar last checked for updates.  In milliseconds since the epoch.</dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the calendar.</dd></dl>
+        <dl><dt>supportedCalendarComponent</dt><dd>(optional) <pre><a href="#SupportedCalendarComponents">SupportedCalendarComponents</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='updateCalendar'><a href='#updateCalendar'>#</a>updateCalendar</h3><p>Object to update calendar.<p>Properties:<dl><dl><dt>accountId</dt><dd>(optional) <pre>string</pre><p>The id of the account the calendar belongs to.</dd></dl>
         <dl><dt>name</dt><dd>(optional) <pre>string</pre><p>The name of the calendar.</dd></dl>
@@ -176,6 +199,7 @@
         <dl><dt>ctag</dt><dd>(optional) <pre>string</pre><p>The ctag field of the CalDAV calendar.</dd></dl>
         <dl><dt>lastChecked</dt><dd>(optional) <pre>number</pre><p>When this calendar last checked for updates.  In milliseconds since the epoch.</dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the calendar.</dd></dl>
+        <dl><dt>supportedCalendarComponent</dt><dd>(optional) <pre><a href="#SupportedCalendarComponents">SupportedCalendarComponents</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='updatedAccount'><a href='#updatedAccount'>#</a>updatedAccount</h3><p>Object to update calendar.<p>Properties:<dl><dl><dt>name</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>username</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -280,6 +304,14 @@
         <dl><dt>rrule</dt><dd>(optional) <pre>string</pre><p>The recurring rule. In iCalendar format.</dd></dl>
         <dl><dt>organizer</dt><dd>(optional) <pre>string</pre><p>The organizer of the event.</dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the event.</dd></dl>
+        <dl><dt>due</dt><dd>(optional) <pre>number</pre><p>The date and time that a to-do is expected to be completed.</dd></dl>
+        <dl><dt>priority</dt><dd>(optional) <pre>integer</pre><p>Priority of event or task. Must be in the range [0..9]. 0 is equivalent of no priority.</dd></dl>
+        <dl><dt>status</dt><dd>(optional) <pre>string</pre><p>The overall status or confirmation for the event or todo.</dd></dl>
+        <dl><dt>percentage_complete</dt><dd>(optional) <pre>integer</pre><p>The percent completion of a todo to the Organizer.</dd></dl>
+        <dl><dt>categories</dt><dd>(optional) <pre>string</pre><p>Event or todo categories. A comma separated list.</dd></dl>
+        <dl><dt>component_class</dt><dd>(optional) <pre>string</pre><p>Access classification for a event or todo.</dd></dl>
+        <dl><dt>attachment</dt><dd>(optional) <pre>string</pre><p>Access classification for a event or todo.</dd></dl>
+        <dl><dt>completed</dt><dd>(optional) <pre>number</pre><p>The date and time that a todo was actually completed.</dd></dl>
         </dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#CalendarEvent">CalendarEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>res</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -316,6 +348,15 @@
         <dl><dt>name</dt><dd><pre>string</pre><p>The name of the notification.</dd></dl>
         <dl><dt>description</dt><dd>(optional) <pre>string</pre><p>The description of the notification.</dd></dl>
         <dl><dt>when</dt><dd><pre>number</pre><p>When the notification should fire. In milliseconds since the epoch.</dd></dl>
+        <dl><dt>period</dt><dd>(optional) <pre>integer</pre><p>If not null, the notification will repeat and will fire again in period minutes.</dd></dl>
+        <dl><dt>delay</dt><dd>(optional) <pre>integer</pre><p>The notification will fire after delay minutes from now. Can not be used together with when.</dd></dl>
+        </dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>notification</dt><dd><pre><a href="#Notification">Notification</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+            <h3 id='updateNotification'><a href='#updateNotification'>#</a>updateNotification</h3><p>Updates the properties of a notification. Specify only the properties that you want to change. Unspecified properties will be left unchanged.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The id of the notification to update.</dd></dl>
+        <dl><dt>changes</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>name</dt><dd>(optional) <pre>string</pre><p>The name of the notification.</dd></dl>
+        <dl><dt>description</dt><dd>(optional) <pre>string</pre><p>The description of the notification.</dd></dl>
+        <dl><dt>when</dt><dd>(optional) <pre>number</pre><p>When the notification should fire. In milliseconds since the epoch.</dd></dl>
         <dl><dt>period</dt><dd>(optional) <pre>integer</pre><p>If not null, the notification will repeat and will fire again in period minutes.</dd></dl>
         <dl><dt>delay</dt><dd>(optional) <pre>integer</pre><p>The notification will fire after delay minutes from now. Can not be used together with when.</dd></dl>
         </dd></dl>

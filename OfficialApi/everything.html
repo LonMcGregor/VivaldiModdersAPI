@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.4, by LonMcGregor.
+    <p>Version 3.5, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -341,6 +341,10 @@
         <dl><dt>address</dt><dd><pre>string</pre><p>The invite address.</dd></dl>
         <dl><dt>partstat</dt><dd><pre>string</pre><p>The participation status for the event invite.</dd></dl>
         </dl>
+        <h3 id='SupportedCalendarComponents'><a href='calendar.html#SupportedCalendarComponents'>#</a>SupportedCalendarComponents</h3><p>An object describing supported calendar component set.<p>Properties:<dl><dl><dt>vevent</dt><dd><pre>boolean</pre><p>Does the calendar support vevent.</dd></dl>
+        <dl><dt>vtodo</dt><dd><pre>boolean</pre><p>Does the calendar support vtodo.</dd></dl>
+        <dl><dt>vjournal</dt><dd><pre>boolean</pre><p>Does the calendar support vjournal.</dd></dl>
+        </dl>
         <h3 id='Notification'><a href='calendar.html#Notification'>#</a>Notification</h3><p>An object describing notification.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the notification. IDs are unique within the current profile, and they remain valid even after the browser is restarted.</dd></dl>
         <dl><dt>event_id</dt><dd>(optional) <pre>string</pre><p>The event id this notification applies to.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>Name of the notification.</dd></dl>
@@ -388,6 +392,14 @@
         <dl><dt>invites</dt><dd>(optional) <p>List of invites.<p><code>Array</code> of:
         <ul><li>Invite</ul></dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the event.</dd></dl>
+        <dl><dt>due</dt><dd>(optional) <pre>number</pre><p>The date and time that a to-do is expected to be completed.</dd></dl>
+        <dl><dt>priority</dt><dd>(optional) <pre>integer</pre><p>Priority of event or task. Must be in the range [0..9]. 0 is equivalent of no priority.</dd></dl>
+        <dl><dt>status</dt><dd>(optional) <pre>string</pre><p>The overall status or confirmation for the event or todo.</dd></dl>
+        <dl><dt>percentage_complete</dt><dd>(optional) <pre>integer</pre><p>The percent completion of a todo to the organizer.</dd></dl>
+        <dl><dt>categories</dt><dd>(optional) <pre>string</pre><p>Event or todo categories. A comma separated list.</dd></dl>
+        <dl><dt>component_class</dt><dd>(optional) <pre>string</pre><p>Access classification for a event or todo.</dd></dl>
+        <dl><dt>attachment</dt><dd>(optional) <pre>string</pre><p>Document object for a event or todo.</dd></dl>
+        <dl><dt>completed</dt><dd>(optional) <pre>number</pre><p>The date and time that a todo was actually completed.</dd></dl>
         </dl>
         <h3 id='CreateDetails'><a href='calendar.html#CreateDetails'>#</a>CreateDetails</h3><p>Object passed to the create() function.<p>Properties:<dl><dl><dt>title</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>description</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -418,6 +430,14 @@
         <ul><li>CreateInviteRow</ul></dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the event to create.</dd></dl>
         <dl><dt>is_template</dt><dd><pre>boolean</pre><p>Is  the event a template or not.</dd></dl>
+        <dl><dt>due</dt><dd>(optional) <pre>number</pre><p>The date and time that a to-do is expected to be completed.</dd></dl>
+        <dl><dt>priority</dt><dd>(optional) <pre>integer</pre><p>Priority of event or task. Must be in the range [0..9]. 0 is equivalent of no priority.</dd></dl>
+        <dl><dt>status</dt><dd>(optional) <pre>string</pre><p>The overall status or confirmation for the event or todo.</dd></dl>
+        <dl><dt>percentage_complete</dt><dd>(optional) <pre>integer</pre><p>The percent completion of a todo to the organizer.</dd></dl>
+        <dl><dt>categories</dt><dd>(optional) <pre>string</pre><p>Event or todo categories. A comma separated list.</dd></dl>
+        <dl><dt>component_class</dt><dd>(optional) <pre>string</pre><p>Access classification for a event or todo.</dd></dl>
+        <dl><dt>attachment</dt><dd>(optional) <pre>string</pre><p>Document object for a event or todo.</dd></dl>
+        <dl><dt>completed</dt><dd>(optional) <pre>number</pre><p>The date and time that a todo was actually completed.</dd></dl>
         </dl>
         <h3 id='EventType'><a href='calendar.html#EventType'>#</a>EventType</h3><p>A event type.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the event type. IDs are unique within the current profile, and they remain valid even after the browser is restarted.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>The event type name.</dd></dl>
@@ -441,6 +461,8 @@
         <dl><dt>active</dt><dd>(optional) <pre>boolean</pre><p>If this CalDAV calendar should be polled.</dd></dl>
         <dl><dt>lastChecked</dt><dd>(optional) <pre>number</pre><p>When this calendar last checked for updates.  In milliseconds since the epoch.</dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the calendar.</dd></dl>
+        <dl><dt>ctag</dt><dd>(optional) <pre>string</pre><p>The ctag field of the CalDAV calendar.</dd></dl>
+        <dl><dt>supportedCalendarComponent</dt><dd>(optional) <pre><a href="#SupportedCalendarComponents">SupportedCalendarComponents</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='Calendar'><a href='calendar.html#Calendar'>#</a>Calendar</h3><p>Calendar that owns events.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the calendar. IDs are unique within the current profile, and they remain valid even after the browser is restarted.</dd></dl>
         <dl><dt>accountId</dt><dd><pre>string</pre><p>The id of the account the calendar belongs to.</dd></dl>
@@ -454,6 +476,7 @@
         <dl><dt>ctag</dt><dd>(optional) <pre>string</pre><p>The ctag field of the CalDAV calendar.</dd></dl>
         <dl><dt>lastChecked</dt><dd>(optional) <pre>number</pre><p>When this calendar last checked for updates.  In milliseconds since the epoch.</dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the calendar.</dd></dl>
+        <dl><dt>supportedCalendarComponent</dt><dd>(optional) <pre><a href="#SupportedCalendarComponents">SupportedCalendarComponents</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='updateCalendar'><a href='calendar.html#updateCalendar'>#</a>updateCalendar</h3><p>Object to update calendar.<p>Properties:<dl><dl><dt>accountId</dt><dd>(optional) <pre>string</pre><p>The id of the account the calendar belongs to.</dd></dl>
         <dl><dt>name</dt><dd>(optional) <pre>string</pre><p>The name of the calendar.</dd></dl>
@@ -466,6 +489,7 @@
         <dl><dt>ctag</dt><dd>(optional) <pre>string</pre><p>The ctag field of the CalDAV calendar.</dd></dl>
         <dl><dt>lastChecked</dt><dd>(optional) <pre>number</pre><p>When this calendar last checked for updates.  In milliseconds since the epoch.</dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the calendar.</dd></dl>
+        <dl><dt>supportedCalendarComponent</dt><dd>(optional) <pre><a href="#SupportedCalendarComponents">SupportedCalendarComponents</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='updatedAccount'><a href='calendar.html#updatedAccount'>#</a>updatedAccount</h3><p>Object to update calendar.<p>Properties:<dl><dl><dt>name</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>username</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -570,6 +594,14 @@
         <dl><dt>rrule</dt><dd>(optional) <pre>string</pre><p>The recurring rule. In iCalendar format.</dd></dl>
         <dl><dt>organizer</dt><dd>(optional) <pre>string</pre><p>The organizer of the event.</dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the event.</dd></dl>
+        <dl><dt>due</dt><dd>(optional) <pre>number</pre><p>The date and time that a to-do is expected to be completed.</dd></dl>
+        <dl><dt>priority</dt><dd>(optional) <pre>integer</pre><p>Priority of event or task. Must be in the range [0..9]. 0 is equivalent of no priority.</dd></dl>
+        <dl><dt>status</dt><dd>(optional) <pre>string</pre><p>The overall status or confirmation for the event or todo.</dd></dl>
+        <dl><dt>percentage_complete</dt><dd>(optional) <pre>integer</pre><p>The percent completion of a todo to the Organizer.</dd></dl>
+        <dl><dt>categories</dt><dd>(optional) <pre>string</pre><p>Event or todo categories. A comma separated list.</dd></dl>
+        <dl><dt>component_class</dt><dd>(optional) <pre>string</pre><p>Access classification for a event or todo.</dd></dl>
+        <dl><dt>attachment</dt><dd>(optional) <pre>string</pre><p>Access classification for a event or todo.</dd></dl>
+        <dl><dt>completed</dt><dd>(optional) <pre>number</pre><p>The date and time that a todo was actually completed.</dd></dl>
         </dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#CalendarEvent">CalendarEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>res</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -606,6 +638,15 @@
         <dl><dt>name</dt><dd><pre>string</pre><p>The name of the notification.</dd></dl>
         <dl><dt>description</dt><dd>(optional) <pre>string</pre><p>The description of the notification.</dd></dl>
         <dl><dt>when</dt><dd><pre>number</pre><p>When the notification should fire. In milliseconds since the epoch.</dd></dl>
+        <dl><dt>period</dt><dd>(optional) <pre>integer</pre><p>If not null, the notification will repeat and will fire again in period minutes.</dd></dl>
+        <dl><dt>delay</dt><dd>(optional) <pre>integer</pre><p>The notification will fire after delay minutes from now. Can not be used together with when.</dd></dl>
+        </dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>notification</dt><dd><pre><a href="#Notification">Notification</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+            <h3 id='updateNotification'><a href='calendar.html#updateNotification'>#</a>updateNotification</h3><p>Updates the properties of a notification. Specify only the properties that you want to change. Unspecified properties will be left unchanged.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The id of the notification to update.</dd></dl>
+        <dl><dt>changes</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>name</dt><dd>(optional) <pre>string</pre><p>The name of the notification.</dd></dl>
+        <dl><dt>description</dt><dd>(optional) <pre>string</pre><p>The description of the notification.</dd></dl>
+        <dl><dt>when</dt><dd>(optional) <pre>number</pre><p>When the notification should fire. In milliseconds since the epoch.</dd></dl>
         <dl><dt>period</dt><dd>(optional) <pre>integer</pre><p>If not null, the notification will repeat and will fire again in period minutes.</dd></dl>
         <dl><dt>delay</dt><dd>(optional) <pre>integer</pre><p>The notification will fire after delay minutes from now. Can not be used together with when.</dd></dl>
         </dd></dl>
@@ -988,6 +1029,7 @@
         <dl><dt>radiogroup</dt><dd>(optional) <pre>integer</pre><p>The radiobutton group this item belongs to.</dd></dl>
         <dl><dt>checked</dt><dd>(optional) <pre>boolean</pre><p>true if the checkbox is checked, otherwise false. Only applies for type='checkbox'.</dd></dl>
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p>Url that can be used to determine a corresponding icon.</dd></dl>
+        <dl><dt>shortcut</dt><dd>(optional) <pre>string</pre><p>A shortcut displayed next to the name. No binding is added.</dd></dl>
         <dl><dt>icons</dt><dd>(optional) <pre><a href="#Icons">Icons</a></pre><p>Icon in PNG format encoded as base64.</dd></dl>
         </dl>
         <h3 id='Container'><a href='contextMenu.html#Container'>#</a>Container</h3><p>Container to expand<p>Properties:<dl><dl><dt>id</dt><dd><pre>integer</pre><p>The unique id of item.</dd></dl>
@@ -1838,8 +1880,7 @@
         <h3 id='FeatureFlagInfo'><a href='runtimePrivate.html#FeatureFlagInfo'>#</a>FeatureFlagInfo</h3><p>Object returned from the getAllFeatureFlags function.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Name of this feature flag. This is the key used to look up the name.</dd></dl>
         <dl><dt>friendlyName</dt><dd><pre>string</pre><p>This is the normalized name of this feature flag suitable to be showed to the user.</dd></dl>
         <dl><dt>description</dt><dd><pre>string</pre><p>Description of this feature flag.</dd></dl>
-        <dl><dt>value</dt><dd><pre>string</pre><p>The current value for this flag (true or false) in official builds.</dd></dl>
-        <dl><dt>internalValue</dt><dd><pre>string</pre><p>The current value for this flag (true or false) in internal builds.</dd></dl>
+        <dl><dt>value</dt><dd><pre>boolean</pre><p>The current value for this flag (true or false).</dd></dl>
         <dl><dt>locked</dt><dd><pre>boolean</pre><p>Locked from being changed. If true, it cannot be changed as it's locked from command line.</dd></dl>
         </dl>
         <h3 id='UserProfile'><a href='runtimePrivate.html#UserProfile'>#</a>UserProfile</h3><p>Object returned from the getUserProfiles function.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Name of this user profile. For a guest profile, this should be ignored and translated string used instead.</dd></dl>
@@ -2182,6 +2223,8 @@
         <h3 id='onBeforeUnloadDialogClosed'><a href='tabsPrivate.html#onBeforeUnloadDialogClosed'>#</a>onBeforeUnloadDialogClosed</h3><p>Fired when a beforeunload dialog has been closed.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Window Id containg the tab Id.</dd></dl>
         <dl><dt>tabId</dt><dd><pre>integer</pre><p>Tab id for the beforeunload dialog.</dd></dl>
         <dl><dt>proceed</dt><dd><pre>boolean</pre><p>If true, the tab operation that triggered the dialog has been allowed to proceed.</dd></dl>
+        <h3 id='onNavigationUrlChanged'><a href='tabsPrivate.html#onNavigationUrlChanged'>#</a>onNavigationUrlChanged</h3><p>Fired when the url has changed and the url bar should be updated.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab Id.</dd></dl>
+        <dl><dt>url</dt><dd><pre>string</pre><p>The new url to display.</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='update'><a href='tabsPrivate.html#update'>#</a>update</h3><p>Update the given tab with Vivaldi-specific properties.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2361,6 +2404,7 @@
         <dl><dt>blue</dt><dd><pre>integer</pre><p>Blue color.</dd></dl>
         </dl>
         <h3 id='DialogName'><a href='utilities.html#DialogName'>#</a>DialogName</h3><dl><dt><code>ENUM</code></dt><dd><p>Name of the dialog to set position for.<li>chromecast: The Chromecast dialog with source and destination. Centered over the active webview.<li>password: The password dialog opening to save a password.<li>permission: The permission dialog allowing or blocking one or more permissions.</ul></dd></dl>
+        <h3 id='CookieMode'><a href='utilities.html#CookieMode'>#</a>CookieMode</h3><dl><dt><code>ENUM</code></dt><dd><p>CookieMode enumeration, corrensponds to CookieControlsMode in chromium/components/content_settings/core/browser/cookie_settings.h<li>off: All cookies allowed.<li>BlockThirdParty: Block third party cookies.<li>BlockThirdPartyIncognitoOnly: Block third party cookies in incognito mode only.</ul></dd></dl>
         <h3 id='FlowDirection'><a href='utilities.html#FlowDirection'>#</a>FlowDirection</h3><dl><dt><code>ENUM</code></dt><dd><p>The direction a dialog would be opened from the given rect.<li>down: Dialog should position itself below the given rect.<li>up: Dialog should position itself above the given rect.</ul></dd></dl>
         <h3 id='UrlValidResults'><a href='utilities.html#UrlValidResults'>#</a>UrlValidResults</h3><p>Object that describes the validitity of a given url.<p>Properties:<dl><dl><dt>urlValid</dt><dd><pre>boolean</pre><p>The url is a correctly formatted url. This might be true even if the protocol is not valid.</dd></dl>
         <dl><dt>schemeValid</dt><dd><pre>boolean</pre><p>The protocol scheme is known and one we can show directly.</dd></dl>
@@ -2398,6 +2442,7 @@
         <dl><dt>timeFormat</dt><dd><pre>string</pre><p>12/24 hour time format string</dd></dl>
         <dl><dt>firstDayOfWeek</dt><dd><pre>number</pre><p>The first day of the week. 0-6 (Sunday to Saturday)</dd></dl>
         </dl>
+        <h3 id='CaptureQRDestination'><a href='utilities.html#CaptureQRDestination'>#</a>CaptureQRDestination</h3><dl><dt><code>ENUM</code></dt><dd><p>Where to store the generated QR code<li>dataurl: Store as a returned data url.<li>file: Store in the download location.<li>clipboard: Store in the clipboard</ul></dd></dl>
         
         <h2>Listeners</h2>
             <details>
@@ -2431,7 +2476,9 @@
         <dl><dt>value</dt><dd><pre>any</pre><p>The new value for the key.</dd></dl>
         <h3 id='onSuspend'><a href='utilities.html#onSuspend'>#</a>onSuspend</h3><p>Fired when the computer is about to suspend.<h3 id='onResume'><a href='utilities.html#onResume'>#</a>onResume</h3><p>Fired when the computer has resumed from suspension.<h3 id='onPasswordIconStatusChanged'><a href='utilities.html#onPasswordIconStatusChanged'>#</a>onPasswordIconStatusChanged</h3><p>Fires for password icon status change.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Window id to show/hide icon for</dd></dl>
         <dl><dt>show</dt><dd><pre>boolean</pre><p>Whether to show or hide icon</dd></dl>
-        <h3 id='onDownloadManagerReady'><a href='utilities.html#onDownloadManagerReady'>#</a>onDownloadManagerReady</h3><p>Fired when the download manager has loaded all its data.<h3 id='onRazerChromaReady'><a href='utilities.html#onRazerChromaReady'>#</a>onRazerChromaReady</h3><p>Fired when the Razer Chroma API has been initialized.
+        <h3 id='onDownloadManagerReady'><a href='utilities.html#onDownloadManagerReady'>#</a>onDownloadManagerReady</h3><p>Fired when the download manager has loaded all its data.<h3 id='onRazerChromaReady'><a href='utilities.html#onRazerChromaReady'>#</a>onRazerChromaReady</h3><p>Fired when the Razer Chroma API has been initialized.<h3 id='onShowQRCode'><a href='utilities.html#onShowQRCode'>#</a>onShowQRCode</h3><p>Fired when Chromium wants us to show a QR code for the given url.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>tab id to show QR code on.</dd></dl>
+        <dl><dt>url</dt><dd><pre>string</pre><p>The url to show the QR code for.</dd></dl>
+        
         <h2>Methods</h2>
         <h3 id='print'><a href='utilities.html#print'>#</a>print</h3><p>Open print preview dialog for the given tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id for the tab we want to print.</dd></dl>
         <h3 id='clearAllRecentlyClosedSessions'><a href='utilities.html#clearAllRecentlyClosedSessions'>#</a>clearAllRecentlyClosedSessions</h3><p>Clears the list of recently closed tabs and/or windows.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p>A boolean variable stating if removing recently closed tabs and/or windows call was successfull or not</dd></dl>
@@ -2493,10 +2540,10 @@
             <h3 id='getDefaultContentSettings'><a href='utilities.html#getDefaultContentSettings'>#</a>getDefaultContentSettings</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>contentSetting</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
-            <h3 id='setBlockThirdPartyCookies'><a href='utilities.html#setBlockThirdPartyCookies'>#</a>setBlockThirdPartyCookies</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>block3rdParty</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+            <h3 id='setBlockThirdPartyCookies'><a href='utilities.html#setBlockThirdPartyCookies'>#</a>setBlockThirdPartyCookies</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>cookieMode</dt><dd><pre><a href="#CookieMode">CookieMode</a></pre><p>Cookie control for third party cookies.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
-            <h3 id='getBlockThirdPartyCookies'><a href='utilities.html#getBlockThirdPartyCookies'>#</a>getBlockThirdPartyCookies</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>blockThirdParty</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+            <h3 id='getBlockThirdPartyCookies'><a href='utilities.html#getBlockThirdPartyCookies'>#</a>getBlockThirdPartyCookies</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>cookieMode</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>cookieMode</dt><dd><pre><a href="#CookieMode">CookieMode</a></pre><p>Cookie control for third party cookies.</dd></dl>
         </dd></dl>
             <h3 id='openTaskManager'><a href='utilities.html#openTaskManager'>#</a>openTaskManager</h3><p>Opens Vivaldi task manager dialog.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
             <h3 id='getStartupAction'><a href='utilities.html#getStartupAction'>#</a>getStartupAction</h3><p>Returns the startup action.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>results</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2541,6 +2588,10 @@
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>wasFocused</dt><dd><pre>boolean</pre><p>true if the dialog was focused, otherwise false.</dd></dl>
         </dd></dl>
             <h3 id='startChromecast'><a href='utilities.html#startChromecast'>#</a>startChromecast</h3><p>Shows the Chromecast dialog.<h3 id='isFirstRun'><a href='utilities.html#isFirstRun'>#</a>isFirstRun</h3><p>chrome::IsChromeFirstRun()<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+            <h3 id='generateQRCode'><a href='utilities.html#generateQRCode'>#</a>generateQRCode</h3><p>Generate a QR image based on the given data.<p>Parameters:<dl><dt>data</dt><dd><pre>string</pre><p>Data to encode in the QR code. The maximum length of the data is 288 bytes.</dd></dl>
+        <dl><dt>destination</dt><dd>(optional) <pre><a href="#CaptureQRDestination">CaptureQRDestination</a></pre><p>Destination of the QR capture, defaults to 'dataurl'.</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p>data url with the generated image if |destination| is 'dataurl' or missing.</dd></dl>
         </dd></dl>
             <h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
 
