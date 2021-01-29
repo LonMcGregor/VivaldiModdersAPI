@@ -14,10 +14,10 @@
     <p>Vivaldi Modders API
     <br />Internal Documentation
     <br /><ul>
-    <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
+    <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.5, by LonMcGregor.
+    <p>Version 3.6, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -604,7 +604,6 @@
         <dl><dt>completed</dt><dd>(optional) <pre>number</pre><p>The date and time that a todo was actually completed.</dd></dl>
         </dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#CalendarEvent">CalendarEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>res</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
             <h3 id='create'><a href='calendar.html#create'>#</a>create</h3><p>Creates a calendar.<p>Parameters:<dl><dt>calendar</dt><dd><pre><a href="#CreateCalendarDetails">CreateCalendarDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#Calendar">Calendar</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -1018,7 +1017,7 @@
         <dl><dt>height</dt><dd><pre>number</pre><p>Height of item that opens menu.</dd></dl>
         </dl>
         <h3 id='Origin'><a href='contextMenu.html#Origin'>#</a>Origin</h3><dl><dt><code>ENUM</code></dt><dd><p>Menu location with respect to rectangle. With pointer the size and height is ignored.<li>pointer<li>topLeft<li>bottomLeft<li>topRight<li>bottomRight</ul></dd></dl>
-        <h3 id='ItemType'><a href='contextMenu.html#ItemType'>#</a>ItemType</h3><dl><dt><code>ENUM</code></dt><dd><p>What kind of item.<li>command<li>checkbox<li>radiobutton<li>folder</ul></dd></dl>
+        <h3 id='ItemType'><a href='contextMenu.html#ItemType'>#</a>ItemType</h3><dl><dt><code>ENUM</code></dt><dd><p>What kind of item.<li>command<li>checkbox<li>radio<li>folder</ul></dd></dl>
         <h3 id='Icons'><a href='contextMenu.html#Icons'>#</a>Icons</h3><dl><dt>Icons</dt><dd><p>Icons encoded as base64.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <h3 id='ContainerMode'><a href='contextMenu.html#ContainerMode'>#</a>ContainerMode</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines container layouts.<li>inline<li>folder</ul></dd></dl>
@@ -1353,8 +1352,7 @@
 
     
         <h2>Methods</h2>
-        <h3 id='getPaths'><a href='mailPrivate.html#getPaths'>#</a>getPaths</h3><p>Returns array of mail paths under a given directory. The root folder location is the profile directory of the current running instance. / Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that that builds up a folder structure as starting point for searching for mails<p><code>Array</code> of:
-        <ul><li>string</ul></dd></dl>
+        <h3 id='getPaths'><a href='mailPrivate.html#getPaths'>#</a>getPaths</h3><p>Returns array of file paths under a given directory.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The root folder from where to build up the file paths.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>paths</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string<li>Paths to mail files</ul></dd></dl>
         </dd></dl>
@@ -1468,7 +1466,7 @@
         <h3 id='SortOrder'><a href='menubarMenu.html#SortOrder'>#</a>SortOrder</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines how to sort container items.<li>ascending<li>descending</ul></dd></dl>
         <h3 id='SortField'><a href='menubarMenu.html#SortField'>#</a>SortField</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines what element to use as sort key.<li>title<li>url<li>nickname<li>description<li>dateadded</ul></dd></dl>
         <h3 id='Edge'><a href='menubarMenu.html#Edge'>#</a>Edge</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines position of menu items added in chrome code wrt container items.<li>above<li>below<li>off</ul></dd></dl>
-        <h3 id='ItemType'><a href='menubarMenu.html#ItemType'>#</a>ItemType</h3><dl><dt><code>ENUM</code></dt><dd><p>What kind of item.<li>normal<li>checkbox<li>radiobutton</ul></dd></dl>
+        <h3 id='ItemType'><a href='menubarMenu.html#ItemType'>#</a>ItemType</h3><dl><dt><code>ENUM</code></dt><dd><p>What kind of item.<li>normal<li>checkbox<li>radio</ul></dd></dl>
         <h3 id='Rect'><a href='menubarMenu.html#Rect'>#</a>Rect</h3><p>Position and size of element in menu bar.<p>Properties:<dl><dl><dt>x</dt><dd><pre>integer</pre><p>Left position of item that opens menu, screen coordinates.</dd></dl>
         <dl><dt>y</dt><dd><pre>integer</pre><p>Top position of item that opens menu, screen coordinates.</dd></dl>
         <dl><dt>width</dt><dd><pre>integer</pre><p>Width of item that opens menu.</dd></dl>
@@ -1790,6 +1788,56 @@
         </dd></dl>
             <h3 id='emptyTrash'><a href='notes.html#emptyTrash'>#</a>emptyTrash</h3><p>Empty the notes trash folder.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>true if the operation was successful, otherwise false.</dd></dl>
         </dd></dl>
+            <h1><a href='pageActions.html'>pageActions</a></h1>
+
+    
+        <h2>Types</h2>
+        <h3 id='ScriptOverride'><a href='pageActions.html#ScriptOverride'>#</a>ScriptOverride</h3><dl><dt><code>ENUM</code></dt><dd><p>Whether a script should be always enabled or disabled.<li>no_override<li>enabled<li>disabled</ul></dd></dl>
+        <h3 id='OverridenScript'><a href='pageActions.html#OverridenScript'>#</a>OverridenScript</h3><p>Used to report that a script is always enabled or disabled<p>Properties:<dl><dl><dt>script</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>override</dt><dd><pre><a href="#ScriptOverride">ScriptOverride</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        
+        <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
+        <h3 id='onScriptsChanged'><a href='pageActions.html#onScriptsChanged'>#</a>onScriptsChanged</h3><p>Fired when new scripts have been found in a page action directory or when some scripts were modified or deleted
+        <h2>Methods</h2>
+        <h3 id='getScripts'><a href='pageActions.html#getScripts'>#</a>getScripts</h3><p>Returns the full path to all known page action scripts.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>scripts</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        </dd></dl>
+            <h3 id='setScriptOverrideForTab'><a href='pageActions.html#setScriptOverrideForTab'>#</a>setScriptOverrideForTab</h3><p>Permanently enables or disables a script for a given tab, or cancels the override<p>Parameters:<dl><dt>script</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>tab_id</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>override</dt><dd><pre><a href="#ScriptOverride">ScriptOverride</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+            <h3 id='getScriptOverridesForTab'><a href='pageActions.html#getScriptOverridesForTab'>#</a>getScriptOverridesForTab</h3><p>Get which scripts have been permanently enabled or disabled for a given tab<p>Parameters:<dl><dt>tab_id</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>OverridenScript</ul></dd></dl>
+        </dd></dl>
             <h1><a href='pipPrivate.html'>pipPrivate</a></h1>
 
     
@@ -1988,7 +2036,7 @@
         <dl><dt>username</dt><dd><pre>string</pre><p>The user name of saved password.</dd></dl>
         <dl><dt>password</dt><dd><pre>string</pre><p>The password in clear text.</dd></dl>
         </dl>
-        <h3 id='PasswordForm'><a href='savedpasswords.html#PasswordForm'>#</a>PasswordForm</h3><p>Information about the password form to store or retrieve. The fields should match those documented in chromium/components/autofill/core/common/password_form.h<p>Properties:<dl><dl><dt>signon_realm</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='PasswordForm'><a href='savedpasswords.html#PasswordForm'>#</a>PasswordForm</h3><p>Information about the password form to store or retrieve. The fields should match those documented in chromium/components/password_manager/core/browser/password_form.h<p>Properties:<dl><dl><dt>signon_realm</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>username</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>password</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2613,7 +2661,6 @@
         </dd></dl>
         <h3 id='setIsFullscreen'><a href='webViewPrivate.html#setIsFullscreen'>#</a>setIsFullscreen</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>isFullscreen</dt><dd><pre>boolean</pre><p>This is used to set a webview as fullscreen or not. This is needed for updating the pseudo-style :fullscreen when going in and out of fullscreen not via element.requestFullscreen and element.cancelFullscreen .</dd></dl>
-        <dl><dt>skipWindowState</dt><dd><pre>boolean</pre><p>Skip restoring window after webview is restored.</dd></dl>
         <h3 id='getPageHistory'><a href='webViewPrivate.html#getPageHistory'>#</a>getPageHistory</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p>The instance ID of the guest <webview> process.</dd></dl>
         <dl><dt>callback</dt><dd><p>Called when history .<p>Parameters:<dl><dt>currentEntryIndex</dt><dd><pre>integer</pre><p>The current index.</dd></dl>
         <dl><dt>pageHistory</dt><dd><p>Array of history items with name and index.<p><code>Array</code> of:

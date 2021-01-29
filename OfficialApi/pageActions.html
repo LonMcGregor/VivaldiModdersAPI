@@ -4,7 +4,7 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vivaldi.pipPrivate</title>
+    <title>vivaldi.pageActions</title>
     <link rel="stylesheet" href="style.css">
     <link href="IDR_PRODUCT_LOGO.png" rel="icon">
     </head>
@@ -23,17 +23,23 @@
     
     <main>
     <a id="backToTop" href="#top">Go back to top</a>
-    <h1>vivaldi.pipPrivate Modders API Reference</h1>
-    <p>Use the <code>vivaldi.pipPrivate</code> API to interact with PIP.
+    <h1>vivaldi.pageActions Modders API Reference</h1>
+    <p>Controls the content injections provided by the page actions service
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul></ul>
+    <ul><li><a href='#ScriptOverride'>ScriptOverride</a><li><a href='#OverridenScript'>OverridenScript</a></ul>
     <h3>Listeners</h3>
-    <ul><li><a href='#onVideoElementCreated'>onVideoElementCreated</a></ul>
+    <ul><li><a href='#onScriptsChanged'>onScriptsChanged</a></ul>
     <h3>Methods</h3>
-    <ul></ul></nav>
+    <ul><li><a href='#getScripts'>getScripts</a><li><a href='#setScriptOverrideForTab'>setScriptOverrideForTab</a><li><a href='#getScriptOverridesForTab'>getScriptOverridesForTab</a></ul></nav>
     
+        <h2>Types</h2>
+        <h3 id='ScriptOverride'><a href='#ScriptOverride'>#</a>ScriptOverride</h3><dl><dt><code>ENUM</code></dt><dd><p>Whether a script should be always enabled or disabled.<li>no_override<li>enabled<li>disabled</ul></dd></dl>
+        <h3 id='OverridenScript'><a href='#OverridenScript'>#</a>OverridenScript</h3><p>Used to report that a script is always enabled or disabled<p>Properties:<dl><dl><dt>script</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>override</dt><dd><pre><a href="#ScriptOverride">ScriptOverride</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        
         <h2>Listeners</h2>
             <details>
             <summary>
@@ -61,5 +67,18 @@
                 <p>Returns array of promises dispatched to the listener</p>
             </div>
         </details>
-        <h3 id='onVideoElementCreated'><a href='#onVideoElementCreated'>#</a>onVideoElementCreated</h3><p>Fired when a video element has been created.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>Tab id for the video element created event.</dd></dl>
-        </main></body></html>
+        <h3 id='onScriptsChanged'><a href='#onScriptsChanged'>#</a>onScriptsChanged</h3><p>Fired when new scripts have been found in a page action directory or when some scripts were modified or deleted
+        <h2>Methods</h2>
+        <h3 id='getScripts'><a href='#getScripts'>#</a>getScripts</h3><p>Returns the full path to all known page action scripts.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>scripts</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        </dd></dl>
+            <h3 id='setScriptOverrideForTab'><a href='#setScriptOverrideForTab'>#</a>setScriptOverrideForTab</h3><p>Permanently enables or disables a script for a given tab, or cancels the override<p>Parameters:<dl><dt>script</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>tab_id</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>override</dt><dd><pre><a href="#ScriptOverride">ScriptOverride</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+            <h3 id='getScriptOverridesForTab'><a href='#getScriptOverridesForTab'>#</a>getScriptOverridesForTab</h3><p>Get which scripts have been permanently enabled or disabled for a given tab<p>Parameters:<dl><dt>tab_id</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>OverridenScript</ul></dd></dl>
+        </dd></dl>
+            </main></body></html>

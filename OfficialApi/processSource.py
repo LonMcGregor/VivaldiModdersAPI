@@ -1,7 +1,7 @@
 import json, glob, os, re
 from json import JSONDecodeError
 
-SOURCE_PATH = 'C:/Users/L/Downloads/vivaldi-source_3.5.2115/vivaldi-source/'
+SOURCE_PATH = r'C:\Users\L\Downloads\vivaldi-source_3.6.2165.tar\vivaldi-source_3.6.2165\vivaldi-source'
 
 def getAllApiDefsInSourceBundle():
     return glob.glob(os.path.join(SOURCE_PATH, 'extensions/schema/*.json'))
