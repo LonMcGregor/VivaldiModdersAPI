@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.6, by LonMcGregor.
+    <p>Version 3.7, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -28,9 +28,9 @@
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul><li><a href='#Rect'>Rect</a><li><a href='#Origin'>Origin</a><li><a href='#ItemType'>ItemType</a><li><a href='#Icons'>Icons</a><li><a href='#ContainerMode'>ContainerMode</a><li><a href='#ContainerContent'>ContainerContent</a><li><a href='#Item'>Item</a><li><a href='#Container'>Container</a><li><a href='#Separator'>Separator</a><li><a href='#Element'>Element</a></ul>
+    <ul><li><a href='#Rect'>Rect</a><li><a href='#Origin'>Origin</a><li><a href='#ItemType'>ItemType</a><li><a href='#Icons'>Icons</a><li><a href='#ContainerMode'>ContainerMode</a><li><a href='#ContainerContent'>ContainerContent</a><li><a href='#Item'>Item</a><li><a href='#Container'>Container</a><li><a href='#Separator'>Separator</a><li><a href='#Element'>Element</a><li><a href='#DocumentType'>DocumentType</a><li><a href='#TextfieldType'>TextfieldType</a><li><a href='#DocumentSupport'>DocumentSupport</a><li><a href='#DocumentArea'>DocumentArea</a><li><a href='#DocumentParams'>DocumentParams</a></ul>
     <h3>Listeners</h3>
-    <ul></ul>
+    <ul><li><a href='#onDocumentMenu'>onDocumentMenu</a></ul>
     <h3>Methods</h3>
     <ul><li><a href='#show'>show</a></ul></nav>
     
@@ -45,12 +45,14 @@
         <h3 id='Icons'><a href='#Icons'>#</a>Icons</h3><dl><dt>Icons</dt><dd><p>Icons encoded as base64.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <h3 id='ContainerMode'><a href='#ContainerMode'>#</a>ContainerMode</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines container layouts.<li>inline<li>folder</ul></dd></dl>
-        <h3 id='ContainerContent'><a href='#ContainerContent'>#</a>ContainerContent</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines functionality to set up on the C++ side. One or more menu items may be created.<li>pwa</ul></dd></dl>
+        <h3 id='ContainerContent'><a href='#ContainerContent'>#</a>ContainerContent</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines functionality to set up on the C++ side. One or more menu items may be created.<li>extensions<li>imageinprofile<li>linkinprofile<li>notes<li>pwa<li>sendlinktodevices<li>sendpagetodevices<li>spellcheck<li>spellcheckoptions<li>speech</ul></dd></dl>
         <h3 id='Item'><a href='#Item'>#</a>Item</h3><p>One menu item.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Text in item.</dd></dl>
         <dl><dt>id</dt><dd><pre>integer</pre><p>The unique id of item.</dd></dl>
         <dl><dt>type</dt><dd><pre><a href="#ItemType">ItemType</a></pre><p>The kind of menu element</dd></dl>
+        <dl><dt>action</dt><dd>(optional) <pre>string</pre><p>Action to execute. This is used for actions that needs to execute in C++. The value must be well defined</dd></dl>
         <dl><dt>radiogroup</dt><dd>(optional) <pre>integer</pre><p>The radiobutton group this item belongs to.</dd></dl>
         <dl><dt>checked</dt><dd>(optional) <pre>boolean</pre><p>true if the checkbox is checked, otherwise false. Only applies for type='checkbox'.</dd></dl>
+        <dl><dt>enabled</dt><dd>(optional) <pre>boolean</pre><p>true if the item is enabled.</dd></dl>
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p>Url that can be used to determine a corresponding icon.</dd></dl>
         <dl><dt>shortcut</dt><dd>(optional) <pre>string</pre><p>A shortcut displayed next to the name. No binding is added.</dd></dl>
         <dl><dt>icons</dt><dd>(optional) <pre><a href="#Icons">Icons</a></pre><p>Icon in PNG format encoded as base64.</dd></dl>
@@ -68,12 +70,87 @@
         <dl><dt>children</dt><dd>(optional) <p>Child menu items.<p><code>Array</code> of:
         <ul><li>Element</ul></dd></dl>
         </dl>
+        <h3 id='DocumentType'><a href='#DocumentType'>#</a>DocumentType</h3><dl><dt><code>ENUM</code></dt><dd><p>The kind of document menu.<li>page<li>link<li>image<li>selection</ul></dd></dl>
+        <h3 id='TextfieldType'><a href='#TextfieldType'>#</a>TextfieldType</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines the type of textfield<li>addressfield<li>searchfield<li>regular<li>document</ul></dd></dl>
+        <h3 id='DocumentSupport'><a href='#DocumentSupport'>#</a>DocumentSupport</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>copy</dt><dd><pre>boolean</pre><p>For elements outside editor</dd></dl>
+        <dl><dt>audio</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>canvas</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>editoptions</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>emoji</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>extensions</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>pictureinpicture</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>password</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>passwordgeneration</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>passwordshowall</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>paste</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>plugin</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>qrcode</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>sendlinktodevices</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>sendpagetodevices</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>video</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='DocumentArea'><a href='#DocumentArea'>#</a>DocumentArea</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>devtools</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>editor</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>image</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>frame</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>webpanel</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='DocumentParams'><a href='#DocumentParams'>#</a>DocumentParams</h3><p>Properties of the document that requests a menu<p>Properties:<dl><dl><dt>linkurl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>linktitle</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>pageurl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>pagetitle</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>srcurl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>selection</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>printableselection</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>selectionurl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>keywordurl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>isdevtools</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>iseditable</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>isimage</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>isframe</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>iswebpanel</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>ismailto</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>support</dt><dd><pre><a href="#DocumentSupport">DocumentSupport</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>textfield</dt><dd><pre><a href="#TextfieldType">TextfieldType</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        
+        <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
+        <h3 id='onDocumentMenu'><a href='#onDocumentMenu'>#</a>onDocumentMenu</h3><p>Fires when a document menu is requested.<p>Parameters:<dl><dt>window</dt><dd><pre>integer</pre><p>id of window where command occurred.</dd></dl>
+        <dl><dt>document</dt><dd><pre>integer</pre><p>id of the document requesting this menu.</dd></dl>
+        <dl><dt>state</dt><dd><pre><a href="#DocumentParams">DocumentParams</a></pre><p>Document data for the given type of menu.</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='show'><a href='#show'>#</a>show</h3><p>Shows a new context menu.<p>Parameters:<dl><dt>properties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>children</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>Element</ul></dd></dl>
         <dl><dt>rect</dt><dd><pre><a href="#Rect">Rect</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>origin</dt><dd><pre><a href="#Origin">Origin</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>documentId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>icons</dt><dd><pre><a href="#Icons">Icons</a></pre><p>Default and folder icons.</dd></dl>
         </dd></dl>
