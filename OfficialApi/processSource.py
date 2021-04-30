@@ -1,34 +1,15 @@
 import json, glob, os, re
 from json import JSONDecodeError
+import jstyleson
 
-SOURCE_PATH = r'C:\Users\L\Downloads\vivaldi-source_3.7.2218.tar\vivaldi-source_3.7.2218\vivaldi-source'
+SOURCE_PATH = r'C:\Users\L\Downloads\vivaldi-source_3.8.2259\vivaldi-source'
 
 def getAllApiDefsInSourceBundle():
     return glob.glob(os.path.join(SOURCE_PATH, 'extensions/schema/*.json'))
 
 def processApiDef(filename):
-    try:
-        with open(filename) as jsonfile:
-            jsonfile.readline() # skip the comment line
-            return json.load(jsonfile)
-    except JSONDecodeError:
-        try:
-            with open(filename) as jsonfile:
-                jsonfile.readline() # skip the comment lines
-                jsonfile.readline() # skip the comment lines
-                jsonfile.readline() # skip the comment lines
-                return json.load(jsonfile)
-        except JSONDecodeError as e:
-            try:
-                with open(filename) as jsonfile:
-                    jsonfile.readline() # skip the comment lines
-                    jsonfile.readline() # skip the comment lines
-                    jsonfile.readline() # skip the comment lines
-                    jsonfile.readline() # skip the comment lines
-                    return json.load(jsonfile)
-            except JSONDecodeError as e:
-                print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagh!")
-                raise e
+    with open(filename) as jsonfile:
+        return jstyleson.load(jsonfile)
 
 def getDescription(name, typeDict, paragraph=True):
     para = '<p>' if paragraph else ''
