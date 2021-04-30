@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.7, by LonMcGregor.
+    <p>Version 3.8, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -78,7 +78,11 @@
         <h3 id='checkForUpdates'><a href='autoUpdate.html#checkForUpdates'>#</a>checkForUpdates</h3><p>Check for Vivaldi browser updates.<p>Parameters:<dl><dt>withUi</dt><dd><pre>boolean</pre><p>Indicates whether we want the auto-update ui to appear.</dd></dl>
         <h3 id='isUpdateNotifierEnabled'><a href='autoUpdate.html#isUpdateNotifierEnabled'>#</a>isUpdateNotifierEnabled</h3><p>Checks whether the update notifier is set to run on startup.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
-            <h3 id='enableUpdateNotifier'><a href='autoUpdate.html#enableUpdateNotifier'>#</a>enableUpdateNotifier</h3><p>Sets the update notifier to run on startup and launches it.<h3 id='disableUpdateNotifier'><a href='autoUpdate.html#disableUpdateNotifier'>#</a>disableUpdateNotifier</h3><p>Removes the update notifier from autorun and attempts to terminate it.<h3 id='getAutoInstallUpdates'><a href='autoUpdate.html#getAutoInstallUpdates'>#</a>getAutoInstallUpdates</h3><p>Checks whether we automatically install updates<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+            <h3 id='enableUpdateNotifier'><a href='autoUpdate.html#enableUpdateNotifier'>#</a>enableUpdateNotifier</h3><p>Sets the update notifier to run on startup and launches it.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+            <h3 id='disableUpdateNotifier'><a href='autoUpdate.html#disableUpdateNotifier'>#</a>disableUpdateNotifier</h3><p>Removes the update notifier from autorun and attempts to terminate it.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+            <h3 id='getAutoInstallUpdates'><a href='autoUpdate.html#getAutoInstallUpdates'>#</a>getAutoInstallUpdates</h3><p>Checks whether we automatically install updates<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
             <h3 id='setAutoInstallUpdates'><a href='autoUpdate.html#setAutoInstallUpdates'>#</a>setAutoInstallUpdates</h3><p>Change automatically install updates setting<p>Parameters:<dl><dt>autoinstall</dt><dd><pre>boolean</pre><p>Indicates whether we want to automatically install updates.</dd></dl>
         <h1><a href='bookmarksPrivate.html'>bookmarksPrivate</a></h1>
@@ -1427,48 +1431,42 @@
 
     
         <h2>Methods</h2>
-        <h3 id='getPaths'><a href='mailPrivate.html#getPaths'>#</a>getPaths</h3><p>Returns array of file paths under a given directory.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The root folder from where to build up the file paths.</dd></dl>
+        <h3 id='getFilePaths'><a href='mailPrivate.html#getFilePaths'>#</a>getFilePaths</h3><p>Returns array of file paths under a given directory.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The root folder from where to build up the file paths.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>paths</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string<li>Paths to mail files</ul></dd></dl>
         </dd></dl>
-            <h3 id='save'><a href='mailPrivate.html#save'>#</a>save</h3><p>Saves a mail to disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
+            <h3 id='writeTextToMessageFile'><a href='mailPrivate.html#writeTextToMessageFile'>#</a>writeTextToMessageFile</h3><p>Saves a mail to disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be created/saved/overridden.</dd></dl>
         <dl><dt>raw</dt><dd><pre>string</pre><p>The raw mail content.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
-            <h3 id='saveBuffer'><a href='mailPrivate.html#saveBuffer'>#</a>saveBuffer</h3><p>Saves a mail to disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
+            <h3 id='writeBufferToMessageFile'><a href='mailPrivate.html#writeBufferToMessageFile'>#</a>writeBufferToMessageFile</h3><p>Saves a mail to disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be created/saved/overridden.</dd></dl>
         <dl><dt>raw</dt><dd><pre>binary</pre><p>The raw mail content as arrayBuffer</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
-            <h3 id='delete'><a href='mailPrivate.html#delete'>#</a>delete</h3><p>Deletes a file. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
+            <h3 id='deleteMessageFile'><a href='mailPrivate.html#deleteMessageFile'>#</a>deleteMessageFile</h3><p>Deletes a file. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be deleted. With ending.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
-            <h3 id='read'><a href='mailPrivate.html#read'>#</a>read</h3><p>Reads the contents of a file. Returns the content as arrayBuffer<p>Parameters:<dl><dt>fileName</dt><dd><pre>string</pre><p>Absoloute path to the file to be read.</dd></dl>
+            <h3 id='readFileToBuffer'><a href='mailPrivate.html#readFileToBuffer'>#</a>readFileToBuffer</h3><p>Reads the contents of a file. Returns the content as arrayBuffer<p>Parameters:<dl><dt>fileName</dt><dd><pre>string</pre><p>Absoloute path to the file to be read.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>raw</dt><dd><pre>binary</pre><p>The file raw content as arrayBuffer.</dd></dl>
         </dd></dl>
-            <h3 id='readM3Message'><a href='mailPrivate.html#readM3Message'>#</a>readM3Message</h3><p>Reads a mail. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
+            <h3 id='readMessageFileToBuffer'><a href='mailPrivate.html#readMessageFileToBuffer'>#</a>readMessageFileToBuffer</h3><p>Reads a mail. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be read.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>raw</dt><dd><pre>binary</pre><p>The mail raw content. as arrayBuffer</dd></dl>
         </dd></dl>
-            <h3 id='readFile'><a href='mailPrivate.html#readFile'>#</a>readFile</h3><p>Reads a file. Returns the file content as text.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>Absoulout path to the file to be read.</dd></dl>
+            <h3 id='readFileToText'><a href='mailPrivate.html#readFileToText'>#</a>readFileToText</h3><p>Reads a file. Returns the file content as text.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>Absoulout path to the file to be read.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>raw</dt><dd><pre>string</pre><p>The file raw content.</dd></dl>
         </dd></dl>
-            <h3 id='getDataDirectory'><a href='mailPrivate.html#getDataDirectory'>#</a>getDataDirectory</h3><p>Returns the user mail data directory and verfies that the directory exists.<p>Parameters:<dl><dt>hashedAccountId</dt><dd><pre>string</pre><p>First 6 characters from the MD5 hash of the accountId. Appended to the end of the default mail data directory</dd></dl>
+            <h3 id='getFileDirectory'><a href='mailPrivate.html#getFileDirectory'>#</a>getFileDirectory</h3><p>Returns the user mail data directory and verfies that the directory exists.<p>Parameters:<dl><dt>hashedAccountId</dt><dd><pre>string</pre><p>First 6 characters from the MD5 hash of the accountId. Appended to the end of the default mail data directory</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>paths</dt><dd><pre>string</pre><p>The directory path to the user mail data directory.</dd></dl>
         </dd></dl>
-            <h3 id='createDataDirectory'><a href='mailPrivate.html#createDataDirectory'>#</a>createDataDirectory</h3><p>Creates the user mail data directory.<p>Parameters:<dl><dt>hashedAccountId</dt><dd><pre>string</pre><p>First 6 characters from the MD5 hash of the accountId. Appended to the end of the default mail data directory</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='rename'><a href='mailPrivate.html#rename'>#</a>rename</h3><p>Renames a file on disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
-        <ul><li>string</ul></dd></dl>
-        <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be renamed. With file ending</dd></dl>
-        <dl><dt>newFileName</dt><dd><pre>string</pre><p>The new file name. With file ending</dd></dl>
+            <h3 id='createFileDirectory'><a href='mailPrivate.html#createFileDirectory'>#</a>createFileDirectory</h3><p>Creates the user mail data directory.<p>Parameters:<dl><dt>hashedAccountId</dt><dd><pre>string</pre><p>First 6 characters from the MD5 hash of the accountId. Appended to the end of the default mail data directory</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
             <h1><a href='menubar.html'>menubar</a></h1>
@@ -1539,7 +1537,7 @@
         <h3 id='SortOrder'><a href='menubarMenu.html#SortOrder'>#</a>SortOrder</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines how to sort container items.<li>ascending<li>descending</ul></dd></dl>
         <h3 id='SortField'><a href='menubarMenu.html#SortField'>#</a>SortField</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines what element to use as sort key.<li>title<li>url<li>nickname<li>description<li>dateadded</ul></dd></dl>
         <h3 id='Edge'><a href='menubarMenu.html#Edge'>#</a>Edge</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines position of menu items added in chrome code wrt container items.<li>above<li>below<li>off</ul></dd></dl>
-        <h3 id='ItemType'><a href='menubarMenu.html#ItemType'>#</a>ItemType</h3><dl><dt><code>ENUM</code></dt><dd><p>What kind of item.<li>normal<li>checkbox<li>radio</ul></dd></dl>
+        <h3 id='ItemType'><a href='menubarMenu.html#ItemType'>#</a>ItemType</h3><dl><dt><code>ENUM</code></dt><dd><p>What kind of item.<li>command<li>checkbox<li>radio<li>folder</ul></dd></dl>
         <h3 id='Rect'><a href='menubarMenu.html#Rect'>#</a>Rect</h3><p>Position and size of element in menu bar.<p>Properties:<dl><dl><dt>x</dt><dd><pre>integer</pre><p>Left position of item that opens menu, screen coordinates.</dd></dl>
         <dl><dt>y</dt><dd><pre>integer</pre><p>Top position of item that opens menu, screen coordinates.</dd></dl>
         <dl><dt>width</dt><dd><pre>integer</pre><p>Width of item that opens menu.</dd></dl>
@@ -1548,19 +1546,15 @@
         <h3 id='Icons'><a href='menubarMenu.html#Icons'>#</a>Icons</h3><dl><dt>Icons</dt><dd><p>Icons encoded as base64.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <h3 id='Item'><a href='menubarMenu.html#Item'>#</a>Item</h3><p>One menu item.<p>Properties:<dl><dl><dt>id</dt><dd><pre>integer</pre><p>The unique id of item.</dd></dl>
-        <dl><dt>label</dt><dd><pre>string</pre><p>Text in item.</dd></dl>
-        <dl><dt>type</dt><dd>(optional) <pre><a href="#ItemType">ItemType</a></pre><p>Defaults to 'normal'.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>Text in item.</dd></dl>
+        <dl><dt>type</dt><dd><pre><a href="#ItemType">ItemType</a></pre><p>Defaults to 'normal'.</dd></dl>
         <dl><dt>selected</dt><dd>(optional) <pre>boolean</pre><p>Whether item is initially selected. Default to false.</dd></dl>
         <dl><dt>visible</dt><dd>(optional) <pre>boolean</pre><p>Whether item is visible or not. Defaults to true.</dd></dl>
         <dl><dt>checked</dt><dd>(optional) <pre>boolean</pre><p>true if the checkbox is checked. Ignored unless type is 'checkbox' or 'radiobutton'.</dd></dl>
-        <dl><dt>group</dt><dd>(optional) <pre>integer</pre><p>The radiobutton group this item belongs to. Must be present for a radio button.</dd></dl>
+        <dl><dt>radiogroup</dt><dd>(optional) <pre>integer</pre><p>The radiobutton group this item belongs to. Must be present for a radio button.</dd></dl>
         <dl><dt>persistent</dt><dd>(optional) <pre>boolean</pre><p>If true the menu item will remain open after menu item is clicked with mouse.</dd></dl>
-        <dl><dt>disabled</dt><dd>(optional) <pre>boolean</pre><p>true if item should appear as grayed out.</dd></dl>
-        <dl><dt>emphasized</dt><dd>(optional) <pre>boolean</pre><p>true if the item should appear in an emphasized style (typically bold).</dd></dl>
         <dl><dt>shortcut</dt><dd>(optional) <pre>string</pre><p>Shortcut to be displayed next to label.</dd></dl>
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p>Url that can be used to determine a corresponding icon.</dd></dl>
-        <dl><dt>parameter</dt><dd>(optional) <pre>string</pre><p>Parameter to command. Sent unaltered with the callback.</dd></dl>
-        <dl><dt>index</dt><dd>(optional) <pre>integer</pre><p>Index in menu list. Can only be used insert into an existing list.</dd></dl>
         <dl><dt>icons</dt><dd>(optional) <pre><a href="#Icons">Icons</a></pre><p>Icons for light and dark menus. There must be two icons and the last shall be for menus with a dark background.</dd></dl>
         </dl>
         <h3 id='Separator'><a href='menubarMenu.html#Separator'>#</a>Separator</h3><p>One separator<p>Properties:<dl><dl><dt>label</dt><dd>(optional) <pre>string</pre><p>Text in item.</dd></dl>
@@ -1568,8 +1562,8 @@
         <h3 id='Container'><a href='menubarMenu.html#Container'>#</a>Container</h3><p>A collection of items set up and expanded from chrome.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>Parent id of data to display.</dd></dl>
         <dl><dt>type</dt><dd><pre><a href="#ContainerType">ContainerType</a></pre><p>What kind of data to expand in this container.</dd></dl>
         <dl><dt>offset</dt><dd><pre>integer</pre><p>Offset into folder/parent data.</dd></dl>
-        <dl><dt>groupFolders</dt><dd>(optional) <pre>boolean</pre><p>If sorted, this flag will group any subfolders together.</dd></dl>
-        <dl><dt>edge</dt><dd>(optional) <pre><a href="#Edge">Edge</a></pre><p>Where to place extra menu items</dd></dl>
+        <dl><dt>groupFolders</dt><dd><pre>boolean</pre><p>If sorted, this flag will group any subfolders together.</dd></dl>
+        <dl><dt>edge</dt><dd><pre><a href="#Edge">Edge</a></pre><p>Where to place extra menu items</dd></dl>
         <dl><dt>sortField</dt><dd>(optional) <pre><a href="#SortField">SortField</a></pre><p>Sort key for elements.</dd></dl>
         <dl><dt>sortOrder</dt><dd>(optional) <pre><a href="#SortOrder">SortOrder</a></pre><p>Sort order for elements.</dd></dl>
         </dl>
@@ -1593,7 +1587,7 @@
         <dl><dt>center</dt><dd><pre>boolean</pre><p>true if the center mouse button activated the menu.</dd></dl>
         </dl>
         <h3 id='Disposition'><a href='menubarMenu.html#Disposition'>#</a>Disposition</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines where a bookmark should be opened.<li>setting<li>current<li>new-tab<li>new-window<li>new-private-window</ul></dd></dl>
-        <h3 id='BookmarkCommand'><a href='menubarMenu.html#BookmarkCommand'>#</a>BookmarkCommand</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines a non-navigation bookmark action.<li>edit<li>addactivetab<li>addfolder<li>addbookmark<li>cut<li>copy<li>paste</ul></dd></dl>
+        <h3 id='BookmarkCommand'><a href='menubarMenu.html#BookmarkCommand'>#</a>BookmarkCommand</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines a non-navigation bookmark action.<li>edit<li>addactivetab<li>addfolder<li>addbookmark<li>addseparator<li>cut<li>copy<li>paste</ul></dd></dl>
         <h3 id='BookmarkAction'><a href='menubarMenu.html#BookmarkAction'>#</a>BookmarkAction</h3><p>Passed with bookmark activation<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>command</dt><dd><pre><a href="#BookmarkCommand">BookmarkCommand</a></pre><p>If set, disposition and background is ignored.</dd></dl>
         <dl><dt>disposition</dt><dd><pre><a href="#Disposition">Disposition</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -1954,6 +1948,10 @@
         <dl><dt>value</dt><dd>(optional) <pre>any</pre><p>Preference value.</dd></dl>
         <dl><dt>default_value</dt><dd><pre>any</pre><p>Preference default value.</dd></dl>
         </dl>
+        <h3 id='TranslateLanguageSettings'><a href='prefs.html#TranslateLanguageSettings'>#</a>TranslateLanguageSettings</h3><p>Current settings active for the given language pair or just the source language.<p>Properties:<dl><dl><dt>isLanguagePairOnAlwaysTranslateList</dt><dd><pre>boolean</pre><p>Is the given language pair on the always translate list.</dd></dl>
+        <dl><dt>isLanguageInNeverTranslateList</dt><dd><pre>boolean</pre><p>Is the given language source language on the never translate list.</dd></dl>
+        <dl><dt>isSiteOnNeverTranslateList</dt><dd><pre>boolean</pre><p>Is the given site on the never translate list.</dd></dl>
+        </dl>
         
         <h2>Listeners</h2>
             <details>
@@ -1995,7 +1993,26 @@
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>results</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>PreferenceValueAndDefault</ul></dd></dl>
         </dd></dl>
-            <h1><a href='runtimePrivate.html'>runtimePrivate</a></h1>
+            <h3 id='setLanguagePairToAlwaysTranslate'><a href='prefs.html#setLanguagePairToAlwaysTranslate'>#</a>setLanguagePairToAlwaysTranslate</h3><p>Translate: Add or remove a pair of languages to the preference for automatic translation.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id used to look up the translate manager stored in the WebContents data. Not used for anything else.</dd></dl>
+        <dl><dt>enable</dt><dd><pre>boolean</pre><p>true to add the language pair to the list, false to remove it from the list.</dd></dl>
+        <dl><dt>original_language</dt><dd><pre>string</pre><p>Original language to translate from.</dd></dl>
+        <dl><dt>target_language</dt><dd><pre>string</pre><p>Target language to translate to.</dd></dl>
+        <h3 id='setLanguageToNeverTranslate'><a href='prefs.html#setLanguageToNeverTranslate'>#</a>setLanguageToNeverTranslate</h3><p>Translate: Add or remove a pair of languages to the preference for never doing automatic translation.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id used to look up the translate manager stored in the WebContents data. Not used for anything else.</dd></dl>
+        <dl><dt>block</dt><dd><pre>boolean</pre><p>true to add the language to the blocked list, false to remove it from the list.</dd></dl>
+        <dl><dt>original_language</dt><dd><pre>string</pre><p>Original language to never translate from.</dd></dl>
+        <dl><dt>target_language</dt><dd><pre>string</pre><p>Target language to never translate to.</dd></dl>
+        <h3 id='setSiteToNeverTranslate'><a href='prefs.html#setSiteToNeverTranslate'>#</a>setSiteToNeverTranslate</h3><p>Translate: Add or remove a site to the preference for never doing automatic translation.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id used to look up the translate manager stored in the WebContents data and the site to block.</dd></dl>
+        <dl><dt>block</dt><dd><pre>boolean</pre><p>true to add the language to the blocked list, false to remove it from the list.</dd></dl>
+        <dl><dt>original_language</dt><dd><pre>string</pre><p>Original language to never translate from.</dd></dl>
+        <dl><dt>target_language</dt><dd><pre>string</pre><p>Target language to never translate to.</dd></dl>
+        <h3 id='getTranslateSettings'><a href='prefs.html#getTranslateSettings'>#</a>getTranslateSettings</h3><p>Translate: Get settings for the given language pair.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id used to look up the translate manager stored in the WebContents data. Not used for anything else.</dd></dl>
+        <dl><dt>original_language</dt><dd><pre>string</pre><p>Original language to never translate from.</dd></dl>
+        <dl><dt>target_language</dt><dd><pre>string</pre><p>Target language to never translate to.</dd></dl>
+        <h3 id='setTranslationDeclined'><a href='prefs.html#setTranslationDeclined'>#</a>setTranslationDeclined</h3><p>Translate: Translation dialog was closed without being used, record that fact.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id used to look up the translate manager stored in the WebContents data. Not used for anything else.</dd></dl>
+        <dl><dt>explicitly_closed</dt><dd><pre>boolean</pre><p>true if the dialog was closed explicitly (from close button), otherwise false if it was closed from clicking outside it or similar.</dd></dl>
+        <dl><dt>original_language</dt><dd><pre>string</pre><p>Original language of the page.</dd></dl>
+        <dl><dt>target_language</dt><dd><pre>string</pre><p>Target language selected.</dd></dl>
+        <h1><a href='runtimePrivate.html'>runtimePrivate</a></h1>
 
     
         <h2>Types</h2>
@@ -2050,7 +2067,7 @@
         </details>
         <h3 id='onProfilesUpdated'><a href='runtimePrivate.html#onProfilesUpdated'>#</a>onProfilesUpdated</h3><p>Fired when profiles have changed and the UI must be updated to reflect it.
         <h2>Methods</h2>
-        <h3 id='exit'><a href='runtimePrivate.html#exit'>#</a>exit</h3><p>Close all browsers and exit the application.<h3 id='getAllFeatureFlags'><a href='runtimePrivate.html#getAllFeatureFlags'>#</a>getAllFeatureFlags</h3><p>Gets all the registered Vivaldi feature flags.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>results</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <h3 id='exit'><a href='runtimePrivate.html#exit'>#</a>exit</h3><p>Close all browsers and exit the application.<h3 id='restart'><a href='runtimePrivate.html#restart'>#</a>restart</h3><p>Close all browsers and restart the application.<h3 id='getAllFeatureFlags'><a href='runtimePrivate.html#getAllFeatureFlags'>#</a>getAllFeatureFlags</h3><p>Gets all the registered Vivaldi feature flags.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>results</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>FeatureFlagInfo</ul></dd></dl>
         </dd></dl>
             <h3 id='setFeatureEnabled'><a href='runtimePrivate.html#setFeatureEnabled'>#</a>setFeatureEnabled</h3><p>Enables or disables a feature.<p>Parameters:<dl><dt>featureName</dt><dd><pre>string</pre><p>Name of the feature to enable or disable.</dd></dl>
@@ -2241,6 +2258,8 @@
     
         <h2>Types</h2>
         <h3 id='TabAlertState'><a href='tabsPrivate.html#TabAlertState'>#</a>TabAlertState</h3><dl><dt><code>ENUM</code></dt><dd><p>The active media type.<li>recording<li>capturing<li>playing<li>muting<li>bluetooth<li>usb<li>pip<li>desktop_capturing<li>vr_presenting_in_headset<li>serial_connected</ul></dd></dl>
+        <h3 id='TranslateStep'><a href='tabsPrivate.html#TranslateStep'>#</a>TranslateStep</h3><dl><dt><code>ENUM</code></dt><dd><p>Denotes which state the page is in with respect to translate.<li>idle<li>before_translate<li>translating<li>after_translate<li>translate_error</ul></dd></dl>
+        <h3 id='TranslateError'><a href='tabsPrivate.html#TranslateError'>#</a>TranslateError</h3><dl><dt><code>ENUM</code></dt><dd><p>Signals translation errors.<li>no_error<li>network<li>init_error<li>unknown_language<li>unsupported_language<li>identical_languages<li>translation_error<li>translation_timeout<li>unexpected_script_error<li>bad_origin<li>script_load_error</ul></dd></dl>
         <h3 id='UpdateTabInfo'><a href='tabsPrivate.html#UpdateTabInfo'>#</a>UpdateTabInfo</h3><p>Object passed to the update and returned in the get function function.<p>Properties:<dl><dl><dt>showImages</dt><dd>(optional) <pre>boolean</pre><p>Show images for all pages loaded in this tab. Default is true.</dd></dl>
         <dl><dt>loadFromCacheOnly</dt><dd>(optional) <pre>boolean</pre><p>Only load the page from cache. Default is false.</dd></dl>
         <dl><dt>enablePlugins</dt><dd>(optional) <pre>boolean</pre><p>Enable plugins on this tab. Default is true.</dd></dl>
@@ -2268,6 +2287,14 @@
         <dl><dt>bottom</dt><dd><pre>integer</pre><p>bottom</dd></dl>
         <dl><dt>path</dt><dd><pre>string</pre><p>Element path to uniquely identify element.</dd></dl>
         <dl><dt>href</dt><dd><pre>string</pre><p>Url of focused element in case it's a link.</dd></dl>
+        </dl>
+        <h3 id='LanguageDetectionDetails'><a href='tabsPrivate.html#LanguageDetectionDetails'>#</a>LanguageDetectionDetails</h3><p>Details the language detection for the current page. Corresponds to LanguageDetectionDetails in C++.<p>Properties:<dl><dl><dt>url</dt><dd><pre>string</pre><p>The url of the page detected was done on.</dd></dl>
+        <dl><dt>contentLanguage</dt><dd><pre>string</pre><p>The language detected by the content (Content-Language).</dd></dl>
+        <dl><dt>cldLanguage</dt><dd><pre>string</pre><p>The language detected by CLD (Chromium's Compact Language Detector library).</dd></dl>
+        <dl><dt>isCldReliable</dt><dd><pre>boolean</pre><p>true if the CLD detection is reliable, otherwise false.</dd></dl>
+        <dl><dt>hasNoTranslate</dt><dd><pre>boolean</pre><p>Whether the notranslate is specified in head tag as a meta; <meta name='google' value='notranslate'> or <meta name='google' content='notranslate'></dd></dl>
+        <dl><dt>htmlRootLanguage</dt><dd><pre>string</pre><p>The language written in the lang attribute of the html element.</dd></dl>
+        <dl><dt>adoptedLanguage</dt><dd><pre>string</pre><p>The adopted language, usually a authoritive decision on the different language tags in a document.</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -2347,6 +2374,18 @@
         <h3 id='onBeforeUnloadDialogClosed'><a href='tabsPrivate.html#onBeforeUnloadDialogClosed'>#</a>onBeforeUnloadDialogClosed</h3><p>Fired when a beforeunload dialog has been closed.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Window Id containg the tab Id.</dd></dl>
         <dl><dt>tabId</dt><dd><pre>integer</pre><p>Tab id for the beforeunload dialog.</dd></dl>
         <dl><dt>proceed</dt><dd><pre>boolean</pre><p>If true, the tab operation that triggered the dialog has been allowed to proceed.</dd></dl>
+        <h3 id='onLanguageDetermined'><a href='tabsPrivate.html#onLanguageDetermined'>#</a>onLanguageDetermined</h3><p>Fired when the language of the current page has been determined.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab Id.</dd></dl>
+        <dl><dt>details</dt><dd><pre><a href="#LanguageDetectionDetails">LanguageDetectionDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onShowTranslationUI'><a href='tabsPrivate.html#onShowTranslationUI'>#</a>onShowTranslationUI</h3><p>Fired when we should show translation UI. The status decides what UI we should show.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab Id.</dd></dl>
+        <dl><dt>step</dt><dd><pre><a href="#TranslateStep">TranslateStep</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>error</dt><dd><pre><a href="#TranslateError">TranslateError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>triggeredFromMenu</dt><dd><pre>boolean</pre><p>true if this was triggered by a manual action or not.</dd></dl>
+        <h3 id='onPageTranslated'><a href='tabsPrivate.html#onPageTranslated'>#</a>onPageTranslated</h3><p>Fired when a translation has been completed on a page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab Id.</dd></dl>
+        <dl><dt>srcLang</dt><dd><pre>string</pre><p>Source language code it was translated from.</dd></dl>
+        <dl><dt>destLang</dt><dd><pre>string</pre><p>Destination language code it was translated to.</dd></dl>
+        <dl><dt>error</dt><dd><pre><a href="#TranslateError">TranslateError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onIsPageTranslatedChanged'><a href='tabsPrivate.html#onIsPageTranslatedChanged'>#</a>onIsPageTranslatedChanged</h3><p>Fired when a translation state has changed on a page, eg. revert has been used.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab Id.</dd></dl>
+        <dl><dt>isTranslated</dt><dd><pre>boolean</pre><p>The translation state has changed. For eg. revert, it will be false after revert has been invoked.</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='update'><a href='tabsPrivate.html#update'>#</a>update</h3><p>Update the given tab with Vivaldi-specific properties.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2377,6 +2416,14 @@
         <dl><dt>modifiers</dt><dd><pre>integer</pre><p>Keyboard modifiers to simulate shift or ctrl-clicking</dd></dl>
         <h3 id='hasBeforeUnloadOrUnload'><a href='tabsPrivate.html#hasBeforeUnloadOrUnload'>#</a>hasBeforeUnloadOrUnload</h3><p>Check if a page contains a beforeunload or unload handler.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>hasHandler</dt><dd><pre>boolean</pre><p>true if the page has a beforeunload or unload handler, blocking a quick termination of the tab.</dd></dl>
+        </dd></dl>
+            <h3 id='translatePage'><a href='tabsPrivate.html#translatePage'>#</a>translatePage</h3><p>Attempts to translate the given page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>srcLang</dt><dd><pre>string</pre><p>Source language code to translate from. May be omitted.</dd></dl>
+        <dl><dt>destLang</dt><dd><pre>string</pre><p>Destination language code to translate to. Must be present.</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>Immediate errors will be given in the callback, eg. for invalid or missing language codes, pages that cannot be translated (eg. devtools, blank pages), etc.</dd></dl>
+        </dd></dl>
+            <h3 id='revertTranslatePage'><a href='tabsPrivate.html#revertTranslatePage'>#</a>revertTranslatePage</h3><p>Attempts to revert the translating of the given page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>true if the page can be reverted, otherwise false.</dd></dl>
         </dd></dl>
             <h1><a href='thumbnails.html'>thumbnails</a></h1>
 
@@ -2818,7 +2865,6 @@
         <h3 id='onWindowClosed'><a href='windowPrivate.html#onWindowClosed'>#</a>onWindowClosed</h3><p>Fired when a window is closed, even for guest windows.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onActiveTabStatusText'><a href='windowPrivate.html#onActiveTabStatusText'>#</a>onActiveTabStatusText</h3><p>Fired when the active tab has new loadstate text. Will reset to <empty> string<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>statusText</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='onCloseAllTabsDone'><a href='windowPrivate.html#onCloseAllTabsDone'>#</a>onCloseAllTabsDone</h3><p><p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Id of the Vivaldi window where the tabstrip is empty.</dd></dl>
         <h3 id='onWebContentsDidStartNavigation'><a href='windowPrivate.html#onWebContentsDidStartNavigation'>#</a>onWebContentsDidStartNavigation</h3><p>Fired when the webcontents mainframe embedded by the VivaldiBrowserWindow start loading. Happens reloaded and first load.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         
         <h2>Methods</h2>

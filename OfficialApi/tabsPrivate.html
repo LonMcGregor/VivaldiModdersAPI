@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.7, by LonMcGregor.
+    <p>Version 3.8, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -28,14 +28,16 @@
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul><li><a href='#TabAlertState'>TabAlertState</a><li><a href='#UpdateTabInfo'>UpdateTabInfo</a><li><a href='#DragData'>DragData</a><li><a href='#NavigationRect'>NavigationRect</a></ul>
+    <ul><li><a href='#TabAlertState'>TabAlertState</a><li><a href='#TranslateStep'>TranslateStep</a><li><a href='#TranslateError'>TranslateError</a><li><a href='#UpdateTabInfo'>UpdateTabInfo</a><li><a href='#DragData'>DragData</a><li><a href='#NavigationRect'>NavigationRect</a><li><a href='#LanguageDetectionDetails'>LanguageDetectionDetails</a></ul>
     <h3>Listeners</h3>
-    <ul><li><a href='#onMediaStateChanged'>onMediaStateChanged</a><li><a href='#onThemeColorChanged'>onThemeColorChanged</a><li><a href='#onTabUpdated'>onTabUpdated</a><li><a href='#onDragEnd'>onDragEnd</a><li><a href='#onPermissionAccessed'>onPermissionAccessed</a><li><a href='#onKeyboardChanged'>onKeyboardChanged</a><li><a href='#onMouseChanged'>onMouseChanged</a><li><a href='#onKeyboardShortcut'>onKeyboardShortcut</a><li><a href='#onTabIsDetached'>onTabIsDetached</a><li><a href='#onTabIsAttached'>onTabIsAttached</a><li><a href='#onMouseGestureDetection'>onMouseGestureDetection</a><li><a href='#onMouseGesture'>onMouseGesture</a><li><a href='#onTabSwitchEnd'>onTabSwitchEnd</a><li><a href='#onRockerGesture'>onRockerGesture</a><li><a href='#onWebviewClickCheck'>onWebviewClickCheck</a><li><a href='#onPageZoom'>onPageZoom</a><li><a href='#onBeforeUnloadDialogClosed'>onBeforeUnloadDialogClosed</a></ul>
+    <ul><li><a href='#onMediaStateChanged'>onMediaStateChanged</a><li><a href='#onThemeColorChanged'>onThemeColorChanged</a><li><a href='#onTabUpdated'>onTabUpdated</a><li><a href='#onDragEnd'>onDragEnd</a><li><a href='#onPermissionAccessed'>onPermissionAccessed</a><li><a href='#onKeyboardChanged'>onKeyboardChanged</a><li><a href='#onMouseChanged'>onMouseChanged</a><li><a href='#onKeyboardShortcut'>onKeyboardShortcut</a><li><a href='#onTabIsDetached'>onTabIsDetached</a><li><a href='#onTabIsAttached'>onTabIsAttached</a><li><a href='#onMouseGestureDetection'>onMouseGestureDetection</a><li><a href='#onMouseGesture'>onMouseGesture</a><li><a href='#onTabSwitchEnd'>onTabSwitchEnd</a><li><a href='#onRockerGesture'>onRockerGesture</a><li><a href='#onWebviewClickCheck'>onWebviewClickCheck</a><li><a href='#onPageZoom'>onPageZoom</a><li><a href='#onBeforeUnloadDialogClosed'>onBeforeUnloadDialogClosed</a><li><a href='#onLanguageDetermined'>onLanguageDetermined</a><li><a href='#onShowTranslationUI'>onShowTranslationUI</a><li><a href='#onPageTranslated'>onPageTranslated</a><li><a href='#onIsPageTranslatedChanged'>onIsPageTranslatedChanged</a></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#update'>update</a><li><a href='#get'>get</a><li><a href='#insertText'>insertText</a><li><a href='#startDrag'>startDrag</a><li><a href='#scrollPage'>scrollPage</a><li><a href='#getSpatialNavigationRects'>getSpatialNavigationRects</a><li><a href='#getScrollPosition'>getScrollPosition</a><li><a href='#activateElementFromPoint'>activateElementFromPoint</a><li><a href='#hasBeforeUnloadOrUnload'>hasBeforeUnloadOrUnload</a></ul></nav>
+    <ul><li><a href='#update'>update</a><li><a href='#get'>get</a><li><a href='#insertText'>insertText</a><li><a href='#startDrag'>startDrag</a><li><a href='#scrollPage'>scrollPage</a><li><a href='#getSpatialNavigationRects'>getSpatialNavigationRects</a><li><a href='#getScrollPosition'>getScrollPosition</a><li><a href='#activateElementFromPoint'>activateElementFromPoint</a><li><a href='#hasBeforeUnloadOrUnload'>hasBeforeUnloadOrUnload</a><li><a href='#translatePage'>translatePage</a><li><a href='#revertTranslatePage'>revertTranslatePage</a></ul></nav>
     
         <h2>Types</h2>
         <h3 id='TabAlertState'><a href='#TabAlertState'>#</a>TabAlertState</h3><dl><dt><code>ENUM</code></dt><dd><p>The active media type.<li>recording<li>capturing<li>playing<li>muting<li>bluetooth<li>usb<li>pip<li>desktop_capturing<li>vr_presenting_in_headset<li>serial_connected</ul></dd></dl>
+        <h3 id='TranslateStep'><a href='#TranslateStep'>#</a>TranslateStep</h3><dl><dt><code>ENUM</code></dt><dd><p>Denotes which state the page is in with respect to translate.<li>idle<li>before_translate<li>translating<li>after_translate<li>translate_error</ul></dd></dl>
+        <h3 id='TranslateError'><a href='#TranslateError'>#</a>TranslateError</h3><dl><dt><code>ENUM</code></dt><dd><p>Signals translation errors.<li>no_error<li>network<li>init_error<li>unknown_language<li>unsupported_language<li>identical_languages<li>translation_error<li>translation_timeout<li>unexpected_script_error<li>bad_origin<li>script_load_error</ul></dd></dl>
         <h3 id='UpdateTabInfo'><a href='#UpdateTabInfo'>#</a>UpdateTabInfo</h3><p>Object passed to the update and returned in the get function function.<p>Properties:<dl><dl><dt>showImages</dt><dd>(optional) <pre>boolean</pre><p>Show images for all pages loaded in this tab. Default is true.</dd></dl>
         <dl><dt>loadFromCacheOnly</dt><dd>(optional) <pre>boolean</pre><p>Only load the page from cache. Default is false.</dd></dl>
         <dl><dt>enablePlugins</dt><dd>(optional) <pre>boolean</pre><p>Enable plugins on this tab. Default is true.</dd></dl>
@@ -63,6 +65,14 @@
         <dl><dt>bottom</dt><dd><pre>integer</pre><p>bottom</dd></dl>
         <dl><dt>path</dt><dd><pre>string</pre><p>Element path to uniquely identify element.</dd></dl>
         <dl><dt>href</dt><dd><pre>string</pre><p>Url of focused element in case it's a link.</dd></dl>
+        </dl>
+        <h3 id='LanguageDetectionDetails'><a href='#LanguageDetectionDetails'>#</a>LanguageDetectionDetails</h3><p>Details the language detection for the current page. Corresponds to LanguageDetectionDetails in C++.<p>Properties:<dl><dl><dt>url</dt><dd><pre>string</pre><p>The url of the page detected was done on.</dd></dl>
+        <dl><dt>contentLanguage</dt><dd><pre>string</pre><p>The language detected by the content (Content-Language).</dd></dl>
+        <dl><dt>cldLanguage</dt><dd><pre>string</pre><p>The language detected by CLD (Chromium's Compact Language Detector library).</dd></dl>
+        <dl><dt>isCldReliable</dt><dd><pre>boolean</pre><p>true if the CLD detection is reliable, otherwise false.</dd></dl>
+        <dl><dt>hasNoTranslate</dt><dd><pre>boolean</pre><p>Whether the notranslate is specified in head tag as a meta; <meta name='google' value='notranslate'> or <meta name='google' content='notranslate'></dd></dl>
+        <dl><dt>htmlRootLanguage</dt><dd><pre>string</pre><p>The language written in the lang attribute of the html element.</dd></dl>
+        <dl><dt>adoptedLanguage</dt><dd><pre>string</pre><p>The adopted language, usually a authoritive decision on the different language tags in a document.</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -142,6 +152,18 @@
         <h3 id='onBeforeUnloadDialogClosed'><a href='#onBeforeUnloadDialogClosed'>#</a>onBeforeUnloadDialogClosed</h3><p>Fired when a beforeunload dialog has been closed.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Window Id containg the tab Id.</dd></dl>
         <dl><dt>tabId</dt><dd><pre>integer</pre><p>Tab id for the beforeunload dialog.</dd></dl>
         <dl><dt>proceed</dt><dd><pre>boolean</pre><p>If true, the tab operation that triggered the dialog has been allowed to proceed.</dd></dl>
+        <h3 id='onLanguageDetermined'><a href='#onLanguageDetermined'>#</a>onLanguageDetermined</h3><p>Fired when the language of the current page has been determined.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab Id.</dd></dl>
+        <dl><dt>details</dt><dd><pre><a href="#LanguageDetectionDetails">LanguageDetectionDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onShowTranslationUI'><a href='#onShowTranslationUI'>#</a>onShowTranslationUI</h3><p>Fired when we should show translation UI. The status decides what UI we should show.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab Id.</dd></dl>
+        <dl><dt>step</dt><dd><pre><a href="#TranslateStep">TranslateStep</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>error</dt><dd><pre><a href="#TranslateError">TranslateError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>triggeredFromMenu</dt><dd><pre>boolean</pre><p>true if this was triggered by a manual action or not.</dd></dl>
+        <h3 id='onPageTranslated'><a href='#onPageTranslated'>#</a>onPageTranslated</h3><p>Fired when a translation has been completed on a page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab Id.</dd></dl>
+        <dl><dt>srcLang</dt><dd><pre>string</pre><p>Source language code it was translated from.</dd></dl>
+        <dl><dt>destLang</dt><dd><pre>string</pre><p>Destination language code it was translated to.</dd></dl>
+        <dl><dt>error</dt><dd><pre><a href="#TranslateError">TranslateError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onIsPageTranslatedChanged'><a href='#onIsPageTranslatedChanged'>#</a>onIsPageTranslatedChanged</h3><p>Fired when a translation state has changed on a page, eg. revert has been used.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab Id.</dd></dl>
+        <dl><dt>isTranslated</dt><dd><pre>boolean</pre><p>The translation state has changed. For eg. revert, it will be false after revert has been invoked.</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='update'><a href='#update'>#</a>update</h3><p>Update the given tab with Vivaldi-specific properties.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -172,5 +194,13 @@
         <dl><dt>modifiers</dt><dd><pre>integer</pre><p>Keyboard modifiers to simulate shift or ctrl-clicking</dd></dl>
         <h3 id='hasBeforeUnloadOrUnload'><a href='#hasBeforeUnloadOrUnload'>#</a>hasBeforeUnloadOrUnload</h3><p>Check if a page contains a beforeunload or unload handler.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>hasHandler</dt><dd><pre>boolean</pre><p>true if the page has a beforeunload or unload handler, blocking a quick termination of the tab.</dd></dl>
+        </dd></dl>
+            <h3 id='translatePage'><a href='#translatePage'>#</a>translatePage</h3><p>Attempts to translate the given page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>srcLang</dt><dd><pre>string</pre><p>Source language code to translate from. May be omitted.</dd></dl>
+        <dl><dt>destLang</dt><dd><pre>string</pre><p>Destination language code to translate to. Must be present.</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>Immediate errors will be given in the callback, eg. for invalid or missing language codes, pages that cannot be translated (eg. devtools, blank pages), etc.</dd></dl>
+        </dd></dl>
+            <h3 id='revertTranslatePage'><a href='#revertTranslatePage'>#</a>revertTranslatePage</h3><p>Attempts to revert the translating of the given page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>true if the page can be reverted, otherwise false.</dd></dl>
         </dd></dl>
             </main></body></html>

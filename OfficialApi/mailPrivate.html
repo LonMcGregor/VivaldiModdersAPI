@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.7, by LonMcGregor.
+    <p>Version 3.8, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -32,51 +32,45 @@
     <h3>Listeners</h3>
     <ul></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#getPaths'>getPaths</a><li><a href='#save'>save</a><li><a href='#saveBuffer'>saveBuffer</a><li><a href='#delete'>delete</a><li><a href='#read'>read</a><li><a href='#readM3Message'>readM3Message</a><li><a href='#readFile'>readFile</a><li><a href='#getDataDirectory'>getDataDirectory</a><li><a href='#createDataDirectory'>createDataDirectory</a><li><a href='#rename'>rename</a></ul></nav>
+    <ul><li><a href='#getFilePaths'>getFilePaths</a><li><a href='#writeTextToMessageFile'>writeTextToMessageFile</a><li><a href='#writeBufferToMessageFile'>writeBufferToMessageFile</a><li><a href='#deleteMessageFile'>deleteMessageFile</a><li><a href='#readFileToBuffer'>readFileToBuffer</a><li><a href='#readMessageFileToBuffer'>readMessageFileToBuffer</a><li><a href='#readFileToText'>readFileToText</a><li><a href='#getFileDirectory'>getFileDirectory</a><li><a href='#createFileDirectory'>createFileDirectory</a></ul></nav>
     
         <h2>Methods</h2>
-        <h3 id='getPaths'><a href='#getPaths'>#</a>getPaths</h3><p>Returns array of file paths under a given directory.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The root folder from where to build up the file paths.</dd></dl>
+        <h3 id='getFilePaths'><a href='#getFilePaths'>#</a>getFilePaths</h3><p>Returns array of file paths under a given directory.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The root folder from where to build up the file paths.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>paths</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string<li>Paths to mail files</ul></dd></dl>
         </dd></dl>
-            <h3 id='save'><a href='#save'>#</a>save</h3><p>Saves a mail to disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
+            <h3 id='writeTextToMessageFile'><a href='#writeTextToMessageFile'>#</a>writeTextToMessageFile</h3><p>Saves a mail to disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be created/saved/overridden.</dd></dl>
         <dl><dt>raw</dt><dd><pre>string</pre><p>The raw mail content.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
-            <h3 id='saveBuffer'><a href='#saveBuffer'>#</a>saveBuffer</h3><p>Saves a mail to disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
+            <h3 id='writeBufferToMessageFile'><a href='#writeBufferToMessageFile'>#</a>writeBufferToMessageFile</h3><p>Saves a mail to disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be created/saved/overridden.</dd></dl>
         <dl><dt>raw</dt><dd><pre>binary</pre><p>The raw mail content as arrayBuffer</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
-            <h3 id='delete'><a href='#delete'>#</a>delete</h3><p>Deletes a file. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
+            <h3 id='deleteMessageFile'><a href='#deleteMessageFile'>#</a>deleteMessageFile</h3><p>Deletes a file. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be deleted. With ending.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
-            <h3 id='read'><a href='#read'>#</a>read</h3><p>Reads the contents of a file. Returns the content as arrayBuffer<p>Parameters:<dl><dt>fileName</dt><dd><pre>string</pre><p>Absoloute path to the file to be read.</dd></dl>
+            <h3 id='readFileToBuffer'><a href='#readFileToBuffer'>#</a>readFileToBuffer</h3><p>Reads the contents of a file. Returns the content as arrayBuffer<p>Parameters:<dl><dt>fileName</dt><dd><pre>string</pre><p>Absoloute path to the file to be read.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>raw</dt><dd><pre>binary</pre><p>The file raw content as arrayBuffer.</dd></dl>
         </dd></dl>
-            <h3 id='readM3Message'><a href='#readM3Message'>#</a>readM3Message</h3><p>Reads a mail. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
+            <h3 id='readMessageFileToBuffer'><a href='#readMessageFileToBuffer'>#</a>readMessageFileToBuffer</h3><p>Reads a mail. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be read.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>raw</dt><dd><pre>binary</pre><p>The mail raw content. as arrayBuffer</dd></dl>
         </dd></dl>
-            <h3 id='readFile'><a href='#readFile'>#</a>readFile</h3><p>Reads a file. Returns the file content as text.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>Absoulout path to the file to be read.</dd></dl>
+            <h3 id='readFileToText'><a href='#readFileToText'>#</a>readFileToText</h3><p>Reads a file. Returns the file content as text.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>Absoulout path to the file to be read.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>raw</dt><dd><pre>string</pre><p>The file raw content.</dd></dl>
         </dd></dl>
-            <h3 id='getDataDirectory'><a href='#getDataDirectory'>#</a>getDataDirectory</h3><p>Returns the user mail data directory and verfies that the directory exists.<p>Parameters:<dl><dt>hashedAccountId</dt><dd><pre>string</pre><p>First 6 characters from the MD5 hash of the accountId. Appended to the end of the default mail data directory</dd></dl>
+            <h3 id='getFileDirectory'><a href='#getFileDirectory'>#</a>getFileDirectory</h3><p>Returns the user mail data directory and verfies that the directory exists.<p>Parameters:<dl><dt>hashedAccountId</dt><dd><pre>string</pre><p>First 6 characters from the MD5 hash of the accountId. Appended to the end of the default mail data directory</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>paths</dt><dd><pre>string</pre><p>The directory path to the user mail data directory.</dd></dl>
         </dd></dl>
-            <h3 id='createDataDirectory'><a href='#createDataDirectory'>#</a>createDataDirectory</h3><p>Creates the user mail data directory.<p>Parameters:<dl><dt>hashedAccountId</dt><dd><pre>string</pre><p>First 6 characters from the MD5 hash of the accountId. Appended to the end of the default mail data directory</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='rename'><a href='#rename'>#</a>rename</h3><p>Renames a file on disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
-        <ul><li>string</ul></dd></dl>
-        <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be renamed. With file ending</dd></dl>
-        <dl><dt>newFileName</dt><dd><pre>string</pre><p>The new file name. With file ending</dd></dl>
+            <h3 id='createFileDirectory'><a href='#createFileDirectory'>#</a>createFileDirectory</h3><p>Creates the user mail data directory.<p>Parameters:<dl><dt>hashedAccountId</dt><dd><pre>string</pre><p>First 6 characters from the MD5 hash of the accountId. Appended to the end of the default mail data directory</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
             </main></body></html>
