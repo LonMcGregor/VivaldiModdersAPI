@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.8, by LonMcGregor.
+    <p>Version 4.0, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -109,6 +109,7 @@
         <h3 id='onThemeColorChanged'><a href='#onThemeColorChanged'>#</a>onThemeColorChanged</h3><p>Fired when a meta theme-color has a value from the web page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>rgb</dt><dd><pre>string</pre><p>Fired when the theme-color in the meta header field has changed. Format is #rrggbb and provided in css hex.</dd></dl>
         <h3 id='onTabUpdated'><a href='#onTabUpdated'>#</a>onTabUpdated</h3><p>Fires when a |WebContent| is changed in some way.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tabInfo</dt><dd><pre><a href="#UpdateTabInfo">UpdateTabInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onDragEnd'><a href='#onDragEnd'>#</a>onDragEnd</h3><p>Fires when tab dragging ends.<p>Parameters:<dl><dt>dragAborted</dt><dd><pre>boolean</pre><p>This is an aborted drag (using ESC or similar).</dd></dl>
         <dl><dt>dropOutsideWindow</dt><dd><pre>boolean</pre><p>This is a valid drop outside any app window.</dd></dl>
@@ -157,7 +158,7 @@
         <h3 id='onShowTranslationUI'><a href='#onShowTranslationUI'>#</a>onShowTranslationUI</h3><p>Fired when we should show translation UI. The status decides what UI we should show.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab Id.</dd></dl>
         <dl><dt>step</dt><dd><pre><a href="#TranslateStep">TranslateStep</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>error</dt><dd><pre><a href="#TranslateError">TranslateError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>triggeredFromMenu</dt><dd><pre>boolean</pre><p>true if this was triggered by a manual action or not.</dd></dl>
+        <dl><dt>automaticTranslation</dt><dd><pre>boolean</pre><p>true if this was triggered by an automatic translation.</dd></dl>
         <h3 id='onPageTranslated'><a href='#onPageTranslated'>#</a>onPageTranslated</h3><p>Fired when a translation has been completed on a page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab Id.</dd></dl>
         <dl><dt>srcLang</dt><dd><pre>string</pre><p>Source language code it was translated from.</dd></dl>
         <dl><dt>destLang</dt><dd><pre>string</pre><p>Destination language code it was translated to.</dd></dl>
@@ -168,23 +169,15 @@
         <h2>Methods</h2>
         <h3 id='update'><a href='#update'>#</a>update</h3><p>Update the given tab with Vivaldi-specific properties.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tabInfo</dt><dd><pre><a href="#UpdateTabInfo">UpdateTabInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>tabInfo</dt><dd><pre><a href="#UpdateTabInfo">UpdateTabInfo</a></pre><p>Return value with the updated tab info.</dd></dl>
-        </dd></dl>
-            <h3 id='get'><a href='#get'>#</a>get</h3><p>Get Vivaldi-specific properties from the tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>tabInfo</dt><dd><pre><a href="#UpdateTabInfo">UpdateTabInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='insertText'><a href='#insertText'>#</a>insertText</h3><p>Insert text into editable fields.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='get'><a href='#get'>#</a>get</h3><p>Get Vivaldi-specific properties from the tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='insertText'><a href='#insertText'>#</a>insertText</h3><p>Insert text into editable fields.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>text</dt><dd><pre>string</pre><p>The text to insert</dd></dl>
         <h3 id='startDrag'><a href='#startDrag'>#</a>startDrag</h3><p>Starts the HTML5 drag of the given tabs.<p>Parameters:<dl><dt>dragData</dt><dd><pre><a href="#DragData">DragData</a></pre><p>The drag data to be transported in the dataobject.</dd></dl>
         <h3 id='scrollPage'><a href='#scrollPage'>#</a>scrollPage</h3><p>Scrolls the page up or down, depending on a parameter<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>scrollType</dt><dd><pre>string</pre><p>Whether to scroll up or down, and by how much</dd></dl>
         <dl><dt>scrollAmount</dt><dd>(optional) <pre>integer</pre><p>The amount to scroll by</dd></dl>
-        <dl><dt>callback</dt><dd><p>Callback function used for error handling</dd></dl>
-            <h3 id='getSpatialNavigationRects'><a href='#getSpatialNavigationRects'>#</a>getSpatialNavigationRects</h3><p>Get rectangles for spatially navigable elements.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>navigationRectList</dt><dd><p>All navigable rects on the page.<p><code>Array</code> of:
-        <ul><li>NavigationRect</ul></dd></dl>
-        </dd></dl>
-            <h3 id='getScrollPosition'><a href='#getScrollPosition'>#</a>getScrollPosition</h3><p>Get scroll position of webview. Corresponds to window.scrollX and window.scrollY.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getSpatialNavigationRects'><a href='#getSpatialNavigationRects'>#</a>getSpatialNavigationRects</h3><p>Get rectangles for spatially navigable elements.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getScrollPosition'><a href='#getScrollPosition'>#</a>getScrollPosition</h3><p>Get scroll position of webview. Corresponds to window.scrollX and window.scrollY.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>scrollX</dt><dd><pre>integer</pre><p>Horizontal scroll coordinate</dd></dl>
         <dl><dt>scrollY</dt><dd><pre>integer</pre><p>Vertical scroll coordinate</dd></dl>
         </dd></dl>
@@ -193,14 +186,8 @@
         <dl><dt>y</dt><dd><pre>integer</pre><p>Vertical co-ordinate from the top</dd></dl>
         <dl><dt>modifiers</dt><dd><pre>integer</pre><p>Keyboard modifiers to simulate shift or ctrl-clicking</dd></dl>
         <h3 id='hasBeforeUnloadOrUnload'><a href='#hasBeforeUnloadOrUnload'>#</a>hasBeforeUnloadOrUnload</h3><p>Check if a page contains a beforeunload or unload handler.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>hasHandler</dt><dd><pre>boolean</pre><p>true if the page has a beforeunload or unload handler, blocking a quick termination of the tab.</dd></dl>
-        </dd></dl>
-            <h3 id='translatePage'><a href='#translatePage'>#</a>translatePage</h3><p>Attempts to translate the given page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='translatePage'><a href='#translatePage'>#</a>translatePage</h3><p>Attempts to translate the given page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>srcLang</dt><dd><pre>string</pre><p>Source language code to translate from. May be omitted.</dd></dl>
         <dl><dt>destLang</dt><dd><pre>string</pre><p>Destination language code to translate to. Must be present.</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>Immediate errors will be given in the callback, eg. for invalid or missing language codes, pages that cannot be translated (eg. devtools, blank pages), etc.</dd></dl>
-        </dd></dl>
-            <h3 id='revertTranslatePage'><a href='#revertTranslatePage'>#</a>revertTranslatePage</h3><p>Attempts to revert the translating of the given page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>true if the page can be reverted, otherwise false.</dd></dl>
-        </dd></dl>
-            </main></body></html>
+        <h3 id='revertTranslatePage'><a href='#revertTranslatePage'>#</a>revertTranslatePage</h3><p>Attempts to revert the translating of the given page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </main></body></html>

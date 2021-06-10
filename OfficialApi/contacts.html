@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 3.8, by LonMcGregor.
+    <p>Version 4.0, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -131,45 +131,19 @@
         <h3 id='onContactChanged'><a href='#onContactChanged'>#</a>onContactChanged</h3><p>Fired when contact is updated.<p>Parameters:<dl><dt>changedContact</dt><dd><pre><a href="#Contact">Contact</a></pre><p>The changed contact</dd></dl>
         
         <h2>Methods</h2>
-        <h3 id='getAll'><a href='#getAll'>#</a>getAll</h3><p>Retrieves all contacts<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>results</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
-        <ul><li>Contact</ul></dd></dl>
-        </dd></dl>
-            <h3 id='getAllEmailAddresses'><a href='#getAllEmailAddresses'>#</a>getAllEmailAddresses</h3><p>Retrieves all email addresses for all contacts<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>results</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
-        <ul><li>EmailAddress</ul></dd></dl>
-        </dd></dl>
-            <h3 id='create'><a href='#create'>#</a>create</h3><p>Creates a contact.<p>Parameters:<dl><dt>contact</dt><dd><pre><a href="#CreateUpdateDetails">CreateUpdateDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#Contact">Contact</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='createMany'><a href='#createMany'>#</a>createMany</h3><p>Creates / imports multiple contacts.<p>Parameters:<dl><dt>contactList</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <h3 id='getAll'><a href='#getAll'>#</a>getAll</h3><p>Retrieves all contacts<h3 id='getAllEmailAddresses'><a href='#getAllEmailAddresses'>#</a>getAllEmailAddresses</h3><p>Retrieves all email addresses for all contacts<h3 id='create'><a href='#create'>#</a>create</h3><p>Creates a contact.<p>Parameters:<dl><dt>contact</dt><dd><pre><a href="#CreateUpdateDetails">CreateUpdateDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='createMany'><a href='#createMany'>#</a>createMany</h3><p>Creates / imports multiple contacts.<p>Parameters:<dl><dt>contactList</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>CreateUpdateDetailsMinimum items: 1</ul></dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#CreateManyContactsResults">CreateManyContactsResults</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='update'><a href='#update'>#</a>update</h3><p>Updates the properties of a contact. Specify only the properties that you want to change. Unspecified properties will be left unchanged.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The contact id to be updated</dd></dl>
+        <h3 id='update'><a href='#update'>#</a>update</h3><p>Updates the properties of a contact. Specify only the properties that you want to change. Unspecified properties will be left unchanged.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The contact id to be updated</dd></dl>
         <dl><dt>changes</dt><dd><pre><a href="#CreateUpdateDetails">CreateUpdateDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#Contact">Contact</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='delete'><a href='#delete'>#</a>delete</h3><p>Deletes a contact.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='addPropertyItem'><a href='#addPropertyItem'>#</a>addPropertyItem</h3><p>Adds a property to a contact.<p>Parameters:<dl><dt>propertyToAdd</dt><dd><pre><a href="#AddPropertyDetails">AddPropertyDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#Contact">Contact</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='addEmailAddress'><a href='#addEmailAddress'>#</a>addEmailAddress</h3><p>Adds an email address to a contact.<p>Parameters:<dl><dt>emailToAdd</dt><dd><pre><a href="#EmailAddressAddUpdate">EmailAddressAddUpdate</a></pre><p>Object holding the fields for the email address to create</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#Contact">Contact</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='updateEmailAddress'><a href='#updateEmailAddress'>#</a>updateEmailAddress</h3><p>Updates an email address for a contact.<p>Parameters:<dl><dt>emailAddressId</dt><dd><pre>string</pre><p>The id of email address to update</dd></dl>
+        <h3 id='delete'><a href='#delete'>#</a>delete</h3><p>Deletes a contact.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='addPropertyItem'><a href='#addPropertyItem'>#</a>addPropertyItem</h3><p>Adds a property to a contact.<p>Parameters:<dl><dt>propertyToAdd</dt><dd><pre><a href="#AddPropertyDetails">AddPropertyDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='addEmailAddress'><a href='#addEmailAddress'>#</a>addEmailAddress</h3><p>Adds an email address to a contact.<p>Parameters:<dl><dt>emailToAdd</dt><dd><pre><a href="#EmailAddressAddUpdate">EmailAddressAddUpdate</a></pre><p>Object holding the fields for the email address to create</dd></dl>
+        <h3 id='updateEmailAddress'><a href='#updateEmailAddress'>#</a>updateEmailAddress</h3><p>Updates an email address for a contact.<p>Parameters:<dl><dt>emailAddressId</dt><dd><pre>string</pre><p>The id of email address to update</dd></dl>
         <dl><dt>emailToUpdate</dt><dd><pre><a href="#EmailAddressAddUpdate">EmailAddressAddUpdate</a></pre><p>Object holding the fields for the email address to update</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#Contact">Contact</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='removeEmailAddress'><a href='#removeEmailAddress'>#</a>removeEmailAddress</h3><p>Removes an email address for a contact.<p>Parameters:<dl><dt>removeEmail</dt><dd><pre>object</pre><p>An object specifying properties to remove email address.<p>Object Properties:<dl><dt>contactId</dt><dd><pre>string</pre><p>The contact id of which email address to remove.</dd></dl>
+        <h3 id='removeEmailAddress'><a href='#removeEmailAddress'>#</a>removeEmailAddress</h3><p>Removes an email address for a contact.<p>Parameters:<dl><dt>removeEmail</dt><dd><pre>object</pre><p>An object specifying properties to remove email address.<p>Object Properties:<dl><dt>contactId</dt><dd><pre>string</pre><p>The contact id of which email address to remove.</dd></dl>
         <dl><dt>emailAddressId</dt><dd><pre>string</pre><p>The id of email address to remove</dd></dl>
         </dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#Contact">Contact</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='updatePropertyItem'><a href='#updatePropertyItem'>#</a>updatePropertyItem</h3><p>Updates a property for a contact.<p>Parameters:<dl><dt>propertyToUpdate</dt><dd><pre><a href="#UpdatePropertyDetails">UpdatePropertyDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#Contact">Contact</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            <h3 id='removePropertyItem'><a href='#removePropertyItem'>#</a>removePropertyItem</h3><p>Removes a property from a contact.<p>Parameters:<dl><dt>propertyToRemove</dt><dd><pre><a href="#RemovePropertyDetails">RemovePropertyDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#Contact">Contact</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-            </main></body></html>
+        <h3 id='updatePropertyItem'><a href='#updatePropertyItem'>#</a>updatePropertyItem</h3><p>Updates a property for a contact.<p>Parameters:<dl><dt>propertyToUpdate</dt><dd><pre><a href="#UpdatePropertyDetails">UpdatePropertyDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='removePropertyItem'><a href='#removePropertyItem'>#</a>removePropertyItem</h3><p>Removes a property from a contact.<p>Parameters:<dl><dt>propertyToRemove</dt><dd><pre><a href="#RemovePropertyDetails">RemovePropertyDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </main></body></html>
