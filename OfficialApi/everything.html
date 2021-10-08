@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 4.0, by LonMcGregor.
+    <p>Version 4.3, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -42,6 +42,13 @@
         <h1><a href='autoUpdate.html'>autoUpdate</a></h1>
 
     
+        <h2>Types</h2>
+        <h3 id='UpdateOperationStatusEnum'><a href='autoUpdate.html#UpdateOperationStatusEnum'>#</a>UpdateOperationStatusEnum</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>noUpdate<li>didAbortWithError<li>didFindValidUpdate<li>willDownloadUpdate<li>didDownloadUpdate<li>willInstallUpdateOnQuit<li>updaterDidRelaunchApplication</ul></dd></dl>
+        <h3 id='UpdateOperationStatus'><a href='autoUpdate.html#UpdateOperationStatus'>#</a>UpdateOperationStatus</h3><p>A structure describing the status of an update operation if any.<p>Properties:<dl><dl><dt>status</dt><dd><pre><a href="#UpdateOperationStatusEnum">UpdateOperationStatusEnum</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>version</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>releaseNotesUrl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        
         <h2>Listeners</h2>
             <details>
             <summary>
@@ -71,7 +78,7 @@
         </details>
         <h3 id='onDidFindValidUpdate'><a href='autoUpdate.html#onDidFindValidUpdate'>#</a>onDidFindValidUpdate</h3><p>Fired when a valid update is found.<p>Parameters:<dl><dt>releaseNotesUrl</dt><dd><pre>string</pre><p>URL of the release notes of the update.</dd></dl>
         <dl><dt>version</dt><dd><pre>string</pre><p>The version of the update or an empty string if not known</dd></dl>
-        <h3 id='onWillDownloadUpdate'><a href='autoUpdate.html#onWillDownloadUpdate'>#</a>onWillDownloadUpdate</h3><p>Fired when an update will be downloaded.<p>Parameters:<dl><dt>version</dt><dd><pre>string</pre><p>The version of the update or an empty string if not known</dd></dl>
+        <h3 id='onUpdaterDidNotFindUpdate'><a href='autoUpdate.html#onUpdaterDidNotFindUpdate'>#</a>onUpdaterDidNotFindUpdate</h3><p>Fired if checkForUpdates did not find an update.<h3 id='onWillDownloadUpdate'><a href='autoUpdate.html#onWillDownloadUpdate'>#</a>onWillDownloadUpdate</h3><p>Fired when an update will be downloaded.<p>Parameters:<dl><dt>version</dt><dd><pre>string</pre><p>The version of the update or an empty string if not known</dd></dl>
         <h3 id='onDidDownloadUpdate'><a href='autoUpdate.html#onDidDownloadUpdate'>#</a>onDidDownloadUpdate</h3><p>Fired when an update has been downloaded.<p>Parameters:<dl><dt>version</dt><dd><pre>string</pre><p>The version of the update or an empty string if not known</dd></dl>
         <h3 id='onWillInstallUpdateOnQuit'><a href='autoUpdate.html#onWillInstallUpdateOnQuit'>#</a>onWillInstallUpdateOnQuit</h3><p>Fired when an update will be installed on restart or quit.<p>Parameters:<dl><dt>version</dt><dd><pre>string</pre><p>The version that will be installed on quit or an empty string if not known</dd></dl>
         <h3 id='onUpdaterWillRelaunchApplication'><a href='autoUpdate.html#onUpdaterWillRelaunchApplication'>#</a>onUpdaterWillRelaunchApplication</h3><p>Fired just before the updater restarts the application.<h3 id='onUpdaterDidRelaunchApplication'><a href='autoUpdate.html#onUpdaterDidRelaunchApplication'>#</a>onUpdaterDidRelaunchApplication</h3><p>Fired when an application has been restarted due to an update.<h3 id='onDidAbortWithError'><a href='autoUpdate.html#onDidAbortWithError'>#</a>onDidAbortWithError</h3><p>Fired when an update fails.<p>Parameters:<dl><dt>description</dt><dd><pre>string</pre><p>Description of the error.</dd></dl>
@@ -80,7 +87,7 @@
         <h2>Methods</h2>
         <h3 id='checkForUpdates'><a href='autoUpdate.html#checkForUpdates'>#</a>checkForUpdates</h3><p>Check for Vivaldi browser updates.<p>Parameters:<dl><dt>withUi</dt><dd><pre>boolean</pre><p>Indicates whether we want the auto-update ui to appear.</dd></dl>
         <h3 id='isUpdateNotifierEnabled'><a href='autoUpdate.html#isUpdateNotifierEnabled'>#</a>isUpdateNotifierEnabled</h3><p>Checks whether the update notifier is set to run on startup.<h3 id='enableUpdateNotifier'><a href='autoUpdate.html#enableUpdateNotifier'>#</a>enableUpdateNotifier</h3><p>Sets the update notifier to run on startup and launches it.<h3 id='disableUpdateNotifier'><a href='autoUpdate.html#disableUpdateNotifier'>#</a>disableUpdateNotifier</h3><p>Removes the update notifier from autorun and attempts to terminate it.<h3 id='installUpdateAndRestart'><a href='autoUpdate.html#installUpdateAndRestart'>#</a>installUpdateAndRestart</h3><p>Installs update & restart. Should be called after an onWillInstallUpdateOnQuit event has occurred.<h3 id='getAutoInstallUpdates'><a href='autoUpdate.html#getAutoInstallUpdates'>#</a>getAutoInstallUpdates</h3><p>Checks whether we automatically install updates<h3 id='setAutoInstallUpdates'><a href='autoUpdate.html#setAutoInstallUpdates'>#</a>setAutoInstallUpdates</h3><p>Change automatically install updates setting<p>Parameters:<dl><dt>autoinstall</dt><dd><pre>boolean</pre><p>Indicates whether we want to automatically install updates.</dd></dl>
-        <h1><a href='bookmarksPrivate.html'>bookmarksPrivate</a></h1>
+        <h3 id='getLastCheckTime'><a href='autoUpdate.html#getLastCheckTime'>#</a>getLastCheckTime</h3><p>Get the date & time we last checked for an update. Returns milliseconds since epoch.<h3 id='getUpdateStatus'><a href='autoUpdate.html#getUpdateStatus'>#</a>getUpdateStatus</h3><p>Get a status of an update operation if any<h3 id='hasAutoUpdates'><a href='autoUpdate.html#hasAutoUpdates'>#</a>hasAutoUpdates</h3><p>Return true if automatic updates are supported.<h1><a href='bookmarksPrivate.html'>bookmarksPrivate</a></h1>
 
     
         <h2>Types</h2>
@@ -101,6 +108,7 @@
         <dl><dt>trash</dt><dd><pre>boolean</pre><p>true if this is the trash folder. Read only.</dd></dl>
         <dl><dt>dateAdded</dt><dd>(optional) <pre>number</pre><p>When this node was created, in milliseconds since the epoch (<code>new Date(dateAdded)</code>).</dd></dl>
         <dl><dt>dateGroupModified</dt><dd>(optional) <pre>number</pre><p>When the contents of this folder last changed, in milliseconds since the epoch.</dd></dl>
+        <dl><dt>faviconUrl</dt><dd>(optional) <pre>string</pre><p>If present this url should be used to retrive a favicon.</dd></dl>
         <dl><dt>children</dt><dd>(optional) <p>An ordered list of children of this node.<p><code>Array</code> of:
         <ul><li>BookmarkTreeNode</ul></dd></dl>
         </dl>
@@ -207,7 +215,8 @@
         <h3 id='onOpen'><a href='bookmarkContextMenu.html#onOpen'>#</a>onOpen</h3><p>Fires before menu opens.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Menu id, same as the bookmark folder to be shown.</dd></dl>
         <h3 id='onClose'><a href='bookmarkContextMenu.html#onClose'>#</a>onClose</h3><p>Fires before menu closes.
         <h2>Methods</h2>
-        <h3 id='show'><a href='bookmarkContextMenu.html#show'>#</a>show</h3><p>Shows a context menu.<p>Parameters:<dl><dt>properties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>siblings</dt><dd><p>List of menu entries.<p><code>Array</code> of:
+        <h3 id='show'><a href='bookmarkContextMenu.html#show'>#</a>show</h3><p>Shows a context menu.<p>Parameters:<dl><dt>properties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>siblings</dt><dd><p>List of menu entries.<p><code>Array</code> of:
         <ul><li>FolderEntry</ul></dd></dl>
         <dl><dt>id</dt><dd><pre>string</pre><p>Bookmark folder id. Must match an id in the sibling list.</dd></dl>
         <dl><dt>edge</dt><dd>(optional) <pre><a href="#Edge">Edge</a></pre><p>Where to place extra menu items</dd></dl>
@@ -331,7 +340,7 @@
         <dl><dt>name</dt><dd><pre>string</pre><p>Name of the notification.</dd></dl>
         <dl><dt>description</dt><dd>(optional) <pre>string</pre><p>The description of the notification.</dd></dl>
         <dl><dt>when</dt><dd><pre>number</pre><p>When this notification should fire. In milliseconds since the epoch.</dd></dl>
-        <dl><dt>period</dt><dd>(optional) <pre>integer</pre><p>If not null, the notification will repeat and will fire again in period minutes.</dd></dl>
+        <dl><dt>period</dt><dd>(optional) <pre>number</pre><p>If not null, when the notification will fire. In milliseconds since the epoch.</dd></dl>
         <dl><dt>delay</dt><dd>(optional) <pre>integer</pre><p>The notification will fire after delay minutes from now. Can not be used together with when.</dd></dl>
         </dl>
         <h3 id='Invite'><a href='calendar.html#Invite'>#</a>Invite</h3><p>Object describing event invite.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The id of the invite.</dd></dl>
@@ -588,14 +597,14 @@
         <dl><dt>name</dt><dd><pre>string</pre><p>The name of the notification.</dd></dl>
         <dl><dt>description</dt><dd>(optional) <pre>string</pre><p>The description of the notification.</dd></dl>
         <dl><dt>when</dt><dd><pre>number</pre><p>When the notification should fire. In milliseconds since the epoch.</dd></dl>
-        <dl><dt>period</dt><dd>(optional) <pre>integer</pre><p>If not null, the notification will repeat and will fire again in period minutes.</dd></dl>
+        <dl><dt>period</dt><dd>(optional) <pre>number</pre><p>If not null, when the notification will fire. In milliseconds since the epoch.</dd></dl>
         <dl><dt>delay</dt><dd>(optional) <pre>integer</pre><p>The notification will fire after delay minutes from now. Can not be used together with when.</dd></dl>
         </dd></dl>
         <h3 id='updateNotification'><a href='calendar.html#updateNotification'>#</a>updateNotification</h3><p>Updates the properties of a notification. Specify only the properties that you want to change. Unspecified properties will be left unchanged.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The id of the notification to update.</dd></dl>
         <dl><dt>changes</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>name</dt><dd>(optional) <pre>string</pre><p>The name of the notification.</dd></dl>
         <dl><dt>description</dt><dd>(optional) <pre>string</pre><p>The description of the notification.</dd></dl>
         <dl><dt>when</dt><dd>(optional) <pre>number</pre><p>When the notification should fire. In milliseconds since the epoch.</dd></dl>
-        <dl><dt>period</dt><dd>(optional) <pre>integer</pre><p>If not null, the notification will repeat and will fire again in period minutes.</dd></dl>
+        <dl><dt>period</dt><dd>(optional) <pre>number</pre><p>If not null, when the notification will fire. In milliseconds since the epoch.</dd></dl>
         <dl><dt>delay</dt><dd>(optional) <pre>integer</pre><p>The notification will fire after delay minutes from now. Can not be used together with when.</dd></dl>
         </dd></dl>
         <h3 id='deleteNotification'><a href='calendar.html#deleteNotification'>#</a>deleteNotification</h3><p>Deletes a notification.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -903,6 +912,7 @@
         <dl><dt>enabled</dt><dd>(optional) <pre>boolean</pre><p>true if the item is enabled.</dd></dl>
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p>Url that can be used to determine a corresponding icon.</dd></dl>
         <dl><dt>shortcut</dt><dd>(optional) <pre>string</pre><p>A shortcut displayed next to the name. No binding is added.</dd></dl>
+        <dl><dt>showshortcut</dt><dd>(optional) <pre>boolean</pre><p>Controls if a shortcut shall be shown. Needed for elements where shortcut is set up in C++ code</dd></dl>
         <dl><dt>icons</dt><dd>(optional) <pre><a href="#Icons">Icons</a></pre><p>Icon in PNG format encoded as base64.</dd></dl>
         </dl>
         <h3 id='Container'><a href='contextMenu.html#Container'>#</a>Container</h3><p>Container to expand<p>Properties:<dl><dl><dt>id</dt><dd><pre>integer</pre><p>The unique id of item.</dd></dl>
@@ -956,6 +966,7 @@
         <dl><dt>iseditable</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>isimage</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>isframe</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>ismailcontent</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>iswebpanel</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>ismailto</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>support</dt><dd><pre><a href="#DocumentSupport">DocumentSupport</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -1067,6 +1078,7 @@
     
         <h2>Methods</h2>
         <h3 id='execute'><a href='editcommand.html#execute'>#</a>execute</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>command</dt><dd><pre>string</pre><p>The command to be executed.</dd></dl>
+        <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h1><a href='historyPrivate.html'>historyPrivate</a></h1>
 
     
@@ -1079,18 +1091,18 @@
         <dl><dt>terms</dt><dd><pre>string</pre><p>If keyWordID is not -1, the terms that the user searched for.</dd></dl>
         </dl>
         <h3 id='HistoryPrivateItem'><a href='historyPrivate.html#HistoryPrivateItem'>#</a>HistoryPrivateItem</h3><p>An object encapsulating one result of a history query.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the item.</dd></dl>
-        <dl><dt>url</dt><dd>(optional) <pre>string</pre><p>The URL navigated to by a user.</dd></dl>
-        <dl><dt>protocol</dt><dd>(optional) <pre>string</pre><p>The protocol of the page navigated to by a user.</dd></dl>
-        <dl><dt>address</dt><dd>(optional) <pre>string</pre><p>The address of the page navigated to by a user.</dd></dl>
-        <dl><dt>title</dt><dd>(optional) <pre>string</pre><p>The title of the page when it was last loaded.</dd></dl>
+        <dl><dt>url</dt><dd><pre>string</pre><p>The URL navigated to by a user.</dd></dl>
+        <dl><dt>protocol</dt><dd><pre>string</pre><p>The protocol of the page navigated to by a user.</dd></dl>
+        <dl><dt>address</dt><dd><pre>string</pre><p>The address of the page navigated to by a user.</dd></dl>
+        <dl><dt>title</dt><dd><pre>string</pre><p>The title of the page when it was last loaded.</dd></dl>
         <dl><dt>lastVisitTime</dt><dd>(optional) <pre>number</pre><p>When this page was last loaded, represented in milliseconds since the epoch.</dd></dl>
-        <dl><dt>visitTime</dt><dd>(optional) <pre>number</pre><p>When this page was visited, represented in milliseconds since the epoch.</dd></dl>
-        <dl><dt>visitCount</dt><dd>(optional) <pre>integer</pre><p>The number of times the user has navigated to this page.</dd></dl>
+        <dl><dt>visitTime</dt><dd><pre>number</pre><p>When this page was visited, represented in milliseconds since the epoch.</dd></dl>
+        <dl><dt>visitCount</dt><dd><pre>integer</pre><p>The number of times the user has navigated to this page.</dd></dl>
         <dl><dt>typedCount</dt><dd>(optional) <pre>integer</pre><p>The number of times the user has navigated to this page by typing in the address.</dd></dl>
         <dl><dt>isBookmarked</dt><dd><pre>boolean</pre><p>States if the URL is bookmarked.</dd></dl>
-        <dl><dt>transition_type</dt><dd>(optional) <pre><a href="#TransitionType">TransitionType</a></pre><p>The transition type for this visit from its referrer.</dd></dl>
-        <dl><dt>dateKey</dt><dd>(optional) <pre>string</pre><p>Date string of the visit. Format: YYYY-MM-DD</dd></dl>
-        <dl><dt>hour</dt><dd>(optional) <pre>integer</pre><p>Hour of day when this url was visited.</dd></dl>
+        <dl><dt>transition_type</dt><dd><pre><a href="#TransitionType">TransitionType</a></pre><p>The transition type for this visit from its referrer.</dd></dl>
+        <dl><dt>dateKey</dt><dd><pre>string</pre><p>Date string of the visit. Format: YYYY-MM-DD</dd></dl>
+        <dl><dt>hour</dt><dd><pre>integer</pre><p>Hour of day when this url was visited.</dd></dl>
         </dl>
         <h3 id='TopUrlItem'><a href='historyPrivate.html#TopUrlItem'>#</a>TopUrlItem</h3><p>An object encapsulating one result of a top url history query.<p>Properties:<dl><dl><dt>date</dt><dd><pre>string</pre><p>The date of the visit for the top url</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p>The url visited</dd></dl>
@@ -1220,6 +1232,7 @@
         <h2>Methods</h2>
         <h3 id='getProfiles'><a href='importData.html#getProfiles'>#</a>getProfiles</h3><p>Retrieves import data profiles.<h3 id='startImport'><a href='importData.html#startImport'>#</a>startImport</h3><p>Start import process.<p>Parameters:<dl><dt>itemsToImport</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string<li>int64</ul></dd></dl>
+        <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>masterPassword</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>path</dt><dd>(optional) <pre>string</pre><p>The file path the user selceted when using non-default profile location.</dd></dl>
@@ -1319,7 +1332,7 @@
         <h3 id='searchMessages'><a href='mailPrivate.html#searchMessages'>#</a>searchMessages</h3><p>Searches messages with certain query.<p>Parameters:<dl><dt>searchValue</dt><dd><pre>string</pre><p>The value to search for</dd></dl>
         <h3 id='matchMessage'><a href='mailPrivate.html#matchMessage'>#</a>matchMessage</h3><p>Does search value match certain message.<p>Parameters:<dl><dt>searchListId</dt><dd><pre>integer</pre><p>The searchListId of the message to be checked.</dd></dl>
         <dl><dt>searchValue</dt><dd><pre>string</pre><p>The value to search for</dd></dl>
-        <h1><a href='menubar.html'>menubar</a></h1>
+        <h3 id='rebuildDatabase'><a href='mailPrivate.html#rebuildDatabase'>#</a>rebuildDatabase</h3><p>Rebuilds the full text database index.<h1><a href='menubar.html'>menubar</a></h1>
 
     
         <h2>Types</h2>
@@ -1501,6 +1514,7 @@
         <dl><dt>action</dt><dd><pre>string</pre><p>A command or a menu identifier. It does not have to be unique. Can be empty for separators.</dd></dl>
         <dl><dt>custom</dt><dd>(optional) <pre>boolean</pre><p>When true, the item has been added by the user.</dd></dl>
         <dl><dt>title</dt><dd>(optional) <pre>string</pre><p>Node title. If not present the title is determined using the action.</dd></dl>
+        <dl><dt>showshortcut</dt><dd>(optional) <pre>boolean</pre><p>Show shortcut string.</dd></dl>
         <dl><dt>radiogroup</dt><dd>(optional) <pre>string</pre><p>Mandatory for radio elements.</dd></dl>
         <dl><dt>containermode</dt><dd>(optional) <pre><a href="#ContainerMode">ContainerMode</a></pre><p>Mandatory for container elements.</dd></dl>
         <dl><dt>containeredge</dt><dd>(optional) <pre><a href="#ContainerEdge">ContainerEdge</a></pre><p>Mandatory for container elements.</dd></dl>
@@ -1566,10 +1580,13 @@
             <h3 id='remove'><a href='menuContent.html#remove'>#</a>remove</h3><p>Deletes one or more items within a named menu.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>ids</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
+        <h3 id='removeAction'><a href='menuContent.html#removeAction'>#</a>removeAction</h3><p>Deletes one or more actions from all models<p>Parameters:<dl><dt>actions</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
         <h3 id='update'><a href='menuContent.html#update'>#</a>update</h3><p>Updates the properties of a node.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>changes</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>title</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>parameter</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>showshortcut</dt><dd>(optional) <pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>containerMode</dt><dd>(optional) <pre><a href="#ContainerMode">ContainerMode</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>containerEdge</dt><dd>(optional) <pre><a href="#ContainerEdge">ContainerEdge</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
@@ -1756,8 +1773,12 @@
 
     
         <h2>Types</h2>
-        <h3 id='PreferenceValue'><a href='prefs.html#PreferenceValue'>#</a>PreferenceValue</h3><p>Preference with its current value.<p>Properties:<dl><dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
+        <h3 id='PreferenceValue'><a href='prefs.html#PreferenceValue'>#</a>PreferenceValue</h3><p>Preference with its new desired value.<p>Properties:<dl><dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
         <dl><dt>value</dt><dd><pre>any</pre><p>Preference value.</dd></dl>
+        </dl>
+        <h3 id='PreferenceNotification'><a href='prefs.html#PreferenceNotification'>#</a>PreferenceNotification</h3><p>Preference value change notification.<p>Properties:<dl><dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
+        <dl><dt>value</dt><dd><pre>any</pre><p>Preference value.</dd></dl>
+        <dl><dt>usesDefault</dt><dd><pre>boolean</pre><p>True if the current value comes from the default and has not been overriden by the user.</dd></dl>
         </dl>
         <h3 id='PreferenceValueAndDefault'><a href='prefs.html#PreferenceValueAndDefault'>#</a>PreferenceValueAndDefault</h3><p>Preference with its current value and default value.<p>Properties:<dl><dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
         <dl><dt>value</dt><dd>(optional) <pre>any</pre><p>Preference value.</dd></dl>
@@ -1798,7 +1819,7 @@
                 <p>Returns array of promises dispatched to the listener</p>
             </div>
         </details>
-        <h3 id='onChanged'><a href='prefs.html#onChanged'>#</a>onChanged</h3><p>Fired when a preference value has changed.<p>Parameters:<dl><dt>newValue</dt><dd><pre><a href="#PreferenceValue">PreferenceValue</a></pre><p>Information about the changed preference.</dd></dl>
+        <h3 id='onChanged'><a href='prefs.html#onChanged'>#</a>onChanged</h3><p>Fired when a preference value has changed.<p>Parameters:<dl><dt>newValue</dt><dd><pre><a href="#PreferenceNotification">PreferenceNotification</a></pre><p>Information about the changed preference.</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='get'><a href='prefs.html#get'>#</a>get</h3><p>Get a specific named preference value.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
@@ -2022,7 +2043,8 @@
         <dl><dt>mimeType</dt><dd>(optional) <pre>string</pre><p>The current documents mimetype.</dd></dl>
         <dl><dt>muteTab</dt><dd>(optional) <pre>boolean</pre><p>If the tab should be quiet.</dd></dl>
         </dl>
-        <h3 id='DragData'><a href='tabsPrivate.html#DragData'>#</a>DragData</h3><p>Provides custom drag data.<p>Properties:<dl><dl><dt>mimeType</dt><dd><pre>string</pre><p>The mime type to use for the custom data.</dd></dl>
+        <h3 id='DragData'><a href='tabsPrivate.html#DragData'>#</a>DragData</h3><p>Provides custom drag data.<p>Properties:<dl><dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>mimeType</dt><dd><pre>string</pre><p>The mime type to use for the custom data.</dd></dl>
         <dl><dt>customData</dt><dd><pre>string</pre><p>The custom data.</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p>The url for the data. Needed for the html5 drag and drop engine. Not set in the onDropEnd event.</dd></dl>
         <dl><dt>title</dt><dd><pre>string</pre><p>The title for the data. Needed for the html5 drag and drop engine. Not set in the onDropEnd event.</dd></dl>
@@ -2168,6 +2190,8 @@
         <dl><dt>srcLang</dt><dd><pre>string</pre><p>Source language code to translate from. May be omitted.</dd></dl>
         <dl><dt>destLang</dt><dd><pre>string</pre><p>Destination language code to translate to. Must be present.</dd></dl>
         <h3 id='revertTranslatePage'><a href='tabsPrivate.html#revertTranslatePage'>#</a>revertTranslatePage</h3><p>Attempts to revert the translating of the given page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='determineTextLanguage'><a href='tabsPrivate.html#determineTextLanguage'>#</a>determineTextLanguage</h3><p>Attempts to determined the language of the given text.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>Any valid tabId can be used here, it is only used to determine which renderer to use.</dd></dl>
+        <dl><dt>text</dt><dd><pre>string</pre><p>String to determine the language for. If the string is too short, this operation might not yield a language code.</dd></dl>
         <h1><a href='thumbnails.html'>thumbnails</a></h1>
 
     
@@ -2175,7 +2199,8 @@
         <h3 id='CaptureBookmarkParams'><a href='thumbnails.html#CaptureBookmarkParams'>#</a>CaptureBookmarkParams</h3><p>A structure containing parameters for the captureUrl call.<p>Properties:<dl><dl><dt>bookmarkId</dt><dd><pre>string</pre><p>Bookmark id to associate the captured thumbnail with.</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p>url to load and generate thumbnail for.</dd></dl>
         </dl>
-        <h3 id='CaptureUIParams'><a href='thumbnails.html#CaptureUIParams'>#</a>CaptureUIParams</h3><p>A structure containing parameters for the captureUI call.<p>Properties:<dl><dl><dt>posX</dt><dd><pre>number</pre><p>X offset inside the given app window in the UI coordinates.</dd></dl>
+        <h3 id='CaptureUIParams'><a href='thumbnails.html#CaptureUIParams'>#</a>CaptureUIParams</h3><p>A structure containing parameters for the captureUI call.<p>Properties:<dl><dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>posX</dt><dd><pre>number</pre><p>X offset inside the given app window in the UI coordinates.</dd></dl>
         <dl><dt>posY</dt><dd><pre>number</pre><p>Y offset inside the given app window in the UI coordinates.</dd></dl>
         <dl><dt>width</dt><dd><pre>number</pre><p>Width of the capture in the UI coordinates.</dd></dl>
         <dl><dt>height</dt><dd><pre>number</pre><p>Height of the capture in the UI coordinates.</dd></dl>
@@ -2238,6 +2263,10 @@
         <dl><dt>lastAccountInfoFetchError</dt><dd><pre><a href="#FetchError">FetchError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>isReady</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
+        <h3 id='PendingRegistration'><a href='vivaldiAccount.html#PendingRegistration'>#</a>PendingRegistration</h3><p>Information about an account that's in the process of registering.<p>Properties:<dl><dl><dt>username</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>password</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>recovery_email</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
         
         <h2>Listeners</h2>
             <details>
@@ -2272,7 +2301,8 @@
         <h3 id='login'><a href='vivaldiAccount.html#login'>#</a>login</h3><p>Attempt to obtain an access token for vivaldi.net using the provided credentials.<p>Parameters:<dl><dt>username</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>password</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>savePassword</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='logout'><a href='vivaldiAccount.html#logout'>#</a>logout</h3><p>Clear the previously obtained tokens and forget the logged in username.<h3 id='getState'><a href='vivaldiAccount.html#getState'>#</a>getState</h3><p>Retrieve the current state of the account manager.<h1><a href='sessionsPrivate.html'>sessionsPrivate</a></h1>
+        <h3 id='logout'><a href='vivaldiAccount.html#logout'>#</a>logout</h3><p>Clear the previously obtained tokens and forget the logged in username.<h3 id='getState'><a href='vivaldiAccount.html#getState'>#</a>getState</h3><p>Retrieve the current state of the account manager.<h3 id='setPendingRegistration'><a href='vivaldiAccount.html#setPendingRegistration'>#</a>setPendingRegistration</h3><p>Stores credentials for an account in the process of registering. Call without parameter to discard the currently stored credentials<p>Parameters:<dl><dt>registration</dt><dd>(optional) <pre><a href="#PendingRegistration">PendingRegistration</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getPendingRegistration'><a href='vivaldiAccount.html#getPendingRegistration'>#</a>getPendingRegistration</h3><p>Retrieves the last stored credentials for a registration in progress.<h1><a href='sessionsPrivate.html'>sessionsPrivate</a></h1>
 
     
         <h2>Types</h2>
@@ -2291,7 +2321,8 @@
         <h2>Methods</h2>
         <h3 id='getAll'><a href='sessionsPrivate.html#getAll'>#</a>getAll</h3><p>Returns all previously saved sessions stored on disk.<h3 id='saveOpenTabs'><a href='sessionsPrivate.html#saveOpenTabs'>#</a>saveOpenTabs</h3><p>Saves all open tabs to the named session.<p>Parameters:<dl><dt>name</dt><dd><pre>string</pre><p>Name of the session to save to.</dd></dl>
         <dl><dt>options</dt><dd><pre><a href="#SessionSaveOptions">SessionSaveOptions</a></pre><p>Session save options.</dd></dl>
-        <h3 id='open'><a href='sessionsPrivate.html#open'>#</a>open</h3><p>Open a specific named session.<p>Parameters:<dl><dt>name</dt><dd><pre>string</pre><p>Name of the session to open.</dd></dl>
+        <h3 id='open'><a href='sessionsPrivate.html#open'>#</a>open</h3><p>Open a specific named session.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>Name of the session to open.</dd></dl>
         <dl><dt>options</dt><dd>(optional) <pre><a href="#SessionOpenOptions">SessionOpenOptions</a></pre><p>Session open options.</dd></dl>
         <h3 id='delete'><a href='sessionsPrivate.html#delete'>#</a>delete</h3><p>Deletes the named session.<p>Parameters:<dl><dt>name</dt><dd><pre>string</pre><p>Name of the session to delete.</dd></dl>
         <h1><a href='utilities.html'>utilities</a></h1>
@@ -2302,35 +2333,31 @@
         <dl><dt>green</dt><dd><pre>integer</pre><p>Green color.</dd></dl>
         <dl><dt>blue</dt><dd><pre>integer</pre><p>Blue color.</dd></dl>
         </dl>
+        <h3 id='BroadcastAction'><a href='utilities.html#BroadcastAction'>#</a>BroadcastAction</h3><dl><dt><code>ENUM</code></dt><dd><p>Identifies broadcast type.<li>open<li>minimizeAll</ul></dd></dl>
         <h3 id='DialogName'><a href='utilities.html#DialogName'>#</a>DialogName</h3><dl><dt><code>ENUM</code></dt><dd><p>Name of the dialog to set position for.<li>chromecast: The Chromecast dialog with source and destination. Centered over the active webview.<li>password: The password dialog opening to save a password.<li>permission: The permission dialog allowing or blocking one or more permissions.</ul></dd></dl>
         <h3 id='CookieMode'><a href='utilities.html#CookieMode'>#</a>CookieMode</h3><dl><dt><code>ENUM</code></dt><dd><p>CookieMode enumeration, corrensponds to CookieControlsMode in chromium/components/content_settings/core/browser/cookie_settings.h<li>off: All cookies allowed.<li>BlockThirdParty: Block third party cookies.<li>BlockThirdPartyIncognitoOnly: Block third party cookies in incognito mode only.</ul></dd></dl>
         <h3 id='FlowDirection'><a href='utilities.html#FlowDirection'>#</a>FlowDirection</h3><dl><dt><code>ENUM</code></dt><dd><p>The direction a dialog would be opened from the given rect.<li>down: Dialog should position itself below the given rect.<li>up: Dialog should position itself above the given rect.</ul></dd></dl>
         <h3 id='UrlValidResults'><a href='utilities.html#UrlValidResults'>#</a>UrlValidResults</h3><p>Object that describes the validitity of a given url.<p>Properties:<dl><dl><dt>urlValid</dt><dd><pre>boolean</pre><p>The url is a correctly formatted url. This might be true even if the protocol is not valid.</dd></dl>
-        <dl><dt>schemeValid</dt><dd><pre>boolean</pre><p>The protocol scheme is known and one we can show directly.</dd></dl>
+        <dl><dt>isBrowserUrl</dt><dd><pre>boolean</pre><p>The url can be shown directly by the browser.</dd></dl>
         <dl><dt>schemeParsed</dt><dd><pre>string</pre><p>The parsed and authorative protocol scheme as parsed by Chromium.</dd></dl>
         <dl><dt>normalizedUrl</dt><dd><pre>string</pre><p>Returns the raw spec, i.e., the full text of the URL, in canonical UTF-8, if the URL is valid.</dd></dl>
-        <dl><dt>externalHandler</dt><dd><pre>boolean</pre><p>The protocol scheme will be passed to a confirmation and run in an external protocol handler.</dd></dl>
         </dl>
         <h3 id='WhatsNewResults'><a href='utilities.html#WhatsNewResults'>#</a>WhatsNewResults</h3><p>Object that describes how a What's new page can be used.<p>Properties:<dl><dl><dt>show</dt><dd><pre>boolean</pre><p>true if the What's new page can be shown, otherwise false.</dd></dl>
         <dl><dt>firstrun</dt><dd><pre>boolean</pre><p>true if this the first time the Whats new page is shown. Do not use if 'show' is false.</dd></dl>
         </dl>
-        <h3 id='UrlFragment'><a href='utilities.html#UrlFragment'>#</a>UrlFragment</h3><p>To be used in context of UrlFragments below. A fragment should be considered not present if 'begin' and 'end' are both 0.<p>Properties:<dl><dl><dt>fragment</dt><dd><pre>string</pre><p>The URL fragment.</dd></dl>
-        <dl><dt>begin</dt><dd><pre>integer</pre><p>Start offset of the fragment within the URL.</dd></dl>
-        <dl><dt>end</dt><dd><pre>integer</pre><p>End offset of the fragment within the URL.</dd></dl>
-        </dl>
-        <h3 id='UrlFragments'><a href='utilities.html#UrlFragments'>#</a>UrlFragments</h3><p>Object with url fragments, including top level domain which is eTLD aware.<p>Properties:<dl><dl><dt>scheme</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>username</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>password</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>host</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>port</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>path</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>query</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>ref</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>tld</dt><dd><pre><a href="#UrlFragment">UrlFragment</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='UrlFragments'><a href='utilities.html#UrlFragments'>#</a>UrlFragments</h3><p>Object with url fragments, including top level domain which is eTLD aware.<p>Properties:<dl><dl><dt>scheme</dt><dd>(optional) <pre>string</pre><p>If URL cannot be parsed at all, this will be absent</dd></dl>
+        <dl><dt>username</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>password</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>host</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>port</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>path</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>query</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>ref</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>tld</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='FileExtension'><a href='utilities.html#FileExtension'>#</a>FileExtension</h3><p>A single extension item used for filtering <p>Properties:<dl><dl><dt>ext</dt><dd><pre>string</pre><p>Extension ending, eg. 'jpg'</dd></dl>
         </dl>
-        <h3 id='SelectFileDialogType'><a href='utilities.html#SelectFileDialogType'>#</a>SelectFileDialogType</h3><dl><dt><code>ENUM</code></dt><dd><p>The type of selectfile dialog to show.<li>file: This is a file select dialog.<li>folder: This is a folder select dialog.</ul></dd></dl>
+        <h3 id='SelectFileDialogType'><a href='utilities.html#SelectFileDialogType'>#</a>SelectFileDialogType</h3><dl><dt><code>ENUM</code></dt><dd><p>The type of selectfile dialog to show.<li>file: This is a file select dialog.<li>save_file: This is a file select dialog, allowing to choose a nonexistent file for saving.<li>folder: This is a folder select dialog.</ul></dd></dl>
         <h3 id='SelectLocalImageParams'><a href='utilities.html#SelectLocalImageParams'>#</a>SelectLocalImageParams</h3><p>Option object for selectLocalImage.<p>Properties:<dl><dl><dt>title</dt><dd><pre>string</pre><p>Title for the file selection dialog.</dd></dl>
         <dl><dt>preferencePath</dt><dd>(optional) <pre>string</pre><p>The preference where to place the result.</dd></dl>
         <dl><dt>thumbnailBookmarkId</dt><dd>(optional) <pre>string</pre><p>The bookmark id where to store the selected local path.</dd></dl>
@@ -2345,6 +2372,9 @@
         <dl><dt>firstDayOfWeek</dt><dd><pre>number</pre><p>The first day of the week. 0-6 (Sunday to Saturday)</dd></dl>
         </dl>
         <h3 id='CaptureQRDestination'><a href='utilities.html#CaptureQRDestination'>#</a>CaptureQRDestination</h3><dl><dt><code>ENUM</code></dt><dd><p>Where to store the generated QR code<li>dataurl: Store as a returned data url.<li>file: Store in the download location.<li>clipboard: Store in the clipboard</ul></dd></dl>
+        <h3 id='GetVersionResults'><a href='utilities.html#GetVersionResults'>#</a>GetVersionResults</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>vivaldiVersion</dt><dd><pre>string</pre><p>The Vivaldi version as a string.</dd></dl>
+        <dl><dt>chromiumVersion</dt><dd><pre>string</pre><p>The Chromium version as a string.</dd></dl>
+        </dl>
         
         <h2>Listeners</h2>
             <details>
@@ -2378,38 +2408,41 @@
         <dl><dt>value</dt><dd><pre>any</pre><p>The new value for the key.</dd></dl>
         <h3 id='onSuspend'><a href='utilities.html#onSuspend'>#</a>onSuspend</h3><p>Fired when the computer is about to suspend.<h3 id='onResume'><a href='utilities.html#onResume'>#</a>onResume</h3><p>Fired when the computer has resumed from suspension.<h3 id='onPasswordIconStatusChanged'><a href='utilities.html#onPasswordIconStatusChanged'>#</a>onPasswordIconStatusChanged</h3><p>Fires for password icon status change.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Window id to show/hide icon for</dd></dl>
         <dl><dt>show</dt><dd><pre>boolean</pre><p>Whether to show or hide icon</dd></dl>
-        <h3 id='onDownloadManagerReady'><a href='utilities.html#onDownloadManagerReady'>#</a>onDownloadManagerReady</h3><p>Fired when the download manager has loaded all its data.<h3 id='onRazerChromaReady'><a href='utilities.html#onRazerChromaReady'>#</a>onRazerChromaReady</h3><p>Fired when the Razer Chroma API has been initialized.<h3 id='onShowQRCode'><a href='utilities.html#onShowQRCode'>#</a>onShowQRCode</h3><p>Fired when Chromium wants us to show a QR code for the given url.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>tab id to show QR code on.</dd></dl>
+        <h3 id='onDownloadManagerReady'><a href='utilities.html#onDownloadManagerReady'>#</a>onDownloadManagerReady</h3><p>Fired when the download manager has loaded all its data.<h3 id='onRazerChromaReady'><a href='utilities.html#onRazerChromaReady'>#</a>onRazerChromaReady</h3><p>Fired when the Razer Chroma API has been initialized.<h3 id='onBroadcastMessage'><a href='utilities.html#onBroadcastMessage'>#</a>onBroadcastMessage</h3><p>Test.<p>Parameters:<dl><dt>message</dt><dd><pre>any</pre><p>The message to receive.</dd></dl>
+        <h3 id='onShowQRCode'><a href='utilities.html#onShowQRCode'>#</a>onShowQRCode</h3><p>Fired when Chromium wants us to show a QR code for the given url.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>tab id to show QR code on.</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p>The url to show the QR code for.</dd></dl>
         
         <h2>Methods</h2>
-        <h3 id='print'><a href='utilities.html#print'>#</a>print</h3><p>Open print preview dialog for the given tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id for the tab we want to print.</dd></dl>
+        <h3 id='print'><a href='utilities.html#print'>#</a>print</h3><p>Open print preview dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>WindowId of browser printing active tab.</dd></dl>
         <h3 id='clearAllRecentlyClosedSessions'><a href='utilities.html#clearAllRecentlyClosedSessions'>#</a>clearAllRecentlyClosedSessions</h3><p>Clears the list of recently closed tabs and/or windows.<h3 id='isTabInLastSession'><a href='utilities.html#isTabInLastSession'>#</a>isTabInLastSession</h3><p>Checks whether a given tab is part of the last loaded session<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id to check if part of the session</dd></dl>
         <h3 id='isUrlValid'><a href='utilities.html#isUrlValid'>#</a>isUrlValid</h3><p>Validates given URL. Returns UrlValidResults with the results.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to validate</dd></dl>
+        <h3 id='canOpenUrlExternally'><a href='utilities.html#canOpenUrlExternally'>#</a>canOpenUrlExternally</h3><p>Check if the browser can potentially open the URL using an external application or an extension. This should only be called if it is already known that the URL is a valid one and is not handled by the browser directly to get a valid result.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to check</dd></dl>
         <h3 id='getUrlFragments'><a href='utilities.html#getUrlFragments'>#</a>getUrlFragments</h3><p>Splits given URL. Returns UrlFragments including top level domain which is eTLD aware.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to process.</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>valid</dt><dd><pre>boolean</pre><p>If false the supplied URL could not be parsed as such, otherwise true.</dd></dl>
-        <dl><dt>fragments</dt><dd><pre><a href="#UrlFragments">UrlFragments</a></pre><p>The URL split up in fragments.</dd></dl>
-        </dd></dl>
-            <h3 id='getSelectedText'><a href='utilities.html#getSelectedText'>#</a>getSelectedText</h3><p>Returns selected text in page with given id<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The page to examine</dd></dl>
-        <h3 id='selectFile'><a href='utilities.html#selectFile'>#</a>selectFile</h3><p>Select a single file and returns the file name.<p>Parameters:<dl><dt>accepts</dt><dd>(optional) <p>Extensions to filter file names on.<p><code>Array</code> of:
+        <h3 id='getSelectedText'><a href='utilities.html#getSelectedText'>#</a>getSelectedText</h3><p>Returns selected text in page with given id<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The page to examine</dd></dl>
+        <h3 id='selectFile'><a href='utilities.html#selectFile'>#</a>selectFile</h3><p>Select a single file and returns the file name.<p>Parameters:<dl><dt>title</dt><dd>(optional) <pre>string</pre><p>Title of the file select dialog.</dd></dl>
+        <dl><dt>accepts</dt><dd>(optional) <p>Extensions to filter file names on.<p><code>Array</code> of:
         <ul><li>FileExtension</ul></dd></dl>
-        <dl><dt>title</dt><dd>(optional) <pre>string</pre><p>Title of the file select dialog.</dd></dl>
+        <dl><dt>defaultPath</dt><dd>(optional) <pre>string</pre><p>The file's default path and name.</dd></dl>
         <dl><dt>type</dt><dd><pre><a href="#SelectFileDialogType">SelectFileDialogType</a></pre><p>Type of file select dialog, defaults to 'file'.</dd></dl>
         <h3 id='selectLocalImage'><a href='utilities.html#selectLocalImage'>#</a>selectLocalImage</h3><p>Ask the user to select an image file and store its path as a data mapping URL in a bookmark or a preference.<p>Parameters:<dl><dt>params</dt><dd><pre><a href="#SelectLocalImageParams">SelectLocalImageParams</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='getVersion'><a href='utilities.html#getVersion'>#</a>getVersion</h3><p>Gets the Vivaldi version and Chromium versions.<p>Parameters:<dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>vivaldiVer</dt><dd><pre>string</pre><p>The Vivaldi version as a string.</dd></dl>
-        <dl><dt>chromiumVer</dt><dd><pre>string</pre><p>The Chromium version as a string.</dd></dl>
-        </dd></dl>
-            <h3 id='getFFMPEGState'><a href='utilities.html#getFFMPEGState'>#</a>getFFMPEGState</h3><p>Helper function for Linux. Reads the env. variable VIVALDI_FFMPEG_FOUND and returns the result<h3 id='getMediaAvailableState'><a href='utilities.html#getMediaAvailableState'>#</a>getMediaAvailableState</h3><p>Windows: Returns whether this version of the OS has media codecs installed. Might return false on N versions of Windows.<h3 id='setSharedData'><a href='utilities.html#setSharedData'>#</a>setSharedData</h3><p>Sets the given data to be kept in-memory for the duration of the Vivaldi setting (until Vivaldi exits).<p>Parameters:<dl><dt>keyValuePair</dt><dd><pre><a href="#SharedDataValue">SharedDataValue</a></pre><p>The Key-value.</dd></dl>
+        <h3 id='getVersion'><a href='utilities.html#getVersion'>#</a>getVersion</h3><p>Gets the Vivaldi version and Chromium versions.<h3 id='getFFMPEGState'><a href='utilities.html#getFFMPEGState'>#</a>getFFMPEGState</h3><p>Helper function for Linux. Reads the env. variable VIVALDI_FFMPEG_FOUND and returns the result<h3 id='getMediaAvailableState'><a href='utilities.html#getMediaAvailableState'>#</a>getMediaAvailableState</h3><p>Windows: Returns whether this version of the OS has media codecs installed. Might return false on N versions of Windows.<h3 id='setSharedData'><a href='utilities.html#setSharedData'>#</a>setSharedData</h3><p>Sets the given data to be kept in-memory for the duration of the Vivaldi setting (until Vivaldi exits).<p>Parameters:<dl><dt>keyValuePair</dt><dd><pre><a href="#SharedDataValue">SharedDataValue</a></pre><p>The Key-value.</dd></dl>
         <h3 id='getSharedData'><a href='utilities.html#getSharedData'>#</a>getSharedData</h3><p>Gets the given data from the in-memory storage.<p>Parameters:<dl><dt>keyValuePair</dt><dd><pre><a href="#SharedDataValue">SharedDataValue</a></pre><p>The Key-value, the value is the default value returned if the key does not exist.</dd></dl>
         <h3 id='getSystemDateFormat'><a href='utilities.html#getSystemDateFormat'>#</a>getSystemDateFormat</h3><p>Returns various date/time system formats<h3 id='getSystemCountry'><a href='utilities.html#getSystemCountry'>#</a>getSystemCountry</h3><p>Return the system settings for the country if available.<h3 id='setLanguage'><a href='utilities.html#setLanguage'>#</a>setLanguage</h3><p>Sets the Vivaldi language code.<p>Parameters:<dl><dt>locale</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='getLanguage'><a href='utilities.html#getLanguage'>#</a>getLanguage</h3><p>Gets the active Vivaldi language code.<h3 id='setVivaldiAsDefaultBrowser'><a href='utilities.html#setVivaldiAsDefaultBrowser'>#</a>setVivaldiAsDefaultBrowser</h3><p>Set Vivaldi as the default browser.<h3 id='isVivaldiDefaultBrowser'><a href='utilities.html#isVivaldiDefaultBrowser'>#</a>isVivaldiDefaultBrowser</h3><p>Is Vivaldi the default browser.<h3 id='launchNetworkSettings'><a href='utilities.html#launchNetworkSettings'>#</a>launchNetworkSettings</h3><p>Launch network settings.<h3 id='savePage'><a href='utilities.html#savePage'>#</a>savePage</h3><p>Saves web page.<h3 id='openPage'><a href='utilities.html#openPage'>#</a>openPage</h3><p>Open web page.<h3 id='setDefaultContentSettings'><a href='utilities.html#setDefaultContentSettings'>#</a>setDefaultContentSettings</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>contentSetting</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getLanguage'><a href='utilities.html#getLanguage'>#</a>getLanguage</h3><p>Gets the active Vivaldi language code.<h3 id='setVivaldiAsDefaultBrowser'><a href='utilities.html#setVivaldiAsDefaultBrowser'>#</a>setVivaldiAsDefaultBrowser</h3><p>Set Vivaldi as the default browser.<h3 id='isVivaldiDefaultBrowser'><a href='utilities.html#isVivaldiDefaultBrowser'>#</a>isVivaldiDefaultBrowser</h3><p>Is Vivaldi the default browser.<h3 id='launchNetworkSettings'><a href='utilities.html#launchNetworkSettings'>#</a>launchNetworkSettings</h3><p>Launch network settings.<h3 id='savePage'><a href='utilities.html#savePage'>#</a>savePage</h3><p>Saves web page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>Id to of page being saved.</dd></dl>
+        <h3 id='openPage'><a href='utilities.html#openPage'>#</a>openPage</h3><p>Open web page.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>WindowId of browser opening a local file.</dd></dl>
+        <h3 id='broadcastMessage'><a href='utilities.html#broadcastMessage'>#</a>broadcastMessage</h3><p>Broadcast a message to all windows. Works from regular to private windows as well.<p>Parameters:<dl><dt>message</dt><dd><pre>any</pre><p>The message to send.</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+            <h3 id='setDefaultContentSettings'><a href='utilities.html#setDefaultContentSettings'>#</a>setDefaultContentSettings</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>contentSetting</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>value</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
             <h3 id='getDefaultContentSettings'><a href='utilities.html#getDefaultContentSettings'>#</a>getDefaultContentSettings</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>contentSetting</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='setBlockThirdPartyCookies'><a href='utilities.html#setBlockThirdPartyCookies'>#</a>setBlockThirdPartyCookies</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>cookieMode</dt><dd><pre><a href="#CookieMode">CookieMode</a></pre><p>Cookie control for third party cookies.</dd></dl>
-        <h3 id='getBlockThirdPartyCookies'><a href='utilities.html#getBlockThirdPartyCookies'>#</a>getBlockThirdPartyCookies</h3><p>Set Vivaldi default content settings.<h3 id='openTaskManager'><a href='utilities.html#openTaskManager'>#</a>openTaskManager</h3><p>Opens Vivaldi task manager dialog.<h3 id='getStartupAction'><a href='utilities.html#getStartupAction'>#</a>getStartupAction</h3><p>Returns the startup action.<h3 id='setStartupAction'><a href='utilities.html#setStartupAction'>#</a>setStartupAction</h3><p>Returns the startup action.<p>Parameters:<dl><dt>startup</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getBlockThirdPartyCookies'><a href='utilities.html#getBlockThirdPartyCookies'>#</a>getBlockThirdPartyCookies</h3><p>Set Vivaldi default content settings.<h3 id='openTaskManager'><a href='utilities.html#openTaskManager'>#</a>openTaskManager</h3><p>Opens Vivaldi task manager dialog.<h3 id='createQRCode'><a href='utilities.html#createQRCode'>#</a>createQRCode</h3><p>Opens the QR Code bubble window for the given page.<p>Parameters:<dl><dt>id</dt><dd><pre>integer</pre><p>The id of the page.</dd></dl>
+        <h3 id='getStartupAction'><a href='utilities.html#getStartupAction'>#</a>getStartupAction</h3><p>Returns the startup action.<h3 id='setStartupAction'><a href='utilities.html#setStartupAction'>#</a>setStartupAction</h3><p>Returns the startup action.<p>Parameters:<dl><dt>startup</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>urls</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
-        <h3 id='canShowWhatsNewPage'><a href='utilities.html#canShowWhatsNewPage'>#</a>canShowWhatsNewPage</h3><p>Checks whether showing the What's new page is allowed.<h3 id='showPasswordDialog'><a href='utilities.html#showPasswordDialog'>#</a>showPasswordDialog</h3><p>Shows password manage dialog.<h3 id='setDialogPosition'><a href='utilities.html#setDialogPosition'>#</a>setDialogPosition</h3><p>Sets the opening position for the given Chromium-triggered dialog.<p>Parameters:<dl><dt>dialogName</dt><dd><pre><a href="#DialogName">DialogName</a></pre><p>The window to set the position for.</dd></dl>
+        <h3 id='canShowWhatsNewPage'><a href='utilities.html#canShowWhatsNewPage'>#</a>canShowWhatsNewPage</h3><p>Checks whether showing the What's new page is allowed.<h3 id='showPasswordDialog'><a href='utilities.html#showPasswordDialog'>#</a>showPasswordDialog</h3><p>Shows password manage dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window id the dialog belongs to.</dd></dl>
+        <h3 id='setDialogPosition'><a href='utilities.html#setDialogPosition'>#</a>setDialogPosition</h3><p>Sets the opening position for the given Chromium-triggered dialog.<p>Parameters:<dl><dt>dialogName</dt><dd><pre><a href="#DialogName">DialogName</a></pre><p>The window to set the position for.</dd></dl>
         <dl><dt>windowId</dt><dd><pre>integer</pre><p>The window id the dialog belongs to.</dd></dl>
         <dl><dt>position</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>left</dt><dd><pre>integer</pre><p>Anchor left position in client coordinates.</dd></dl>
         <dl><dt>top</dt><dd><pre>integer</pre><p>Anchor top position in client coordinates.</dd></dl>
@@ -2427,8 +2460,12 @@
         </dd></dl>
         <h3 id='isDialogOpen'><a href='utilities.html#isDialogOpen'>#</a>isDialogOpen</h3><p>Checks whether the given native dialog is open.<p>Parameters:<dl><dt>dialogName</dt><dd><pre><a href="#DialogName">DialogName</a></pre><p>Dialog name to check for visibility.</dd></dl>
         <h3 id='focusDialog'><a href='utilities.html#focusDialog'>#</a>focusDialog</h3><p>Focus the named dialog so keyboard navigation within it is available.<p>Parameters:<dl><dt>dialogName</dt><dd><pre><a href="#DialogName">DialogName</a></pre><p>Dialog name to check for visibility.</dd></dl>
-        <h3 id='startChromecast'><a href='utilities.html#startChromecast'>#</a>startChromecast</h3><p>Shows the Chromecast dialog.<h3 id='isFirstRun'><a href='utilities.html#isFirstRun'>#</a>isFirstRun</h3><p>chrome::IsChromeFirstRun()<h3 id='generateQRCode'><a href='utilities.html#generateQRCode'>#</a>generateQRCode</h3><p>Generate a QR image based on the given data.<p>Parameters:<dl><dt>data</dt><dd><pre>string</pre><p>Data to encode in the QR code. The maximum length of the data is 288 bytes.</dd></dl>
+        <h3 id='startChromecast'><a href='utilities.html#startChromecast'>#</a>startChromecast</h3><p>Shows the Chromecast dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Window id where casting should start.</dd></dl>
+        <h3 id='isFirstRun'><a href='utilities.html#isFirstRun'>#</a>isFirstRun</h3><p>chrome::IsChromeFirstRun()<h3 id='generateQRCode'><a href='utilities.html#generateQRCode'>#</a>generateQRCode</h3><p>Generate a QR image based on the given data.<p>Parameters:<dl><dt>data</dt><dd><pre>string</pre><p>Data to encode in the QR code. The maximum length of the data is 288 bytes.</dd></dl>
         <dl><dt>destination</dt><dd>(optional) <pre><a href="#CaptureQRDestination">CaptureQRDestination</a></pre><p>Destination of the QR capture, defaults to 'dataurl'.</dd></dl>
+        <h3 id='getGAPIKey'><a href='utilities.html#getGAPIKey'>#</a>getGAPIKey</h3><p>Returns G API key.<h3 id='getGOAuthClientId'><a href='utilities.html#getGOAuthClientId'>#</a>getGOAuthClientId</h3><p>Returns G OAuth API client id.<h3 id='getGOAuthClientSecret'><a href='utilities.html#getGOAuthClientSecret'>#</a>getGOAuthClientSecret</h3><p>Returns G OAuth API client secret.<h3 id='getCommandLineValue'><a href='utilities.html#getCommandLineValue'>#</a>getCommandLineValue</h3><p>Gets the command line value for the given named argument.<p>Parameters:<dl><dt>value</dt><dd><pre>string</pre><p>Name of the command line switch without initial dashes eg. translate-server-url.</dd></dl>
+        <h3 id='osCrypt'><a href='utilities.html#osCrypt'>#</a>osCrypt</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>plain</dt><dd><pre>string</pre><p>The content to encrypt</dd></dl>
+        <h3 id='osDecrypt'><a href='utilities.html#osDecrypt'>#</a>osDecrypt</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>encrypted</dt><dd><pre>string</pre><p>The content to decrypt</dd></dl>
         <h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
 
     
@@ -2452,14 +2489,14 @@
         <dl><dt>pageHistory</dt><dd><p>Array of history items with name and index.<p><code>Array</code> of:
         <ul><li>object<li>{'name': {'type': 'string', 'description': 'Title for the page.'}, 'url': {'type': 'string', 'description': 'URL for the entry.'}, 'index': {'type': 'integer', 'description': 'Relative history index. This can be used in <webview>.go(|index|).'}}</ul></dd></dl>
         </dd></dl>
-            <h3 id='allowBlockedInsecureContent'><a href='webViewPrivate.html#allowBlockedInsecureContent'>#</a>allowBlockedInsecureContent</h3><p>Will load all blocked content in a page.<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='getFocusedElementInfo'><a href='webViewPrivate.html#getFocusedElementInfo'>#</a>getFocusedElementInfo</h3><p>Gets the tagname and type of currently focused element and whether it's editable.<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+            <h3 id='getFocusedElementInfo'><a href='webViewPrivate.html#getFocusedElementInfo'>#</a>getFocusedElementInfo</h3><p>Gets the tagname and type of currently focused element and whether it's editable.<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p>The instance ID of the guest <webview> process.</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>element</dt><dd><pre>string</pre><p>Element name</dd></dl>
         <dl><dt>type</dt><dd><pre>string</pre><p>Element type</dd></dl>
         <dl><dt>editable</dt><dd><pre>boolean</pre><p>True if element is editable.</dd></dl>
         <dl><dt>role</dt><dd><pre>string</pre><p>Element role</dd></dl>
         </dd></dl>
-            <h3 id='sendRequest'><a href='webViewPrivate.html#sendRequest'>#</a>sendRequest</h3><p>Navigates the webview to a given URL but with greater control over the sent request.<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+            <h3 id='allowBlockedInsecureContent'><a href='webViewPrivate.html#allowBlockedInsecureContent'>#</a>allowBlockedInsecureContent</h3><p>Will load all blocked content in a page.<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='sendRequest'><a href='webViewPrivate.html#sendRequest'>#</a>sendRequest</h3><p>Navigates the webview to a given URL but with greater control over the sent request.<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p>The URL of the page to navigate to.</dd></dl>
         <dl><dt>transitionType</dt><dd><pre><a href="#historyPrivate.TransitionType">historyPrivate.TransitionType</a></pre><p>How the URL was reached.</dd></dl>
         <dl><dt>usePost</dt><dd><pre>boolean</pre><p>Whether to perform the navigation via POST.</dd></dl>
@@ -2512,15 +2549,11 @@
                 <p>Returns array of promises dispatched to the listener</p>
             </div>
         </details>
-        <h3 id='onMinimized'><a href='windowPrivate.html#onMinimized'>#</a>onMinimized</h3><p>Fired when the window changes minimized status.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>enabled</dt><dd><pre>boolean</pre><p>Changed minimized state.</dd></dl>
-        <h3 id='onMaximized'><a href='windowPrivate.html#onMaximized'>#</a>onMaximized</h3><p>Fired when the window changes maximized status.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>enabled</dt><dd><pre>boolean</pre><p>Changed maximized state.</dd></dl>
+        <h3 id='onStateChanged'><a href='windowPrivate.html#onStateChanged'>#</a>onStateChanged</h3><p>Fired when the window state changes (minimize/maximize/fullscreen).<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>state</dt><dd><pre><a href="#WindowState">WindowState</a></pre><p>The new state set to the window.</dd></dl>
         <h3 id='onPositionChanged'><a href='windowPrivate.html#onPositionChanged'>#</a>onPositionChanged</h3><p>Fired when the window changes position.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onActivated'><a href='windowPrivate.html#onActivated'>#</a>onActivated</h3><p>Fired when the window changes activation.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>activated</dt><dd><pre>boolean</pre><p>Changed activation state.</dd></dl>
-        <h3 id='onFullscreen'><a href='windowPrivate.html#onFullscreen'>#</a>onFullscreen</h3><p>Fired when the window changes fullscreen status.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>enabled</dt><dd><pre>boolean</pre><p>Changed fullscreen state.</dd></dl>
         <h3 id='onFullscreenMenubarChanged'><a href='windowPrivate.html#onFullscreenMenubarChanged'>#</a>onFullscreenMenubarChanged</h3><p>Fired when the main menu bar is show/hidden in fullscreen.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>shown</dt><dd><pre>boolean</pre><p>Main menubar is shown (true) or hidden (false).</dd></dl>
         <h3 id='onWindowCreated'><a href='windowPrivate.html#onWindowCreated'>#</a>onWindowCreated</h3><p>Fired when a window is created, even for guest windows.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>

@@ -17,23 +17,30 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 4.0, by LonMcGregor.
+    <p>Version 4.3, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
     <main>
     <a id="backToTop" href="#top">Go back to top</a>
     <h1>vivaldi.autoUpdate Modders API Reference</h1>
-    <p>Use the <code>chrome.autoupdate</code> API to interact with (Win)Sparkle.
+    <p>Use the <code>vivaldi.autoupdate</code> API to interact with (Win)Sparkle.
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul></ul>
+    <ul><li><a href='#UpdateOperationStatusEnum'>UpdateOperationStatusEnum</a><li><a href='#UpdateOperationStatus'>UpdateOperationStatus</a></ul>
     <h3>Listeners</h3>
-    <ul><li><a href='#onDidFindValidUpdate'>onDidFindValidUpdate</a><li><a href='#onWillDownloadUpdate'>onWillDownloadUpdate</a><li><a href='#onDidDownloadUpdate'>onDidDownloadUpdate</a><li><a href='#onWillInstallUpdateOnQuit'>onWillInstallUpdateOnQuit</a><li><a href='#onUpdaterWillRelaunchApplication'>onUpdaterWillRelaunchApplication</a><li><a href='#onUpdaterDidRelaunchApplication'>onUpdaterDidRelaunchApplication</a><li><a href='#onDidAbortWithError'>onDidAbortWithError</a></ul>
+    <ul><li><a href='#onDidFindValidUpdate'>onDidFindValidUpdate</a><li><a href='#onUpdaterDidNotFindUpdate'>onUpdaterDidNotFindUpdate</a><li><a href='#onWillDownloadUpdate'>onWillDownloadUpdate</a><li><a href='#onDidDownloadUpdate'>onDidDownloadUpdate</a><li><a href='#onWillInstallUpdateOnQuit'>onWillInstallUpdateOnQuit</a><li><a href='#onUpdaterWillRelaunchApplication'>onUpdaterWillRelaunchApplication</a><li><a href='#onUpdaterDidRelaunchApplication'>onUpdaterDidRelaunchApplication</a><li><a href='#onDidAbortWithError'>onDidAbortWithError</a></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#checkForUpdates'>checkForUpdates</a><li><a href='#isUpdateNotifierEnabled'>isUpdateNotifierEnabled</a><li><a href='#enableUpdateNotifier'>enableUpdateNotifier</a><li><a href='#disableUpdateNotifier'>disableUpdateNotifier</a><li><a href='#installUpdateAndRestart'>installUpdateAndRestart</a><li><a href='#getAutoInstallUpdates'>getAutoInstallUpdates</a><li><a href='#setAutoInstallUpdates'>setAutoInstallUpdates</a></ul></nav>
+    <ul><li><a href='#checkForUpdates'>checkForUpdates</a><li><a href='#isUpdateNotifierEnabled'>isUpdateNotifierEnabled</a><li><a href='#enableUpdateNotifier'>enableUpdateNotifier</a><li><a href='#disableUpdateNotifier'>disableUpdateNotifier</a><li><a href='#installUpdateAndRestart'>installUpdateAndRestart</a><li><a href='#getAutoInstallUpdates'>getAutoInstallUpdates</a><li><a href='#setAutoInstallUpdates'>setAutoInstallUpdates</a><li><a href='#getLastCheckTime'>getLastCheckTime</a><li><a href='#getUpdateStatus'>getUpdateStatus</a><li><a href='#hasAutoUpdates'>hasAutoUpdates</a></ul></nav>
     
+        <h2>Types</h2>
+        <h3 id='UpdateOperationStatusEnum'><a href='#UpdateOperationStatusEnum'>#</a>UpdateOperationStatusEnum</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>noUpdate<li>didAbortWithError<li>didFindValidUpdate<li>willDownloadUpdate<li>didDownloadUpdate<li>willInstallUpdateOnQuit<li>updaterDidRelaunchApplication</ul></dd></dl>
+        <h3 id='UpdateOperationStatus'><a href='#UpdateOperationStatus'>#</a>UpdateOperationStatus</h3><p>A structure describing the status of an update operation if any.<p>Properties:<dl><dl><dt>status</dt><dd><pre><a href="#UpdateOperationStatusEnum">UpdateOperationStatusEnum</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>version</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>releaseNotesUrl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        
         <h2>Listeners</h2>
             <details>
             <summary>
@@ -63,7 +70,7 @@
         </details>
         <h3 id='onDidFindValidUpdate'><a href='#onDidFindValidUpdate'>#</a>onDidFindValidUpdate</h3><p>Fired when a valid update is found.<p>Parameters:<dl><dt>releaseNotesUrl</dt><dd><pre>string</pre><p>URL of the release notes of the update.</dd></dl>
         <dl><dt>version</dt><dd><pre>string</pre><p>The version of the update or an empty string if not known</dd></dl>
-        <h3 id='onWillDownloadUpdate'><a href='#onWillDownloadUpdate'>#</a>onWillDownloadUpdate</h3><p>Fired when an update will be downloaded.<p>Parameters:<dl><dt>version</dt><dd><pre>string</pre><p>The version of the update or an empty string if not known</dd></dl>
+        <h3 id='onUpdaterDidNotFindUpdate'><a href='#onUpdaterDidNotFindUpdate'>#</a>onUpdaterDidNotFindUpdate</h3><p>Fired if checkForUpdates did not find an update.<h3 id='onWillDownloadUpdate'><a href='#onWillDownloadUpdate'>#</a>onWillDownloadUpdate</h3><p>Fired when an update will be downloaded.<p>Parameters:<dl><dt>version</dt><dd><pre>string</pre><p>The version of the update or an empty string if not known</dd></dl>
         <h3 id='onDidDownloadUpdate'><a href='#onDidDownloadUpdate'>#</a>onDidDownloadUpdate</h3><p>Fired when an update has been downloaded.<p>Parameters:<dl><dt>version</dt><dd><pre>string</pre><p>The version of the update or an empty string if not known</dd></dl>
         <h3 id='onWillInstallUpdateOnQuit'><a href='#onWillInstallUpdateOnQuit'>#</a>onWillInstallUpdateOnQuit</h3><p>Fired when an update will be installed on restart or quit.<p>Parameters:<dl><dt>version</dt><dd><pre>string</pre><p>The version that will be installed on quit or an empty string if not known</dd></dl>
         <h3 id='onUpdaterWillRelaunchApplication'><a href='#onUpdaterWillRelaunchApplication'>#</a>onUpdaterWillRelaunchApplication</h3><p>Fired just before the updater restarts the application.<h3 id='onUpdaterDidRelaunchApplication'><a href='#onUpdaterDidRelaunchApplication'>#</a>onUpdaterDidRelaunchApplication</h3><p>Fired when an application has been restarted due to an update.<h3 id='onDidAbortWithError'><a href='#onDidAbortWithError'>#</a>onDidAbortWithError</h3><p>Fired when an update fails.<p>Parameters:<dl><dt>description</dt><dd><pre>string</pre><p>Description of the error.</dd></dl>
@@ -72,4 +79,4 @@
         <h2>Methods</h2>
         <h3 id='checkForUpdates'><a href='#checkForUpdates'>#</a>checkForUpdates</h3><p>Check for Vivaldi browser updates.<p>Parameters:<dl><dt>withUi</dt><dd><pre>boolean</pre><p>Indicates whether we want the auto-update ui to appear.</dd></dl>
         <h3 id='isUpdateNotifierEnabled'><a href='#isUpdateNotifierEnabled'>#</a>isUpdateNotifierEnabled</h3><p>Checks whether the update notifier is set to run on startup.<h3 id='enableUpdateNotifier'><a href='#enableUpdateNotifier'>#</a>enableUpdateNotifier</h3><p>Sets the update notifier to run on startup and launches it.<h3 id='disableUpdateNotifier'><a href='#disableUpdateNotifier'>#</a>disableUpdateNotifier</h3><p>Removes the update notifier from autorun and attempts to terminate it.<h3 id='installUpdateAndRestart'><a href='#installUpdateAndRestart'>#</a>installUpdateAndRestart</h3><p>Installs update & restart. Should be called after an onWillInstallUpdateOnQuit event has occurred.<h3 id='getAutoInstallUpdates'><a href='#getAutoInstallUpdates'>#</a>getAutoInstallUpdates</h3><p>Checks whether we automatically install updates<h3 id='setAutoInstallUpdates'><a href='#setAutoInstallUpdates'>#</a>setAutoInstallUpdates</h3><p>Change automatically install updates setting<p>Parameters:<dl><dt>autoinstall</dt><dd><pre>boolean</pre><p>Indicates whether we want to automatically install updates.</dd></dl>
-        </main></body></html>
+        <h3 id='getLastCheckTime'><a href='#getLastCheckTime'>#</a>getLastCheckTime</h3><p>Get the date & time we last checked for an update. Returns milliseconds since epoch.<h3 id='getUpdateStatus'><a href='#getUpdateStatus'>#</a>getUpdateStatus</h3><p>Get a status of an update operation if any<h3 id='hasAutoUpdates'><a href='#hasAutoUpdates'>#</a>hasAutoUpdates</h3><p>Return true if automatic updates are supported.</main></body></html>

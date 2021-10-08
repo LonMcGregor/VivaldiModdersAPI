@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 4.0, by LonMcGregor.
+    <p>Version 4.3, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -28,15 +28,19 @@
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul><li><a href='#PreferenceValue'>PreferenceValue</a><li><a href='#PreferenceValueAndDefault'>PreferenceValueAndDefault</a><li><a href='#TranslateLanguageSettings'>TranslateLanguageSettings</a></ul>
+    <ul><li><a href='#PreferenceValue'>PreferenceValue</a><li><a href='#PreferenceNotification'>PreferenceNotification</a><li><a href='#PreferenceValueAndDefault'>PreferenceValueAndDefault</a><li><a href='#TranslateLanguageSettings'>TranslateLanguageSettings</a></ul>
     <h3>Listeners</h3>
     <ul><li><a href='#onChanged'>onChanged</a></ul>
     <h3>Methods</h3>
     <ul><li><a href='#get'>get</a><li><a href='#set'>set</a><li><a href='#reset'>reset</a><li><a href='#getForCache'>getForCache</a><li><a href='#setLanguagePairToAlwaysTranslate'>setLanguagePairToAlwaysTranslate</a><li><a href='#setLanguageToNeverTranslate'>setLanguageToNeverTranslate</a><li><a href='#setSiteToNeverTranslate'>setSiteToNeverTranslate</a><li><a href='#getTranslateSettings'>getTranslateSettings</a><li><a href='#setTranslationDeclined'>setTranslationDeclined</a><li><a href='#resetTranslationPrefs'>resetTranslationPrefs</a></ul></nav>
     
         <h2>Types</h2>
-        <h3 id='PreferenceValue'><a href='#PreferenceValue'>#</a>PreferenceValue</h3><p>Preference with its current value.<p>Properties:<dl><dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
+        <h3 id='PreferenceValue'><a href='#PreferenceValue'>#</a>PreferenceValue</h3><p>Preference with its new desired value.<p>Properties:<dl><dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
         <dl><dt>value</dt><dd><pre>any</pre><p>Preference value.</dd></dl>
+        </dl>
+        <h3 id='PreferenceNotification'><a href='#PreferenceNotification'>#</a>PreferenceNotification</h3><p>Preference value change notification.<p>Properties:<dl><dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
+        <dl><dt>value</dt><dd><pre>any</pre><p>Preference value.</dd></dl>
+        <dl><dt>usesDefault</dt><dd><pre>boolean</pre><p>True if the current value comes from the default and has not been overriden by the user.</dd></dl>
         </dl>
         <h3 id='PreferenceValueAndDefault'><a href='#PreferenceValueAndDefault'>#</a>PreferenceValueAndDefault</h3><p>Preference with its current value and default value.<p>Properties:<dl><dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
         <dl><dt>value</dt><dd>(optional) <pre>any</pre><p>Preference value.</dd></dl>
@@ -77,7 +81,7 @@
                 <p>Returns array of promises dispatched to the listener</p>
             </div>
         </details>
-        <h3 id='onChanged'><a href='#onChanged'>#</a>onChanged</h3><p>Fired when a preference value has changed.<p>Parameters:<dl><dt>newValue</dt><dd><pre><a href="#PreferenceValue">PreferenceValue</a></pre><p>Information about the changed preference.</dd></dl>
+        <h3 id='onChanged'><a href='#onChanged'>#</a>onChanged</h3><p>Fired when a preference value has changed.<p>Parameters:<dl><dt>newValue</dt><dd><pre><a href="#PreferenceNotification">PreferenceNotification</a></pre><p>Information about the changed preference.</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='get'><a href='#get'>#</a>get</h3><p>Get a specific named preference value.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
