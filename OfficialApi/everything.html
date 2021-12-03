@@ -14,10 +14,10 @@
     <p>Vivaldi Modders API
     <br />Internal Documentation
     <br /><ul>
-    <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
+    <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 4.3, by LonMcGregor.
+    <p>Version 5.0, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -149,6 +149,7 @@
             </div>
         </details>
         <h3 id='onFaviconChanged'><a href='bookmarksPrivate.html#onFaviconChanged'>#</a>onFaviconChanged</h3><p>Fired when a favicon changes.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Bookmark id</dd></dl>
+        <dl><dt>favicon_url</dt><dd><pre>string</pre><p>The favicon's url</dd></dl>
         <h3 id='onMetaInfoChanged'><a href='bookmarksPrivate.html#onMetaInfoChanged'>#</a>onMetaInfoChanged</h3><p>Fired when meta info changes.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Bookmark id</dd></dl>
         <dl><dt>changeInfo</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>nickname</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>description</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -528,15 +529,9 @@
                 <p>Returns array of promises dispatched to the listener</p>
             </div>
         </details>
+        <h3 id='onIcsFileOpened'><a href='calendar.html#onIcsFileOpened'>#</a>onIcsFileOpened</h3><p>Called when the user opens a downloaded ics file<p>Parameters:<dl><dt>filePath</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onWebcalUrlOpened'><a href='calendar.html#onWebcalUrlOpened'>#</a>onWebcalUrlOpened</h3><p>Called when the user opens a webcal link<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onEventCreated'><a href='calendar.html#onEventCreated'>#</a>onEventCreated</h3><p>Fired when a event is created.<p>Parameters:<dl><dt>createdEvent</dt><dd><pre><a href="#CalendarEvent">CalendarEvent</a></pre><p>The created event.</dd></dl>
-        <h3 id='onEventRemoved'><a href='calendar.html#onEventRemoved'>#</a>onEventRemoved</h3><p>Fired when event is deleted.<p>Parameters:<dl><dt>removedEvent</dt><dd><pre><a href="#CalendarEvent">CalendarEvent</a></pre><p>The deleted event type.</dd></dl>
-        <h3 id='onEventChanged'><a href='calendar.html#onEventChanged'>#</a>onEventChanged</h3><p>Fired when event is updated.<p>Parameters:<dl><dt>changedEvent</dt><dd><pre><a href="#CalendarEvent">CalendarEvent</a></pre><p>The changed event.</dd></dl>
-        <h3 id='onEventTypeCreated'><a href='calendar.html#onEventTypeCreated'>#</a>onEventTypeCreated</h3><p>Fired when a event type is created.<p>Parameters:<dl><dt>createdEventType</dt><dd><pre><a href="#EventType">EventType</a></pre><p>The created event type.</dd></dl>
-        <h3 id='onEventTypeRemoved'><a href='calendar.html#onEventTypeRemoved'>#</a>onEventTypeRemoved</h3><p>Fired when event type is deleted.<p>Parameters:<dl><dt>removedEventType</dt><dd><pre><a href="#EventType">EventType</a></pre><p>The deleted event.</dd></dl>
-        <h3 id='onEventTypeChanged'><a href='calendar.html#onEventTypeChanged'>#</a>onEventTypeChanged</h3><p>Fired when event type is updated.<p>Parameters:<dl><dt>changedEventType</dt><dd><pre><a href="#EventType">EventType</a></pre><p>The changed event type.</dd></dl>
-        <h3 id='onCalendarCreated'><a href='calendar.html#onCalendarCreated'>#</a>onCalendarCreated</h3><p>Fired when a calendar is created.<p>Parameters:<dl><dt>createdCalendar</dt><dd><pre><a href="#Calendar">Calendar</a></pre><p>The created calendar.</dd></dl>
-        <h3 id='onCalendarRemoved'><a href='calendar.html#onCalendarRemoved'>#</a>onCalendarRemoved</h3><p>Fired when calendar is deleted.<p>Parameters:<dl><dt>removedCalendar</dt><dd><pre><a href="#Calendar">Calendar</a></pre><p>The deleted calendar.</dd></dl>
-        <h3 id='onCalendarChanged'><a href='calendar.html#onCalendarChanged'>#</a>onCalendarChanged</h3><p>Fired when calendar is updated.<p>Parameters:<dl><dt>changedCalendar</dt><dd><pre><a href="#Calendar">Calendar</a></pre><p>The changed calendar.</dd></dl>
         <h3 id='onNotificationChanged'><a href='calendar.html#onNotificationChanged'>#</a>onNotificationChanged</h3><p>Fired when notification is created, updated or deleted.<p>Parameters:<dl><dt>changedNotification</dt><dd><pre><a href="#Notification">Notification</a></pre><p>The created, changed or updated notification.</dd></dl>
         <h3 id='onCalendarDataChanged'><a href='calendar.html#onCalendarDataChanged'>#</a>onCalendarDataChanged</h3><p>Fired when the calendar datamodel should be reloaded.
         <h2>Methods</h2>
@@ -1232,10 +1227,9 @@
         <h2>Methods</h2>
         <h3 id='getProfiles'><a href='importData.html#getProfiles'>#</a>getProfiles</h3><p>Retrieves import data profiles.<h3 id='startImport'><a href='importData.html#startImport'>#</a>startImport</h3><p>Start import process.<p>Parameters:<dl><dt>itemsToImport</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string<li>int64</ul></dd></dl>
-        <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>masterPassword</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>importPath</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>path</dt><dd>(optional) <pre>string</pre><p>The file path the user selceted when using non-default profile location.</dd></dl>
         </dd></dl>
             <h1><a href='infobars.html'>infobars</a></h1>
 
@@ -1305,6 +1299,8 @@
         
         <h2>Methods</h2>
         <h3 id='getFilePaths'><a href='mailPrivate.html#getFilePaths'>#</a>getFilePaths</h3><p>Returns array of file paths under a given directory.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The root folder from where to build up the file paths.</dd></dl>
+        <h3 id='getFullPath'><a href='mailPrivate.html#getFullPath'>#</a>getFullPath</h3><p>Given a file entry, return full path of the file<p>Parameters:<dl><dt>filesystem</dt><dd><pre>string</pre><p>The file entry to be looked up</dd></dl>
+        <dl><dt>path</dt><dd><pre>string</pre><p>The path</dd></dl>
         <h3 id='getMailFilePaths'><a href='mailPrivate.html#getMailFilePaths'>#</a>getMailFilePaths</h3><p>Returns array of file paths under the  default profile /Mail directory.<h3 id='writeTextToMessageFile'><a href='mailPrivate.html#writeTextToMessageFile'>#</a>writeTextToMessageFile</h3><p>Saves a mail to disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be created/saved/overridden.</dd></dl>
@@ -1496,7 +1492,8 @@
         <h3 id='onError'><a href='menubarMenu.html#onError'>#</a>onError</h3><p>Fired if an error condtion occurs that can not be routed with a callback.<p>Parameters:<dl><dt>text</dt><dd><pre>string</pre><p>Error message for logging purposes.</dd></dl>
         
         <h2>Methods</h2>
-        <h3 id='show'><a href='menubarMenu.html#show'>#</a>show</h3><p>Shows a context menu.<p>Parameters:<dl><dt>properties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>id</dt><dd><pre>integer</pre><p>Id of the menu in the 'siblings' list to open.</dd></dl>
+        <h3 id='show'><a href='menubarMenu.html#show'>#</a>show</h3><p>Shows a context menu.<p>Parameters:<dl><dt>properties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>id</dt><dd><pre>integer</pre><p>Id of the menu in the 'siblings' list to open.</dd></dl>
         <dl><dt>siblings</dt><dd><p>List of menu entries.<p><code>Array</code> of:
         <ul><li>Menu</ul></dd></dl>
         <dl><dt>icons</dt><dd><pre><a href="#Icons">Icons</a></pre><p>Default and folder icons.</dd></dl>
@@ -1680,7 +1677,10 @@
         </dd></dl>
         <h3 id='onImportBegan'><a href='notes.html#onImportBegan'>#</a>onImportBegan</h3><p>Fired when a notes import session is begun.  Expensive observers should ignore onCreated updates until onImportEnded is fired.  Observers should still handle other notifications immediately.<h3 id='onImportEnded'><a href='notes.html#onImportEnded'>#</a>onImportEnded</h3><p>Fired when a notes import session is ended.
         <h2>Methods</h2>
-        <h3 id='get'><a href='notes.html#get'>#</a>get</h3><p>Retrieves the specified NoteTreeNode(s).<p>Parameters:<dl><dt>idOrIdList</dt><dd><pre>⚠ CHOICES</pre><p>A single string-valued id, or an array of string-valued ids[{'type': 'string', 'serialized_type': 'int64'}, {'type': 'array', 'items': {'type': 'string', 'serialized_type': 'int64'}, 'minItems': 1}]</dd></dl>
+        <h3 id='get'><a href='notes.html#get'>#</a>get</h3><p>Retrieves the specified NoteTreeNode(s).<p>Parameters:<dl><dt>idOrIdList (overloaded)</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>idOrIdList (overloaded)</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>string<li>int64Minimum items: 1</ul></dd></dl>
+        </dd></dl>
         <h3 id='getTree'><a href='notes.html#getTree'>#</a>getTree</h3><p>Retrieves the entire Notes hierarchy.<h3 id='create'><a href='notes.html#create'>#</a>create</h3><p>Creates a bookmark or folder under the specified parentId.<p>Parameters:<dl><dt>note</dt><dd><pre><a href="#CreateDetails">CreateDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='update'><a href='notes.html#update'>#</a>update</h3><p>Updates the properties of a note or folder. Specify only the properties that you want to change; unspecified properties will be left unchanged. <b>Note:</b> Currently, only 'title' and 'url' are supported.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>changes</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>title</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -1824,8 +1824,8 @@
         <h2>Methods</h2>
         <h3 id='get'><a href='prefs.html#get'>#</a>get</h3><p>Get a specific named preference value.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
         <h3 id='set'><a href='prefs.html#set'>#</a>set</h3><p>Set a specific preference.<p>Parameters:<dl><dt>newValue</dt><dd><pre><a href="#PreferenceValue">PreferenceValue</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>api['name']</dt><dd>⚠ WARNING! Failed to get info as type not provided</dd></dl>
-<h3 id='getForCache'><a href='prefs.html#getForCache'>#</a>getForCache</h3><p>Get all preferences to be cached on the JS side with one call. Only changes to these will be reported by onChanged<p>Parameters:<dl><dt>paths</dt><dd><p>Which preferences are needed<p><code>Array</code> of:
+        <h3 id='reset'><a href='prefs.html#reset'>#</a>reset</h3><p>Reset a preference to its default value.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
+        <h3 id='getForCache'><a href='prefs.html#getForCache'>#</a>getForCache</h3><p>Get all preferences to be cached on the JS side with one call. Only changes to these will be reported by onChanged<p>Parameters:<dl><dt>paths</dt><dd><p>Which preferences are needed<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <h3 id='setLanguagePairToAlwaysTranslate'><a href='prefs.html#setLanguagePairToAlwaysTranslate'>#</a>setLanguagePairToAlwaysTranslate</h3><p>Translate: Add or remove a pair of languages to the preference for automatic translation.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id used to look up the translate manager stored in the WebContents data. Not used for anything else.</dd></dl>
         <dl><dt>enable</dt><dd><pre>boolean</pre><p>true to add the language pair to the list, false to remove it from the list.</dd></dl>
@@ -1942,7 +1942,8 @@
             <h3 id='delete'><a href='savedpasswords.html#delete'>#</a>delete</h3><p>Removes a password in the password store.<p>Parameters:<dl><dt>isExplicit</dt><dd><pre>boolean</pre><p>The action was initiated as the result of user input</dd></dl>
         <dl><dt>passwordForm</dt><dd><pre><a href="#PasswordForm">PasswordForm</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='getList'><a href='savedpasswords.html#getList'>#</a>getList</h3><p>Retrieves list of saved passwords.<h3 id='remove'><a href='savedpasswords.html#remove'>#</a>remove</h3><p>Removes an item from the list retrieved with getList.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='authenticate'><a href='savedpasswords.html#authenticate'>#</a>authenticate</h3><p>Before showing password to the user, make sure they are authenticated via the OS.<h1><a href='settings.html'>settings</a></h1>
+        <h3 id='authenticate'><a href='savedpasswords.html#authenticate'>#</a>authenticate</h3><p>Before showing password to the user, make sure they are authenticated via the OS.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h1><a href='settings.html'>settings</a></h1>
 
     
         <h2>Types</h2>
@@ -2125,7 +2126,8 @@
         <dl><dt>windowsKeyCode</dt><dd><pre>integer</pre><p>Value of key that changed</dd></dl>
         <dl><dt>afterGesture</dt><dd><pre>boolean</pre><p>True when the keyboard event completed a mouse or wheel gesture</dd></dl>
         <h3 id='onMouseChanged'><a href='tabsPrivate.html#onMouseChanged'>#</a>onMouseChanged</h3><p>Fires when mouse state has changed.<p>Parameters:<dl><dt>motion</dt><dd><pre>boolean</pre><p>True when mouse has moved, false when mouse is pressed/released.</dd></dl>
-        <h3 id='onKeyboardShortcut'><a href='tabsPrivate.html#onKeyboardShortcut'>#</a>onKeyboardShortcut</h3><p>Fires when on a keystroke that hasn't been consumed by the browser<p>Parameters:<dl><dt>shortcutText</dt><dd><pre>string</pre><p>String representation of a keyboard shortcut</dd></dl>
+        <h3 id='onKeyboardShortcut'><a href='tabsPrivate.html#onKeyboardShortcut'>#</a>onKeyboardShortcut</h3><p>Fires when on a keystroke that hasn't been consumed by the browser<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Id of the browser window this keyboard event originates from.</dd></dl>
+        <dl><dt>shortcutText</dt><dd><pre>string</pre><p>String representation of a keyboard shortcut</dd></dl>
         <dl><dt>autoRepeat</dt><dd><pre>boolean</pre><p>True if the shortcut is generated as a result of automatic keyboard repeat</dd></dl>
         <h3 id='onTabIsDetached'><a href='tabsPrivate.html#onTabIsDetached'>#</a>onTabIsDetached</h3><p>Fired when a tab that is moved out of a window detaches from the source-window. This is used to make sure two WebViews don't try to use the same WebContents.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>Tab id used for Tabstrip WebContents retrieval.</dd></dl>
         <dl><dt>windowId</dt><dd><pre>integer</pre><p>Target WindowId that the message is intended. As in not the window it is detached from, but the window it is attached to.</dd></dl>
@@ -2192,6 +2194,79 @@
         <h3 id='revertTranslatePage'><a href='tabsPrivate.html#revertTranslatePage'>#</a>revertTranslatePage</h3><p>Attempts to revert the translating of the given page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='determineTextLanguage'><a href='tabsPrivate.html#determineTextLanguage'>#</a>determineTextLanguage</h3><p>Attempts to determined the language of the given text.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>Any valid tabId can be used here, it is only used to determine which renderer to use.</dd></dl>
         <dl><dt>text</dt><dd><pre>string</pre><p>String to determine the language for. If the string is too short, this operation might not yield a language code.</dd></dl>
+        <h1><a href='themePrivate.html'>themePrivate</a></h1>
+
+    
+        <h2>Types</h2>
+        <h3 id='BackgroundPosition'><a href='themePrivate.html#BackgroundPosition'>#</a>BackgroundPosition</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>stretch<li>center<li>repeat</ul></dd></dl>
+        <h3 id='ThemeData'><a href='themePrivate.html#ThemeData'>#</a>ThemeData</h3><p>Basic typesafe theme data.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The id of the queried theme. This is always set.</dd></dl>
+        <dl><dt>isInstalled</dt><dd><pre>boolean</pre><p>Is the theme installed or not.</dd></dl>
+        <dl><dt>version</dt><dd><pre>number</pre><p>If the theme is installed, this is the version of the installed theme.</dd></dl>
+        </dl>
+        <h3 id='ThemeObject'><a href='themePrivate.html#ThemeObject'>#</a>ThemeObject</h3><dl><dt>ThemeObject</dt><dd><pre>object</pre><p>The theme object.<p>Object Properties:<dl><dt>type</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<pre>any</pre></dd></dl>
+        <dl><dt>preserveNull</dt><dd><pre>True</pre></dd></dl>
+        </dd></dl>
+        <h3 id='ExportOptions'><a href='themePrivate.html#ExportOptions'>#</a>ExportOptions</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>returnBlob</dt><dd>(optional) <pre>boolean</pre><p>When true, the theme archive is returned as a memory blob instead of asking the user to select the file.</dd></dl>
+        <dl><dt>windowId</dt><dd>(optional) <pre>number</pre><p>Window to show the file selection dialog to select the output file. Must not be given when |returnBlob| is true.</dd></dl>
+        <dl><dt>dialogTitle</dt><dd>(optional) <pre>string</pre><p>The title of the file selection dialog to select the output file. Must not be given when |returnBlob| is true.</dd></dl>
+        </dl>
+        <h3 id='ExportResult'><a href='themePrivate.html#ExportResult'>#</a>ExportResult</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>success</dt><dd><pre>boolean</pre><p>True if the theme was successfully exported. False on errors or if the user cancelled operation.</dd></dl>
+        <dl><dt>dataBlob</dt><dd>(optional) <pre>binary</pre><p>The exported archive as binary blob. This is given only on success and ony when |returnBlob| is true in |ExportOptions|.</dd></dl>
+        </dl>
+        <h3 id='ImportOptions'><a href='themePrivate.html#ImportOptions'>#</a>ImportOptions</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>windowId</dt><dd>(optional) <pre>number</pre><p>The window that shows the import archive selector dialog. Must mot be given if dataBlob is given.</dd></dl>
+        <dl><dt>dialogTitle</dt><dd>(optional) <pre>string</pre><p>The title to use in the import archive selector dialog. Must mot be given if dataBlob is given.</dd></dl>
+        <dl><dt>dataBlob</dt><dd>(optional) <pre>binary</pre><p>The archive to import the theme from. It will be used instead of a user-selected file. It should be a typed array on JS side. This must not be given if windowId or dialogTitle are specified.</dd></dl>
+        </dl>
+        <h3 id='ImportErrorKind'><a href='themePrivate.html#ImportErrorKind'>#</a>ImportErrorKind</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>io<li>badArchive<li>badSettings<li>network</ul></dd></dl>
+        <h3 id='ImportError'><a href='themePrivate.html#ImportError'>#</a>ImportError</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>kind</dt><dd><pre><a href="#ImportErrorKind">ImportErrorKind</a></pre><p>Generic error kind</dd></dl>
+        <dl><dt>details</dt><dd><pre>string</pre><p>low-level error message in English</dd></dl>
+        </dl>
+        <h3 id='ImportResult'><a href='themePrivate.html#ImportResult'>#</a>ImportResult</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>error</dt><dd>(optional) <pre><a href="#ImportError">ImportError</a></pre><p>Error if any during the operation.</dd></dl>
+        <dl><dt>themeID</dt><dd><pre>string</pre><p>The id of the imported theme or an empty string if the user cancels the import or on errors.</dd></dl>
+        </dl>
+        
+        <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
+        <h3 id='onThemeDownloadStarted'><a href='themePrivate.html#onThemeDownloadStarted'>#</a>onThemeDownloadStarted</h3><p>Fired when the theme download is starting.<p>Parameters:<dl><dt>themeId</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onThemeDownloadProgress'><a href='themePrivate.html#onThemeDownloadProgress'>#</a>onThemeDownloadProgress</h3><p>Fired on download progress.<p>Parameters:<dl><dt>themeId</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>currentValue</dt><dd><pre>integer</pre><p>Fired on download progress with the current progress value.</dd></dl>
+        <h3 id='onThemeDownloadCompleted'><a href='themePrivate.html#onThemeDownloadCompleted'>#</a>onThemeDownloadCompleted</h3><p>Fired on download and install completion.<p>Parameters:<dl><dt>themeId</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>success</dt><dd><pre>boolean</pre><p>true on successful theme install.</dd></dl>
+        <dl><dt>error</dt><dd><pre>string</pre><p>if success is false, provides an error description.</dd></dl>
+        <h3 id='onThemesUpdated'><a href='themePrivate.html#onThemesUpdated'>#</a>onThemesUpdated</h3><p>Fired if the preview or permanent theme collection has changed.<p>Parameters:<dl><dt>preview</dt><dd><pre>boolean</pre><p>true if preview has changed, otherwise false.</dd></dl>
+        
+        <h2>Methods</h2>
+        <h3 id='export'><a href='themePrivate.html#export'>#</a>export</h3><p>Export the theme into a zip file<p>Parameters:<dl><dt>theme</dt><dd><pre><a href="#ThemeObject">ThemeObject</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>options</dt><dd><pre><a href="#ExportOptions">ExportOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='import'><a href='themePrivate.html#import'>#</a>import</h3><p>Import and install theme archive.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#ImportOptions">ImportOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='download'><a href='themePrivate.html#download'>#</a>download</h3><p>Download and install theme.<p>Parameters:<dl><dt>themeId</dt><dd><pre>string</pre><p>Theme ID of the theme to download and install. This parameter is primarily used for status events.</dd></dl>
+        <dl><dt>url</dt><dd><pre>string</pre><p>URL to the theme to download and install.</dd></dl>
+        <h3 id='getThemeData'><a href='themePrivate.html#getThemeData'>#</a>getThemeData</h3><p>Get some information about the given theme id.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Theme ID of the theme to return data about.</dd></dl>
         <h1><a href='thumbnails.html'>thumbnails</a></h1>
 
     
@@ -2239,6 +2314,59 @@
         <dl><dt>image</dt><dd><pre>string</pre><p>base64-encoded of the captured image if any.</dd></dl>
         </dd></dl>
             <h3 id='captureBookmark'><a href='thumbnails.html#captureBookmark'>#</a>captureBookmark</h3><p>Loads a url then captures the contents of it and attached it to a bookmark.<p>Parameters:<dl><dt>params</dt><dd><pre><a href="#CaptureBookmarkParams">CaptureBookmarkParams</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h1><a href='translateHistory.html'>translateHistory</a></h1>
+
+    
+        <h2>Types</h2>
+        <h3 id='TextItem'><a href='translateHistory.html#TextItem'>#</a>TextItem</h3><p><p>Properties:<dl><dl><dt>code</dt><dd><pre>string</pre><p>Language code.</dd></dl>
+        <dl><dt>text</dt><dd><pre>string</pre><p>Text.</dd></dl>
+        </dl>
+        <h3 id='HistoryItem'><a href='translateHistory.html#HistoryItem'>#</a>HistoryItem</h3><p><p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>Unique identifier.</dd></dl>
+        <dl><dt>srcItem</dt><dd><pre><a href="#TextItem">TextItem</a></pre><p>Text and language code of original (non-translated) data.</dd></dl>
+        <dl><dt>translatedItem</dt><dd><pre><a href="#TextItem">TextItem</a></pre><p>Text and language code of translated data.</dd></dl>
+        </dl>
+        
+        <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
+        <h3 id='onAdded'><a href='translateHistory.html#onAdded'>#</a>onAdded</h3><p>Fires when elements have been appended to the list.<p>Parameters:<dl><dt>items</dt><dd><p>Elements in the order they have been added<p><code>Array</code> of:
+        <ul><li>HistoryItem</ul></dd></dl>
+        <dl><dt>index</dt><dd><pre>number</pre><p>Index where the elements are located.</dd></dl>
+        <h3 id='onMoved'><a href='translateHistory.html#onMoved'>#</a>onMoved</h3><p>Fires when an element has been moved within the list.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Identifier of element that has been moved.</dd></dl>
+        <dl><dt>index</dt><dd><pre>number</pre><p>Index to where element has been moved.</dd></dl>
+        <h3 id='onRemoved'><a href='translateHistory.html#onRemoved'>#</a>onRemoved</h3><p>Fires when elements have been appended to the list.<p>Parameters:<dl><dt>ids</dt><dd><p>A list of ids that have been removed. An empty list means all.<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        
+        <h2>Methods</h2>
+        <h3 id='get'><a href='translateHistory.html#get'>#</a>get</h3><p>Retrieves the full history.<h3 id='add'><a href='translateHistory.html#add'>#</a>add</h3><p>Adds an item to the list. If item already exists that item is returned without adding a duplicate. The returned item's id it set up in the call.<p>Parameters:<dl><dt>item</dt><dd><pre><a href="#HistoryItem">HistoryItem</a></pre><p>Data to add. Note, the id element is ignored.</dd></dl>
+        <dl><dt>index</dt><dd><pre>number</pre><p>Where to add element. -1 indicates end of list.</dd></dl>
+        <h3 id='remove'><a href='translateHistory.html#remove'>#</a>remove</h3><p>Removes one or more items.<p>Parameters:<dl><dt>ids</dt><dd><p>List of identifiers representing items to be removed.<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        <h3 id='reset'><a href='translateHistory.html#reset'>#</a>reset</h3><p>Removes items with matching timestamp.<p>Parameters:<dl><dt>since</dt><dd><pre>number</pre><p>In milliseconds since epoch. Remove all items with a timestamp greater or equal to this value.</dd></dl>
         <h1><a href='vivaldiAccount.html'>vivaldiAccount</a></h1>
 
     
@@ -2333,7 +2461,73 @@
         <dl><dt>green</dt><dd><pre>integer</pre><p>Green color.</dd></dl>
         <dl><dt>blue</dt><dd><pre>integer</pre><p>Blue color.</dd></dl>
         </dl>
-        <h3 id='BroadcastAction'><a href='utilities.html#BroadcastAction'>#</a>BroadcastAction</h3><dl><dt><code>ENUM</code></dt><dd><p>Identifies broadcast type.<li>open<li>minimizeAll</ul></dd></dl>
+        <h3 id='PopupWindow'><a href='utilities.html#PopupWindow'>#</a>PopupWindow</h3><p>PopupWindow in vivaldi/vivapp/src/stores/PopupWindowStore.js<p>Properties:<dl><dl><dt>identifier</dt><dd><pre>string</pre><p>UUID identifying the popup.</dd></dl>
+        <dl><dt>windowBounds</dt><dd><pre>object</pre><p>Size and position of window.<p>Object Properties:<dl><dt>height</dt><dd><pre>number</pre><p>Height.</dd></dl>
+        <dl><dt>width</dt><dd><pre>number</pre><p>Width.</dd></dl>
+        <dl><dt>left</dt><dd>(optional) <pre>number</pre><p>Left screen position.</dd></dl>
+        <dl><dt>top</dt><dd>(optional) <pre>number</pre><p>Top screen position.</dd></dl>
+        <dl><dt>minHeight</dt><dd>(optional) <pre>number</pre><p>Minimum height.</dd></dl>
+        <dl><dt>minWidth</dt><dd>(optional) <pre>number</pre><p>Minimum width of window..</dd></dl>
+        </dd></dl>
+        <dl><dt>ownerWindowId</dt><dd><pre>number</pre><p>WindowId of owner browser.</dd></dl>
+        <dl><dt>acceptOrBlockCallback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>windowId of the window accepting the popup.</dd></dl>
+        </dd></dl>
+            <dl><dt>incognito</dt><dd><pre>boolean</pre><p>Popup is incognito.</dd></dl>
+        </dl>
+        <h3 id='CalendarBroadcastMessage'><a href='utilities.html#CalendarBroadcastMessage'>#</a>CalendarBroadcastMessage</h3><dl><dt><code>ENUM</code></dt><dd><p>Calendar broadcast message between windows<li>startListeners<li>stopListeners<li>loadData</ul></dd></dl>
+        <h3 id='WindowState'><a href='utilities.html#WindowState'>#</a>WindowState</h3><dl><dt><code>ENUM</code></dt><dd><p>The state of this browser window.<li>normal: Normal window state (i.e. not minimized, maximized, or fullscreen).<li>minimized: Minimized window state.<li>maximized: Maximized window state.<li>fullscreen: Fullscreen window state.</ul></dd></dl>
+        <h3 id='WindowType'><a href='utilities.html#WindowType'>#</a>WindowType</h3><dl><dt><code>ENUM</code></dt><dd><p>Type of window. normal is a browser-window.<li>normal<li>popup<li>settings</ul></dd></dl>
+        <h3 id='WindowRestoreState'><a href='utilities.html#WindowRestoreState'>#</a>WindowRestoreState</h3><dl><dt><code>ENUM</code></dt><dd><p>State of window after going out of fullscreen.<li>normal<li>minimized<li>maximized</ul></dd></dl>
+        <h3 id='WindowRestoreStateFromFullscreen'><a href='utilities.html#WindowRestoreStateFromFullscreen'>#</a>WindowRestoreStateFromFullscreen</h3><dl><dt><code>ENUM</code></dt><dd><p>State of window after going out of html-fullscreen.<li>normal<li>minimized<li>maximized<li>fullscreen</ul></dd></dl>
+        <h3 id='StatusbarMode'><a href='utilities.html#StatusbarMode'>#</a>StatusbarMode</h3><dl><dt><code>ENUM</code></dt><dd><p>Statusbar view setting. 'on' | 'off' | 'overlay' (StatusBarDisplayValues from gen/prefs/prefNames.js)<li>on<li>off<li>overlay</ul></dd></dl>
+        <h3 id='WindowProperties'><a href='utilities.html#WindowProperties'>#</a>WindowProperties</h3><p>Type WindowState in ./stores/WindowStore.js<p>Properties:<dl><dl><dt>type</dt><dd><pre><a href="#WindowType">WindowType</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>state</dt><dd>(optional) <pre><a href="#WindowState">WindowState</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>restoreStateFullscreen</dt><dd><pre><a href="#WindowRestoreState">WindowRestoreState</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>restoreStateHtml5Fullscreen</dt><dd><pre><a href="#WindowRestoreStateFromFullscreen">WindowRestoreStateFromFullscreen</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>nativeDecorations</dt><dd><pre>boolean</pre><p>Window is uses native window-controls.</dd></dl>
+        <dl><dt>incognito</dt><dd><pre>boolean</pre><p>Window is incognito.</dd></dl>
+        <dl><dt>guest</dt><dd><pre>boolean</pre><p>Window is guest.</dd></dl>
+        <dl><dt>fullscreenMenubarShown</dt><dd><pre>boolean</pre><p>Window has menubar in fullscreen.</dd></dl>
+        <dl><dt>html5FullScreen</dt><dd><pre>boolean</pre><p>Window is fullscreened through htmlelement.requestFullScreen.</dd></dl>
+        <dl><dt>active</dt><dd><pre>boolean</pre><p>Window is active.</dd></dl>
+        <dl><dt>minimalUI</dt><dd>(optional) <pre>boolean</pre><p>Window is incognito.</dd></dl>
+        <dl><dt>visibleUI</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>bookmarksBar</dt><dd><pre>boolean</pre><p>Showing bookmarksbar.</dd></dl>
+        <dl><dt>addressBar</dt><dd><pre>boolean</pre><p>Showing addressbar.</dd></dl>
+        <dl><dt>panelToggle</dt><dd><pre>boolean</pre><p>Showing panel-toggle.</dd></dl>
+        <dl><dt>tabs</dt><dd><pre>boolean</pre><p>Showing tabs.</dd></dl>
+        <dl><dt>statusBar</dt><dd><pre><a href="#StatusbarMode">StatusbarMode</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+        </dl>
+        <h3 id='BroadcastAction'><a href='utilities.html#BroadcastAction'>#</a>BroadcastAction</h3><p>Identifies broadcast type. Only one property should be used.<p>Properties:<dl><dl><dt>minimizeAll</dt><dd>(optional) <pre>boolean</pre><p>Minimize all windows.</dd></dl>
+        <dl><dt>open</dt><dd>(optional) <pre>object</pre><p>Open urls in other window.<p>Object Properties:<dl><dt>winId</dt><dd><pre>number</pre><p>Id of the window where urls are opened.</dd></dl>
+        <dl><dt>prompt</dt><dd><pre>boolean</pre><p>Show confirm open bookmark dialog.</dd></dl>
+        <dl><dt>urls</dt><dd><p>Urls to open.<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        </dd></dl>
+        <dl><dt>showSettingsWindow</dt><dd>(optional) <pre>object</pre><p>Show the settingswindow.<p>Object Properties:<dl><dt>settingsCategory</dt><dd>(optional) <pre>string</pre><p>String with settings to show on the form: category&query. ie. all&languages</dd></dl>
+        </dd></dl>
+        <dl><dt>popupStoreChanged</dt><dd>(optional) <pre>object</pre><p>A popupStore has changed state.<p>Object Properties:<dl><dt>windowId</dt><dd><pre>number</pre><p></dd></dl>
+        <dl><dt>popupWindows</dt><dd><p>Popupwindows owned by |windowId|.<p><code>Array</code> of:
+        <ul><li>PopupWindow</ul></dd></dl>
+        </dd></dl>
+        <dl><dt>handlePopupWindow</dt><dd>(optional) <pre>object</pre><p>Accept or reject a popup window event.<p>Object Properties:<dl><dt>windowId</dt><dd><pre>number</pre><p>The windowId of the window that accepts a popup. The tab will be accepted into the tabstrip.</dd></dl>
+        <dl><dt>popupId</dt><dd><pre>string</pre><p>Unique ID for a popupwindow.</dd></dl>
+        </dd></dl>
+        <dl><dt>calendar</dt><dd>(optional) <pre>object</pre><p>Control data handling and turning on/off change listeners.<p>Object Properties:<dl><dt>message</dt><dd><pre><a href="#CalendarBroadcastMessage">CalendarBroadcastMessage</a></pre><p>The control message to pass.</dd></dl>
+        </dd></dl>
+        <dl><dt>translate</dt><dd>(optional) <pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>winId</dt><dd><pre>number</pre><p>The window where translation takes place.</dd></dl>
+        <dl><dt>lang</dt><dd><pre>string</pre><p>Language of text to be translated.</dd></dl>
+        <dl><dt>text</dt><dd><pre>string</pre><p>Text to be translated.</dd></dl>
+        </dd></dl>
+        <dl><dt>windowActiveStateChanged</dt><dd>(optional) <pre>object</pre><p>A window has changed active state.<p>Object Properties:<dl><dt>windowId</dt><dd><pre>number</pre><p>Identifier for the window owning the state.</dd></dl>
+        <dl><dt>activated</dt><dd><pre>boolean</pre><p>Window is active.</dd></dl>
+        </dd></dl>
+        <dl><dt>windowAdded</dt><dd>(optional) <pre>object</pre><p>A window has been added.<p>Object Properties:<dl><dt>windowId</dt><dd><pre>number</pre><p>Identifier for the window being added.</dd></dl>
+        <dl><dt>windowState</dt><dd><pre><a href="#WindowProperties">WindowProperties</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+        <dl><dt>windowRemoved</dt><dd>(optional) <pre>object</pre><p>A window has been removed.<p>Object Properties:<dl><dt>windowId</dt><dd><pre>number</pre><p>Identifier for the window being removed.</dd></dl>
+        </dd></dl>
+        </dl>
         <h3 id='DialogName'><a href='utilities.html#DialogName'>#</a>DialogName</h3><dl><dt><code>ENUM</code></dt><dd><p>Name of the dialog to set position for.<li>chromecast: The Chromecast dialog with source and destination. Centered over the active webview.<li>password: The password dialog opening to save a password.<li>permission: The permission dialog allowing or blocking one or more permissions.</ul></dd></dl>
         <h3 id='CookieMode'><a href='utilities.html#CookieMode'>#</a>CookieMode</h3><dl><dt><code>ENUM</code></dt><dd><p>CookieMode enumeration, corrensponds to CookieControlsMode in chromium/components/content_settings/core/browser/cookie_settings.h<li>off: All cookies allowed.<li>BlockThirdParty: Block third party cookies.<li>BlockThirdPartyIncognitoOnly: Block third party cookies in incognito mode only.</ul></dd></dl>
         <h3 id='FlowDirection'><a href='utilities.html#FlowDirection'>#</a>FlowDirection</h3><dl><dt><code>ENUM</code></dt><dd><p>The direction a dialog would be opened from the given rect.<li>down: Dialog should position itself below the given rect.<li>up: Dialog should position itself above the given rect.</ul></dd></dl>
@@ -2358,10 +2552,24 @@
         <h3 id='FileExtension'><a href='utilities.html#FileExtension'>#</a>FileExtension</h3><p>A single extension item used for filtering <p>Properties:<dl><dl><dt>ext</dt><dd><pre>string</pre><p>Extension ending, eg. 'jpg'</dd></dl>
         </dl>
         <h3 id='SelectFileDialogType'><a href='utilities.html#SelectFileDialogType'>#</a>SelectFileDialogType</h3><dl><dt><code>ENUM</code></dt><dd><p>The type of selectfile dialog to show.<li>file: This is a file select dialog.<li>save_file: This is a file select dialog, allowing to choose a nonexistent file for saving.<li>folder: This is a folder select dialog.</ul></dd></dl>
-        <h3 id='SelectLocalImageParams'><a href='utilities.html#SelectLocalImageParams'>#</a>SelectLocalImageParams</h3><p>Option object for selectLocalImage.<p>Properties:<dl><dl><dt>title</dt><dd><pre>string</pre><p>Title for the file selection dialog.</dd></dl>
-        <dl><dt>preferencePath</dt><dd>(optional) <pre>string</pre><p>The preference where to place the result.</dd></dl>
+        <h3 id='SelectFileOptions'><a href='utilities.html#SelectFileOptions'>#</a>SelectFileOptions</h3><p>Option object for selectFile.<p>Properties:<dl><dl><dt>windowId</dt><dd><pre>integer</pre><p>Id of the window to show the file selection dialog against.</dd></dl>
+        <dl><dt>title</dt><dd><pre>string</pre><p>Title of the file select dialog.</dd></dl>
+        <dl><dt>type</dt><dd><pre><a href="#SelectFileDialogType">SelectFileDialogType</a></pre><p>Type of file select dialog, defaults to 'file'.</dd></dl>
+        <dl><dt>accepts</dt><dd>(optional) <p>Extensions to filter file names on.<p><code>Array</code> of:
+        <ul><li>FileExtension</ul></dd></dl>
+        <dl><dt>defaultPath</dt><dd>(optional) <pre>string</pre><p>The file's default path and name.</dd></dl>
+        </dl>
+        <h3 id='SelectLocalImageParams'><a href='utilities.html#SelectLocalImageParams'>#</a>SelectLocalImageParams</h3><p>Option object for selectLocalImage.<p>Properties:<dl><dl><dt>windowId</dt><dd><pre>integer</pre><p>Id of the window to show the file selection dialog against.</dd></dl>
+        <dl><dt>title</dt><dd><pre>string</pre><p>Title for the file selection dialog.</dd></dl>
+        <dl><dt>profileImage</dt><dd>(optional) <pre>boolean</pre><p>Store the image path as the path for a custom profile avatar.</dd></dl>
+        <dl><dt>themeId</dt><dd>(optional) <pre>string</pre><p>The id of theme to store the background image in.</dd></dl>
         <dl><dt>thumbnailBookmarkId</dt><dd>(optional) <pre>string</pre><p>The bookmark id where to store the selected local path.</dd></dl>
-        <dl><dt>setPathInPrefs</dt><dd>(optional) <pre>boolean</pre><p>If true, set the actual path in the given |preferencesPath| and do not create a mapping.</dd></dl>
+        </dl>
+        <h3 id='StoreImageOptions'><a href='utilities.html#StoreImageOptions'>#</a>StoreImageOptions</h3><p>Option object for storeImage.<p>Properties:<dl><dl><dt>url</dt><dd>(optional) <pre>string</pre><p>The URL to read the data from. Currently only the file URL is supported.</dd></dl>
+        <dl><dt>data</dt><dd>(optional) <pre>binary</pre><p>The image data.</dd></dl>
+        <dl><dt>mimeType</dt><dd>(optional) <pre>string</pre><p>The type of the image.</dd></dl>
+        <dl><dt>themeId</dt><dd>(optional) <pre>string</pre><p>The id of theme to store the image as theme background.</dd></dl>
+        <dl><dt>thumbnailBookmarkId</dt><dd>(optional) <pre>string</pre><p>The bookmark id where to store the image as a thumbnail.</dd></dl>
         </dl>
         <h3 id='SharedDataValue'><a href='utilities.html#SharedDataValue'>#</a>SharedDataValue</h3><p>Data key+value pair.<p>Properties:<dl><dl><dt>key</dt><dd><pre>string</pre><p>The data key.</dd></dl>
         <dl><dt>value</dt><dd><pre>any</pre><p>The data value.</dd></dl>
@@ -2408,7 +2616,7 @@
         <dl><dt>value</dt><dd><pre>any</pre><p>The new value for the key.</dd></dl>
         <h3 id='onSuspend'><a href='utilities.html#onSuspend'>#</a>onSuspend</h3><p>Fired when the computer is about to suspend.<h3 id='onResume'><a href='utilities.html#onResume'>#</a>onResume</h3><p>Fired when the computer has resumed from suspension.<h3 id='onPasswordIconStatusChanged'><a href='utilities.html#onPasswordIconStatusChanged'>#</a>onPasswordIconStatusChanged</h3><p>Fires for password icon status change.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Window id to show/hide icon for</dd></dl>
         <dl><dt>show</dt><dd><pre>boolean</pre><p>Whether to show or hide icon</dd></dl>
-        <h3 id='onDownloadManagerReady'><a href='utilities.html#onDownloadManagerReady'>#</a>onDownloadManagerReady</h3><p>Fired when the download manager has loaded all its data.<h3 id='onRazerChromaReady'><a href='utilities.html#onRazerChromaReady'>#</a>onRazerChromaReady</h3><p>Fired when the Razer Chroma API has been initialized.<h3 id='onBroadcastMessage'><a href='utilities.html#onBroadcastMessage'>#</a>onBroadcastMessage</h3><p>Test.<p>Parameters:<dl><dt>message</dt><dd><pre>any</pre><p>The message to receive.</dd></dl>
+        <h3 id='onDownloadManagerReady'><a href='utilities.html#onDownloadManagerReady'>#</a>onDownloadManagerReady</h3><p>Fired when the download manager has loaded all its data.<h3 id='onRazerChromaReady'><a href='utilities.html#onRazerChromaReady'>#</a>onRazerChromaReady</h3><p>Fired when the Razer Chroma API has been initialized.<h3 id='onBroadcastMessage'><a href='utilities.html#onBroadcastMessage'>#</a>onBroadcastMessage</h3><p>Test.<p>Parameters:<dl><dt>message</dt><dd><pre><a href="#BroadcastAction">BroadcastAction</a></pre><p>The message to receive.</dd></dl>
         <h3 id='onShowQRCode'><a href='utilities.html#onShowQRCode'>#</a>onShowQRCode</h3><p>Fired when Chromium wants us to show a QR code for the given url.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>tab id to show QR code on.</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p>The url to show the QR code for.</dd></dl>
         
@@ -2417,27 +2625,25 @@
         <h3 id='clearAllRecentlyClosedSessions'><a href='utilities.html#clearAllRecentlyClosedSessions'>#</a>clearAllRecentlyClosedSessions</h3><p>Clears the list of recently closed tabs and/or windows.<h3 id='isTabInLastSession'><a href='utilities.html#isTabInLastSession'>#</a>isTabInLastSession</h3><p>Checks whether a given tab is part of the last loaded session<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id to check if part of the session</dd></dl>
         <h3 id='isUrlValid'><a href='utilities.html#isUrlValid'>#</a>isUrlValid</h3><p>Validates given URL. Returns UrlValidResults with the results.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to validate</dd></dl>
         <h3 id='canOpenUrlExternally'><a href='utilities.html#canOpenUrlExternally'>#</a>canOpenUrlExternally</h3><p>Check if the browser can potentially open the URL using an external application or an extension. This should only be called if it is already known that the URL is a valid one and is not handled by the browser directly to get a valid result.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to check</dd></dl>
-        <h3 id='getUrlFragments'><a href='utilities.html#getUrlFragments'>#</a>getUrlFragments</h3><p>Splits given URL. Returns UrlFragments including top level domain which is eTLD aware.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to process.</dd></dl>
+        <h3 id='generateGUID'><a href='utilities.html#generateGUID'>#</a>generateGUID</h3><p>Generate new GUID string.<h3 id='getUrlFragments'><a href='utilities.html#getUrlFragments'>#</a>getUrlFragments</h3><p>Splits given URL. Returns UrlFragments including top level domain which is eTLD aware.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to process.</dd></dl>
         <h3 id='getSelectedText'><a href='utilities.html#getSelectedText'>#</a>getSelectedText</h3><p>Returns selected text in page with given id<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The page to examine</dd></dl>
-        <h3 id='selectFile'><a href='utilities.html#selectFile'>#</a>selectFile</h3><p>Select a single file and returns the file name.<p>Parameters:<dl><dt>title</dt><dd>(optional) <pre>string</pre><p>Title of the file select dialog.</dd></dl>
-        <dl><dt>accepts</dt><dd>(optional) <p>Extensions to filter file names on.<p><code>Array</code> of:
-        <ul><li>FileExtension</ul></dd></dl>
-        <dl><dt>defaultPath</dt><dd>(optional) <pre>string</pre><p>The file's default path and name.</dd></dl>
-        <dl><dt>type</dt><dd><pre><a href="#SelectFileDialogType">SelectFileDialogType</a></pre><p>Type of file select dialog, defaults to 'file'.</dd></dl>
+        <h3 id='selectFile'><a href='utilities.html#selectFile'>#</a>selectFile</h3><p>Select a single file and returns the file name.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#SelectFileOptions">SelectFileOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='selectLocalImage'><a href='utilities.html#selectLocalImage'>#</a>selectLocalImage</h3><p>Ask the user to select an image file and store its path as a data mapping URL in a bookmark or a preference.<p>Parameters:<dl><dt>params</dt><dd><pre><a href="#SelectLocalImageParams">SelectLocalImageParams</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='storeImage'><a href='utilities.html#storeImage'>#</a>storeImage</h3><p>Save image from a memory blob to image store and put its URL to preferences or bookmarks.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#StoreImageOptions">StoreImageOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='getVersion'><a href='utilities.html#getVersion'>#</a>getVersion</h3><p>Gets the Vivaldi version and Chromium versions.<h3 id='getFFMPEGState'><a href='utilities.html#getFFMPEGState'>#</a>getFFMPEGState</h3><p>Helper function for Linux. Reads the env. variable VIVALDI_FFMPEG_FOUND and returns the result<h3 id='getMediaAvailableState'><a href='utilities.html#getMediaAvailableState'>#</a>getMediaAvailableState</h3><p>Windows: Returns whether this version of the OS has media codecs installed. Might return false on N versions of Windows.<h3 id='setSharedData'><a href='utilities.html#setSharedData'>#</a>setSharedData</h3><p>Sets the given data to be kept in-memory for the duration of the Vivaldi setting (until Vivaldi exits).<p>Parameters:<dl><dt>keyValuePair</dt><dd><pre><a href="#SharedDataValue">SharedDataValue</a></pre><p>The Key-value.</dd></dl>
         <h3 id='getSharedData'><a href='utilities.html#getSharedData'>#</a>getSharedData</h3><p>Gets the given data from the in-memory storage.<p>Parameters:<dl><dt>keyValuePair</dt><dd><pre><a href="#SharedDataValue">SharedDataValue</a></pre><p>The Key-value, the value is the default value returned if the key does not exist.</dd></dl>
         <h3 id='getSystemDateFormat'><a href='utilities.html#getSystemDateFormat'>#</a>getSystemDateFormat</h3><p>Returns various date/time system formats<h3 id='getSystemCountry'><a href='utilities.html#getSystemCountry'>#</a>getSystemCountry</h3><p>Return the system settings for the country if available.<h3 id='setLanguage'><a href='utilities.html#setLanguage'>#</a>setLanguage</h3><p>Sets the Vivaldi language code.<p>Parameters:<dl><dt>locale</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='getLanguage'><a href='utilities.html#getLanguage'>#</a>getLanguage</h3><p>Gets the active Vivaldi language code.<h3 id='setVivaldiAsDefaultBrowser'><a href='utilities.html#setVivaldiAsDefaultBrowser'>#</a>setVivaldiAsDefaultBrowser</h3><p>Set Vivaldi as the default browser.<h3 id='isVivaldiDefaultBrowser'><a href='utilities.html#isVivaldiDefaultBrowser'>#</a>isVivaldiDefaultBrowser</h3><p>Is Vivaldi the default browser.<h3 id='launchNetworkSettings'><a href='utilities.html#launchNetworkSettings'>#</a>launchNetworkSettings</h3><p>Launch network settings.<h3 id='savePage'><a href='utilities.html#savePage'>#</a>savePage</h3><p>Saves web page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>Id to of page being saved.</dd></dl>
+        <h3 id='getLanguage'><a href='utilities.html#getLanguage'>#</a>getLanguage</h3><p>Gets the active Vivaldi language code.<h3 id='setVivaldiAsDefaultBrowser'><a href='utilities.html#setVivaldiAsDefaultBrowser'>#</a>setVivaldiAsDefaultBrowser</h3><p>Set Vivaldi as the default browser.<h3 id='isVivaldiDefaultBrowser'><a href='utilities.html#isVivaldiDefaultBrowser'>#</a>isVivaldiDefaultBrowser</h3><p>Is Vivaldi the default browser.<h3 id='launchNetworkSettings'><a href='utilities.html#launchNetworkSettings'>#</a>launchNetworkSettings</h3><p>Launch network settings.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='savePage'><a href='utilities.html#savePage'>#</a>savePage</h3><p>Saves web page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>Id to of page being saved.</dd></dl>
         <h3 id='openPage'><a href='utilities.html#openPage'>#</a>openPage</h3><p>Open web page.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>WindowId of browser opening a local file.</dd></dl>
-        <h3 id='broadcastMessage'><a href='utilities.html#broadcastMessage'>#</a>broadcastMessage</h3><p>Broadcast a message to all windows. Works from regular to private windows as well.<p>Parameters:<dl><dt>message</dt><dd><pre>any</pre><p>The message to send.</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-            <h3 id='setDefaultContentSettings'><a href='utilities.html#setDefaultContentSettings'>#</a>setDefaultContentSettings</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>contentSetting</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='broadcastMessage'><a href='utilities.html#broadcastMessage'>#</a>broadcastMessage</h3><p>Broadcast a message to all windows. Works from regular to private windows as well.<p>Parameters:<dl><dt>message</dt><dd><pre><a href="#BroadcastAction">BroadcastAction</a></pre><p>The message to send.</dd></dl>
+        <h3 id='setDefaultContentSettings'><a href='utilities.html#setDefaultContentSettings'>#</a>setDefaultContentSettings</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>contentSetting</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>value</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
             <h3 id='getDefaultContentSettings'><a href='utilities.html#getDefaultContentSettings'>#</a>getDefaultContentSettings</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>contentSetting</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='setBlockThirdPartyCookies'><a href='utilities.html#setBlockThirdPartyCookies'>#</a>setBlockThirdPartyCookies</h3><p>Set Vivaldi default content settings.<p>Parameters:<dl><dt>cookieMode</dt><dd><pre><a href="#CookieMode">CookieMode</a></pre><p>Cookie control for third party cookies.</dd></dl>
-        <h3 id='getBlockThirdPartyCookies'><a href='utilities.html#getBlockThirdPartyCookies'>#</a>getBlockThirdPartyCookies</h3><p>Set Vivaldi default content settings.<h3 id='openTaskManager'><a href='utilities.html#openTaskManager'>#</a>openTaskManager</h3><p>Opens Vivaldi task manager dialog.<h3 id='createQRCode'><a href='utilities.html#createQRCode'>#</a>createQRCode</h3><p>Opens the QR Code bubble window for the given page.<p>Parameters:<dl><dt>id</dt><dd><pre>integer</pre><p>The id of the page.</dd></dl>
+        <h3 id='getBlockThirdPartyCookies'><a href='utilities.html#getBlockThirdPartyCookies'>#</a>getBlockThirdPartyCookies</h3><p>Set Vivaldi default content settings.<h3 id='openTaskManager'><a href='utilities.html#openTaskManager'>#</a>openTaskManager</h3><p>Opens Vivaldi task manager dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='createQRCode'><a href='utilities.html#createQRCode'>#</a>createQRCode</h3><p>Opens the QR Code bubble window for the given page.<p>Parameters:<dl><dt>id</dt><dd><pre>integer</pre><p>The id of the page.</dd></dl>
         <h3 id='getStartupAction'><a href='utilities.html#getStartupAction'>#</a>getStartupAction</h3><p>Returns the startup action.<h3 id='setStartupAction'><a href='utilities.html#setStartupAction'>#</a>setStartupAction</h3><p>Returns the startup action.<p>Parameters:<dl><dt>startup</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>urls</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
@@ -2463,7 +2669,7 @@
         <h3 id='startChromecast'><a href='utilities.html#startChromecast'>#</a>startChromecast</h3><p>Shows the Chromecast dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Window id where casting should start.</dd></dl>
         <h3 id='isFirstRun'><a href='utilities.html#isFirstRun'>#</a>isFirstRun</h3><p>chrome::IsChromeFirstRun()<h3 id='generateQRCode'><a href='utilities.html#generateQRCode'>#</a>generateQRCode</h3><p>Generate a QR image based on the given data.<p>Parameters:<dl><dt>data</dt><dd><pre>string</pre><p>Data to encode in the QR code. The maximum length of the data is 288 bytes.</dd></dl>
         <dl><dt>destination</dt><dd>(optional) <pre><a href="#CaptureQRDestination">CaptureQRDestination</a></pre><p>Destination of the QR capture, defaults to 'dataurl'.</dd></dl>
-        <h3 id='getGAPIKey'><a href='utilities.html#getGAPIKey'>#</a>getGAPIKey</h3><p>Returns G API key.<h3 id='getGOAuthClientId'><a href='utilities.html#getGOAuthClientId'>#</a>getGOAuthClientId</h3><p>Returns G OAuth API client id.<h3 id='getGOAuthClientSecret'><a href='utilities.html#getGOAuthClientSecret'>#</a>getGOAuthClientSecret</h3><p>Returns G OAuth API client secret.<h3 id='getCommandLineValue'><a href='utilities.html#getCommandLineValue'>#</a>getCommandLineValue</h3><p>Gets the command line value for the given named argument.<p>Parameters:<dl><dt>value</dt><dd><pre>string</pre><p>Name of the command line switch without initial dashes eg. translate-server-url.</dd></dl>
+        <h3 id='getGAPIKey'><a href='utilities.html#getGAPIKey'>#</a>getGAPIKey</h3><p>Returns G API key.<h3 id='getGOAuthClientId'><a href='utilities.html#getGOAuthClientId'>#</a>getGOAuthClientId</h3><p>Returns G OAuth API client id.<h3 id='getGOAuthClientSecret'><a href='utilities.html#getGOAuthClientSecret'>#</a>getGOAuthClientSecret</h3><p>Returns G OAuth API client secret.<h3 id='getMOAuthClientId'><a href='utilities.html#getMOAuthClientId'>#</a>getMOAuthClientId</h3><p>Returns MS OAuth API client id.<h3 id='getCommandLineValue'><a href='utilities.html#getCommandLineValue'>#</a>getCommandLineValue</h3><p>Gets the command line value for the given named argument.<p>Parameters:<dl><dt>value</dt><dd><pre>string</pre><p>Name of the command line switch without initial dashes eg. translate-server-url.</dd></dl>
         <h3 id='osCrypt'><a href='utilities.html#osCrypt'>#</a>osCrypt</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>plain</dt><dd><pre>string</pre><p>The content to encrypt</dd></dl>
         <h3 id='osDecrypt'><a href='utilities.html#osDecrypt'>#</a>osDecrypt</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>encrypted</dt><dd><pre>string</pre><p>The content to decrypt</dd></dl>
         <h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
@@ -2488,12 +2694,6 @@
         <dl><dt>callback</dt><dd><p>Called when history .<p>Parameters:<dl><dt>currentEntryIndex</dt><dd><pre>integer</pre><p>The current index.</dd></dl>
         <dl><dt>pageHistory</dt><dd><p>Array of history items with name and index.<p><code>Array</code> of:
         <ul><li>object<li>{'name': {'type': 'string', 'description': 'Title for the page.'}, 'url': {'type': 'string', 'description': 'URL for the entry.'}, 'index': {'type': 'integer', 'description': 'Relative history index. This can be used in <webview>.go(|index|).'}}</ul></dd></dl>
-        </dd></dl>
-            <h3 id='getFocusedElementInfo'><a href='webViewPrivate.html#getFocusedElementInfo'>#</a>getFocusedElementInfo</h3><p>Gets the tagname and type of currently focused element and whether it's editable.<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p>The instance ID of the guest <webview> process.</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>element</dt><dd><pre>string</pre><p>Element name</dd></dl>
-        <dl><dt>type</dt><dd><pre>string</pre><p>Element type</dd></dl>
-        <dl><dt>editable</dt><dd><pre>boolean</pre><p>True if element is editable.</dd></dl>
-        <dl><dt>role</dt><dd><pre>string</pre><p>Element role</dd></dl>
         </dd></dl>
             <h3 id='allowBlockedInsecureContent'><a href='webViewPrivate.html#allowBlockedInsecureContent'>#</a>allowBlockedInsecureContent</h3><p>Will load all blocked content in a page.<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='sendRequest'><a href='webViewPrivate.html#sendRequest'>#</a>sendRequest</h3><p>Navigates the webview to a given URL but with greater control over the sent request.<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2521,6 +2721,11 @@
         </dl>
         <h3 id='WindowState'><a href='windowPrivate.html#WindowState'>#</a>WindowState</h3><dl><dt><code>ENUM</code></dt><dd><p>The state of this browser window.<li>normal: Normal window state (i.e. not minimized, maximized, or fullscreen).<li>minimized: Minimized window state.<li>maximized: Maximized window state.<li>fullscreen: Fullscreen window state.</ul></dd></dl>
         <h3 id='WindowType'><a href='windowPrivate.html#WindowType'>#</a>WindowType</h3><dl><dt><code>ENUM</code></dt><dd><p>The type of this browser window.<li>normal: This is a normal browser window.<li>settings: This is a settings window.<li>popup: This is a popup window.</ul></dd></dl>
+        <h3 id='FocusedElementInfo'><a href='windowPrivate.html#FocusedElementInfo'>#</a>FocusedElementInfo</h3><p>Information about the HTML element having focus.<p>Properties:<dl><dl><dt>tagName</dt><dd><pre>string</pre><p>Element tag name</dd></dl>
+        <dl><dt>type</dt><dd><pre>string</pre><p>Element type</dd></dl>
+        <dl><dt>editable</dt><dd><pre>boolean</pre><p>True if element is editable.</dd></dl>
+        <dl><dt>role</dt><dd><pre>string</pre><p>Element role</dd></dl>
+        </dl>
         
         <h2>Listeners</h2>
             <details>
@@ -2572,6 +2777,7 @@
         </dd></dl>
             <h3 id='getCurrentId'><a href='windowPrivate.html#getCurrentId'>#</a>getCurrentId</h3><p>Returns the window id of the window we are currently running inside.<h3 id='setState'><a href='windowPrivate.html#setState'>#</a>setState</h3><p>Sets the window state.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window id of the window to change the state for.</dd></dl>
         <dl><dt>state</dt><dd><pre><a href="#WindowState">WindowState</a></pre><p>The state to set the window to.</dd></dl>
+        <h3 id='getFocusedElementInfo'><a href='windowPrivate.html#getFocusedElementInfo'>#</a>getFocusedElementInfo</h3><p>Get information about currently focused element in Vivaldi window or any of its webviews.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h1><a href='zoom.html'>zoom</a></h1>
 
     

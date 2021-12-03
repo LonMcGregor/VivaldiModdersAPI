@@ -1,0 +1,107 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vivaldi.themePrivate</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="IDR_PRODUCT_LOGO.png" rel="icon">
+    </head>
+    <body>
+    <nav class='side'>
+    <img src="IDR_PRODUCT_LOGO.png">
+    <p>Vivaldi Modders API
+    <br />Internal Documentation
+    <br /><ul>
+    <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
+    <li><a href="everything.html">Search Everything</a></li>
+    </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
+    <p>Version 5.0, by LonMcGregor.
+    <p>This website is not affiliated with vivaldi.
+    <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
+    
+    <main>
+    <a id="backToTop" href="#top">Go back to top</a>
+    <h1>vivaldi.themePrivate Modders API Reference</h1>
+    <p>Use the <code>vivaldi.themePrivate</code> to access the API.
+    <nav class='contents' id='top'>
+    <h2>Navigation</h2>
+    <h3>Types</h3>
+    <ul><li><a href='#BackgroundPosition'>BackgroundPosition</a><li><a href='#ThemeData'>ThemeData</a><li><a href='#ThemeObject'>ThemeObject</a><li><a href='#ExportOptions'>ExportOptions</a><li><a href='#ExportResult'>ExportResult</a><li><a href='#ImportOptions'>ImportOptions</a><li><a href='#ImportErrorKind'>ImportErrorKind</a><li><a href='#ImportError'>ImportError</a><li><a href='#ImportResult'>ImportResult</a></ul>
+    <h3>Listeners</h3>
+    <ul><li><a href='#onThemeDownloadStarted'>onThemeDownloadStarted</a><li><a href='#onThemeDownloadProgress'>onThemeDownloadProgress</a><li><a href='#onThemeDownloadCompleted'>onThemeDownloadCompleted</a><li><a href='#onThemesUpdated'>onThemesUpdated</a></ul>
+    <h3>Methods</h3>
+    <ul><li><a href='#export'>export</a><li><a href='#import'>import</a><li><a href='#download'>download</a><li><a href='#getThemeData'>getThemeData</a></ul></nav>
+    
+        <h2>Types</h2>
+        <h3 id='BackgroundPosition'><a href='#BackgroundPosition'>#</a>BackgroundPosition</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>stretch<li>center<li>repeat</ul></dd></dl>
+        <h3 id='ThemeData'><a href='#ThemeData'>#</a>ThemeData</h3><p>Basic typesafe theme data.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The id of the queried theme. This is always set.</dd></dl>
+        <dl><dt>isInstalled</dt><dd><pre>boolean</pre><p>Is the theme installed or not.</dd></dl>
+        <dl><dt>version</dt><dd><pre>number</pre><p>If the theme is installed, this is the version of the installed theme.</dd></dl>
+        </dl>
+        <h3 id='ThemeObject'><a href='#ThemeObject'>#</a>ThemeObject</h3><dl><dt>ThemeObject</dt><dd><pre>object</pre><p>The theme object.<p>Object Properties:<dl><dt>type</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<pre>any</pre></dd></dl>
+        <dl><dt>preserveNull</dt><dd><pre>True</pre></dd></dl>
+        </dd></dl>
+        <h3 id='ExportOptions'><a href='#ExportOptions'>#</a>ExportOptions</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>returnBlob</dt><dd>(optional) <pre>boolean</pre><p>When true, the theme archive is returned as a memory blob instead of asking the user to select the file.</dd></dl>
+        <dl><dt>windowId</dt><dd>(optional) <pre>number</pre><p>Window to show the file selection dialog to select the output file. Must not be given when |returnBlob| is true.</dd></dl>
+        <dl><dt>dialogTitle</dt><dd>(optional) <pre>string</pre><p>The title of the file selection dialog to select the output file. Must not be given when |returnBlob| is true.</dd></dl>
+        </dl>
+        <h3 id='ExportResult'><a href='#ExportResult'>#</a>ExportResult</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>success</dt><dd><pre>boolean</pre><p>True if the theme was successfully exported. False on errors or if the user cancelled operation.</dd></dl>
+        <dl><dt>dataBlob</dt><dd>(optional) <pre>binary</pre><p>The exported archive as binary blob. This is given only on success and ony when |returnBlob| is true in |ExportOptions|.</dd></dl>
+        </dl>
+        <h3 id='ImportOptions'><a href='#ImportOptions'>#</a>ImportOptions</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>windowId</dt><dd>(optional) <pre>number</pre><p>The window that shows the import archive selector dialog. Must mot be given if dataBlob is given.</dd></dl>
+        <dl><dt>dialogTitle</dt><dd>(optional) <pre>string</pre><p>The title to use in the import archive selector dialog. Must mot be given if dataBlob is given.</dd></dl>
+        <dl><dt>dataBlob</dt><dd>(optional) <pre>binary</pre><p>The archive to import the theme from. It will be used instead of a user-selected file. It should be a typed array on JS side. This must not be given if windowId or dialogTitle are specified.</dd></dl>
+        </dl>
+        <h3 id='ImportErrorKind'><a href='#ImportErrorKind'>#</a>ImportErrorKind</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>io<li>badArchive<li>badSettings<li>network</ul></dd></dl>
+        <h3 id='ImportError'><a href='#ImportError'>#</a>ImportError</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>kind</dt><dd><pre><a href="#ImportErrorKind">ImportErrorKind</a></pre><p>Generic error kind</dd></dl>
+        <dl><dt>details</dt><dd><pre>string</pre><p>low-level error message in English</dd></dl>
+        </dl>
+        <h3 id='ImportResult'><a href='#ImportResult'>#</a>ImportResult</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>error</dt><dd>(optional) <pre><a href="#ImportError">ImportError</a></pre><p>Error if any during the operation.</dd></dl>
+        <dl><dt>themeID</dt><dd><pre>string</pre><p>The id of the imported theme or an empty string if the user cancels the import or on errors.</dd></dl>
+        </dl>
+        
+        <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
+        <h3 id='onThemeDownloadStarted'><a href='#onThemeDownloadStarted'>#</a>onThemeDownloadStarted</h3><p>Fired when the theme download is starting.<p>Parameters:<dl><dt>themeId</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onThemeDownloadProgress'><a href='#onThemeDownloadProgress'>#</a>onThemeDownloadProgress</h3><p>Fired on download progress.<p>Parameters:<dl><dt>themeId</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>currentValue</dt><dd><pre>integer</pre><p>Fired on download progress with the current progress value.</dd></dl>
+        <h3 id='onThemeDownloadCompleted'><a href='#onThemeDownloadCompleted'>#</a>onThemeDownloadCompleted</h3><p>Fired on download and install completion.<p>Parameters:<dl><dt>themeId</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>success</dt><dd><pre>boolean</pre><p>true on successful theme install.</dd></dl>
+        <dl><dt>error</dt><dd><pre>string</pre><p>if success is false, provides an error description.</dd></dl>
+        <h3 id='onThemesUpdated'><a href='#onThemesUpdated'>#</a>onThemesUpdated</h3><p>Fired if the preview or permanent theme collection has changed.<p>Parameters:<dl><dt>preview</dt><dd><pre>boolean</pre><p>true if preview has changed, otherwise false.</dd></dl>
+        
+        <h2>Methods</h2>
+        <h3 id='export'><a href='#export'>#</a>export</h3><p>Export the theme into a zip file<p>Parameters:<dl><dt>theme</dt><dd><pre><a href="#ThemeObject">ThemeObject</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>options</dt><dd><pre><a href="#ExportOptions">ExportOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='import'><a href='#import'>#</a>import</h3><p>Import and install theme archive.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#ImportOptions">ImportOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='download'><a href='#download'>#</a>download</h3><p>Download and install theme.<p>Parameters:<dl><dt>themeId</dt><dd><pre>string</pre><p>Theme ID of the theme to download and install. This parameter is primarily used for status events.</dd></dl>
+        <dl><dt>url</dt><dd><pre>string</pre><p>URL to the theme to download and install.</dd></dl>
+        <h3 id='getThemeData'><a href='#getThemeData'>#</a>getThemeData</h3><p>Get some information about the given theme id.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Theme ID of the theme to return data about.</dd></dl>
+        </main></body></html>
