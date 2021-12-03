@@ -2,7 +2,7 @@ import json, glob, os, re
 from json import JSONDecodeError
 import jstyleson
 
-SOURCE_PATH = r'C:\Users\L\Downloads\vivaldi-source_4.3.2439.tar\vivaldi-source_4.3.2439\vivaldi-source'
+SOURCE_PATH = r'C:\Users\L\Downloads\vivaldi-source_5.0.2497.tar\vivaldi-source_5.0.2497\vivaldi-source'
 
 def getAllApiDefsInSourceBundle():
     return glob.glob(os.path.join(SOURCE_PATH, 'extensions/schema/*.json'))
@@ -16,7 +16,7 @@ def getDescription(name, typeDict, paragraph=True):
     if 'description' in typeDict:
         return para + str(typeDict['description'])
     else:
-        print("WARNING: No description for "+name)
+        # print("WARNING: No description for "+name)
         return para + " ⚠ NO DESCRIPTION PROVIDED"
 
 def optional(typeDict):
@@ -25,7 +25,11 @@ def optional(typeDict):
 def typeToHtml(name, prop, makeTopLevel=False):
     # makeTopLevel decides if a linkable anchor ID should be given
     out = ''
-    if 'enum' in prop: # enum of values
+    if type(prop) == type(True):
+        out += f'''<dl><dt>{name}</dt><dd>'''
+        out += '''<pre>True</pre></dd></dl>
+        '''
+    elif 'enum' in prop: # enum of values
         out += f'''<dl><dt><code>ENUM</code></dt><dd>'''
         out += optional(prop)
         out += getDescription(name, prop)
@@ -44,22 +48,18 @@ def typeToHtml(name, prop, makeTopLevel=False):
         out += '''</dd></dl>
         '''
     elif 'choices' in prop: # ?
-        out += f'''<dl><dt>{name}</dt><dd>'''
-        out += optional(prop)
-        out += f'''<pre>⚠ CHOICES</pre>'''
-        print("WARNING: Strange 'choices' construct in " + name)
-        out += getDescription(name, prop)
-        out += str(prop['choices'])
+        for choice in prop['choices']:
+            out += typeToHtml(name + " (overloaded)", choice)
         out += '''</dd></dl>
         '''
-    elif prop['type'] in ['number', 'integer', 'string', 'boolean', 'any', 'binary']:
+    elif 'type' in prop and prop['type'] in ['number', 'integer', 'string', 'boolean', 'any', 'binary']:
         out += f'''<dl><dt>{name}</dt><dd>'''
         out += optional(prop)
         out += f'''<pre>{prop['type']}</pre>'''
         out += getDescription(name, prop)
         out += '''</dd></dl>
         '''
-    elif prop['type'] == 'array':
+    elif 'type' in prop and prop['type'] == 'array':
         out += f'''<dl><dt>{name}</dt><dd>'''
         out += optional(prop)
         out += getDescription(name, prop)
@@ -73,7 +73,7 @@ def typeToHtml(name, prop, makeTopLevel=False):
             out += 'Maximum items: ' + str(prop['maxItems'])
         out += '''</ul></dd></dl>
         '''
-    elif prop['type'] == 'object':
+    elif 'type' in prop and prop['type'] == 'object':
         out += f'''<dl><dt>{name}</dt><dd>'''
         out += optional(prop)
         if 'isInstanceOf' in prop:
@@ -85,12 +85,15 @@ def typeToHtml(name, prop, makeTopLevel=False):
         if 'isInstanceOf' in prop:
             out += '⚠ Additional Properties extending type: ' + str(prop['additionalProperties'])
             print("Warning: Extended type, documentation not supported for " + name)
-        else:
+        if 'properties' in prop:
             for key, val in prop['properties'].items():
+                out += typeToHtml(key, val)
+        if 'additionalProperties' in prop:
+            for key, val in prop['additionalProperties'].items():
                 out += typeToHtml(key, val)
         out += '''</dd></dl>
         '''
-    elif prop['type'] == 'function':
+    elif ('type' in prop and prop['type'] == 'function') or (name == 'reset' and 'parameters' in prop):
         if makeTopLevel:
             out += f'''<h3 id='{name}'><a href='#{name}'>#</a>{name}</h3>'''
         else:
@@ -103,6 +106,12 @@ def typeToHtml(name, prop, makeTopLevel=False):
         if not makeTopLevel:
             out += '''</dd></dl>
             '''
+    elif prop == 'any':
+        out += f'''<dl><dt>{name}</dt><dd>'''
+        out += optional(prop)
+        out += getDescription(name, prop)
+        out += '''<pre>any</pre></dd></dl>
+        '''
     else:
         raise Exception('BAD vTYPE PROP TYPE '+prop['type'])
     return out
@@ -130,6 +139,8 @@ def convertListenerToHtml(api):
 
 def convertMethodToHtml(api):
     if 'type' not in api or api['type'] != 'function':
+        if api['name'] == 'reset':
+            return typeToHtml(api['name'], api, True)
         print("WARNING! Method is not a function type: " + api['name'])
         return "<dl><dt>api['name']</dt><dd>⚠ WARNING! Failed to get info as type not provided</dd></dl>\n"
     return typeToHtml(api['name'], api, True)
