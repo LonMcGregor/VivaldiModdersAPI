@@ -14,10 +14,10 @@
     <p>Vivaldi Modders API
     <br />Internal Documentation
     <br /><ul>
-    <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
+    <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 5.2, by LonMcGregor.
+    <p>Version 5.4, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -28,7 +28,7 @@
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul><li><a href='#Mode'>Mode</a><li><a href='#Edge'>Edge</a><li><a href='#MenuItem'>MenuItem</a></ul>
+    <ul><li><a href='#Mode'>Mode</a><li><a href='#Edge'>Edge</a><li><a href='#ItemType'>ItemType</a><li><a href='#MenuItem'>MenuItem</a></ul>
     <h3>Listeners</h3>
     <ul><li><a href='#onActivated'>onActivated</a></ul>
     <h3>Methods</h3>
@@ -37,15 +37,16 @@
         <h2>Types</h2>
         <h3 id='Mode'><a href='#Mode'>#</a>Mode</h3><dl><dt><code>ENUM</code></dt><dd><p>What part menubar to manipulate<li>all<li>update<li>tabs</ul></dd></dl>
         <h3 id='Edge'><a href='#Edge'>#</a>Edge</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines position of menu items added in chrome code wrt container items.<li>above<li>below<li>off</ul></dd></dl>
+        <h3 id='ItemType'><a href='#ItemType'>#</a>ItemType</h3><dl><dt><code>ENUM</code></dt><dd><p>What kind of item.<li>command<li>checkbox<li>radio<li>folder<li>container<li>separator</ul></dd></dl>
         <h3 id='MenuItem'><a href='#MenuItem'>#</a>MenuItem</h3><p>One menu item.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Text in item.</dd></dl>
         <dl><dt>action</dt><dd><pre>string</pre><p>Action to execute.</dd></dl>
         <dl><dt>id</dt><dd><pre>integer</pre><p>The unique id of item.</dd></dl>
         <dl><dt>items</dt><dd>(optional) <p>Child menu items.<p><code>Array</code> of:
         <ul><li>MenuItem</ul></dd></dl>
         <dl><dt>visible</dt><dd>(optional) <pre>boolean</pre><p>Whether this menu item is visible or not. Defaults to true.</dd></dl>
-        <dl><dt>type</dt><dd>(optional) <pre>string</pre><p>'normal' or 'checkbox'. Defaults to 'normal'.</dd></dl>
+        <dl><dt>type</dt><dd>(optional) <pre><a href="#ItemType">ItemType</a></pre><p>'normal' or 'checkbox'. Defaults to 'normal'.</dd></dl>
         <dl><dt>checked</dt><dd>(optional) <pre>boolean</pre><p>true if the checkbox is checked, otherwise false. Only applies for type='checkbox'.</dd></dl>
-        <dl><dt>disabled</dt><dd>(optional) <pre>boolean</pre><p>true if the item should appear as grayed out.</dd></dl>
+        <dl><dt>enabled</dt><dd>(optional) <pre>boolean</pre><p>false if the item should appear as grayed out. Assumed true if not set.</dd></dl>
         <dl><dt>withNoWindow</dt><dd><pre>boolean</pre><p>true if the item should remain normal when no windows are open. If false the item will be grayed out.</dd></dl>
         <dl><dt>emphasized</dt><dd>(optional) <pre>boolean</pre><p>true if the item should appear in an emphasized style (typically bold).</dd></dl>
         <dl><dt>shortcut</dt><dd>(optional) <pre>string</pre><p>String which illustrates a shortcut. The presence of a string will not execute menu action.</dd></dl>

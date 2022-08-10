@@ -14,10 +14,10 @@
     <p>Vivaldi Modders API
     <br />Internal Documentation
     <br /><ul>
-    <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
+    <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 5.2, by LonMcGregor.
+    <p>Version 5.4, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -625,7 +625,7 @@
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre><a href="#Account">Account</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>res</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
-            <h3 id='deleteAccount'><a href='calendar.html#deleteAccount'>#</a>deleteAccount</h3><p>Deletes an account.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The account id to be deleted</dd></dl>
+            <h3 id='deleteAccount'><a href='calendar.html#deleteAccount'>#</a>deleteAccount</h3><p>Deletes an account and its calendars, events, recurring_exceptions, notifications etc<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The account id to be deleted</dd></dl>
         <h3 id='getAllEventTemplates'><a href='calendar.html#getAllEventTemplates'>#</a>getAllEventTemplates</h3><p>Retrieves all event templates.<h1><a href='contacts.html'>contacts</a></h1>
 
     
@@ -904,7 +904,7 @@
         <h3 id='Icons'><a href='contextMenu.html#Icons'>#</a>Icons</h3><dl><dt>Icons</dt><dd><p>Icons encoded as base64.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <h3 id='ContainerMode'><a href='contextMenu.html#ContainerMode'>#</a>ContainerMode</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines container layouts.<li>inline<li>folder</ul></dd></dl>
-        <h3 id='ContainerContent'><a href='contextMenu.html#ContainerContent'>#</a>ContainerContent</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines functionality to set up on the C++ side. One or more menu items may be created.<li>extensions<li>imageinprofile<li>linkinprofile<li>notes<li>pwa<li>linkinpwa<li>sendlinktodevices<li>sendpagetodevices<li>spellcheck<li>spellcheckoptions<li>speech</ul></dd></dl>
+        <h3 id='ContainerContent'><a href='contextMenu.html#ContainerContent'>#</a>ContainerContent</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines functionality to set up on the C++ side. One or more menu items may be created.<li>extensions<li>imageinprofile<li>linkinprofile<li>linktohighlight<li>notes<li>pwa<li>linkinpwa<li>sendlinktodevices<li>sendpagetodevices<li>spellcheck<li>spellcheckoptions<li>speech</ul></dd></dl>
         <h3 id='Item'><a href='contextMenu.html#Item'>#</a>Item</h3><p>One menu item.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Text in item.</dd></dl>
         <dl><dt>id</dt><dd><pre>integer</pre><p>The unique id of item.</dd></dl>
         <dl><dt>type</dt><dd><pre><a href="#ItemType">ItemType</a></pre><p>The kind of menu element</dd></dl>
@@ -938,6 +938,7 @@
         <dl><dt>editoptions</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>emoji</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>extensions</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>highlight</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>pictureinpicture</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>password</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>passwordgeneration</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -1089,7 +1090,7 @@
         <h3 id='TransitionType'><a href='historyPrivate.html#TransitionType'>#</a>TransitionType</h3><dl><dt><code>ENUM</code></dt><dd><p>The transition type for this visit from its referrer.<li>link<li>typed<li>auto_bookmark<li>auto_subframe<li>manual_subframe<li>generated<li>auto_toplevel<li>form_submit<li>reload<li>keyword<li>keyword_generated</ul></dd></dl>
         <h3 id='TypedHistoryItem'><a href='historyPrivate.html#TypedHistoryItem'>#</a>TypedHistoryItem</h3><p>An object containing informations of one typed history entry<p>Properties:<dl><dl><dt>url</dt><dd><pre>string</pre><p>The URL navigated to by a user.</dd></dl>
         <dl><dt>title</dt><dd><pre>string</pre><p>The title of the page when it was last loaded.</dd></dl>
-        <dl><dt>keywordId</dt><dd><pre>integer</pre><p>The database identifier of the used keyword for a search or -1 if this wasn't a search.</dd></dl>
+        <dl><dt>keywordId</dt><dd><pre>string</pre><p>The database identifier of the used keyword for a search or -1 if this wasn't a search.</dd></dl>
         <dl><dt>terms</dt><dd><pre>string</pre><p>If keyWordID is not -1, the terms that the user searched for.</dd></dl>
         </dl>
         <h3 id='HistoryPrivateItem'><a href='historyPrivate.html#HistoryPrivateItem'>#</a>HistoryPrivateItem</h3><p>An object encapsulating one result of a history query.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the item.</dd></dl>
@@ -1162,12 +1163,8 @@
         <h3 id='visitSearch'><a href='historyPrivate.html#visitSearch'>#</a>visitSearch</h3><p>Retrives all visits. Sorted by visit time descending.<p>Parameters:<dl><dt>query</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>startTime</dt><dd>(optional) <pre>number</pre><p>Limit results to those visited after this date, represented in milliseconds since the epoch. If not specified, this defaults to 24 hours in the past.</dd></dl>
         <dl><dt>endTime</dt><dd>(optional) <pre>number</pre><p>Limit results to those visited before this date, represented in milliseconds since the epoch.</dd></dl>
         </dd></dl>
-        <h3 id='setKeywordSearchTermsForURL'><a href='historyPrivate.html#setKeywordSearchTermsForURL'>#</a>setKeywordSearchTermsForURL</h3><p>Stores the search terms and keyword used for a search of which the URL is present in history<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL for which to add search terms</dd></dl>
-        <dl><dt>keywordId</dt><dd><pre>integer</pre><p>A number identifying the keyword that was used</dd></dl>
-        <dl><dt>searchTerms</dt><dd><pre>string</pre><p>The search terms to store</dd></dl>
-        <h3 id='deleteAllSearchTermsForKeyword'><a href='historyPrivate.html#deleteAllSearchTermsForKeyword'>#</a>deleteAllSearchTermsForKeyword</h3><p>Removes all search terms stored in history for a given keyword<p>Parameters:<dl><dt>keywordId</dt><dd><pre>integer</pre><p>A number identifying the keyword that was used</dd></dl>
         <h3 id='getTypedHistory'><a href='historyPrivate.html#getTypedHistory'>#</a>getTypedHistory</h3><p>Retrieves a list of items used to populate the typed URL results of the address bar<p>Parameters:<dl><dt>query</dt><dd><pre>string</pre><p>A piece of text that the results should contain</dd></dl>
-        <dl><dt>prefixKeywordId</dt><dd><pre>integer</pre><p>A number identifying a possible keyword prefixing the query or -1 if none.</dd></dl>
+        <dl><dt>prefixKeywordId</dt><dd><pre>string</pre><p>A number identifying a possible keyword prefixing the query or -1 if none.</dd></dl>
         <dl><dt>max_results</dt><dd><pre>integer</pre><p>The number of items to return</dd></dl>
         <h3 id='migrateOldTypedUrl'><a href='historyPrivate.html#migrateOldTypedUrl'>#</a>migrateOldTypedUrl</h3><p>Add an old typed URL to history<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL that was visited</dd></dl>
         <dl><dt>time</dt><dd><pre>number</pre><p>The time at which the visit took place as a UNIX timestamp</dd></dl>
@@ -1345,21 +1342,22 @@
         <h3 id='searchMessages'><a href='mailPrivate.html#searchMessages'>#</a>searchMessages</h3><p>Searches messages with certain query.<p>Parameters:<dl><dt>searchValue</dt><dd><pre>string</pre><p>The value to search for</dd></dl>
         <h3 id='matchMessage'><a href='mailPrivate.html#matchMessage'>#</a>matchMessage</h3><p>Does search value match certain message.<p>Parameters:<dl><dt>searchListId</dt><dd><pre>integer</pre><p>The searchListId of the message to be checked.</dd></dl>
         <dl><dt>searchValue</dt><dd><pre>string</pre><p>The value to search for</dd></dl>
-        <h3 id='rebuildDatabase'><a href='mailPrivate.html#rebuildDatabase'>#</a>rebuildDatabase</h3><p>Rebuilds the full text database index.<h1><a href='menubar.html'>menubar</a></h1>
+        <h3 id='rebuildAndVacuumDatabase'><a href='mailPrivate.html#rebuildAndVacuumDatabase'>#</a>rebuildAndVacuumDatabase</h3><p>Rebuilds the full text database index. Defragments and frees up unused space in the db file. This can be very slow.<h1><a href='menubar.html'>menubar</a></h1>
 
     
         <h2>Types</h2>
         <h3 id='Mode'><a href='menubar.html#Mode'>#</a>Mode</h3><dl><dt><code>ENUM</code></dt><dd><p>What part menubar to manipulate<li>all<li>update<li>tabs</ul></dd></dl>
         <h3 id='Edge'><a href='menubar.html#Edge'>#</a>Edge</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines position of menu items added in chrome code wrt container items.<li>above<li>below<li>off</ul></dd></dl>
+        <h3 id='ItemType'><a href='menubar.html#ItemType'>#</a>ItemType</h3><dl><dt><code>ENUM</code></dt><dd><p>What kind of item.<li>command<li>checkbox<li>radio<li>folder<li>container<li>separator</ul></dd></dl>
         <h3 id='MenuItem'><a href='menubar.html#MenuItem'>#</a>MenuItem</h3><p>One menu item.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Text in item.</dd></dl>
         <dl><dt>action</dt><dd><pre>string</pre><p>Action to execute.</dd></dl>
         <dl><dt>id</dt><dd><pre>integer</pre><p>The unique id of item.</dd></dl>
         <dl><dt>items</dt><dd>(optional) <p>Child menu items.<p><code>Array</code> of:
         <ul><li>MenuItem</ul></dd></dl>
         <dl><dt>visible</dt><dd>(optional) <pre>boolean</pre><p>Whether this menu item is visible or not. Defaults to true.</dd></dl>
-        <dl><dt>type</dt><dd>(optional) <pre>string</pre><p>'normal' or 'checkbox'. Defaults to 'normal'.</dd></dl>
+        <dl><dt>type</dt><dd>(optional) <pre><a href="#ItemType">ItemType</a></pre><p>'normal' or 'checkbox'. Defaults to 'normal'.</dd></dl>
         <dl><dt>checked</dt><dd>(optional) <pre>boolean</pre><p>true if the checkbox is checked, otherwise false. Only applies for type='checkbox'.</dd></dl>
-        <dl><dt>disabled</dt><dd>(optional) <pre>boolean</pre><p>true if the item should appear as grayed out.</dd></dl>
+        <dl><dt>enabled</dt><dd>(optional) <pre>boolean</pre><p>false if the item should appear as grayed out. Assumed true if not set.</dd></dl>
         <dl><dt>withNoWindow</dt><dd><pre>boolean</pre><p>true if the item should remain normal when no windows are open. If false the item will be grayed out.</dd></dl>
         <dl><dt>emphasized</dt><dd>(optional) <pre>boolean</pre><p>true if the item should appear in an emphasized style (typically bold).</dd></dl>
         <dl><dt>shortcut</dt><dd>(optional) <pre>string</pre><p>String which illustrates a shortcut. The presence of a string will not execute menu action.</dd></dl>
@@ -1425,6 +1423,7 @@
         <dl><dt>name</dt><dd><pre>string</pre><p>Text in item.</dd></dl>
         <dl><dt>type</dt><dd><pre><a href="#ItemType">ItemType</a></pre><p>Defaults to 'normal'.</dd></dl>
         <dl><dt>selected</dt><dd>(optional) <pre>boolean</pre><p>Whether item is initially selected. Default to false.</dd></dl>
+        <dl><dt>enabled</dt><dd>(optional) <pre>boolean</pre><p>Whether item is enabled or not (grayed out) . Defaults to true.</dd></dl>
         <dl><dt>visible</dt><dd>(optional) <pre>boolean</pre><p>Whether item is visible or not. Defaults to true.</dd></dl>
         <dl><dt>checked</dt><dd>(optional) <pre>boolean</pre><p>true if the checkbox is checked. Ignored unless type is 'checkbox' or 'radiobutton'.</dd></dl>
         <dl><dt>radiogroup</dt><dd>(optional) <pre>integer</pre><p>The radiobutton group this item belongs to. Must be present for a radio button.</dd></dl>
@@ -1857,7 +1856,8 @@
         <dl><dt>explicitly_closed</dt><dd><pre>boolean</pre><p>true if the dialog was closed explicitly (from close button), otherwise false if it was closed from clicking outside it or similar.</dd></dl>
         <dl><dt>original_language</dt><dd><pre>string</pre><p>Original language of the page.</dd></dl>
         <dl><dt>target_language</dt><dd><pre>string</pre><p>Target language selected.</dd></dl>
-        <h3 id='resetTranslationPrefs'><a href='prefs.html#resetTranslationPrefs'>#</a>resetTranslationPrefs</h3><p>Translate: Resets the translation preferences to defaults.<h1><a href='readingListPrivate.html'>readingListPrivate</a></h1>
+        <h3 id='resetTranslationPrefs'><a href='prefs.html#resetTranslationPrefs'>#</a>resetTranslationPrefs</h3><p>Translate: Resets the translation preferences to defaults.<dl><dt>api['name']</dt><dd>⚠ WARNING! Failed to get info as type not provided</dd></dl>
+<h1><a href='readingListPrivate.html'>readingListPrivate</a></h1>
 
     
         <h2>Types</h2>
@@ -1958,8 +1958,7 @@
         <h2>Methods</h2>
         <h3 id='exit'><a href='runtimePrivate.html#exit'>#</a>exit</h3><p>Close all browsers and exit the application.<h3 id='restart'><a href='runtimePrivate.html#restart'>#</a>restart</h3><p>Close all browsers and restart the application.<h3 id='getAllFeatureFlags'><a href='runtimePrivate.html#getAllFeatureFlags'>#</a>getAllFeatureFlags</h3><p>Gets all the registered Vivaldi feature flags.<h3 id='setFeatureEnabled'><a href='runtimePrivate.html#setFeatureEnabled'>#</a>setFeatureEnabled</h3><p>Enables or disables a feature.<p>Parameters:<dl><dt>featureName</dt><dd><pre>string</pre><p>Name of the feature to enable or disable.</dd></dl>
         <dl><dt>enable</dt><dd><pre>boolean</pre><p>true to enable feature.</dd></dl>
-        <h3 id='isGuestSession'><a href='runtimePrivate.html#isGuestSession'>#</a>isGuestSession</h3><p>Checks whether the profile in the current window is running as a guest session or not.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Id of window to retrieve state from.</dd></dl>
-        <h3 id='hasGuestSession'><a href='runtimePrivate.html#hasGuestSession'>#</a>hasGuestSession</h3><p>Checks whether any guest session is open.<h3 id='switchToGuestSession'><a href='runtimePrivate.html#switchToGuestSession'>#</a>switchToGuestSession</h3><p>Switch to a guest session.<h3 id='closeGuestSession'><a href='runtimePrivate.html#closeGuestSession'>#</a>closeGuestSession</h3><p>Close all guest session windows.<h3 id='openProfileSelectionWindow'><a href='runtimePrivate.html#openProfileSelectionWindow'>#</a>openProfileSelectionWindow</h3><p>Open window for profile management.<h3 id='getUserProfiles'><a href='runtimePrivate.html#getUserProfiles'>#</a>getUserProfiles</h3><p>Get all or just the active registered user profile(s).<p>Parameters:<dl><dt>activeOnly</dt><dd>(optional) <pre>boolean</pre><p>If true, only return the active profile.</dd></dl>
+        <h3 id='isGuestSession'><a href='runtimePrivate.html#isGuestSession'>#</a>isGuestSession</h3><p>Checks whether the current profile is running as a guest session or not.<h3 id='hasGuestSession'><a href='runtimePrivate.html#hasGuestSession'>#</a>hasGuestSession</h3><p>Checks whether any guest session is open.<h3 id='switchToGuestSession'><a href='runtimePrivate.html#switchToGuestSession'>#</a>switchToGuestSession</h3><p>Switch to a guest session.<h3 id='closeGuestSession'><a href='runtimePrivate.html#closeGuestSession'>#</a>closeGuestSession</h3><p>Close all guest session windows.<h3 id='openProfileSelectionWindow'><a href='runtimePrivate.html#openProfileSelectionWindow'>#</a>openProfileSelectionWindow</h3><p>Open window for profile management.<h3 id='getUserProfiles'><a href='runtimePrivate.html#getUserProfiles'>#</a>getUserProfiles</h3><p>Get all or just the active registered user profile(s).<p>Parameters:<dl><dt>activeOnly</dt><dd>(optional) <pre>boolean</pre><p>If true, only return the active profile.</dd></dl>
         <h3 id='openNamedProfile'><a href='runtimePrivate.html#openNamedProfile'>#</a>openNamedProfile</h3><p>Open a new window using the given named profile.<p>Parameters:<dl><dt>profilePath</dt><dd><pre>string</pre><p>Path of the profile to open.</dd></dl>
         <h3 id='closeActiveProfile'><a href='runtimePrivate.html#closeActiveProfile'>#</a>closeActiveProfile</h3><p>Close all windows for the active profile in this window.<h3 id='getUserProfileImages'><a href='runtimePrivate.html#getUserProfileImages'>#</a>getUserProfileImages</h3><p>Get all available user profiles images.<h3 id='updateActiveProfile'><a href='runtimePrivate.html#updateActiveProfile'>#</a>updateActiveProfile</h3><p>Updates the name and icon index for the active profile.<p>Parameters:<dl><dt>name</dt><dd><pre>string</pre><p>New name for the profile.</dd></dl>
         <dl><dt>avatarIndex</dt><dd><pre>integer</pre><p>Index into the avatar table for the new avatar.</dd></dl>
@@ -1998,6 +1997,82 @@
         <dl><dt>passwordForm</dt><dd><pre><a href="#PasswordForm">PasswordForm</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='getList'><a href='savedpasswords.html#getList'>#</a>getList</h3><p>Retrieves list of saved passwords.<h3 id='remove'><a href='savedpasswords.html#remove'>#</a>remove</h3><p>Removes an item from the list retrieved with getList.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='authenticate'><a href='savedpasswords.html#authenticate'>#</a>authenticate</h3><p>Before showing password to the user, make sure they are authenticated via the OS.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h1><a href='searchEngines.html'>searchEngines</a></h1>
+
+    
+        <h2>Types</h2>
+        <h3 id='DefaultType'><a href='searchEngines.html#DefaultType'>#</a>DefaultType</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>defaultSearch<li>defaultPrivate<li>defaultSearchField<li>defaultSearchFieldPrivate<li>defaultSpeeddials<li>defaultSpeeddialsPrivate<li>defaultImage</ul></dd></dl>
+        <h3 id='TemplateURL'><a href='searchEngines.html#TemplateURL'>#</a>TemplateURL</h3><p>Represents a specific search engine. Urls and post params should only be used when editing the properties of a TemplateURL<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>readOnly</dt><dd><pre>boolean</pre><p>Search engines are marked as read only if they are provided by extensions, or early on if they come from the set available before the service is fully loaded</dd></dl>
+        <dl><dt>extensionId</dt><dd><pre>string</pre><p>For regular search engines, this string is empty. Otherwise it contains the id of the extension that provided the search.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>keyword</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>faviconUrl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>postParams</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>suggestUrl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>suggestPostParams</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>imageUrl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>imagePostParams</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>prepopulateId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='AllTemplateURLs'><a href='searchEngines.html#AllTemplateURLs'>#</a>AllTemplateURLs</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>templateUrls</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>TemplateURL</ul></dd></dl>
+        <dl><dt>defaultSearch</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>defaultPrivate</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>defaultSearchField</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>defaultSearchFieldPrivate</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>defaultSpeeddials</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>defaultSpeeddialsPrivate</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>defaultImage</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='SearchRequest'><a href='searchEngines.html#SearchRequest'>#</a>SearchRequest</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>contentType</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>postParams</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        
+        <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
+        <h3 id='onTemplateUrlsChanged'><a href='searchEngines.html#onTemplateUrlsChanged'>#</a>onTemplateUrlsChanged</h3><p>Informs that template URLs have changed
+        <h2>Methods</h2>
+        <h3 id='getKeywordForUrl'><a href='searchEngines.html#getKeywordForUrl'>#</a>getKeywordForUrl</h3><p>Obtains the default keyword for a given search URL<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getTemplateUrls'><a href='searchEngines.html#getTemplateUrls'>#</a>getTemplateUrls</h3><p>Retrieves data about all template URLS.<h3 id='addTemplateUrl'><a href='searchEngines.html#addTemplateUrl'>#</a>addTemplateUrl</h3><p>Adds a template url.<p>Parameters:<dl><dt>templateUrl</dt><dd><pre><a href="#TemplateURL">TemplateURL</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='removeTemplateUrl'><a href='searchEngines.html#removeTemplateUrl'>#</a>removeTemplateUrl</h3><p>Removes a template url.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='updateTemplateUrl'><a href='searchEngines.html#updateTemplateUrl'>#</a>updateTemplateUrl</h3><p>Changes a template url.<p>Parameters:<dl><dt>templateUrl</dt><dd><pre><a href="#TemplateURL">TemplateURL</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='moveTemplateUrl'><a href='searchEngines.html#moveTemplateUrl'>#</a>moveTemplateUrl</h3><p>reorders by moving a search engine before another one<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The search engine to move</dd></dl>
+        <dl><dt>successor_id</dt><dd>(optional) <pre>string</pre><p>The search engine will be moved before the one with this id or to the end if omitted. Must be different from id.</dd></dl>
+        <h3 id='setDefault'><a href='searchEngines.html#setDefault'>#</a>setDefault</h3><p>Sets a default template url.<p>Parameters:<dl><dt>defaultType</dt><dd><pre><a href="#DefaultType">DefaultType</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getSearchRequest'><a href='searchEngines.html#getSearchRequest'>#</a>getSearchRequest</h3><p>Provides the request info to use for performing a search<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>searchTerms</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getSuggestRequest'><a href='searchEngines.html#getSuggestRequest'>#</a>getSuggestRequest</h3><p>Provides the request info to use for requesting suggestions<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>searchTerms</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='repairPrepopulatedTemplateUrls'><a href='searchEngines.html#repairPrepopulatedTemplateUrls'>#</a>repairPrepopulatedTemplateUrls</h3><p>resets the prepopulated template urls and the default search<p>Parameters:<dl><dt>onlyKeepPrepopulated</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h1><a href='settings.html'>settings</a></h1>
 
     
@@ -2119,9 +2194,9 @@
         <dl><dt>height</dt><dd><pre>integer</pre><p>height</dd></dl>
         <dl><dt>right</dt><dd><pre>integer</pre><p>right</dd></dl>
         <dl><dt>bottom</dt><dd><pre>integer</pre><p>bottom</dd></dl>
-        <dl><dt>path</dt><dd><pre>string</pre><p>Element path to uniquely identify element.</dd></dl>
         <dl><dt>href</dt><dd><pre>string</pre><p>Url of focused element in case it's a link.</dd></dl>
         </dl>
+        <h3 id='NavigationDirection'><a href='tabsPrivate.html#NavigationDirection'>#</a>NavigationDirection</h3><dl><dt><code>ENUM</code></dt><dd><p>Which direction to move the current spatnav rect.<li>left<li>right<li>up<li>down</ul></dd></dl>
         <h3 id='LanguageDetectionDetails'><a href='tabsPrivate.html#LanguageDetectionDetails'>#</a>LanguageDetectionDetails</h3><p>Details the language detection for the current page. Corresponds to LanguageDetectionDetails in C++.<p>Properties:<dl><dl><dt>url</dt><dd><pre>string</pre><p>The url of the page detected was done on.</dd></dl>
         <dl><dt>contentLanguage</dt><dd><pre>string</pre><p>The language detected by the content (Content-Language).</dd></dl>
         <dl><dt>cldLanguage</dt><dd><pre>string</pre><p>The language detected by CLD (Chromium's Compact Language Detector library).</dd></dl>
@@ -2184,6 +2259,7 @@
         <h3 id='onKeyboardShortcut'><a href='tabsPrivate.html#onKeyboardShortcut'>#</a>onKeyboardShortcut</h3><p>Fires when on a keystroke that hasn't been consumed by the browser<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Id of the browser window this keyboard event originates from.</dd></dl>
         <dl><dt>shortcutText</dt><dd><pre>string</pre><p>String representation of a keyboard shortcut</dd></dl>
         <dl><dt>autoRepeat</dt><dd><pre>boolean</pre><p>True if the shortcut is generated as a result of automatic keyboard repeat</dd></dl>
+        <dl><dt>fromDevtools</dt><dd><pre>boolean</pre><p>True if the shortcut comes from a devtools window</dd></dl>
         <h3 id='onTabIsDetached'><a href='tabsPrivate.html#onTabIsDetached'>#</a>onTabIsDetached</h3><p>Fired when a tab that is moved out of a window detaches from the source-window. This is used to make sure two WebViews don't try to use the same WebContents.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>Tab id used for Tabstrip WebContents retrieval.</dd></dl>
         <dl><dt>windowId</dt><dd><pre>integer</pre><p>Target WindowId that the message is intended. As in not the window it is detached from, but the window it is attached to.</dd></dl>
         <h3 id='onTabIsAttached'><a href='tabsPrivate.html#onTabIsAttached'>#</a>onTabIsAttached</h3><p>Fired when a WebContents is attached to an embedder. This is used to make sure two WebViews don't try to use the same WebContents.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>Tab id used for Tabstrip WebContents retrieval.</dd></dl>
@@ -2233,14 +2309,11 @@
         <h3 id='scrollPage'><a href='tabsPrivate.html#scrollPage'>#</a>scrollPage</h3><p>Scrolls the page up or down, depending on a parameter<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>scrollType</dt><dd><pre>string</pre><p>Whether to scroll up or down, and by how much</dd></dl>
         <dl><dt>scrollAmount</dt><dd>(optional) <pre>integer</pre><p>The amount to scroll by</dd></dl>
-        <h3 id='getSpatialNavigationRects'><a href='tabsPrivate.html#getSpatialNavigationRects'>#</a>getSpatialNavigationRects</h3><p>Get rectangles for spatially navigable elements.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='getScrollPosition'><a href='tabsPrivate.html#getScrollPosition'>#</a>getScrollPosition</h3><p>Get scroll position of webview. Corresponds to window.scrollX and window.scrollY.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>scrollX</dt><dd><pre>integer</pre><p>Horizontal scroll coordinate</dd></dl>
-        <dl><dt>scrollY</dt><dd><pre>integer</pre><p>Vertical scroll coordinate</dd></dl>
-        </dd></dl>
-            <h3 id='activateElementFromPoint'><a href='tabsPrivate.html#activateElementFromPoint'>#</a>activateElementFromPoint</h3><p>Find element from given coordinates and activate it.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>x</dt><dd><pre>integer</pre><p>Horizontal co-ordinate from the left</dd></dl>
-        <dl><dt>y</dt><dd><pre>integer</pre><p>Vertical co-ordinate from the top</dd></dl>
+        <h3 id='getCurrentSpatnavRect'><a href='tabsPrivate.html#getCurrentSpatnavRect'>#</a>getCurrentSpatnavRect</h3><p>Get the currently focused spatnav rect<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='moveSpatnavRect'><a href='tabsPrivate.html#moveSpatnavRect'>#</a>moveSpatnavRect</h3><p>Move current spatnav rect in |direction|<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>direction</dt><dd><pre><a href="#NavigationDirection">NavigationDirection</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='updateSpatnavRects'><a href='tabsPrivate.html#updateSpatnavRects'>#</a>updateSpatnavRects</h3><p>Update Rectangles for Spatial Navigation. Used when switching tabs while spatnav is active, for example.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='activateSpatnavElement'><a href='tabsPrivate.html#activateSpatnavElement'>#</a>activateSpatnavElement</h3><p>Activate currently focused spatnav element<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>modifiers</dt><dd><pre>integer</pre><p>Keyboard modifiers to simulate shift or ctrl-clicking</dd></dl>
         <h3 id='hasBeforeUnloadOrUnload'><a href='tabsPrivate.html#hasBeforeUnloadOrUnload'>#</a>hasBeforeUnloadOrUnload</h3><p>Check if a page contains a beforeunload or unload handler.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='translatePage'><a href='tabsPrivate.html#translatePage'>#</a>translatePage</h3><p>Attempts to translate the given page.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2553,8 +2626,7 @@
         <dl><dt>statusBar</dt><dd><pre><a href="#StatusbarMode">StatusbarMode</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
         </dl>
-        <h3 id='BroadcastAction'><a href='utilities.html#BroadcastAction'>#</a>BroadcastAction</h3><p>Identifies broadcast type. Only one property should be used.<p>Properties:<dl><dl><dt>minimizeAll</dt><dd>(optional) <pre>boolean</pre><p>Minimize all windows.</dd></dl>
-        <dl><dt>open</dt><dd>(optional) <pre>object</pre><p>Open urls in other window.<p>Object Properties:<dl><dt>winId</dt><dd><pre>number</pre><p>Id of the window where urls are opened.</dd></dl>
+        <h3 id='BroadcastAction'><a href='utilities.html#BroadcastAction'>#</a>BroadcastAction</h3><p>Identifies broadcast type. Only one property should be used.<p>Properties:<dl><dl><dt>open</dt><dd>(optional) <pre>object</pre><p>Open urls in other window.<p>Object Properties:<dl><dt>winId</dt><dd><pre>number</pre><p>Id of the window where urls are opened.</dd></dl>
         <dl><dt>prompt</dt><dd><pre>boolean</pre><p>Show confirm open bookmark dialog.</dd></dl>
         <dl><dt>urls</dt><dd><p>Urls to open.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
@@ -2568,19 +2640,21 @@
         <dl><dt>handlePopupWindow</dt><dd>(optional) <pre>object</pre><p>Accept or reject a popup window event.<p>Object Properties:<dl><dt>windowId</dt><dd><pre>number</pre><p>The windowId of the window that accepts a popup. The tab will be accepted into the tabstrip.</dd></dl>
         <dl><dt>popupId</dt><dd><pre>string</pre><p>Unique ID for a popupwindow.</dd></dl>
         </dd></dl>
+        <dl><dt>actionChanged</dt><dd>(optional) <pre>object</pre><p>An action has changed. Message contains the new settings<p>Object Properties:<dl><dt>command</dt><dd><pre>string</pre><p>Action name.</dd></dl>
+        <dl><dt>shortcuts</dt><dd>(optional) <p>Shortcuts for the action. If omitted there are no shortcuts.<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        <dl><dt>gestures</dt><dd>(optional) <p>Gestures for the action. If omitted there are no gestures.<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        </dd></dl>
+        <dl><dt>actionsRestored</dt><dd>(optional) <pre>object</pre><p>Section has been reset<p>Object Properties:<dl><dt>dummy</dt><dd>(optional) <pre>string</pre><p>One arg must be present</dd></dl>
+        </dd></dl>
         <dl><dt>calendar</dt><dd>(optional) <pre>object</pre><p>Control data handling and turning on/off change listeners.<p>Object Properties:<dl><dt>message</dt><dd><pre><a href="#CalendarBroadcastMessage">CalendarBroadcastMessage</a></pre><p>The control message to pass.</dd></dl>
+        </dd></dl>
+        <dl><dt>updateMacMenu</dt><dd>(optional) <pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>winId</dt><dd><pre>number</pre><p>The window that needs update.</dd></dl>
         </dd></dl>
         <dl><dt>translate</dt><dd>(optional) <pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>winId</dt><dd><pre>number</pre><p>The window where translation takes place.</dd></dl>
         <dl><dt>lang</dt><dd><pre>string</pre><p>Language of text to be translated.</dd></dl>
         <dl><dt>text</dt><dd><pre>string</pre><p>Text to be translated.</dd></dl>
-        </dd></dl>
-        <dl><dt>windowActiveStateChanged</dt><dd>(optional) <pre>object</pre><p>A window has changed active state.<p>Object Properties:<dl><dt>windowId</dt><dd><pre>number</pre><p>Identifier for the window owning the state.</dd></dl>
-        <dl><dt>activated</dt><dd><pre>boolean</pre><p>Window is active.</dd></dl>
-        </dd></dl>
-        <dl><dt>windowAdded</dt><dd>(optional) <pre>object</pre><p>A window has been added.<p>Object Properties:<dl><dt>windowId</dt><dd><pre>number</pre><p>Identifier for the window being added.</dd></dl>
-        <dl><dt>windowState</dt><dd><pre><a href="#WindowProperties">WindowProperties</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
-        <dl><dt>windowRemoved</dt><dd>(optional) <pre>object</pre><p>A window has been removed.<p>Object Properties:<dl><dt>windowId</dt><dd><pre>number</pre><p>Identifier for the window being removed.</dd></dl>
         </dd></dl>
         </dl>
         <h3 id='DialogName'><a href='utilities.html#DialogName'>#</a>DialogName</h3><dl><dt><code>ENUM</code></dt><dd><p>Name of the dialog to set position for.<li>chromecast: The Chromecast dialog with source and destination. Centered over the active webview.<li>password: The password dialog opening to save a password.<li>permission: The permission dialog allowing or blocking one or more permissions.</ul></dd></dl>
@@ -2604,6 +2678,11 @@
         <dl><dt>ref</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tld</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>urlForSecurityDisplay</dt><dd>(optional) <pre>string</pre><p>URL formatted for security display, meaning formatted in unicode in a way to avoid IDN homograph attack.</dd></dl>
+        <dl><dt>tldForSecurityDisplay</dt><dd>(optional) <pre>string</pre><p>TLD for security display</dd></dl>
+        <dl><dt>hostForSecurityDisplay</dt><dd>(optional) <pre>string</pre><p>Host for security display</dd></dl>
+        <dl><dt>pathForSecurityDisplay</dt><dd>(optional) <pre>string</pre><p>Path for security display</dd></dl>
+        <dl><dt>queryForSecurityDisplay</dt><dd>(optional) <pre>string</pre><p>Query for security display</dd></dl>
+        <dl><dt>refForSecurityDisplay</dt><dd>(optional) <pre>string</pre><p>ref for security display</dd></dl>
         </dl>
         <h3 id='FileExtension'><a href='utilities.html#FileExtension'>#</a>FileExtension</h3><p>A single extension item used for filtering <p>Properties:<dl><dl><dt>ext</dt><dd><pre>string</pre><p>Extension ending, eg. 'jpg'</dd></dl>
         </dl>
@@ -2638,6 +2717,7 @@
         <h3 id='CaptureQRDestination'><a href='utilities.html#CaptureQRDestination'>#</a>CaptureQRDestination</h3><dl><dt><code>ENUM</code></dt><dd><p>Where to store the generated QR code<li>dataurl: Store as a returned data url.<li>file: Store in the download location.<li>clipboard: Store in the clipboard</ul></dd></dl>
         <h3 id='GetVersionResults'><a href='utilities.html#GetVersionResults'>#</a>GetVersionResults</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>vivaldiVersion</dt><dd><pre>string</pre><p>The Vivaldi version as a string.</dd></dl>
         <dl><dt>chromiumVersion</dt><dd><pre>string</pre><p>The Chromium version as a string.</dd></dl>
+        <dl><dt>mailVersion</dt><dd><pre>string</pre><p>The Vivaldi mail version as a string.</dd></dl>
         </dl>
         <h3 id='TranslateError'><a href='utilities.html#TranslateError'>#</a>TranslateError</h3><dl><dt><code>ENUM</code></dt><dd><p>The error messages translate can return.<li>no_error<li>network<li>unknown_language<li>unsupported_language<li>timeout<li>error</ul></dd></dl>
         <h3 id='TranslateTextResponse'><a href='utilities.html#TranslateTextResponse'>#</a>TranslateTextResponse</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>error</dt><dd><pre><a href="#TranslateError">TranslateError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2743,6 +2823,7 @@
         <dl><dt>destinationLanguageCode</dt><dd><pre>string</pre><p>The destination language code.</dd></dl>
         <dl><dt>sourceText</dt><dd><p>The strings to translate.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
+        <h3 id='showManageSSLCertificates'><a href='utilities.html#showManageSSLCertificates'>#</a>showManageSSLCertificates</h3><p>Show the OS manage certificates dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window to use as parent window for the dialog</dd></dl>
         <h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
 
     
@@ -2770,6 +2851,7 @@
         <h3 id='sendRequest'><a href='webViewPrivate.html#sendRequest'>#</a>sendRequest</h3><p>Navigates the webview to a given URL but with greater control over the sent request.<p>Parameters:<dl><dt>instanceId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p>The URL of the page to navigate to.</dd></dl>
         <dl><dt>transitionType</dt><dd><pre><a href="#historyPrivate.TransitionType">historyPrivate.TransitionType</a></pre><p>How the URL was reached.</dd></dl>
+        <dl><dt>fromUrlField</dt><dd><pre>boolean</pre><p>Whether the request came from the url field</dd></dl>
         <dl><dt>usePost</dt><dd><pre>boolean</pre><p>Whether to perform the navigation via POST.</dd></dl>
         <dl><dt>postData</dt><dd><pre>string</pre><p>When using POST, this will be the body of the request.</dd></dl>
         <dl><dt>extraHeaders</dt><dd><pre>string</pre><p>Extra headers to pass with the request. See OpenURLParams in chromium code.</dd></dl>
@@ -2788,7 +2870,7 @@
         <dl><dt>incognito</dt><dd>(optional) <pre>boolean</pre><p>Incogito window. Default is false.</dd></dl>
         <dl><dt>focused</dt><dd>(optional) <pre>boolean</pre><p>If true, opens a active window. Default is true.</dd></dl>
         <dl><dt>tabUrl</dt><dd>(optional) <pre>string</pre><p>The url to be added as a new tab, this will be added to the tab model. Not used for settings, popups, etc.</dd></dl>
-        <dl><dt>extData</dt><dd>(optional) <pre>string</pre><p>Extra data to attach to the window.</dd></dl>
+        <dl><dt>vivExtData</dt><dd>(optional) <pre>string</pre><p>Extra data to attach to the window.</dd></dl>
         </dl>
         <h3 id='WindowState'><a href='windowPrivate.html#WindowState'>#</a>WindowState</h3><dl><dt><code>ENUM</code></dt><dd><p>The state of this browser window.<li>normal: Normal window state (i.e. not minimized, maximized, or fullscreen).<li>minimized: Minimized window state.<li>maximized: Maximized window state.<li>fullscreen: Fullscreen window state.</ul></dd></dl>
         <h3 id='WindowType'><a href='windowPrivate.html#WindowType'>#</a>WindowType</h3><dl><dt><code>ENUM</code></dt><dd><p>The type of this browser window.<li>normal: This is a normal browser window.<li>settings: This is a settings window.<li>popup: This is a popup window.</ul></dd></dl>
