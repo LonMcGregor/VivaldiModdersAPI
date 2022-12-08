@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 5.4, by LonMcGregor.
+    <p>Version 5.6, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -28,11 +28,11 @@
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul><li><a href='#AccountType'>AccountType</a><li><a href='#RecurrenceException'>RecurrenceException</a><li><a href='#EventException'>EventException</a><li><a href='#CreateNotificationRow'>CreateNotificationRow</a><li><a href='#CreateInviteRow'>CreateInviteRow</a><li><a href='#SupportedCalendarComponents'>SupportedCalendarComponents</a><li><a href='#Notification'>Notification</a><li><a href='#Invite'>Invite</a><li><a href='#CalendarEvent'>CalendarEvent</a><li><a href='#CreateDetails'>CreateDetails</a><li><a href='#EventType'>EventType</a><li><a href='#CreateEventType'>CreateEventType</a><li><a href='#CreateEventsResults'>CreateEventsResults</a><li><a href='#CreateCalendarDetails'>CreateCalendarDetails</a><li><a href='#Calendar'>Calendar</a><li><a href='#updateCalendar'>updateCalendar</a><li><a href='#updatedAccount'>updatedAccount</a><li><a href='#createdAccount'>createdAccount</a><li><a href='#Account'>Account</a></ul>
+    <ul><li><a href='#AccountType'>AccountType</a><li><a href='#RecurrenceException'>RecurrenceException</a><li><a href='#CreateNotificationRow'>CreateNotificationRow</a><li><a href='#CreateInviteRow'>CreateInviteRow</a><li><a href='#SupportedCalendarComponents'>SupportedCalendarComponents</a><li><a href='#Notification'>Notification</a><li><a href='#Invite'>Invite</a><li><a href='#CalendarEvent'>CalendarEvent</a><li><a href='#CreateDetails'>CreateDetails</a><li><a href='#EventType'>EventType</a><li><a href='#CreateEventType'>CreateEventType</a><li><a href='#CreateEventsResults'>CreateEventsResults</a><li><a href='#CreateCalendarDetails'>CreateCalendarDetails</a><li><a href='#Calendar'>Calendar</a><li><a href='#updateCalendar'>updateCalendar</a><li><a href='#updatedAccount'>updatedAccount</a><li><a href='#createdAccount'>createdAccount</a><li><a href='#Account'>Account</a></ul>
     <h3>Listeners</h3>
     <ul><li><a href='#onIcsFileOpened'>onIcsFileOpened</a><li><a href='#onWebcalUrlOpened'>onWebcalUrlOpened</a><li><a href='#onMailtoOpened'>onMailtoOpened</a><li><a href='#onEventCreated'>onEventCreated</a><li><a href='#onNotificationChanged'>onNotificationChanged</a><li><a href='#onCalendarDataChanged'>onCalendarDataChanged</a></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#getAllEvents'>getAllEvents</a><li><a href='#getAllEventTypes'>getAllEventTypes</a><li><a href='#getAllNotifications'>getAllNotifications</a><li><a href='#eventCreate'>eventCreate</a><li><a href='#eventsCreate'>eventsCreate</a><li><a href='#deleteEvent'>deleteEvent</a><li><a href='#deleteEventException'>deleteEventException</a><li><a href='#updateEvent'>updateEvent</a><li><a href='#create'>create</a><li><a href='#getAll'>getAll</a><li><a href='#delete'>delete</a><li><a href='#update'>update</a><li><a href='#eventTypeCreate'>eventTypeCreate</a><li><a href='#eventTypeUpdate'>eventTypeUpdate</a><li><a href='#deleteEventType'>deleteEventType</a><li><a href='#createEventException'>createEventException</a><li><a href='#createNotification'>createNotification</a><li><a href='#updateNotification'>updateNotification</a><li><a href='#deleteNotification'>deleteNotification</a><li><a href='#createInvite'>createInvite</a><li><a href='#deleteInvite'>deleteInvite</a><li><a href='#updateInvite'>updateInvite</a><li><a href='#getAllAccounts'>getAllAccounts</a><li><a href='#createAccount'>createAccount</a><li><a href='#updateAccount'>updateAccount</a><li><a href='#deleteAccount'>deleteAccount</a><li><a href='#getAllEventTemplates'>getAllEventTemplates</a></ul></nav>
+    <ul><li><a href='#getAllEvents'>getAllEvents</a><li><a href='#getAllEventTypes'>getAllEventTypes</a><li><a href='#getAllNotifications'>getAllNotifications</a><li><a href='#eventCreate'>eventCreate</a><li><a href='#eventsCreate'>eventsCreate</a><li><a href='#deleteEvent'>deleteEvent</a><li><a href='#deleteEventException'>deleteEventException</a><li><a href='#updateRecurrenceException'>updateRecurrenceException</a><li><a href='#updateEvent'>updateEvent</a><li><a href='#create'>create</a><li><a href='#getAll'>getAll</a><li><a href='#delete'>delete</a><li><a href='#update'>update</a><li><a href='#eventTypeCreate'>eventTypeCreate</a><li><a href='#eventTypeUpdate'>eventTypeUpdate</a><li><a href='#deleteEventType'>deleteEventType</a><li><a href='#createEventException'>createEventException</a><li><a href='#createNotification'>createNotification</a><li><a href='#updateNotification'>updateNotification</a><li><a href='#deleteNotification'>deleteNotification</a><li><a href='#createInvite'>createInvite</a><li><a href='#deleteInvite'>deleteInvite</a><li><a href='#updateInvite'>updateInvite</a><li><a href='#getAllAccounts'>getAllAccounts</a><li><a href='#createAccount'>createAccount</a><li><a href='#updateAccount'>updateAccount</a><li><a href='#deleteAccount'>deleteAccount</a><li><a href='#getAllEventTemplates'>getAllEventTemplates</a></ul></nav>
     
         <h2>Types</h2>
         <h3 id='AccountType'><a href='#AccountType'>#</a>AccountType</h3><dl><dt><code>ENUM</code></dt><dd><p>The account type. Maps to int in db: 0: Local. 1: Vivaldi.net calendar. 2: Google Calendar. 3: CalDAV.  4: Read only iCal.<li>local<li>vivaldi<li>google<li>caldav<li>ical</ul></dd></dl>
@@ -41,9 +41,6 @@
         <dl><dt>date</dt><dd>(optional) <pre>number</pre><p>The date of a recurring event that an exception should be added to. In milliseconds since the epoch.</dd></dl>
         <dl><dt>exception_event_id</dt><dd>(optional) <pre>string</pre><p>The id of the event that serves as exception to the event in a recurrence series.</dd></dl>
         <dl><dt>parent_event_id</dt><dd>(optional) <pre>string</pre><p>The id of the event that is parent to all the others events in the recurrence series.</dd></dl>
-        </dl>
-        <h3 id='EventException'><a href='#EventException'>#</a>EventException</h3><p>A pattern describing how a event exception occurs. Used during import and create.<p>Properties:<dl><dl><dt>exceptionDate</dt><dd>(optional) <pre>number</pre><p>The date an exception should be added to. In milliseconds since the epoch.</dd></dl>
-        <dl><dt>cancelled</dt><dd>(optional) <pre>boolean</pre><p>If a certain instance of recurring event is cancelled.</dd></dl>
         </dl>
         <h3 id='CreateNotificationRow'><a href='#CreateNotificationRow'>#</a>CreateNotificationRow</h3><p>An object describing notification to be created during event creation.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Name of the notification.</dd></dl>
         <dl><dt>when</dt><dd><pre>number</pre><p>When this notification should fire. In milliseconds since the epoch.</dd></dl>
@@ -93,7 +90,7 @@
         <dl><dt>sequence</dt><dd>(optional) <pre>integer</pre><p>iCal sequence field according to: https://tools.ietf.org/html/rfc5545#section-3.8.7.4.</dd></dl>
         <dl><dt>ical</dt><dd>(optional) <pre>string</pre><p>The original ical message.</dd></dl>
         <dl><dt>rrule</dt><dd>(optional) <pre>string</pre><p>The recurring rule. In iCalendar format.</dd></dl>
-        <dl><dt>recurrenceExceptions</dt><dd>(optional) <p>List of recurrence exceptions.<p><code>Array</code> of:
+        <dl><dt>recurrenceExceptions</dt><dd>(optional) <p>List of recurrence exceptions. Either cancelled instances or moved.<p><code>Array</code> of:
         <ul><li>RecurrenceException</ul></dd></dl>
         <dl><dt>notifications</dt><dd>(optional) <p>List of notifications.<p><code>Array</code> of:
         <ul><li>Notification</ul></dd></dl>
@@ -130,8 +127,8 @@
         <dl><dt>rrule</dt><dd>(optional) <pre>string</pre><p>The recurring rule. In iCalendar format.</dd></dl>
         <dl><dt>eventTypeId</dt><dd>(optional) <pre>string</pre><p>The event type id of the event.</dd></dl>
         <dl><dt>organizer</dt><dd>(optional) <pre>string</pre><p>The organizer of the event.</dd></dl>
-        <dl><dt>eventExceptions</dt><dd>(optional) <p>List of recurrence exceptions.<p><code>Array</code> of:
-        <ul><li>object<li>{'exception': {'$ref': 'EventException'}, 'exception_event': {'optional': True, '$ref': 'CreateDetails'}}</ul></dd></dl>
+        <dl><dt>recurrenceExceptions</dt><dd>(optional) <p>List of recurrence exceptions.<p><code>Array</code> of:
+        <ul><li>RecurrenceException</ul></dd></dl>
         <dl><dt>notifications</dt><dd>(optional) <p>List of notifications to create.<p><code>Array</code> of:
         <ul><li>CreateNotificationRow</ul></dd></dl>
         <dl><dt>invites</dt><dd>(optional) <p>List of invites to create.<p><code>Array</code> of:
@@ -171,7 +168,7 @@
         <dl><dt>lastChecked</dt><dd>(optional) <pre>number</pre><p>When this calendar last checked for updates.  In milliseconds since the epoch.</dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the calendar.</dd></dl>
         <dl><dt>ctag</dt><dd>(optional) <pre>string</pre><p>The ctag field of the CalDAV calendar.</dd></dl>
-        <dl><dt>supportedCalendarComponent</dt><dd>(optional) <pre><a href="#SupportedCalendarComponents">SupportedCalendarComponents</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>supportedCalendarComponent</dt><dd><pre><a href="#SupportedCalendarComponents">SupportedCalendarComponents</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='Calendar'><a href='#Calendar'>#</a>Calendar</h3><p>Calendar that owns events.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the calendar. IDs are unique within the current profile, and they remain valid even after the browser is restarted.</dd></dl>
         <dl><dt>accountId</dt><dd><pre>string</pre><p>The id of the account the calendar belongs to.</dd></dl>
@@ -185,7 +182,7 @@
         <dl><dt>ctag</dt><dd>(optional) <pre>string</pre><p>The ctag field of the CalDAV calendar.</dd></dl>
         <dl><dt>lastChecked</dt><dd>(optional) <pre>number</pre><p>When this calendar last checked for updates.  In milliseconds since the epoch.</dd></dl>
         <dl><dt>timezone</dt><dd>(optional) <pre>string</pre><p>The timezone of the calendar.</dd></dl>
-        <dl><dt>supportedCalendarComponent</dt><dd>(optional) <pre><a href="#SupportedCalendarComponents">SupportedCalendarComponents</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>supportedCalendarComponent</dt><dd><pre><a href="#SupportedCalendarComponents">SupportedCalendarComponents</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='updateCalendar'><a href='#updateCalendar'>#</a>updateCalendar</h3><p>Object to update calendar.<p>Properties:<dl><dl><dt>accountId</dt><dd>(optional) <pre>string</pre><p>The id of the account the calendar belongs to.</dd></dl>
         <dl><dt>name</dt><dd>(optional) <pre>string</pre><p>The name of the calendar.</dd></dl>
@@ -259,6 +256,12 @@
         <ul><li>CreateDetailsMinimum items: 1</ul></dd></dl>
         <h3 id='deleteEvent'><a href='#deleteEvent'>#</a>deleteEvent</h3><p>Deletes an event.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='deleteEventException'><a href='#deleteEventException'>#</a>deleteEventException</h3><p>Deletes an recurring event exception.<p>Parameters:<dl><dt>exception_id</dt><dd><pre>string</pre><p>The id of the exception to delete.</dd></dl>
+        <h3 id='updateRecurrenceException'><a href='#updateRecurrenceException'>#</a>updateRecurrenceException</h3><p>Updates the recurrence exception of an event. Specify only the properties that you want to change. Unspecified properties will be left unchanged.<p>Parameters:<dl><dt>recurrenceId</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>changes</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>cancelled</dt><dd>(optional) <pre>boolean</pre><p>If a certain instance of recurring event is cancelled.</dd></dl>
+        <dl><dt>date</dt><dd>(optional) <pre>number</pre><p>The date of a recurring event that an exception should be added to. In milliseconds since the epoch.</dd></dl>
+        <dl><dt>exception_event_id</dt><dd>(optional) <pre>string</pre><p>The id of the event that serves as exception to the event in a recurrence series.</dd></dl>
+        <dl><dt>parent_event_id</dt><dd>(optional) <pre>string</pre><p>The id of the event that is parent to all the others events in the recurrence series.</dd></dl>
+        </dd></dl>
         <h3 id='updateEvent'><a href='#updateEvent'>#</a>updateEvent</h3><p>Updates the properties of an event. Specify only the properties that you want to change. Unspecified properties will be left unchanged.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>changes</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>calendarId</dt><dd>(optional) <pre>string</pre><p>The updated calendar id of event.</dd></dl>
         <dl><dt>alarmId</dt><dd>(optional) <pre>string</pre><p>The updated alarm id of event.</dd></dl>

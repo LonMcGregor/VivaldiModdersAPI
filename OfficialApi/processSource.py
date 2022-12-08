@@ -2,7 +2,7 @@ import json, glob, os, re
 from json import JSONDecodeError
 import jstyleson
 
-SOURCE_PATH = r'D:\vivaldi-source_5.4.2753\vivaldi-source'
+SOURCE_PATH = r'D:\vivaldi-source_5.6.2867\vivaldi-source'
 
 def getAllApiDefsInSourceBundle():
     return glob.glob(os.path.join(SOURCE_PATH, 'extensions/schema/*.json'))

@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 5.4, by LonMcGregor.
+    <p>Version 5.6, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -32,7 +32,7 @@
     <h3>Listeners</h3>
     <ul><li><a href='#onImportStarted'>onImportStarted</a><li><a href='#onImportEnded'>onImportEnded</a><li><a href='#onImportItemStarted'>onImportItemStarted</a><li><a href='#onImportItemEnded'>onImportItemEnded</a><li><a href='#onImportItemFailed'>onImportItemFailed</a></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#getProfiles'>getProfiles</a><li><a href='#startImport'>startImport</a><li><a href='#openThunderbirdMailbox'>openThunderbirdMailbox</a><li><a href='#readMessageFromThunderbirdMailbox'>readMessageFromThunderbirdMailbox</a></ul></nav>
+    <ul><li><a href='#getProfiles'>getProfiles</a><li><a href='#startImport'>startImport</a><li><a href='#openThunderbirdMailbox'>openThunderbirdMailbox</a><li><a href='#closeThunderbirdMailbox'>closeThunderbirdMailbox</a><li><a href='#readMessageFromThunderbirdMailbox'>readMessageFromThunderbirdMailbox</a></ul></nav>
     
         <h2>Types</h2>
         <h3 id='import_types'><a href='#import_types'>#</a>import_types</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>internet_explorer<li>firefox<li>safari<li>bookmarks_file<li>opera<li>opera_bookmark<li>chrome<li>chromium<li>vivaldi<li>yandex<li>opera_opium_beta<li>opera_opium_dev<li>brave<li>edge<li>edge_chromium<li>thunderbird<li>opera_opium<li>unknown</ul></dd></dl>
@@ -46,10 +46,10 @@
         <dl><dt>favorites</dt><dd><pre>boolean</pre><p>Does profile support favorites.</dd></dl>
         <dl><dt>passwords</dt><dd><pre>boolean</pre><p>Does profile support passwords.</dd></dl>
         <dl><dt>supportsMasterPassword</dt><dd><pre>boolean</pre><p>Does profile support a master password to decode passwords.</dd></dl>
-        <dl><dt>search</dt><dd><pre>boolean</pre><p>Does profile support search.</dd></dl>
         <dl><dt>speeddial</dt><dd><pre>boolean</pre><p>Does profile support Speed Dial.</dd></dl>
         <dl><dt>notes</dt><dd><pre>boolean</pre><p>Does profile support notes.</dd></dl>
         <dl><dt>email</dt><dd><pre>boolean</pre><p>Does profile support email.</dd></dl>
+        <dl><dt>contacts</dt><dd><pre>boolean</pre><p>Does profile support contacts.</dd></dl>
         <dl><dt>supportsStandaloneImport</dt><dd><pre>boolean</pre><p>Does profile support standalone import with a dialog.</dd></dl>
         <dl><dt>hasDefaultInstall</dt><dd><pre>boolean</pre><p>Is a default installation detected (for Opera 12 and Vivaldi).</dd></dl>
         <dl><dt>willShowDialogType</dt><dd><pre>string</pre><p>When import starts and custom profile or file import is selected, this returns what dialog will be shown, if any. Possible values are 'file', 'folder' and 'none'.</dd></dl>
@@ -93,15 +93,23 @@
         <dl><dt>error</dt><dd><pre>string</pre><p>Error message that can be shown to the user.</dd></dl>
         
         <h2>Methods</h2>
-        <h3 id='getProfiles'><a href='#getProfiles'>#</a>getProfiles</h3><p>Retrieves import data profiles.<h3 id='startImport'><a href='#startImport'>#</a>startImport</h3><p>Start import process.<p>Parameters:<dl><dt>itemsToImport</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
-        <ul><li>string<li>int64</ul></dd></dl>
+        <h3 id='getProfiles'><a href='#getProfiles'>#</a>getProfiles</h3><p>Retrieves import data profiles.<h3 id='startImport'><a href='#startImport'>#</a>startImport</h3><p>Start import process.<p>Parameters:<dl><dt>profileIndex</dt><dd><pre>integer</pre><p>Index of the profile we want to import. This is a null based index of results from getProfiles.</dd></dl>
+        <dl><dt>askUserForFileLocation</dt><dd><pre>boolean</pre><p>Show file dialog to user.</dd></dl>
+        <dl><dt>profileName</dt><dd><pre>string</pre><p>Name of profile.</dd></dl>
+        <dl><dt>typesToImport</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>history</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>favorites</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>passwords</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>speeddial</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>notes</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
         <dl><dt>masterPassword</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>importPath</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>result</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
             <h3 id='openThunderbirdMailbox'><a href='#openThunderbirdMailbox'>#</a>openThunderbirdMailbox</h3><p>Opens Thunderbird mailbox from disk and seek to seekPosition. If called with already opened file it only seeks to seekPosition. If called with a new path it closes the current file and opens the new one.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>Path to mailbox.</dd></dl>
-        <dl><dt>seekPosition</dt><dd>(optional) <pre>integer</pre><p>Seek to this position after opening</dd></dl>
-        <h3 id='readMessageFromThunderbirdMailbox'><a href='#readMessageFromThunderbirdMailbox'>#</a>readMessageFromThunderbirdMailbox</h3><p>Read one message from currently open Thunderbird mailbox.<p>Parameters:<dl><dt>callback</dt><dd><p>Callback function containing message<p>Parameters:<dl><dt>message</dt><dd><pre>string</pre><p>Contents of the message just read</dd></dl>
-        <dl><dt>seekPosition</dt><dd><pre>integer</pre><p>Seek position in file after reading. Returns -1 if all messages have been read.</dd></dl>
+        <dl><dt>seekPosition</dt><dd>(optional) <pre>string</pre><p>Seek to this position after opening, serialized as a string because V8's integer type is too small for large mbox files.</dd></dl>
+        <dl><dt>callback</dt><dd><p>Callback function returning file size.<p>Parameters:<dl><dt>fileSize</dt><dd><pre>string</pre><p>Size of mailbox file in bytes. Suitable for using seekPosition/fileSize as a  status indicator ratio. Serialized as a string because V8's integer type is too small for large mbox files.</dd></dl>
+        </dd></dl>
+            <h3 id='closeThunderbirdMailbox'><a href='#closeThunderbirdMailbox'>#</a>closeThunderbirdMailbox</h3><p>Closes currently open thunderbird mailbox, if any<h3 id='readMessageFromThunderbirdMailbox'><a href='#readMessageFromThunderbirdMailbox'>#</a>readMessageFromThunderbirdMailbox</h3><p>Read one message from currently open Thunderbird mailbox.<p>Parameters:<dl><dt>callback</dt><dd><p>Callback function containing message<p>Parameters:<dl><dt>message</dt><dd><pre>string</pre><p>Contents of the message just read</dd></dl>
+        <dl><dt>seekPosition</dt><dd><pre>string</pre><p>Seek position in file after reading. Returns -1 if all messages have been read. Serialized as a string because V8's integer type is too small for large mbox files.</dd></dl>
         </dd></dl>
             </main></body></html>
