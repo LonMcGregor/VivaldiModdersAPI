@@ -10,3 +10,4 @@ Needs [linjackson78/jstyleson](https://github.com/linjackson78/jstyleson) instal
 
 ## TODOs
 * each `chrome.Tab` has an `extData` object which vivaldi uses for things like stacks and tiling. this needs a public reference
+* add a script that extracts just the extension, vivapp and VIVALDI_VERSION files

@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 5.7, by LonMcGregor.
+    <p>Version 6.0, by LonMcGregor.
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -1264,7 +1264,6 @@
         <h3 id='InfobarButton'><a href='infobars.html#InfobarButton'>#</a>InfobarButton</h3><p>Button to be shown in the infobar.<p>Properties:<dl><dl><dt>text</dt><dd><pre>string</pre><p>Text to be shown in the button.</dd></dl>
         <dl><dt>action</dt><dd><pre><a href="#ButtonAction">ButtonAction</a></pre><p>The action to be performed when clicking this button.</dd></dl>
         <dl><dt>prominent</dt><dd><pre>boolean</pre><p>This is the prominent button and should receive styling accordingly.</dd></dl>
-        <dl><dt>triggersUACPrompt</dt><dd><pre>boolean</pre><p>Will this trigger a UAC prompt on Windows.</dd></dl>
         </dl>
         <h3 id='Infobar'><a href='infobars.html#Infobar'>#</a>Infobar</h3><p>Object passed to the onInfobarCreated event.<p>Properties:<dl><dl><dt>tabId</dt><dd><pre>integer</pre><p>The tabId this infobar is associated with.</dd></dl>
         <dl><dt>identifier</dt><dd><pre>integer</pre><p>The identifier used to identify this infobar. It is only unique in combination with |tabId|.</dd></dl>
@@ -1330,10 +1329,12 @@
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be created/saved/overridden.</dd></dl>
         <dl><dt>raw</dt><dd><pre>string</pre><p>The raw mail content.</dd></dl>
+        <dl><dt>append</dt><dd>(optional) <pre>boolean</pre><p>Whether to append to file instead of write.</dd></dl>
         <h3 id='writeBufferToMessageFile'><a href='mailPrivate.html#writeBufferToMessageFile'>#</a>writeBufferToMessageFile</h3><p>Saves a mail to disk. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to create a folder structure, starting at user default profile /Mail The function returns error if empty<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be created/saved/overridden.</dd></dl>
         <dl><dt>raw</dt><dd><pre>binary</pre><p>The raw mail content as arrayBuffer</dd></dl>
+        <dl><dt>append</dt><dd>(optional) <pre>boolean</pre><p>Whether to append to file instead of write.</dd></dl>
         <h3 id='deleteMessageFile'><a href='mailPrivate.html#deleteMessageFile'>#</a>deleteMessageFile</h3><p>Deletes a file. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be deleted. With ending.</dd></dl>
@@ -1952,7 +1953,8 @@
         </details>
         <h3 id='onProfilesUpdated'><a href='runtimePrivate.html#onProfilesUpdated'>#</a>onProfilesUpdated</h3><p>Fired when profiles have changed and the UI must be updated to reflect it.
         <h2>Methods</h2>
-        <h3 id='exit'><a href='runtimePrivate.html#exit'>#</a>exit</h3><p>Close all browsers and exit the application.<h3 id='restart'><a href='runtimePrivate.html#restart'>#</a>restart</h3><p>Close all browsers and restart the application.<h3 id='getAllFeatureFlags'><a href='runtimePrivate.html#getAllFeatureFlags'>#</a>getAllFeatureFlags</h3><p>Gets all the registered Vivaldi feature flags.<h3 id='setFeatureEnabled'><a href='runtimePrivate.html#setFeatureEnabled'>#</a>setFeatureEnabled</h3><p>Enables or disables a feature.<p>Parameters:<dl><dt>featureName</dt><dd><pre>string</pre><p>Name of the feature to enable or disable.</dd></dl>
+        <h3 id='exit'><a href='runtimePrivate.html#exit'>#</a>exit</h3><p>Close all browsers and exit the application.<p>Parameters:<dl><dt>prompt</dt><dd><pre>boolean</pre><p>Show exit confirmation when true.</dd></dl>
+        <h3 id='restart'><a href='runtimePrivate.html#restart'>#</a>restart</h3><p>Close all browsers and restart the application.<h3 id='getAllFeatureFlags'><a href='runtimePrivate.html#getAllFeatureFlags'>#</a>getAllFeatureFlags</h3><p>Gets all the registered Vivaldi feature flags.<h3 id='setFeatureEnabled'><a href='runtimePrivate.html#setFeatureEnabled'>#</a>setFeatureEnabled</h3><p>Enables or disables a feature.<p>Parameters:<dl><dt>featureName</dt><dd><pre>string</pre><p>Name of the feature to enable or disable.</dd></dl>
         <dl><dt>enable</dt><dd><pre>boolean</pre><p>true to enable feature.</dd></dl>
         <h3 id='isGuestSession'><a href='runtimePrivate.html#isGuestSession'>#</a>isGuestSession</h3><p>Checks whether the current profile is running as a guest session or not.<h3 id='hasGuestSession'><a href='runtimePrivate.html#hasGuestSession'>#</a>hasGuestSession</h3><p>Checks whether any guest session is open.<h3 id='switchToGuestSession'><a href='runtimePrivate.html#switchToGuestSession'>#</a>switchToGuestSession</h3><p>Switch to a guest session.<h3 id='closeGuestSession'><a href='runtimePrivate.html#closeGuestSession'>#</a>closeGuestSession</h3><p>Close all guest session windows.<h3 id='openProfileSelectionWindow'><a href='runtimePrivate.html#openProfileSelectionWindow'>#</a>openProfileSelectionWindow</h3><p>Open window for profile management.<h3 id='getUserProfiles'><a href='runtimePrivate.html#getUserProfiles'>#</a>getUserProfiles</h3><p>Get all or just the active registered user profile(s).<p>Parameters:<dl><dt>activeOnly</dt><dd>(optional) <pre>boolean</pre><p>If true, only return the active profile.</dd></dl>
         <h3 id='openNamedProfile'><a href='runtimePrivate.html#openNamedProfile'>#</a>openNamedProfile</h3><p>Open a new window using the given named profile.<p>Parameters:<dl><dt>profilePath</dt><dd><pre>string</pre><p>Path of the profile to open.</dd></dl>
@@ -2337,9 +2339,7 @@
         <h3 id='ExportResult'><a href='themePrivate.html#ExportResult'>#</a>ExportResult</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>success</dt><dd><pre>boolean</pre><p>True if the theme was successfully exported. False on errors or if the user cancelled operation.</dd></dl>
         <dl><dt>dataBlob</dt><dd>(optional) <pre>binary</pre><p>The exported archive as binary blob. This is given only on success and ony when |returnBlob| is true in |ExportOptions|.</dd></dl>
         </dl>
-        <h3 id='ImportOptions'><a href='themePrivate.html#ImportOptions'>#</a>ImportOptions</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>windowId</dt><dd>(optional) <pre>number</pre><p>The window that shows the import archive selector dialog. Must mot be given if dataBlob is given.</dd></dl>
-        <dl><dt>dialogTitle</dt><dd>(optional) <pre>string</pre><p>The title to use in the import archive selector dialog. Must mot be given if dataBlob is given.</dd></dl>
-        <dl><dt>dataBlob</dt><dd>(optional) <pre>binary</pre><p>The archive to import the theme from. It will be used instead of a user-selected file. It should be a typed array on JS side. This must not be given if windowId or dialogTitle are specified.</dd></dl>
+        <h3 id='ImportOptions'><a href='themePrivate.html#ImportOptions'>#</a>ImportOptions</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>dataBlob</dt><dd><pre>binary</pre><p>The archive to import the theme from.</dd></dl>
         </dl>
         <h3 id='ImportErrorKind'><a href='themePrivate.html#ImportErrorKind'>#</a>ImportErrorKind</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>io<li>badArchive<li>badSettings<li>network</ul></dd></dl>
         <h3 id='ImportError'><a href='themePrivate.html#ImportError'>#</a>ImportError</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>kind</dt><dd><pre><a href="#ImportErrorKind">ImportErrorKind</a></pre><p>Generic error kind</dd></dl>
@@ -2558,25 +2558,140 @@
 
     
         <h2>Types</h2>
-        <h3 id='SessionItem'><a href='sessionsPrivate.html#SessionItem'>#</a>SessionItem</h3><p>Object that holds all information about a single session.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Session display name created from the filename</dd></dl>
+        <h3 id='ContentType'><a href='sessionsPrivate.html#ContentType'>#</a>ContentType</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines role of a node in content. 'group' is the same as a stack.<li>window<li>workspace<li>pinned<li>group<li>tab</ul></dd></dl>
+        <h3 id='WorkspaceItem'><a href='sessionsPrivate.html#WorkspaceItem'>#</a>WorkspaceItem</h3><p>Holds information of a workspace. Not actual tabs, but the workspace itself.<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>Name shown in UI.</dd></dl>
+        <dl><dt>icon</dt><dd><pre>string</pre><p>Icon shown in UI.</dd></dl>
+        <dl><dt>emoji</dt><dd><pre>string</pre><p>emoji shown in UI.</dd></dl>
+        </dl>
+        <h3 id='TabContent'><a href='sessionsPrivate.html#TabContent'>#</a>TabContent</h3><p>Holds information of a tab<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>Active page title. Can be empty.</dd></dl>
+        <dl><dt>url</dt><dd><pre>string</pre><p>Url of active entry in navigation list.</dd></dl>
+        <dl><dt>pinned</dt><dd><pre>boolean</pre><p>Pinned state of the tab.</dd></dl>
+        <dl><dt>quarantine</dt><dd><pre>boolean</pre><p>Tab is not installed if true</dd></dl>
+        <dl><dt>group</dt><dd><pre>string</pre><p>The group (stack) the tab belongs to. Can be empty which means no group.</dd></dl>
+        <dl><dt>groupName</dt><dd><pre>string</pre><p>Name shown in UI. Only set for tabs in a stack. Can be empty even then.</dd></dl>
+        </dl>
+        <h3 id='WindowContent'><a href='sessionsPrivate.html#WindowContent'>#</a>WindowContent</h3><p>Holds information of a window<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
+        <dl><dt>quarantine</dt><dd><pre>boolean</pre><p>Window is not installed if true</dd></dl>
+        <dl><dt>tabs</dt><dd><p>Tabs in window.<p><code>Array</code> of:
+        <ul><li>TabContent</ul></dd></dl>
+        </dl>
+        <h3 id='WorkspaceContent'><a href='sessionsPrivate.html#WorkspaceContent'>#</a>WorkspaceContent</h3><p>Holds information, including tabs of a workspace.<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
+        <dl><dt>quarantine</dt><dd><pre>boolean</pre><p>Window is not installed if true</dd></dl>
+        <dl><dt>tabs</dt><dd><p>Tabs in workspace.<p><code>Array</code> of:
+        <ul><li>TabContent</ul></dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>Name shown in UI.</dd></dl>
+        <dl><dt>icon</dt><dd><pre>string</pre><p>Icon shown in UI.</dd></dl>
+        <dl><dt>emoji</dt><dd><pre>string</pre><p>emoji shown in UI.</dd></dl>
+        </dl>
+        <h3 id='ContentModel'><a href='sessionsPrivate.html#ContentModel'>#</a>ContentModel</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Session identifier.</dd></dl>
+        <dl><dt>windows</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>WindowContent</ul></dd></dl>
+        <dl><dt>workspaces</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>WorkspaceContent</ul></dd></dl>
+        </dl>
+        <h3 id='ContentCommands'><a href='sessionsPrivate.html#ContentCommands'>#</a>ContentCommands</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>ids</dt><dd><p>Tabs and windows in a session.<p><code>Array</code> of:
+        <ul><li>number</ul></dd></dl>
+        <dl><dt>type</dt><dd>(optional) <pre><a href="#ContentType">ContentType</a></pre><p>Used for commands: ['title'].</dd></dl>
+        <dl><dt>quarantine</dt><dd>(optional) <pre>boolean</pre><p>For setting quarantine state.</dd></dl>
+        <dl><dt>title</dt><dd>(optional) <pre>string</pre><p>For setting title. Ignored if number of ids is not 1.</dd></dl>
+        </dl>
+        <h3 id='ItemType'><a href='sessionsPrivate.html#ItemType'>#</a>ItemType</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines supported items<li>folder<li>node<li>history</ul></dd></dl>
+        <h3 id='SessionItem'><a href='sessionsPrivate.html#SessionItem'>#</a>SessionItem</h3><p>Object that holds all information about a single session.<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
+        <dl><dt>type</dt><dd><pre><a href="#ItemType">ItemType</a></pre><p>Tells what kind of item. 'folder' or 'node'. A 'node' can have children (it is then a container).</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>Session display name.</dd></dl>
         <dl><dt>createDateJS</dt><dd><pre>number</pre><p>Session save date in JS format.</dd></dl>
+        <dl><dt>modifyDateJS</dt><dd><pre>number</pre><p>Session update date in JS format.</dd></dl>
         <dl><dt>windows</dt><dd><pre>number</pre><p>Number of windows in this session.</dd></dl>
         <dl><dt>tabs</dt><dd><pre>number</pre><p>Number of tabs in this session.</dd></dl>
+        <dl><dt>workspaces</dt><dd><p>List of workspaces in session.<p><code>Array</code> of:
+        <ul><li>WorkspaceItem</ul></dd></dl>
+        <dl><dt>parentId</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
+        <dl><dt>containerId</dt><dd><pre>number</pre><p>Set for elements in a container or trash, -1 otherwise.</dd></dl>
+        <dl><dt>content</dt><dd>(optional) <pre><a href="#ContentModel">ContentModel</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>children</dt><dd>(optional) <p>An ordered list of children of this node.<p><code>Array</code> of:
+        <ul><li>SessionItem</ul></dd></dl>
         </dl>
-        <h3 id='SessionOpenOptions'><a href='sessionsPrivate.html#SessionOpenOptions'>#</a>SessionOpenOptions</h3><p>Options for opening the session.<p>Properties:<dl><dl><dt>openInNewWindow</dt><dd><pre>boolean</pre><p>The session will open in a new window.</dd></dl>
+        <h3 id='SessionList'><a href='sessionsPrivate.html#SessionList'>#</a>SessionList</h3><dl><dt>SessionList</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>SessionItem</ul></dd></dl>
+        <h3 id='SessionModel'><a href='sessionsPrivate.html#SessionModel'>#</a>SessionModel</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>items</dt><dd><pre><a href="#SessionList">SessionList</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>rootId</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>autosaveId</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>trashId</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>loadingFailed</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
-        <h3 id='SessionSaveOptions'><a href='sessionsPrivate.html#SessionSaveOptions'>#</a>SessionSaveOptions</h3><p>Options for saving the session.<p>Properties:<dl><dl><dt>saveOnlyWindowId</dt><dd><pre>integer</pre><p>Save only the given window.</dd></dl>
-        <dl><dt>ids</dt><dd>(optional) <p>List of tab identifiers to be saved.<p><code>Array</code> of:
+        <h3 id='SessionOpenOptions'><a href='sessionsPrivate.html#SessionOpenOptions'>#</a>SessionOpenOptions</h3><p>Options for opening the session.<p>Properties:<dl><dl><dt>newWindow</dt><dd><pre>boolean</pre><p>The session will open in a new window.</dd></dl>
+        <dl><dt>oneWindow</dt><dd><pre>boolean</pre><p>All tabs will open in one windows.</dd></dl>
+        <dl><dt>withWorkspace</dt><dd><pre>boolean</pre><p>Open workspace tabs.</dd></dl>
+        </dl>
+        <h3 id='SessionAddOptions'><a href='sessionsPrivate.html#SessionAddOptions'>#</a>SessionAddOptions</h3><p>Options for adding a new session or updating an existing session.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>User friendly description of the session. [add, duplicate].</dd></dl>
+        <dl><dt>filename</dt><dd><pre>string</pre><p>Filename without extension. Final name be extended with numbers (N) on collision. [all]</dd></dl>
+        <dl><dt>parentId</dt><dd><pre>number</pre><p>Parent of new session node in the model. [add, duplicate].</dd></dl>
+        <dl><dt>index</dt><dd><pre>number</pre><p>Where to insert among parent's siblings. [add, duplicate].</dd></dl>
+        <dl><dt>owner</dt><dd><pre>string</pre><p>Free form token that is passed back with the event. Allows proper handling when data is added. [add, duplicate].</dd></dl>
+        <dl><dt>fromId</dt><dd>(optional) <pre>number</pre><p>If set, the new entry is copied from the given.</dd></dl>
+        <dl><dt>windowId</dt><dd>(optional) <pre>integer</pre><p>Save only the given window. 0 or not set means all windows. Ignored if 'fromId' is set. [add, update]</dd></dl>
+        <dl><dt>ids</dt><dd>(optional) <p>List of tab identifiers to be saved. Ignored if 'fromId' is set. [add, upddate]<p><code>Array</code> of:
         <ul><li>integer</ul></dd></dl>
+        <dl><dt>backup</dt><dd>(optional) <pre>boolean</pre><p>Special flag for timed backups. No other options are then used. Setting this to false leads to a noop.</dd></dl>
+        </dl>
+        <h3 id='SessionChange'><a href='sessionsPrivate.html#SessionChange'>#</a>SessionChange</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines what has changed.<li>added<li>changed<li>deleted<li>moved<li>content</ul></dd></dl>
+        <h3 id='SessionChangeData'><a href='sessionsPrivate.html#SessionChangeData'>#</a>SessionChangeData</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>owner</dt><dd><pre>string</pre><p>Caller component (in UI) identifier.</dd></dl>
+        <dl><dt>parentId</dt><dd><pre>number</pre><p>Set for 'added' and 'moved' events.</dd></dl>
+        <dl><dt>index</dt><dd><pre>number</pre><p>Set for 'added' and 'moved' events.</dd></dl>
+        <dl><dt>item</dt><dd>(optional) <pre><a href="#SessionItem">SessionItem</a></pre><p>Set for 'added' and 'changed' event.</dd></dl>
         </dl>
         
+        <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
+        <h3 id='onChanged'><a href='sessionsPrivate.html#onChanged'>#</a>onChanged</h3><p>Fired when a session is added or removed.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>change</dt><dd><pre><a href="#SessionChange">SessionChange</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>data</dt><dd><pre><a href="#SessionChangeData">SessionChangeData</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        
         <h2>Methods</h2>
-        <h3 id='getAll'><a href='sessionsPrivate.html#getAll'>#</a>getAll</h3><p>Returns all previously saved sessions stored on disk.<h3 id='saveOpenTabs'><a href='sessionsPrivate.html#saveOpenTabs'>#</a>saveOpenTabs</h3><p>Saves all open tabs to the named session.<p>Parameters:<dl><dt>name</dt><dd><pre>string</pre><p>Name of the session to save to.</dd></dl>
-        <dl><dt>options</dt><dd><pre><a href="#SessionSaveOptions">SessionSaveOptions</a></pre><p>Session save options.</dd></dl>
-        <h3 id='open'><a href='sessionsPrivate.html#open'>#</a>open</h3><p>Open a specific named session.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>name</dt><dd><pre>string</pre><p>Name of the session to open.</dd></dl>
-        <dl><dt>options</dt><dd>(optional) <pre><a href="#SessionOpenOptions">SessionOpenOptions</a></pre><p>Session open options.</dd></dl>
-        <h3 id='delete'><a href='sessionsPrivate.html#delete'>#</a>delete</h3><p>Deletes the named session.<p>Parameters:<dl><dt>name</dt><dd><pre>string</pre><p>Name of the session to delete.</dd></dl>
+        <h3 id='getAll'><a href='sessionsPrivate.html#getAll'>#</a>getAll</h3><p>Returns all previously saved sessions stored on disk.<h3 id='add'><a href='sessionsPrivate.html#add'>#</a>add</h3><p>Saves all open tabs to the named session.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#SessionAddOptions">SessionAddOptions</a></pre><p>Controls the adding behavior.</dd></dl>
+        <h3 id='delete'><a href='sessionsPrivate.html#delete'>#</a>delete</h3><p>Deletes session. Items in the trash folder are permanently removed. Others are moved to trash.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session to delete.</dd></dl>
+        <dl><dt>index</dt><dd><pre>number</pre><p>Index to move to in trash folder.</dd></dl>
+        <h3 id='emptyTrash'><a href='sessionsPrivate.html#emptyTrash'>#</a>emptyTrash</h3><p>Permanently deletes all trashed session.<h3 id='getContent'><a href='sessionsPrivate.html#getContent'>#</a>getContent</h3><p>Returns contents of a session.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session.</dd></dl>
+        <h3 id='makeContainer'><a href='sessionsPrivate.html#makeContainer'>#</a>makeContainer</h3><p>Turns a history session into the default entry of the container.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Session identifier.</dd></dl>
+        <h3 id='modifyContent'><a href='sessionsPrivate.html#modifyContent'>#</a>modifyContent</h3><p>Changes internal settings in a session<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Session identifier.</dd></dl>
+        <dl><dt>commands</dt><dd><pre><a href="#ContentCommands">ContentCommands</a></pre><p>Describes changes to be made</dd></dl>
+        <h3 id='move'><a href='sessionsPrivate.html#move'>#</a>move</h3><p>Moves session.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session to move.</dd></dl>
+        <dl><dt>parentId</dt><dd><pre>number</pre><p>New parent</dd></dl>
+        <dl><dt>index</dt><dd><pre>number</pre><p>Position in new parent's child list.</dd></dl>
+        <h3 id='open'><a href='sessionsPrivate.html#open'>#</a>open</h3><p>Open a specific named session.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session to open.</dd></dl>
+        <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>options</dt><dd><pre><a href="#SessionOpenOptions">SessionOpenOptions</a></pre><p>Session open options.</dd></dl>
+        <h3 id='rename'><a href='sessionsPrivate.html#rename'>#</a>rename</h3><p>Renames the named session.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session to rename.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>New name.</dd></dl>
+        <h3 id='update'><a href='sessionsPrivate.html#update'>#</a>update</h3><p>Updates a session with current open tabs.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session to update.</dd></dl>
+        <dl><dt>options</dt><dd><pre><a href="#SessionAddOptions">SessionAddOptions</a></pre><p>Controls the update behavior.</dd></dl>
         <h1><a href='utilities.html'>utilities</a></h1>
 
     
