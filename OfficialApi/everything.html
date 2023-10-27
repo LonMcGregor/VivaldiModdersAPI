@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 6.0, by LonMcGregor.
+    <p>Version 6.4
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -104,6 +104,7 @@
         <dl><dt>thumbnail</dt><dd><pre>string</pre><p>chrome://thumb/<url> pointing to the stored url of the thumbnail</dd></dl>
         <dl><dt>partner</dt><dd><pre>string</pre><p>Partner id for the node. Vivaldi extended property</dd></dl>
         <dl><dt>speeddial</dt><dd><pre>boolean</pre><p>Boolean variable, stating if a folder is a speeddial folder</dd></dl>
+        <dl><dt>themeColor</dt><dd><pre>string</pre><p>The theme color from the website, to use as the background of the speed dials thumbnail, if no other thumbnail is available</dd></dl>
         <dl><dt>bookmarkbar</dt><dd><pre>boolean</pre><p>Boolean variable, stating if a folder is a bookmark bar folder</dd></dl>
         <dl><dt>trash</dt><dd><pre>boolean</pre><p>true if this is the trash folder. Read only.</dd></dl>
         <dl><dt>dateAdded</dt><dd>(optional) <pre>number</pre><p>When this node was created, in milliseconds since the epoch (<code>new Date(dateAdded)</code>).</dd></dl>
@@ -111,14 +112,6 @@
         <dl><dt>faviconUrl</dt><dd>(optional) <pre>string</pre><p>If present this url should be used to retrive a favicon.</dd></dl>
         <dl><dt>children</dt><dd>(optional) <p>An ordered list of children of this node.<p><code>Array</code> of:
         <ul><li>BookmarkTreeNode</ul></dd></dl>
-        </dl>
-        <h3 id='MetaInfo'><a href='bookmarksPrivate.html#MetaInfo'>#</a>MetaInfo</h3><p>Meta for the bookmark<p>Properties:<dl><dl><dt>nickname</dt><dd><pre>string</pre><p>The nickname for the node. Vivaldi extended property</dd></dl>
-        <dl><dt>description</dt><dd><pre>string</pre><p>The description text for the node. Vivaldi extended property</dd></dl>
-        <dl><dt>partner</dt><dd><pre>string</pre><p>Partner id for the node. Vivaldi extended property</dd></dl>
-        <dl><dt>speeddial</dt><dd><pre>boolean</pre><p>Boolean variable, stating if a folder is a speeddial folder</dd></dl>
-        <dl><dt>bookmarkbar</dt><dd><pre>boolean</pre><p>Boolean variable, stating if a folder is a bookmark bar folder</dd></dl>
-        <dl><dt>dateAdded</dt><dd>(optional) <pre>number</pre><p>When this node was created, in milliseconds since the epoch (<code>new Date(dateAdded)</code>).</dd></dl>
-        <dl><dt>dateGroupModified</dt><dd>(optional) <pre>number</pre><p>When the contents of this folder last changed, in milliseconds since the epoch.</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -156,6 +149,7 @@
         <dl><dt>thumbnail</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>speeddial</dt><dd>(optional) <pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>bookmarkbar</dt><dd>(optional) <pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>themeColor</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
         
         <h2>Methods</h2>
@@ -166,6 +160,7 @@
         <dl><dt>locale</dt><dd><pre>string</pre><p>The locale of the used bookmark file.</dd></dl>
         </dd></dl>
             <h3 id='isCustomThumbnail'><a href='bookmarksPrivate.html#isCustomThumbnail'>#</a>isCustomThumbnail</h3><p>Check if the bookmark has a custom thumbnail from a local file or resource.<p>Parameters:<dl><dt>bookmarkId</dt><dd><pre>string</pre><p>the id of the bookmark</dd></dl>
+        <h3 id='export'><a href='bookmarksPrivate.html#export'>#</a>export</h3><p>Exports bookmarks to a Chrome html bookmark file<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The file selector will be modal to this window.</dd></dl>
         <h1><a href='bookmarkContextMenu.html'>bookmarkContextMenu</a></h1>
 
     
@@ -247,12 +242,13 @@
         <dl><dt>badgeIcon</dt><dd>(optional) <pre>string</pre><p>data-url for the current icon.</dd></dl>
         <dl><dt>badgeTextColor</dt><dd>(optional) <pre>string</pre><p>Text color for the badge text, currently unused.</dd></dl>
         <dl><dt>badgeBackgroundColor</dt><dd>(optional) <pre>string</pre><p>Background color for the badge text.</dd></dl>
+        <dl><dt>enabled</dt><dd>(optional) <pre>boolean</pre><p>Whether the extension is enabled or not.</dd></dl>
         <dl><dt>actionType</dt><dd>(optional) <pre><a href="#ActionType">ActionType</a></pre><p>The type of the extensionAction, either pageaction or browseraction.</dd></dl>
         <dl><dt>visible</dt><dd>(optional) <pre>boolean</pre><p>Visibility of the action button, defaults to true.</dd></dl>
         <dl><dt>actionIsHidden</dt><dd>(optional) <pre>boolean</pre><p>Set to true if the action is user-set to hidden. Defaults to false.</dd></dl>
         <dl><dt>allowInIncognito</dt><dd>(optional) <pre>boolean</pre><p>Whether the action is available in incognito windows or not.</dd></dl>
         <dl><dt>extensionType</dt><dd>(optional) <pre><a href="#ExtensionType">ExtensionType</a></pre><p>The type of the extensionAction, either pageaction or browseraction. Defaults to |extensionAction|.</dd></dl>
-        <dl><dt>name</dt><dd>(optional) <pre>string</pre><p>Name of extension.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>Name of extension.</dd></dl>
         <dl><dt>homepage</dt><dd>(optional) <pre>string</pre><p>Homepage of extension.</dd></dl>
         <dl><dt>optionspage</dt><dd>(optional) <pre>string</pre><p>Address of extension options page.</dd></dl>
         <dl><dt>optionsInNewTab</dt><dd>(optional) <pre>boolean</pre><p>false if the options page should be opened embedded, true if it opens in a new tab.</dd></dl>
@@ -316,7 +312,7 @@
 
     
         <h2>Types</h2>
-        <h3 id='AccountType'><a href='calendar.html#AccountType'>#</a>AccountType</h3><dl><dt><code>ENUM</code></dt><dd><p>The account type. Maps to int in db: 0: Local. 1: Vivaldi.net calendar. 2: Google Calendar. 3: CalDAV.  4: Read only iCal.<li>local<li>vivaldi<li>google<li>caldav<li>ical</ul></dd></dl>
+        <h3 id='AccountType'><a href='calendar.html#AccountType'>#</a>AccountType</h3><dl><dt><code>ENUM</code></dt><dd><p>The account type. Maps to int in db: 0: Local. 1: Vivaldi.net calendar. 2: Google Calendar. 3: CalDAV.  4: Read only iCal.<li>local<li>vivaldi<li>google<li>caldav<li>ical<li>fastmail</ul></dd></dl>
         <h3 id='RecurrenceException'><a href='calendar.html#RecurrenceException'>#</a>RecurrenceException</h3><p>A object describing how an instance of event recurrence is changed.<p>Properties:<dl><dl><dt>exception_id</dt><dd>(optional) <pre>string</pre><p>The id of the exception.</dd></dl>
         <dl><dt>cancelled</dt><dd>(optional) <pre>boolean</pre><p>If a certain instance of recurring event is cancelled.</dd></dl>
         <dl><dt>date</dt><dd>(optional) <pre>number</pre><p>The date of a recurring event that an exception should be added to. In milliseconds since the epoch.</dd></dl>
@@ -497,6 +493,10 @@
         <dl><dt>account_type</dt><dd>(optional) <pre><a href="#AccountType">AccountType</a></pre><p>The type of account.</dd></dl>
         <dl><dt>interval</dt><dd>(optional) <pre>integer</pre><p>The interval how often this account should poll. In seconds.</dd></dl>
         </dl>
+        <h3 id='EventTemplate'><a href='calendar.html#EventTemplate'>#</a>EventTemplate</h3><p>A event template object.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the event template.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>The name of the event template.</dd></dl>
+        <dl><dt>ical</dt><dd><pre>string</pre><p>The ical of the event template.</dd></dl>
+        </dl>
         
         <h2>Listeners</h2>
             <details>
@@ -629,7 +629,14 @@
         <dl><dt>res</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
             <h3 id='deleteAccount'><a href='calendar.html#deleteAccount'>#</a>deleteAccount</h3><p>Deletes an account and its calendars, events, recurring_exceptions, notifications etc<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The account id to be deleted</dd></dl>
-        <h3 id='getAllEventTemplates'><a href='calendar.html#getAllEventTemplates'>#</a>getAllEventTemplates</h3><p>Retrieves all event templates.<h1><a href='contacts.html'>contacts</a></h1>
+        <h3 id='createEventTemplate'><a href='calendar.html#createEventTemplate'>#</a>createEventTemplate</h3><p>Creates an event template.<p>Parameters:<dl><dt>name</dt><dd><pre>string</pre><p>The event template name.</dd></dl>
+        <dl><dt>ical</dt><dd><pre>string</pre><p>The event template ical.</dd></dl>
+        <h3 id='getAllEventTemplates'><a href='calendar.html#getAllEventTemplates'>#</a>getAllEventTemplates</h3><p>Retrieves all event templates.<h3 id='updateEventTemplate'><a href='calendar.html#updateEventTemplate'>#</a>updateEventTemplate</h3><p>Updates the properties of an event template. Specify only the properties that you want to change. Unspecified properties will be left unchanged.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The id of the event template to update.</dd></dl>
+        <dl><dt>changes</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>name</dt><dd>(optional) <pre>string</pre><p>The updated name of the event template.</dd></dl>
+        <dl><dt>ical</dt><dd>(optional) <pre>string</pre><p>The updated ical of the event template.</dd></dl>
+        </dd></dl>
+        <h3 id='deleteEventTemplate'><a href='calendar.html#deleteEventTemplate'>#</a>deleteEventTemplate</h3><p>Deletes an event template.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The id of the event template to delete.</dd></dl>
+        <h1><a href='contacts.html'>contacts</a></h1>
 
     
         <h2>Types</h2>
@@ -1099,6 +1106,16 @@
         <dl><dt>terms</dt><dd><pre>string</pre><p>If keyWordID is not -1, the terms that the user searched for.</dd></dl>
         <dl><dt>typedCount</dt><dd><pre>integer</pre><p>The number of times the user has navigated to this page by typing in the address.</dd></dl>
         </dl>
+        <h3 id='DetailedHistoryItem'><a href='historyPrivate.html#DetailedHistoryItem'>#</a>DetailedHistoryItem</h3><p>An object encapsulating one result of a top url history query.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the item.</dd></dl>
+        <dl><dt>url</dt><dd><pre>string</pre><p>The URL navigated to by a user.</dd></dl>
+        <dl><dt>title</dt><dd><pre>string</pre><p>The title of the page when it was last loaded.</dd></dl>
+        <dl><dt>lastVisitTime</dt><dd>(optional) <pre>number</pre><p>When this page was last loaded, represented in milliseconds since the epoch.</dd></dl>
+        <dl><dt>visitCount</dt><dd><pre>integer</pre><p>The number of times the user has navigated to this page.</dd></dl>
+        <dl><dt>typedCount</dt><dd>(optional) <pre>integer</pre><p>The number of times the user has navigated to this page by typing in the address.</dd></dl>
+        <dl><dt>isBookmarked</dt><dd><pre>boolean</pre><p>States if the URL is bookmarked.</dd></dl>
+        <dl><dt>transitionType</dt><dd><pre><a href="#TransitionType">TransitionType</a></pre><p>The transition type for this visit from its referrer.</dd></dl>
+        <dl><dt>isRedirect</dt><dd><pre>boolean</pre><p>The link is in a redirection chain. First and last redirection links are not considered as redirect.</dd></dl>
+        </dl>
         <h3 id='HistoryPrivateItem'><a href='historyPrivate.html#HistoryPrivateItem'>#</a>HistoryPrivateItem</h3><p>An object encapsulating one result of a history query.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the item.</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p>The URL navigated to by a user.</dd></dl>
         <dl><dt>protocol</dt><dd><pre>string</pre><p>The protocol of the page navigated to by a user.</dd></dl>
@@ -1150,11 +1167,6 @@
         </dd></dl>
         
         <h2>Methods</h2>
-        <h3 id='dbSearch'><a href='historyPrivate.html#dbSearch'>#</a>dbSearch</h3><p><p>Parameters:<dl><dt>query</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>text</dt><dd><pre>string</pre><p>A free-text query to the history service.  Leave empty to retrieve all pages.</dd></dl>
-        <dl><dt>startTime</dt><dd>(optional) <pre>number</pre><p>Limit results to those visited after this date, represented in milliseconds since the epoch.</dd></dl>
-        <dl><dt>endTime</dt><dd>(optional) <pre>number</pre><p>Limit results to those visited before this date, represented in milliseconds since the epoch.</dd></dl>
-        <dl><dt>maxResults</dt><dd>(optional) <pre>integer</pre><p>The maximum number of results to retrieve.  Defaults to 100.</dd></dl>
-        </dd></dl>
         <h3 id='search'><a href='historyPrivate.html#search'>#</a>search</h3><p>Searches the history for the last visit time of each page matching the query.<p>Parameters:<dl><dt>query</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>text</dt><dd><pre>string</pre><p>A free-text query to the history service.  Leave empty to retrieve all pages.</dd></dl>
         <dl><dt>startTime</dt><dd>(optional) <pre>number</pre><p>Limit results to those visited after this date, represented in milliseconds since the epoch. If not specified, this defaults to 24 hours in the past.</dd></dl>
         <dl><dt>endTime</dt><dd>(optional) <pre>number</pre><p>Limit results to those visited before this date, represented in milliseconds since the epoch.</dd></dl>
@@ -1175,6 +1187,11 @@
         <h3 id='migrateOldTypedUrl'><a href='historyPrivate.html#migrateOldTypedUrl'>#</a>migrateOldTypedUrl</h3><p>Add an old typed URL to history<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL that was visited</dd></dl>
         <dl><dt>time</dt><dd><pre>number</pre><p>The time at which the visit took place as a UNIX timestamp</dd></dl>
         <dl><dt>transitionType</dt><dd><pre><a href="#TransitionType">TransitionType</a></pre><p>Expected to be typed, keyword or generated. In the last two cases, remember to call setKeywordSearchTermsForURL.</dd></dl>
+        <h3 id='getDetailedHistory'><a href='historyPrivate.html#getDetailedHistory'>#</a>getDetailedHistory</h3><p><p>Parameters:<dl><dt>query</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>text</dt><dd><pre>string</pre><p>A free-text query to the history service.  Leave empty to retrieve all pages.</dd></dl>
+        <dl><dt>startTime</dt><dd>(optional) <pre>number</pre><p>Limit results to those visited after this date, represented in milliseconds since the epoch.</dd></dl>
+        <dl><dt>endTime</dt><dd>(optional) <pre>number</pre><p>Limit results to those visited before this date, represented in milliseconds since the epoch.</dd></dl>
+        <dl><dt>maxResults</dt><dd>(optional) <pre>integer</pre><p>The maximum number of results to retrieve.  Defaults to 100.</dd></dl>
+        </dd></dl>
         <h1><a href='importData.html'>importData</a></h1>
 
     
@@ -1581,25 +1598,26 @@
                 <p>Returns array of promises dispatched to the listener</p>
             </div>
         </details>
-        <h3 id='onChanged'><a href='menuContent.html#onChanged'>#</a>onChanged</h3><p>Fires when the content of a named menu has changed.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>id</dt><dd><pre>string</pre><p>Unique identifier for the named menu.</dd></dl>
+        <h3 id='onChanged'><a href='menuContent.html#onChanged'>#</a>onChanged</h3><p>Fires when the content of a menu has changed.<p>Parameters:<dl><dt>menu</dt><dd><pre>string</pre><p>Menu resource name.</dd></dl>
+        <dl><dt>id</dt><dd><pre>string</pre><p>Unique identifier for menu.</dd></dl>
+        <dl><dt>role</dt><dd><pre><a href="#Role">Role</a></pre><p>Describes the role of menu.</dd></dl>
         <dl><dt>selectId</dt><dd><pre>string</pre><p>If non-negative this id can be used to set selected element.</dd></dl>
         <dl><dt>items</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>MenuTreeNode</ul></dd></dl>
         
         <h2>Methods</h2>
-        <h3 id='get'><a href='menuContent.html#get'>#</a>get</h3><p>Retrieves a named menu.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Root id of the named menu.</dd></dl>
+        <h3 id='get'><a href='menuContent.html#get'>#</a>get</h3><p>Retrieves content of a menu.<p>Parameters:<dl><dt>menu</dt><dd><pre>string</pre><p>Menu resource name.</dd></dl>
+        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Root id of the menu.</dd></dl>
         <dl><dt>role</dt><dd><pre><a href="#Role">Role</a></pre><p>Describes how the menu can be used.</dd></dl>
         <dl><dt>result</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>MenuTreeNode</ul></dd></dl>
         </dd></dl>
-            <h3 id='move'><a href='menuContent.html#move'>#</a>move</h3><p>Moves one or more items within a named menu.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+            <h3 id='move'><a href='menuContent.html#move'>#</a>move</h3><p>Moves one or more items within a menu.<p>Parameters:<dl><dt>menu</dt><dd><pre>string</pre><p>Menu resource name.</dd></dl>
         <dl><dt>ids</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>parentId</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>index</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='create'><a href='menuContent.html#create'>#</a>create</h3><p>Add one or more items within a named menu.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='create'><a href='menuContent.html#create'>#</a>create</h3><p>Add one or more items within a menu.<p>Parameters:<dl><dt>menu</dt><dd><pre>string</pre><p>Menu resource name.</dd></dl>
         <dl><dt>parentId</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>index</dt><dd><pre>integer</pre><p>Where to add elements. A negative value means at end.</dd></dl>
         <dl><dt>items</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
@@ -1608,12 +1626,12 @@
         <dl><dt>ids</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         </dd></dl>
-            <h3 id='remove'><a href='menuContent.html#remove'>#</a>remove</h3><p>Deletes one or more items within a named menu.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+            <h3 id='remove'><a href='menuContent.html#remove'>#</a>remove</h3><p>Deletes one or more items within a menu.<p>Parameters:<dl><dt>menu</dt><dd><pre>string</pre><p>Menu resource name.</dd></dl>
         <dl><dt>ids</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <h3 id='removeAction'><a href='menuContent.html#removeAction'>#</a>removeAction</h3><p>Deletes one or more actions from all models<p>Parameters:<dl><dt>actions</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
-        <h3 id='update'><a href='menuContent.html#update'>#</a>update</h3><p>Updates the properties of a node.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='update'><a href='menuContent.html#update'>#</a>update</h3><p>Updates the properties of a node.<p>Parameters:<dl><dt>menu</dt><dd><pre>string</pre><p>Menu resource name.</dd></dl>
         <dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>changes</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>title</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>parameter</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -1621,7 +1639,8 @@
         <dl><dt>containerMode</dt><dd>(optional) <pre><a href="#ContainerMode">ContainerMode</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>containerEdge</dt><dd>(optional) <pre><a href="#ContainerEdge">ContainerEdge</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
-        <h3 id='reset'><a href='menuContent.html#reset'>#</a>reset</h3><p>Restores default content within a named menu or in a submenu of that named menu.<p>Parameters:<dl><dt>namedMenu</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='reset'><a href='menuContent.html#reset'>#</a>reset</h3><p>Restores default content within a menu or in a submenu of that menu.<p>Parameters:<dl><dt>menu</dt><dd><pre>string</pre><p>Menu resource name.</dd></dl>
+        <dl><dt>isContext</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>ids</dt><dd>(optional) <p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <h1><a href='mousegestures.html'>mousegestures</a></h1>
@@ -2091,11 +2110,11 @@
         <h2>Types</h2>
         <h3 id='SyncNotificationClientStatus'><a href='sync.html#SyncNotificationClientStatus'>#</a>SyncNotificationClientStatus</h3><dl><dt><code>ENUM</code></dt><dd><p>Used to report whether we have a connection to the notification server.<li>connected<li>disconnected</ul></dd></dl>
         <h3 id='EngineState'><a href='sync.html#EngineState'>#</a>EngineState</h3><dl><dt><code>ENUM</code></dt><dd><p>The state of the sync engine.<li>stopped: Sync has not been requested by the user<li>starting: Sync has been requested but the engine is not done starting<li>starting_server_error: Sync has been requested but the engine is not done starting and can't do so because of a server issue<li>started: The sync engine is running normally<li>clearing_data: The sync engine is running, but it is in the process of requesting server data to be cleared.<li>configuration_pending: The sync engine is running, but it is waiting for the current setup to be complete before actually syncing anything<li>failed: The sync engine encountered an error that forced it to stop.</ul></dd></dl>
-        <h3 id='DisableReason'><a href='sync.html#DisableReason'>#</a>DisableReason</h3><dl><dt><code>ENUM</code></dt><dd><p>The reason why the sync engine is in a failed state. This should be kept in sync with SyncService::DisableReason (chromium/components/sync/driver/sync_service.h)<li>enterprise_policy<li>not_signed_in<li>user_choice<li>unrecoverable_error<li>flag</ul></dd></dl>
-        <h3 id='CycleStatus'><a href='sync.html#CycleStatus'>#</a>CycleStatus</h3><dl><dt><code>ENUM</code></dt><dd><p>Error occuring as part of the sync cycle. This should be kept in sync with VivaldiSyncUIHelper::CycleStatus (sync/vivaldi_sync_ui_helper.h)<li>not_synced<li>success<li>in_progress<li>auth_error<li>server_error<li>network_error<li>conflict<li>throttled<li>other_error</ul></dd></dl>
+        <h3 id='DisableReason'><a href='sync.html#DisableReason'>#</a>DisableReason</h3><dl><dt><code>ENUM</code></dt><dd><p>The reason why the sync engine is in a failed state. This should be kept in sync with SyncService::DisableReason (chromium/components/sync/driver/sync_service.h)<li>enterprise_policy<li>not_signed_in<li>unrecoverable_error<li>flag</ul></dd></dl>
+        <h3 id='CycleStatus'><a href='sync.html#CycleStatus'>#</a>CycleStatus</h3><dl><dt><code>ENUM</code></dt><dd><p>Error occuring as part of the sync cycle. This should be kept in sync with VivaldiSyncUIHelper::CycleStatus (sync/vivaldi_sync_ui_helper.h)<li>not_synced<li>success<li>auth_error<li>server_error<li>network_error<li>conflict<li>throttled<li>other_error</ul></dd></dl>
         <h3 id='ProtocolErrorType'><a href='sync.html#ProtocolErrorType'>#</a>ProtocolErrorType</h3><dl><dt><code>ENUM</code></dt><dd><p>Possible error types for errors returned as part of sync server responses. This should be kept in sync with syncer::SyncProtocolErrorType (chromium/components/sync/protocol/sync_protocol_error.h)<li>success<li>not_my_birthday<li>throttled<li>clear_pending<li>transient_error<li>migration_done<li>disabled_by_admin<li>partial_failure<li>client_data_obsolete<li>encryption_obsolete<li>unknown</ul></dd></dl>
         <h3 id='ClientAction'><a href='sync.html#ClientAction'>#</a>ClientAction</h3><dl><dt><code>ENUM</code></dt><dd><p>Possible action that the client can take to fix the last server-returned error. This should be kept in sync with syncer::ClientAction (chromium/components/sync/protocol/sync_protocol_error.h)<li>upgrade_client<li>disable_sync_on_client<li>stop_sync_for_disabled_account<li>reset_local_sync_data<li>unknown</ul></dd></dl>
-        <h3 id='DataType'><a href='sync.html#DataType'>#</a>DataType</h3><dl><dt><code>ENUM</code></dt><dd><p>User selectable data types that we support<li>bookmarks<li>preferences<li>passwords<li>autofill<li>typed_urls<li>extensions<li>notes<li>reading_list</ul></dd></dl>
+        <h3 id='DataType'><a href='sync.html#DataType'>#</a>DataType</h3><dl><dt><code>ENUM</code></dt><dd><p>User selectable data types that we support<li>bookmarks<li>preferences<li>passwords<li>autofill<li>history<li>extensions<li>apps<li>reading_list<li>tabs<li>notes</ul></dd></dl>
         <h3 id='DataTypeSelection'><a href='sync.html#DataTypeSelection'>#</a>DataTypeSelection</h3><p>A structure containing the system status of a data type.<p>Properties:<dl><dl><dt>dataType</dt><dd><pre><a href="#DataType">DataType</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>enabled</dt><dd><pre>boolean</pre><p>true if we want to sync this data type, otherwise false.</dd></dl>
         </dl>
@@ -2255,6 +2274,7 @@
         <dl><dt>modifiers</dt><dd><pre>integer</pre><p>Modifier state when change occured</dd></dl>
         <dl><dt>windowsKeyCode</dt><dd><pre>integer</pre><p>Value of key that changed</dd></dl>
         <dl><dt>afterGesture</dt><dd><pre>boolean</pre><p>True when the keyboard event completed a mouse or wheel gesture</dd></dl>
+        <dl><dt>autoRepeat</dt><dd><pre>boolean</pre><p>True if the event is a result of automatic keyboard repeat.</dd></dl>
         <h3 id='onMouseChanged'><a href='tabsPrivate.html#onMouseChanged'>#</a>onMouseChanged</h3><p>Fires when mouse state has changed.<p>Parameters:<dl><dt>motion</dt><dd><pre>boolean</pre><p>True when mouse has moved, false when mouse is pressed/released.</dd></dl>
         <h3 id='onKeyboardShortcut'><a href='tabsPrivate.html#onKeyboardShortcut'>#</a>onKeyboardShortcut</h3><p>Fires when on a keystroke that hasn't been consumed by the browser<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Id of the browser window this keyboard event originates from.</dd></dl>
         <dl><dt>shortcutText</dt><dd><pre>string</pre><p>String representation of a keyboard shortcut</dd></dl>
@@ -2307,7 +2327,6 @@
         <h3 id='scrollPage'><a href='tabsPrivate.html#scrollPage'>#</a>scrollPage</h3><p>Scrolls the page up or down, depending on a parameter<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>scrollType</dt><dd><pre>string</pre><p>Whether to scroll up or down, and by how much</dd></dl>
         <dl><dt>scrollAmount</dt><dd>(optional) <pre>integer</pre><p>The amount to scroll by</dd></dl>
-        <h3 id='getCurrentSpatnavRect'><a href='tabsPrivate.html#getCurrentSpatnavRect'>#</a>getCurrentSpatnavRect</h3><p>Get the currently focused spatnav rect<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='moveSpatnavRect'><a href='tabsPrivate.html#moveSpatnavRect'>#</a>moveSpatnavRect</h3><p>Move current spatnav rect in |direction|<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>direction</dt><dd><pre><a href="#NavigationDirection">NavigationDirection</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='activateSpatnavElement'><a href='tabsPrivate.html#activateSpatnavElement'>#</a>activateSpatnavElement</h3><p>Activate currently focused spatnav element<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2559,12 +2578,20 @@
     
         <h2>Types</h2>
         <h3 id='ContentType'><a href='sessionsPrivate.html#ContentType'>#</a>ContentType</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines role of a node in content. 'group' is the same as a stack.<li>window<li>workspace<li>pinned<li>group<li>tab</ul></dd></dl>
+        <h3 id='BackupType'><a href='sessionsPrivate.html#BackupType'>#</a>BackupType</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines how a backup should be made.<li>backup<li>autosave</ul></dd></dl>
+        <h3 id='ContentTarget'><a href='sessionsPrivate.html#ContentTarget'>#</a>ContentTarget</h3><p>Settings used when moving an element in a saved session.<p>Properties:<dl><dl><dt>beforeTabId</dt><dd><pre>number</pre><p>Target id. Move items before tab with this id. At end if negative.</dd></dl>
+        <dl><dt>group</dt><dd>(optional) <pre>string</pre><p>Target tab stack id. Remove id if empty.</dd></dl>
+        <dl><dt>pinned</dt><dd>(optional) <pre>boolean</pre><p>Target pinned state.</dd></dl>
+        <dl><dt>windowId</dt><dd>(optional) <pre>number</pre><p>Target window id. Not set when target is within a workspace.</dd></dl>
+        <dl><dt>workspace</dt><dd>(optional) <pre>number</pre><p>Target workspace id. Remove id if negative.</dd></dl>
+        </dl>
         <h3 id='WorkspaceItem'><a href='sessionsPrivate.html#WorkspaceItem'>#</a>WorkspaceItem</h3><p>Holds information of a workspace. Not actual tabs, but the workspace itself.<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>Name shown in UI.</dd></dl>
         <dl><dt>icon</dt><dd><pre>string</pre><p>Icon shown in UI.</dd></dl>
         <dl><dt>emoji</dt><dd><pre>string</pre><p>emoji shown in UI.</dd></dl>
         </dl>
         <h3 id='TabContent'><a href='sessionsPrivate.html#TabContent'>#</a>TabContent</h3><p>Holds information of a tab<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
+        <dl><dt>index</dt><dd><pre>number</pre><p>Index as stored in database.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>Active page title. Can be empty.</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p>Url of active entry in navigation list.</dd></dl>
         <dl><dt>pinned</dt><dd><pre>boolean</pre><p>Pinned state of the tab.</dd></dl>
@@ -2572,13 +2599,13 @@
         <dl><dt>group</dt><dd><pre>string</pre><p>The group (stack) the tab belongs to. Can be empty which means no group.</dd></dl>
         <dl><dt>groupName</dt><dd><pre>string</pre><p>Name shown in UI. Only set for tabs in a stack. Can be empty even then.</dd></dl>
         </dl>
-        <h3 id='WindowContent'><a href='sessionsPrivate.html#WindowContent'>#</a>WindowContent</h3><p>Holds information of a window<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
-        <dl><dt>quarantine</dt><dd><pre>boolean</pre><p>Window is not installed if true</dd></dl>
+        <h3 id='WindowContent'><a href='sessionsPrivate.html#WindowContent'>#</a>WindowContent</h3><p>Holds information of a window.<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
+        <dl><dt>quarantine</dt><dd><pre>boolean</pre><p>Window is not installed if true.</dd></dl>
         <dl><dt>tabs</dt><dd><p>Tabs in window.<p><code>Array</code> of:
         <ul><li>TabContent</ul></dd></dl>
         </dl>
         <h3 id='WorkspaceContent'><a href='sessionsPrivate.html#WorkspaceContent'>#</a>WorkspaceContent</h3><p>Holds information, including tabs of a workspace.<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
-        <dl><dt>quarantine</dt><dd><pre>boolean</pre><p>Window is not installed if true</dd></dl>
+        <dl><dt>quarantine</dt><dd><pre>boolean</pre><p>Workspace is not installed if true.</dd></dl>
         <dl><dt>tabs</dt><dd><p>Tabs in workspace.<p><code>Array</code> of:
         <ul><li>TabContent</ul></dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>Name shown in UI.</dd></dl>
@@ -2591,13 +2618,34 @@
         <dl><dt>workspaces</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>WorkspaceContent</ul></dd></dl>
         </dl>
+        <h3 id='GroupAlias'><a href='sessionsPrivate.html#GroupAlias'>#</a>GroupAlias</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>group</dt><dd><pre>string</pre><p>Existing group id.</dd></dl>
+        <dl><dt>alias</dt><dd><pre>string</pre><p>A new unique id that can be used instead of the existing.</dd></dl>
+        </dl>
+        <h3 id='WorkspaceState'><a href='sessionsPrivate.html#WorkspaceState'>#</a>WorkspaceState</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>groups</dt><dd><p>List of new group ids. There must be one entry for each affected group.<p><code>Array</code> of:
+        <ul><li>GroupAlias</ul></dd></dl>
+        <dl><dt>item</dt><dd><pre><a href="#WorkspaceItem">WorkspaceItem</a></pre><p>List of workspaces in session.</dd></dl>
+        </dl>
         <h3 id='ContentCommands'><a href='sessionsPrivate.html#ContentCommands'>#</a>ContentCommands</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>ids</dt><dd><p>Tabs and windows in a session.<p><code>Array</code> of:
         <ul><li>number</ul></dd></dl>
-        <dl><dt>type</dt><dd>(optional) <pre><a href="#ContentType">ContentType</a></pre><p>Used for commands: ['title'].</dd></dl>
+        <dl><dt>groupAliases</dt><dd>(optional) <p>A list of new group ids that must be supplied when creating a window. There must be one entry for each affected group.<p><code>Array</code> of:
+        <ul><li>GroupAlias</ul></dd></dl>
+        <dl><dt>move</dt><dd>(optional) <pre>boolean</pre><p>For moving tabs.</dd></dl>
+        <dl><dt>pin</dt><dd>(optional) <pre>boolean</pre><p>For setting pinned state.</dd></dl>
         <dl><dt>quarantine</dt><dd>(optional) <pre>boolean</pre><p>For setting quarantine state.</dd></dl>
+        <dl><dt>remove</dt><dd>(optional) <pre>boolean</pre><p>For deleting a tab.</dd></dl>
+        <dl><dt>tabstack</dt><dd>(optional) <pre>boolean</pre><p>For creating a stack. There must be at least two tabs in the 'ids' list.</dd></dl>
         <dl><dt>title</dt><dd>(optional) <pre>string</pre><p>For setting title. Ignored if number of ids is not 1.</dd></dl>
+        <dl><dt>target</dt><dd>(optional) <pre><a href="#ContentTarget">ContentTarget</a></pre><p>Used for commands: ['move', 'tabstack'].</dd></dl>
+        <dl><dt>type</dt><dd>(optional) <pre><a href="#ContentType">ContentType</a></pre><p>Used for commands: ['title'].</dd></dl>
+        <dl><dt>window</dt><dd>(optional) <pre>boolean</pre><p>For creating a window.</dd></dl>
+        <dl><dt>workspace</dt><dd>(optional) <pre>boolean</pre><p>For creating a workspace.</dd></dl>
+        <dl><dt>workspaceState</dt><dd>(optional) <pre><a href="#WorkspaceState">WorkspaceState</a></pre><p>Used for commands: ['workspace']</dd></dl>
+        <dl><dt>workspaceId</dt><dd>(optional) <pre>number</pre><p>Used for commands: ['workspace']</dd></dl>
         </dl>
         <h3 id='ItemType'><a href='sessionsPrivate.html#ItemType'>#</a>ItemType</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines supported items<li>folder<li>node<li>history</ul></dd></dl>
+        <h3 id='GroupName'><a href='sessionsPrivate.html#GroupName'>#</a>GroupName</h3><p>Holds custom name for a group (tab stack).<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>Group identifier.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>Visible name in UI.</dd></dl>
+        </dl>
         <h3 id='SessionItem'><a href='sessionsPrivate.html#SessionItem'>#</a>SessionItem</h3><p>Object that holds all information about a single session.<p>Properties:<dl><dl><dt>id</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
         <dl><dt>type</dt><dd><pre><a href="#ItemType">ItemType</a></pre><p>Tells what kind of item. 'folder' or 'node'. A 'node' can have children (it is then a container).</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>Session display name.</dd></dl>
@@ -2605,17 +2653,21 @@
         <dl><dt>modifyDateJS</dt><dd><pre>number</pre><p>Session update date in JS format.</dd></dl>
         <dl><dt>windows</dt><dd><pre>number</pre><p>Number of windows in this session.</dd></dl>
         <dl><dt>tabs</dt><dd><pre>number</pre><p>Number of tabs in this session.</dd></dl>
+        <dl><dt>quarantined</dt><dd><pre>number</pre><p>Number of quarantined (inactive) tabs in this session.</dd></dl>
         <dl><dt>workspaces</dt><dd><p>List of workspaces in session.<p><code>Array</code> of:
         <ul><li>WorkspaceItem</ul></dd></dl>
+        <dl><dt>groupNames</dt><dd><p>List of custom group names (tab stack names) in session. Can be empty.<p><code>Array</code> of:
+        <ul><li>GroupName</ul></dd></dl>
         <dl><dt>parentId</dt><dd><pre>number</pre><p>Unique identifier.</dd></dl>
         <dl><dt>containerId</dt><dd><pre>number</pre><p>Set for elements in a container or trash, -1 otherwise.</dd></dl>
         <dl><dt>content</dt><dd>(optional) <pre><a href="#ContentModel">ContentModel</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>children</dt><dd>(optional) <p>An ordered list of children of this node.<p><code>Array</code> of:
         <ul><li>SessionItem</ul></dd></dl>
         </dl>
-        <h3 id='SessionList'><a href='sessionsPrivate.html#SessionList'>#</a>SessionList</h3><dl><dt>SessionList</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <h3 id='SessionIds'><a href='sessionsPrivate.html#SessionIds'>#</a>SessionIds</h3><dl><dt>SessionIds</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>number</ul></dd></dl>
+        <h3 id='SessionModel'><a href='sessionsPrivate.html#SessionModel'>#</a>SessionModel</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>items</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>SessionItem</ul></dd></dl>
-        <h3 id='SessionModel'><a href='sessionsPrivate.html#SessionModel'>#</a>SessionModel</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>items</dt><dd><pre><a href="#SessionList">SessionList</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>rootId</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>autosaveId</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>trashId</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2624,6 +2676,8 @@
         <h3 id='SessionOpenOptions'><a href='sessionsPrivate.html#SessionOpenOptions'>#</a>SessionOpenOptions</h3><p>Options for opening the session.<p>Properties:<dl><dl><dt>newWindow</dt><dd><pre>boolean</pre><p>The session will open in a new window.</dd></dl>
         <dl><dt>oneWindow</dt><dd><pre>boolean</pre><p>All tabs will open in one windows.</dd></dl>
         <dl><dt>withWorkspace</dt><dd><pre>boolean</pre><p>Open workspace tabs.</dd></dl>
+        <dl><dt>tabIds</dt><dd><p>Open given tabs only.<p><code>Array</code> of:
+        <ul><li>number</ul></dd></dl>
         </dl>
         <h3 id='SessionAddOptions'><a href='sessionsPrivate.html#SessionAddOptions'>#</a>SessionAddOptions</h3><p>Options for adding a new session or updating an existing session.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>User friendly description of the session. [add, duplicate].</dd></dl>
         <dl><dt>filename</dt><dd><pre>string</pre><p>Filename without extension. Final name be extended with numbers (N) on collision. [all]</dd></dl>
@@ -2634,13 +2688,14 @@
         <dl><dt>windowId</dt><dd>(optional) <pre>integer</pre><p>Save only the given window. 0 or not set means all windows. Ignored if 'fromId' is set. [add, update]</dd></dl>
         <dl><dt>ids</dt><dd>(optional) <p>List of tab identifiers to be saved. Ignored if 'fromId' is set. [add, upddate]<p><code>Array</code> of:
         <ul><li>integer</ul></dd></dl>
-        <dl><dt>backup</dt><dd>(optional) <pre>boolean</pre><p>Special flag for timed backups. No other options are then used. Setting this to false leads to a noop.</dd></dl>
+        <dl><dt>backup</dt><dd>(optional) <pre><a href="#BackupType">BackupType</a></pre><p>Special flag for timed backups. No other options are then used.</dd></dl>
         </dl>
         <h3 id='SessionChange'><a href='sessionsPrivate.html#SessionChange'>#</a>SessionChange</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines what has changed.<li>added<li>changed<li>deleted<li>moved<li>content</ul></dd></dl>
         <h3 id='SessionChangeData'><a href='sessionsPrivate.html#SessionChangeData'>#</a>SessionChangeData</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>owner</dt><dd><pre>string</pre><p>Caller component (in UI) identifier.</dd></dl>
         <dl><dt>parentId</dt><dd><pre>number</pre><p>Set for 'added' and 'moved' events.</dd></dl>
         <dl><dt>index</dt><dd><pre>number</pre><p>Set for 'added' and 'moved' events.</dd></dl>
         <dl><dt>item</dt><dd>(optional) <pre><a href="#SessionItem">SessionItem</a></pre><p>Set for 'added' and 'changed' event.</dd></dl>
+        <dl><dt>content</dt><dd>(optional) <pre><a href="#ContentModel">ContentModel</a></pre><p>Set for 'content' event.</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -2673,12 +2728,14 @@
         <h3 id='onChanged'><a href='sessionsPrivate.html#onChanged'>#</a>onChanged</h3><p>Fired when a session is added or removed.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>change</dt><dd><pre><a href="#SessionChange">SessionChange</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>data</dt><dd><pre><a href="#SessionChangeData">SessionChangeData</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onPersistentLoad'><a href='sessionsPrivate.html#onPersistentLoad'>#</a>onPersistentLoad</h3><p>Fired when a persisted session is loaded.<p>Parameters:<dl><dt>state</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='getAll'><a href='sessionsPrivate.html#getAll'>#</a>getAll</h3><p>Returns all previously saved sessions stored on disk.<h3 id='add'><a href='sessionsPrivate.html#add'>#</a>add</h3><p>Saves all open tabs to the named session.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#SessionAddOptions">SessionAddOptions</a></pre><p>Controls the adding behavior.</dd></dl>
         <h3 id='delete'><a href='sessionsPrivate.html#delete'>#</a>delete</h3><p>Deletes session. Items in the trash folder are permanently removed. Others are moved to trash.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session to delete.</dd></dl>
         <dl><dt>index</dt><dd><pre>number</pre><p>Index to move to in trash folder.</dd></dl>
-        <h3 id='emptyTrash'><a href='sessionsPrivate.html#emptyTrash'>#</a>emptyTrash</h3><p>Permanently deletes all trashed session.<h3 id='getContent'><a href='sessionsPrivate.html#getContent'>#</a>getContent</h3><p>Returns contents of a session.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session.</dd></dl>
+        <h3 id='emptyTrash'><a href='sessionsPrivate.html#emptyTrash'>#</a>emptyTrash</h3><p>Permanently deletes all trashed session.<h3 id='getAutosaveIds'><a href='sessionsPrivate.html#getAutosaveIds'>#</a>getAutosaveIds</h3><p>Get ids for nodes that are older than 'days' old from the time the function was called<p>Parameters:<dl><dt>days</dt><dd><pre>number</pre><p>Number of days to go hack in history.</dd></dl>
+        <h3 id='getContent'><a href='sessionsPrivate.html#getContent'>#</a>getContent</h3><p>Returns contents of a session.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session.</dd></dl>
         <h3 id='makeContainer'><a href='sessionsPrivate.html#makeContainer'>#</a>makeContainer</h3><p>Turns a history session into the default entry of the container.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Session identifier.</dd></dl>
         <h3 id='modifyContent'><a href='sessionsPrivate.html#modifyContent'>#</a>modifyContent</h3><p>Changes internal settings in a session<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Session identifier.</dd></dl>
         <dl><dt>commands</dt><dd><pre><a href="#ContentCommands">ContentCommands</a></pre><p>Describes changes to be made</dd></dl>
@@ -2700,20 +2757,6 @@
         <dl><dt>green</dt><dd><pre>integer</pre><p>Green color.</dd></dl>
         <dl><dt>blue</dt><dd><pre>integer</pre><p>Blue color.</dd></dl>
         </dl>
-        <h3 id='PopupWindow'><a href='utilities.html#PopupWindow'>#</a>PopupWindow</h3><p>PopupWindow in vivaldi/vivapp/src/stores/PopupWindowStore.js<p>Properties:<dl><dl><dt>identifier</dt><dd><pre>string</pre><p>UUID identifying the popup.</dd></dl>
-        <dl><dt>windowBounds</dt><dd><pre>object</pre><p>Size and position of window.<p>Object Properties:<dl><dt>height</dt><dd><pre>number</pre><p>Height.</dd></dl>
-        <dl><dt>width</dt><dd><pre>number</pre><p>Width.</dd></dl>
-        <dl><dt>left</dt><dd>(optional) <pre>number</pre><p>Left screen position.</dd></dl>
-        <dl><dt>top</dt><dd>(optional) <pre>number</pre><p>Top screen position.</dd></dl>
-        <dl><dt>minHeight</dt><dd>(optional) <pre>number</pre><p>Minimum height.</dd></dl>
-        <dl><dt>minWidth</dt><dd>(optional) <pre>number</pre><p>Minimum width of window..</dd></dl>
-        </dd></dl>
-        <dl><dt>ownerWindowId</dt><dd><pre>number</pre><p>WindowId of owner browser.</dd></dl>
-        <dl><dt>acceptOrBlockCallback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>windowId of the window accepting the popup.</dd></dl>
-        </dd></dl>
-            <dl><dt>incognito</dt><dd><pre>boolean</pre><p>Popup is incognito.</dd></dl>
-        </dl>
-        <h3 id='CalendarBroadcastMessage'><a href='utilities.html#CalendarBroadcastMessage'>#</a>CalendarBroadcastMessage</h3><dl><dt><code>ENUM</code></dt><dd><p>Calendar broadcast message between windows<li>startListeners<li>stopListeners<li>loadData</ul></dd></dl>
         <h3 id='WindowState'><a href='utilities.html#WindowState'>#</a>WindowState</h3><dl><dt><code>ENUM</code></dt><dd><p>The state of this browser window.<li>normal: Normal window state (i.e. not minimized, maximized, or fullscreen).<li>minimized: Minimized window state.<li>maximized: Maximized window state.<li>fullscreen: Fullscreen window state.</ul></dd></dl>
         <h3 id='WindowType'><a href='utilities.html#WindowType'>#</a>WindowType</h3><dl><dt><code>ENUM</code></dt><dd><p>Type of window. normal is a browser-window.<li>normal<li>popup<li>settings</ul></dd></dl>
         <h3 id='WindowRestoreState'><a href='utilities.html#WindowRestoreState'>#</a>WindowRestoreState</h3><dl><dt><code>ENUM</code></dt><dd><p>State of window after going out of fullscreen.<li>normal<li>minimized<li>maximized</ul></dd></dl>
@@ -2737,32 +2780,8 @@
         <dl><dt>statusBar</dt><dd><pre><a href="#StatusbarMode">StatusbarMode</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
         </dl>
-        <h3 id='BroadcastAction'><a href='utilities.html#BroadcastAction'>#</a>BroadcastAction</h3><p>Identifies broadcast type. Only one property should be used.<p>Properties:<dl><dl><dt>open</dt><dd>(optional) <pre>object</pre><p>Open urls in other window.<p>Object Properties:<dl><dt>winId</dt><dd><pre>number</pre><p>Id of the window where urls are opened.</dd></dl>
-        <dl><dt>prompt</dt><dd><pre>boolean</pre><p>Show confirm open bookmark dialog.</dd></dl>
-        <dl><dt>urls</dt><dd><p>Urls to open.<p><code>Array</code> of:
-        <ul><li>string</ul></dd></dl>
-        </dd></dl>
-        <dl><dt>showSettingsWindow</dt><dd>(optional) <pre>object</pre><p>Show the settingswindow.<p>Object Properties:<dl><dt>settingsCategory</dt><dd>(optional) <pre>string</pre><p>String with settings to show on the form: category&query. ie. all&languages</dd></dl>
-        </dd></dl>
-        <dl><dt>popupStoreChanged</dt><dd>(optional) <pre>object</pre><p>A popupStore has changed state.<p>Object Properties:<dl><dt>windowId</dt><dd><pre>number</pre><p></dd></dl>
-        <dl><dt>popupWindows</dt><dd><p>Popupwindows owned by |windowId|.<p><code>Array</code> of:
-        <ul><li>PopupWindow</ul></dd></dl>
-        </dd></dl>
-        <dl><dt>handlePopupWindow</dt><dd>(optional) <pre>object</pre><p>Accept or reject a popup window event.<p>Object Properties:<dl><dt>windowId</dt><dd><pre>number</pre><p>The windowId of the window that accepts a popup. The tab will be accepted into the tabstrip.</dd></dl>
-        <dl><dt>popupId</dt><dd><pre>string</pre><p>Unique ID for a popupwindow.</dd></dl>
-        </dd></dl>
-        <dl><dt>actionChanged</dt><dd>(optional) <pre>object</pre><p>An action has changed. Message contains the new settings<p>Object Properties:<dl><dt>command</dt><dd><pre>string</pre><p>Action name.</dd></dl>
-        <dl><dt>shortcuts</dt><dd>(optional) <p>Shortcuts for the action. If omitted there are no shortcuts.<p><code>Array</code> of:
-        <ul><li>string</ul></dd></dl>
-        <dl><dt>gestures</dt><dd>(optional) <p>Gestures for the action. If omitted there are no gestures.<p><code>Array</code> of:
-        <ul><li>string</ul></dd></dl>
-        </dd></dl>
-        <dl><dt>actionsRestored</dt><dd>(optional) <pre>object</pre><p>Section has been reset<p>Object Properties:<dl><dt>dummy</dt><dd>(optional) <pre>string</pre><p>One arg must be present</dd></dl>
-        </dd></dl>
-        <dl><dt>calendar</dt><dd>(optional) <pre>object</pre><p>Control data handling and turning on/off change listeners.<p>Object Properties:<dl><dt>message</dt><dd><pre><a href="#CalendarBroadcastMessage">CalendarBroadcastMessage</a></pre><p>The control message to pass.</dd></dl>
-        </dd></dl>
-        <dl><dt>updateMacMenu</dt><dd>(optional) <pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>winId</dt><dd><pre>number</pre><p>The window that needs update.</dd></dl>
-        </dd></dl>
+        <h3 id='BroadcastAction'><a href='utilities.html#BroadcastAction'>#</a>BroadcastAction</h3><p>Identifies broadcast type. Only one property should be used.<p>Properties:<dl><dl><dt>startDragging</dt><dd>(optional) <pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>endDragging</dt><dd>(optional) <pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>translate</dt><dd>(optional) <pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>winId</dt><dd><pre>number</pre><p>The window where translation takes place.</dd></dl>
         <dl><dt>lang</dt><dd><pre>string</pre><p>Language of text to be translated.</dd></dl>
         <dl><dt>text</dt><dd><pre>string</pre><p>Text to be translated.</dd></dl>
@@ -2827,7 +2846,6 @@
         <h3 id='CaptureQRDestination'><a href='utilities.html#CaptureQRDestination'>#</a>CaptureQRDestination</h3><dl><dt><code>ENUM</code></dt><dd><p>Where to store the generated QR code<li>dataurl: Store as a returned data url.<li>file: Store in the download location.<li>clipboard: Store in the clipboard</ul></dd></dl>
         <h3 id='GetVersionResults'><a href='utilities.html#GetVersionResults'>#</a>GetVersionResults</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>vivaldiVersion</dt><dd><pre>string</pre><p>The Vivaldi version as a string.</dd></dl>
         <dl><dt>chromiumVersion</dt><dd><pre>string</pre><p>The Chromium version as a string.</dd></dl>
-        <dl><dt>mailVersion</dt><dd><pre>string</pre><p>The Vivaldi mail version as a string.</dd></dl>
         </dl>
         <h3 id='TranslateError'><a href='utilities.html#TranslateError'>#</a>TranslateError</h3><dl><dt><code>ENUM</code></dt><dd><p>The error messages translate can return.<li>no_error<li>network<li>unknown_language<li>unsupported_language<li>timeout<li>error</ul></dd></dl>
         <h3 id='TranslateTextResponse'><a href='utilities.html#TranslateTextResponse'>#</a>TranslateTextResponse</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>error</dt><dd><pre><a href="#TranslateError">TranslateError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2836,6 +2854,19 @@
         <ul><li>string</ul></dd></dl>
         <dl><dt>translatedText</dt><dd><p>The translated text corresponding to the given sourceText.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
+        </dl>
+        <h3 id='ProxyPlatformSupport'><a href='utilities.html#ProxyPlatformSupport'>#</a>ProxyPlatformSupport</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>support</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='ProxyHost'><a href='utilities.html#ProxyHost'>#</a>ProxyHost</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>host</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>port</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='ProxyConnectInfo'><a href='utilities.html#ProxyConnectInfo'>#</a>ProxyConnectInfo</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>message</dt><dd><pre>string</pre><p>Information when success is false.</dd></dl>
+        <dl><dt>pid</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>success</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='ProxyOptions'><a href='utilities.html#ProxyOptions'>#</a>ProxyOptions</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>local</dt><dd><pre><a href="#ProxyHost">ProxyHost</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>remote</dt><dd><pre><a href="#ProxyHost">ProxyHost</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>token</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -2871,15 +2902,15 @@
         <h3 id='onSuspend'><a href='utilities.html#onSuspend'>#</a>onSuspend</h3><p>Fired when the computer is about to suspend.<h3 id='onResume'><a href='utilities.html#onResume'>#</a>onResume</h3><p>Fired when the computer has resumed from suspension.<h3 id='onPasswordIconStatusChanged'><a href='utilities.html#onPasswordIconStatusChanged'>#</a>onPasswordIconStatusChanged</h3><p>Fires for password icon status change.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Window id to show/hide icon for</dd></dl>
         <dl><dt>show</dt><dd><pre>boolean</pre><p>Whether to show or hide icon</dd></dl>
         <h3 id='onDownloadManagerReady'><a href='utilities.html#onDownloadManagerReady'>#</a>onDownloadManagerReady</h3><p>Fired when the download manager has loaded all its data.<h3 id='onRazerChromaReady'><a href='utilities.html#onRazerChromaReady'>#</a>onRazerChromaReady</h3><p>Fired when the Razer Chroma API has been initialized.<h3 id='onBroadcastMessage'><a href='utilities.html#onBroadcastMessage'>#</a>onBroadcastMessage</h3><p>Test.<p>Parameters:<dl><dt>message</dt><dd><pre><a href="#BroadcastAction">BroadcastAction</a></pre><p>The message to receive.</dd></dl>
-        <h3 id='onShowQRCode'><a href='utilities.html#onShowQRCode'>#</a>onShowQRCode</h3><p>Fired when Chromium wants us to show a QR code for the given url.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>tab id to show QR code on.</dd></dl>
-        <dl><dt>url</dt><dd><pre>string</pre><p>The url to show the QR code for.</dd></dl>
+        <h3 id='onShowQRCode'><a href='utilities.html#onShowQRCode'>#</a>onShowQRCode</h3><p>Fired when Chromium wants us to show a QR code for the given url.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The url to show the QR code for.</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='print'><a href='utilities.html#print'>#</a>print</h3><p>Open print preview dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>WindowId of browser printing active tab.</dd></dl>
         <h3 id='clearAllRecentlyClosedSessions'><a href='utilities.html#clearAllRecentlyClosedSessions'>#</a>clearAllRecentlyClosedSessions</h3><p>Clears the list of recently closed tabs and/or windows.<h3 id='isTabInLastSession'><a href='utilities.html#isTabInLastSession'>#</a>isTabInLastSession</h3><p>Checks whether a given tab is part of the last loaded session<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id to check if part of the session</dd></dl>
         <h3 id='isUrlValid'><a href='utilities.html#isUrlValid'>#</a>isUrlValid</h3><p>Validates given URL. Returns UrlValidResults with the results.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to validate</dd></dl>
         <h3 id='canOpenUrlExternally'><a href='utilities.html#canOpenUrlExternally'>#</a>canOpenUrlExternally</h3><p>Check if the browser can potentially open the URL using an external application or an extension. This should only be called if it is already known that the URL is a valid one and is not handled by the browser directly to get a valid result.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to check</dd></dl>
-        <h3 id='generateGUID'><a href='utilities.html#generateGUID'>#</a>generateGUID</h3><p>Generate new GUID string.<h3 id='getUrlFragments'><a href='utilities.html#getUrlFragments'>#</a>getUrlFragments</h3><p>Splits given URL. Returns UrlFragments including top level domain which is eTLD aware.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to process.</dd></dl>
+        <h3 id='getUrlFragments'><a href='utilities.html#getUrlFragments'>#</a>getUrlFragments</h3><p>Splits given URL. Returns UrlFragments including top level domain which is eTLD aware.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to process.</dd></dl>
+        <h3 id='urlToThumbnailText'><a href='utilities.html#urlToThumbnailText'>#</a>urlToThumbnailText</h3><p>Gets the text for a fallback speeddial thumbnail<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to get the text from.</dd></dl>
         <h3 id='getSelectedText'><a href='utilities.html#getSelectedText'>#</a>getSelectedText</h3><p>Returns selected text in page with given id<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The page to examine</dd></dl>
         <h3 id='selectFile'><a href='utilities.html#selectFile'>#</a>selectFile</h3><p>Select a single file and returns the file name.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#SelectFileOptions">SelectFileOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='selectLocalImage'><a href='utilities.html#selectLocalImage'>#</a>selectLocalImage</h3><p>Ask the user to select an image file and store its path as a data mapping URL in a bookmark or a preference.<p>Parameters:<dl><dt>params</dt><dd><pre><a href="#SelectLocalImageParams">SelectLocalImageParams</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2926,7 +2957,7 @@
         <h3 id='startChromecast'><a href='utilities.html#startChromecast'>#</a>startChromecast</h3><p>Shows the Chromecast dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Window id where casting should start.</dd></dl>
         <h3 id='isFirstRun'><a href='utilities.html#isFirstRun'>#</a>isFirstRun</h3><p>chrome::IsChromeFirstRun()<h3 id='generateQRCode'><a href='utilities.html#generateQRCode'>#</a>generateQRCode</h3><p>Generate a QR image based on the given data.<p>Parameters:<dl><dt>data</dt><dd><pre>string</pre><p>Data to encode in the QR code. The maximum length of the data is 288 bytes.</dd></dl>
         <dl><dt>destination</dt><dd>(optional) <pre><a href="#CaptureQRDestination">CaptureQRDestination</a></pre><p>Destination of the QR capture, defaults to 'dataurl'.</dd></dl>
-        <h3 id='getGAPIKey'><a href='utilities.html#getGAPIKey'>#</a>getGAPIKey</h3><p>Returns G API key.<h3 id='getVivaldiNetOAuthClientSecret'><a href='utilities.html#getVivaldiNetOAuthClientSecret'>#</a>getVivaldiNetOAuthClientSecret</h3><p>Returns Vivaldi.net OAuth client secret.<h3 id='getVivaldiNetOAuthClientId'><a href='utilities.html#getVivaldiNetOAuthClientId'>#</a>getVivaldiNetOAuthClientId</h3><p>Returns Vivaldi.net OAuth client id.<h3 id='getGOAuthClientId'><a href='utilities.html#getGOAuthClientId'>#</a>getGOAuthClientId</h3><p>Returns G OAuth API client id.<h3 id='getGOAuthClientSecret'><a href='utilities.html#getGOAuthClientSecret'>#</a>getGOAuthClientSecret</h3><p>Returns G OAuth API client secret.<h3 id='getMOAuthClientId'><a href='utilities.html#getMOAuthClientId'>#</a>getMOAuthClientId</h3><p>Returns MS OAuth API client id.<h3 id='getYOAuthClientId'><a href='utilities.html#getYOAuthClientId'>#</a>getYOAuthClientId</h3><p>Returns Yahoo OAuth client id.<h3 id='getYOAuthClientSecret'><a href='utilities.html#getYOAuthClientSecret'>#</a>getYOAuthClientSecret</h3><p>Returns Yahoo OAuth client secret.<h3 id='getCommandLineValue'><a href='utilities.html#getCommandLineValue'>#</a>getCommandLineValue</h3><p>Gets the command line value for the given named argument.<p>Parameters:<dl><dt>value</dt><dd><pre>string</pre><p>Name of the command line switch without initial dashes eg. translate-server-url.</dd></dl>
+        <h3 id='getGAPIKey'><a href='utilities.html#getGAPIKey'>#</a>getGAPIKey</h3><p>Returns G API key.<h3 id='getVivaldiNetOAuthClientSecret'><a href='utilities.html#getVivaldiNetOAuthClientSecret'>#</a>getVivaldiNetOAuthClientSecret</h3><p>Returns Vivaldi.net OAuth client secret.<h3 id='getVivaldiNetOAuthClientId'><a href='utilities.html#getVivaldiNetOAuthClientId'>#</a>getVivaldiNetOAuthClientId</h3><p>Returns Vivaldi.net OAuth client id.<h3 id='getGOAuthClientId'><a href='utilities.html#getGOAuthClientId'>#</a>getGOAuthClientId</h3><p>Returns G OAuth API client id.<h3 id='getGOAuthClientSecret'><a href='utilities.html#getGOAuthClientSecret'>#</a>getGOAuthClientSecret</h3><p>Returns G OAuth API client secret.<h3 id='getMOAuthClientId'><a href='utilities.html#getMOAuthClientId'>#</a>getMOAuthClientId</h3><p>Returns MS OAuth API client id.<h3 id='getYOAuthClientId'><a href='utilities.html#getYOAuthClientId'>#</a>getYOAuthClientId</h3><p>Returns Yahoo OAuth client id.<h3 id='getYOAuthClientSecret'><a href='utilities.html#getYOAuthClientSecret'>#</a>getYOAuthClientSecret</h3><p>Returns Yahoo OAuth client secret.<h3 id='getFOAuthClientId'><a href='utilities.html#getFOAuthClientId'>#</a>getFOAuthClientId</h3><p>Returns Fastmail OAuth client id.<h3 id='getCommandLineValue'><a href='utilities.html#getCommandLineValue'>#</a>getCommandLineValue</h3><p>Gets the command line value for the given named argument.<p>Parameters:<dl><dt>value</dt><dd><pre>string</pre><p>Name of the command line switch without initial dashes eg. translate-server-url.</dd></dl>
         <h3 id='osCrypt'><a href='utilities.html#osCrypt'>#</a>osCrypt</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>plain</dt><dd><pre>string</pre><p>The content to encrypt</dd></dl>
         <h3 id='osDecrypt'><a href='utilities.html#osDecrypt'>#</a>osDecrypt</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>encrypted</dt><dd><pre>string</pre><p>The content to decrypt</dd></dl>
         <h3 id='translateText'><a href='utilities.html#translateText'>#</a>translateText</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>sourceLanguageCode</dt><dd><pre>string</pre><p>The language code of the source text, or empty if you want the server to try to detect the language.</dd></dl>
@@ -2935,7 +2966,8 @@
         <ul><li>string</ul></dd></dl>
         <h3 id='showManageSSLCertificates'><a href='utilities.html#showManageSSLCertificates'>#</a>showManageSSLCertificates</h3><p>Show the OS manage certificates dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window to use as parent window for the dialog</dd></dl>
         <h3 id='setProtocolHandling'><a href='utilities.html#setProtocolHandling'>#</a>setProtocolHandling</h3><p>Turn on/off protocol handling for web pages.<p>Parameters:<dl><dt>enabled</dt><dd><pre>boolean</pre><p>Turn on/off protocol handling for web pages.</dd></dl>
-        <h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
+        <h3 id='supportsProxy'><a href='utilities.html#supportsProxy'>#</a>supportsProxy</h3><p>Returns true or false depending on invisiv proxy can be used or not. This is a platform test, not a test of other condtitions.<h3 id='connectProxy'><a href='utilities.html#connectProxy'>#</a>connectProxy</h3><p>Connects to invisiv proxy.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#ProxyOptions">ProxyOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='disconnectProxy'><a href='utilities.html#disconnectProxy'>#</a>disconnectProxy</h3><p>Disconnects from invisiv proxy.<h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
 
     
         <h2>Types</h2>
@@ -2970,6 +3002,7 @@
 
     
         <h2>Types</h2>
+        <h3 id='WindowState'><a href='windowPrivate.html#WindowState'>#</a>WindowState</h3><dl><dt><code>ENUM</code></dt><dd><p>The state of this browser window.<li>normal: Normal window state (i.e. not minimized, maximized, or fullscreen).<li>minimized: Minimized window state.<li>maximized: Maximized window state.<li>fullscreen: Fullscreen window state.</ul></dd></dl>
         <h3 id='CreateWindowOptions'><a href='windowPrivate.html#CreateWindowOptions'>#</a>CreateWindowOptions</h3><p>Object passed to the |create| function.<p>Properties:<dl><dl><dt>bounds</dt><dd>(optional) <pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>left</dt><dd>(optional) <pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>top</dt><dd>(optional) <pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>width</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2980,11 +3013,12 @@
         <dl><dt>windowDecoration</dt><dd>(optional) <pre>boolean</pre><p>Enable window decoration. Defaults to false.</dd></dl>
         <dl><dt>incognito</dt><dd>(optional) <pre>boolean</pre><p>Incogito window. Default is false.</dd></dl>
         <dl><dt>focused</dt><dd>(optional) <pre>boolean</pre><p>If true, opens a active window. Default is true.</dd></dl>
+        <dl><dt>state</dt><dd>(optional) <pre><a href="#WindowState">WindowState</a></pre><p>The state to set the window to. Default is normal window state (i.e. not minimized, maximized, or fullscreen).</dd></dl>
         <dl><dt>tabUrl</dt><dd>(optional) <pre>string</pre><p>The url to be added as a new tab, this will be added to the tab model. Not used for settings, popups, etc.</dd></dl>
         <dl><dt>vivExtData</dt><dd>(optional) <pre>string</pre><p>Extra data to attach to the window.</dd></dl>
+        <dl><dt>windowKey</dt><dd>(optional) <pre>string</pre><p>Id to identify the window. If a window with a given id is created while another window with the same id already exists, the currently opened window will be focused instead of creating a new window.</dd></dl>
         </dl>
-        <h3 id='WindowState'><a href='windowPrivate.html#WindowState'>#</a>WindowState</h3><dl><dt><code>ENUM</code></dt><dd><p>The state of this browser window.<li>normal: Normal window state (i.e. not minimized, maximized, or fullscreen).<li>minimized: Minimized window state.<li>maximized: Maximized window state.<li>fullscreen: Fullscreen window state.</ul></dd></dl>
-        <h3 id='WindowType'><a href='windowPrivate.html#WindowType'>#</a>WindowType</h3><dl><dt><code>ENUM</code></dt><dd><p>The type of this browser window.<li>normal: This is a normal browser window.<li>settings: This is a settings window.<li>popup: This is a popup window.</ul></dd></dl>
+        <h3 id='WindowType'><a href='windowPrivate.html#WindowType'>#</a>WindowType</h3><dl><dt><code>ENUM</code></dt><dd><p>The type of this browser window.<li>normal: This is a normal browser window.<li>settings: This is a settings window.<li>popup: This is a popup window.<li>devtools: This is a devtools window.</ul></dd></dl>
         <h3 id='FocusedElementInfo'><a href='windowPrivate.html#FocusedElementInfo'>#</a>FocusedElementInfo</h3><p>Information about the HTML element having focus.<p>Properties:<dl><dl><dt>tagName</dt><dd><pre>string</pre><p>Element tag name</dd></dl>
         <dl><dt>type</dt><dd><pre>string</pre><p>Element type</dd></dl>
         <dl><dt>editable</dt><dd><pre>boolean</pre><p>True if element is editable.</dd></dl>
@@ -3030,6 +3064,7 @@
         <h3 id='onBeforeUnloadDialogOpened'><a href='windowPrivate.html#onBeforeUnloadDialogOpened'>#</a>onBeforeUnloadDialogOpened</h3><p>Fired when a beforeunload dialog is shown for a tab.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onWindowClosed'><a href='windowPrivate.html#onWindowClosed'>#</a>onWindowClosed</h3><p>Fired when a window is closed, even for guest windows.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onWindowCloseCanceled'><a href='windowPrivate.html#onWindowCloseCanceled'>#</a>onWindowCloseCanceled</h3><p>Fired when a window close sqeuence is canceled. Note that the close action may not have been started from JS.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onPageInfoPopupChanged'><a href='windowPrivate.html#onPageInfoPopupChanged'>#</a>onPageInfoPopupChanged</h3><p>Fired when a page information popup visibility changes.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>visible</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onActiveTabStatusText'><a href='windowPrivate.html#onActiveTabStatusText'>#</a>onActiveTabStatusText</h3><p>Fired when the active tab has new loadstate text. Will reset to <empty> string<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -3040,9 +3075,7 @@
         <h3 id='create'><a href='windowPrivate.html#create'>#</a>create</h3><p>Create a window with additional Vivaldi specific properties.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>Url to page to show as the full window UI of the new window.</dd></dl>
         <dl><dt>options</dt><dd><pre><a href="#CreateWindowOptions">CreateWindowOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>type</dt><dd>(optional) <pre><a href="#WindowType">WindowType</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window id of the created window if successful or -1 on an error or if the user immediately closed the window.</dd></dl>
-        </dd></dl>
-            <h3 id='getCurrentId'><a href='windowPrivate.html#getCurrentId'>#</a>getCurrentId</h3><p>Returns the window id of the window we are currently running inside.<h3 id='setState'><a href='windowPrivate.html#setState'>#</a>setState</h3><p>Sets the window state.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window id of the window to change the state for.</dd></dl>
+        <h3 id='getCurrentId'><a href='windowPrivate.html#getCurrentId'>#</a>getCurrentId</h3><p>Returns the window id of the window we are currently running inside.<h3 id='setState'><a href='windowPrivate.html#setState'>#</a>setState</h3><p>Sets the window state.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window id of the window to change the state for.</dd></dl>
         <dl><dt>state</dt><dd><pre><a href="#WindowState">WindowState</a></pre><p>The state to set the window to.</dd></dl>
         <h3 id='updateMaximizeButtonPosition'><a href='windowPrivate.html#updateMaximizeButtonPosition'>#</a>updateMaximizeButtonPosition</h3><p>Notify C++ about the position of the maximize button to show extra native GUI like the split window menu in Windows 11.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window id of the window to update the coordinates of the maximize button.</dd></dl>
         <dl><dt>left</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>

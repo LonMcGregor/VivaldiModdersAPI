@@ -1,8 +1,8 @@
-import json, glob, os, re
+import json, glob, os, re, sys
 from json import JSONDecodeError
 import jstyleson
 
-SOURCE_PATH = r'C:\Users\L\Downloads\vivaldi-source_6.0.2979.tar\vivaldi-source_6.0.2979\vivaldi-source'
+SOURCE_PATH = sys.argv[1]
 
 def getAllApiDefsInSourceBundle():
     return glob.glob(os.path.join(SOURCE_PATH, 'extensions/schema/*.json'))
@@ -157,7 +157,7 @@ def makeNav(apis):
     out += f'''<li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version {version()}, by LonMcGregor.
+    <p>Version {version()}
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     '''
