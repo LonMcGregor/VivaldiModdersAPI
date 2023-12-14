@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 6.4
+    <p>Version 6.5
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -28,11 +28,11 @@
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul><li><a href='#ActionType'>ActionType</a><li><a href='#ExtensionType'>ExtensionType</a><li><a href='#MenuType'>MenuType</a><li><a href='#MenuItem'>MenuItem</a><li><a href='#ExtensionInfo'>ExtensionInfo</a></ul>
+    <ul><li><a href='#ActionType'>ActionType</a><li><a href='#ExtensionType'>ExtensionType</a><li><a href='#MenuType'>MenuType</a><li><a href='#MenuItem'>MenuItem</a><li><a href='#ExtensionInfo'>ExtensionInfo</a><li><a href='#ExtensionInstallError'>ExtensionInstallError</a></ul>
     <h3>Listeners</h3>
-    <ul><li><a href='#onAdded'>onAdded</a><li><a href='#onRemoved'>onRemoved</a><li><a href='#onUpdated'>onUpdated</a><li><a href='#onCommandAdded'>onCommandAdded</a><li><a href='#onCommandRemoved'>onCommandRemoved</a><li><a href='#onIconLoaded'>onIconLoaded</a></ul>
+    <ul><li><a href='#onAdded'>onAdded</a><li><a href='#onRemoved'>onRemoved</a><li><a href='#onUpdated'>onUpdated</a><li><a href='#onCommandAdded'>onCommandAdded</a><li><a href='#onCommandRemoved'>onCommandRemoved</a><li><a href='#onIconLoaded'>onIconLoaded</a><li><a href='#onExtensionDisabledInstallErrorAdded'>onExtensionDisabledInstallErrorAdded</a><li><a href='#onExtensionDisabledInstallErrorRemoved'>onExtensionDisabledInstallErrorRemoved</a></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#getToolbarExtensions'>getToolbarExtensions</a><li><a href='#executeExtensionAction'>executeExtensionAction</a><li><a href='#toggleBrowserActionVisibility'>toggleBrowserActionVisibility</a><li><a href='#removeExtension'>removeExtension</a><li><a href='#showExtensionOptions'>showExtensionOptions</a><li><a href='#getExtensionMenu'>getExtensionMenu</a><li><a href='#executeMenuAction'>executeMenuAction</a></ul></nav>
+    <ul><li><a href='#getToolbarExtensions'>getToolbarExtensions</a><li><a href='#executeExtensionAction'>executeExtensionAction</a><li><a href='#toggleBrowserActionVisibility'>toggleBrowserActionVisibility</a><li><a href='#removeExtension'>removeExtension</a><li><a href='#showExtensionOptions'>showExtensionOptions</a><li><a href='#getExtensionMenu'>getExtensionMenu</a><li><a href='#executeMenuAction'>executeMenuAction</a><li><a href='#showGlobalError'>showGlobalError</a><li><a href='#triggerGlobalErrors'>triggerGlobalErrors</a></ul></nav>
     
         <h2>Types</h2>
         <h3 id='ActionType'><a href='#ActionType'>#</a>ActionType</h3><dl><dt><code>ENUM</code></dt><dd><p>browser- or pageAction.<li>browser<li>page</ul></dd></dl>
@@ -64,6 +64,10 @@
         <dl><dt>optionspage</dt><dd>(optional) <pre>string</pre><p>Address of extension options page.</dd></dl>
         <dl><dt>optionsInNewTab</dt><dd>(optional) <pre>boolean</pre><p>false if the options page should be opened embedded, true if it opens in a new tab.</dd></dl>
         <dl><dt>keyboardShortcut</dt><dd>(optional) <pre>string</pre><p>Keyboard shortcut to toggle this extension.</dd></dl>
+        </dl>
+        <h3 id='ExtensionInstallError'><a href='#ExtensionInstallError'>#</a>ExtensionInstallError</h3><p>Extension error.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique extension identifier.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>Extension name.</dd></dl>
+        <dl><dt>commandId</dt><dd><pre>integer</pre><p>Int id to lookup an error on action.</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -102,6 +106,8 @@
         <h3 id='onCommandRemoved'><a href='#onCommandRemoved'>#</a>onCommandRemoved</h3><p>Fired when a keyboard shortcut is removed from an extension.<p>Parameters:<dl><dt>extensionId</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>shortcut</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onIconLoaded'><a href='#onIconLoaded'>#</a>onIconLoaded</h3><p>Fired when an extension-icon is fully loaded. Note that only ExtensionInfo.id and ExtensionInfo.badgeIcon is filled!<p>Parameters:<dl><dt>extension</dt><dd><pre><a href="#ExtensionInfo">ExtensionInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onExtensionDisabledInstallErrorAdded'><a href='#onExtensionDisabledInstallErrorAdded'>#</a>onExtensionDisabledInstallErrorAdded</h3><p>Fired when an extensionerror is created. Can be of various kinds of GlobalErrors<p>Parameters:<dl><dt>error</dt><dd><pre><a href="#ExtensionInstallError">ExtensionInstallError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onExtensionDisabledInstallErrorRemoved'><a href='#onExtensionDisabledInstallErrorRemoved'>#</a>onExtensionDisabledInstallErrorRemoved</h3><p>Fired when an extensionerror is handled or removed. Can be of various kinds of GlobalErrors.<p>Parameters:<dl><dt>error</dt><dd><pre><a href="#ExtensionInstallError">ExtensionInstallError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='getToolbarExtensions'><a href='#getToolbarExtensions'>#</a>getToolbarExtensions</h3><p><h3 id='executeExtensionAction'><a href='#executeExtensionAction'>#</a>executeExtensionAction</h3><p>execute browserAction or pageAction for extension<p>Parameters:<dl><dt>extensionId</dt><dd><pre>string</pre><p></dd></dl>
@@ -119,4 +125,6 @@
         <dl><dt>menuId</dt><dd><pre>string</pre><p>id of the menu item.</dd></dl>
         <dl><dt>result</dt><dd><p>Callback for action.<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>true on success.</dd></dl>
         </dd></dl>
-            </main></body></html>
+            <h3 id='showGlobalError'><a href='#showGlobalError'>#</a>showGlobalError</h3><p>Show the dialog for an extension install error.<p>Parameters:<dl><dt>commandId</dt><dd><pre>integer</pre><p>The id for the error.</dd></dl>
+        <dl><dt>windowId</dt><dd><pre>integer</pre><p>id of the application window. Used to find the Browser object.</dd></dl>
+        <h3 id='triggerGlobalErrors'><a href='#triggerGlobalErrors'>#</a>triggerGlobalErrors</h3><p>Loop through any pending global extension errors and fire events for the ui.</main></body></html>

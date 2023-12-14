@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 6.4
+    <p>Version 6.5
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -254,6 +254,10 @@
         <dl><dt>optionsInNewTab</dt><dd>(optional) <pre>boolean</pre><p>false if the options page should be opened embedded, true if it opens in a new tab.</dd></dl>
         <dl><dt>keyboardShortcut</dt><dd>(optional) <pre>string</pre><p>Keyboard shortcut to toggle this extension.</dd></dl>
         </dl>
+        <h3 id='ExtensionInstallError'><a href='extensionActionUtils.html#ExtensionInstallError'>#</a>ExtensionInstallError</h3><p>Extension error.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique extension identifier.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>Extension name.</dd></dl>
+        <dl><dt>commandId</dt><dd><pre>integer</pre><p>Int id to lookup an error on action.</dd></dl>
+        </dl>
         
         <h2>Listeners</h2>
             <details>
@@ -291,6 +295,8 @@
         <h3 id='onCommandRemoved'><a href='extensionActionUtils.html#onCommandRemoved'>#</a>onCommandRemoved</h3><p>Fired when a keyboard shortcut is removed from an extension.<p>Parameters:<dl><dt>extensionId</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>shortcut</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onIconLoaded'><a href='extensionActionUtils.html#onIconLoaded'>#</a>onIconLoaded</h3><p>Fired when an extension-icon is fully loaded. Note that only ExtensionInfo.id and ExtensionInfo.badgeIcon is filled!<p>Parameters:<dl><dt>extension</dt><dd><pre><a href="#ExtensionInfo">ExtensionInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onExtensionDisabledInstallErrorAdded'><a href='extensionActionUtils.html#onExtensionDisabledInstallErrorAdded'>#</a>onExtensionDisabledInstallErrorAdded</h3><p>Fired when an extensionerror is created. Can be of various kinds of GlobalErrors<p>Parameters:<dl><dt>error</dt><dd><pre><a href="#ExtensionInstallError">ExtensionInstallError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onExtensionDisabledInstallErrorRemoved'><a href='extensionActionUtils.html#onExtensionDisabledInstallErrorRemoved'>#</a>onExtensionDisabledInstallErrorRemoved</h3><p>Fired when an extensionerror is handled or removed. Can be of various kinds of GlobalErrors.<p>Parameters:<dl><dt>error</dt><dd><pre><a href="#ExtensionInstallError">ExtensionInstallError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='getToolbarExtensions'><a href='extensionActionUtils.html#getToolbarExtensions'>#</a>getToolbarExtensions</h3><p><h3 id='executeExtensionAction'><a href='extensionActionUtils.html#executeExtensionAction'>#</a>executeExtensionAction</h3><p>execute browserAction or pageAction for extension<p>Parameters:<dl><dt>extensionId</dt><dd><pre>string</pre><p></dd></dl>
@@ -308,7 +314,9 @@
         <dl><dt>menuId</dt><dd><pre>string</pre><p>id of the menu item.</dd></dl>
         <dl><dt>result</dt><dd><p>Callback for action.<p>Parameters:<dl><dt>success</dt><dd><pre>boolean</pre><p>true on success.</dd></dl>
         </dd></dl>
-            <h1><a href='calendar.html'>calendar</a></h1>
+            <h3 id='showGlobalError'><a href='extensionActionUtils.html#showGlobalError'>#</a>showGlobalError</h3><p>Show the dialog for an extension install error.<p>Parameters:<dl><dt>commandId</dt><dd><pre>integer</pre><p>The id for the error.</dd></dl>
+        <dl><dt>windowId</dt><dd><pre>integer</pre><p>id of the application window. Used to find the Browser object.</dd></dl>
+        <h3 id='triggerGlobalErrors'><a href='extensionActionUtils.html#triggerGlobalErrors'>#</a>triggerGlobalErrors</h3><p>Loop through any pending global extension errors and fire events for the ui.<h1><a href='calendar.html'>calendar</a></h1>
 
     
         <h2>Types</h2>
@@ -384,6 +392,7 @@
         <dl><dt>completed</dt><dd>(optional) <pre>number</pre><p>The date and time that a todo was actually completed.</dd></dl>
         <dl><dt>syncPending</dt><dd>(optional) <pre>boolean</pre><p>Does this event have any pending sync changes.</dd></dl>
         <dl><dt>deletePending</dt><dd>(optional) <pre>boolean</pre><p>Should the event be deleted locally once server deletion is completed.</dd></dl>
+        <dl><dt>end_recurring</dt><dd>(optional) <pre>number</pre><p>When this event ends re-occurring. In milliseconds since the epoch.</dd></dl>
         </dl>
         <h3 id='CreateDetails'><a href='calendar.html#CreateDetails'>#</a>CreateDetails</h3><p>Object passed to the create() function.<p>Properties:<dl><dl><dt>title</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>description</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -421,6 +430,7 @@
         <dl><dt>completed</dt><dd>(optional) <pre>number</pre><p>The date and time that a todo was actually completed.</dd></dl>
         <dl><dt>syncPending</dt><dd>(optional) <pre>boolean</pre><p>Does this event have any pending sync changes.</dd></dl>
         <dl><dt>deletePending</dt><dd>(optional) <pre>boolean</pre><p>Should the event be deleted locally once server deletion is completed.</dd></dl>
+        <dl><dt>end_recurring</dt><dd>(optional) <pre>number</pre><p>When this event ends re-occurring. In milliseconds since the epoch.</dd></dl>
         </dl>
         <h3 id='EventType'><a href='calendar.html#EventType'>#</a>EventType</h3><p>A event type.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique identifier for the event type. IDs are unique within the current profile, and they remain valid even after the browser is restarted.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>The event type name.</dd></dl>
@@ -575,6 +585,7 @@
         <dl><dt>completed</dt><dd>(optional) <pre>number</pre><p>The date and time that a todo was actually completed.</dd></dl>
         <dl><dt>syncPending</dt><dd>(optional) <pre>boolean</pre><p>Does this event have any pending sync changes.</dd></dl>
         <dl><dt>deletePending</dt><dd>(optional) <pre>boolean</pre><p>Should the event be deleted locally once server deletion is completed.</dd></dl>
+        <dl><dt>end_recurring</dt><dd>(optional) <pre>number</pre><p>When this event ends re-occurring. In milliseconds since the epoch.</dd></dl>
         </dd></dl>
         <h3 id='create'><a href='calendar.html#create'>#</a>create</h3><p>Creates a calendar.<p>Parameters:<dl><dt>calendar</dt><dd><pre><a href="#CreateCalendarDetails">CreateCalendarDetails</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='getAll'><a href='calendar.html#getAll'>#</a>getAll</h3><p>Returns all calendars.<h3 id='delete'><a href='calendar.html#delete'>#</a>delete</h3><p>Deletes a calendar, with all its events and event exceptions.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The id of the calendar to be deleted.</dd></dl>
@@ -776,8 +787,8 @@
         <dl><dt>id</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>rules_list_checksum</dt><dd><pre>string</pre><p>Checksum of the compiled rule file derived from this source. This will be the empty string if the rule source has never been fetched succesfully.</dd></dl>
         <dl><dt>unsafe_adblock_metadata</dt><dd><pre><a href="#AdBlockMetadata">AdBlockMetadata</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>last_update</dt><dd><pre>number</pre><p>The last time the source was successfully fetched and the corresponding rules updated.</dd></dl>
-        <dl><dt>next_fetch</dt><dd><pre>number</pre><p>The next time a fetching and updating from the rule source will be attempted.</dd></dl>
+        <dl><dt>last_update</dt><dd><pre>number</pre><p>The last time the source was successfully fetched and the corresponding rules updated. Represented in milliseconds since the epoch.</dd></dl>
+        <dl><dt>next_fetch</dt><dd><pre>number</pre><p>The next time a fetching and updating from the rule source will be attempted. Represented in milliseconds since the epoch.</dd></dl>
         <dl><dt>is_fetching</dt><dd><pre>boolean</pre><p>Whether fetching of the rule source is in progress</dd></dl>
         <dl><dt>last_fetch_result</dt><dd><pre><a href="#FetchResult">FetchResult</a></pre><p>The result of the last fetch attempt</dd></dl>
         <dl><dt>rules_info</dt><dd><pre><a href="#RulesInfo">RulesInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -926,6 +937,7 @@
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p>Url that can be used to determine a corresponding icon.</dd></dl>
         <dl><dt>shortcut</dt><dd>(optional) <pre>string</pre><p>A shortcut displayed next to the name. No binding is added.</dd></dl>
         <dl><dt>showshortcut</dt><dd>(optional) <pre>boolean</pre><p>Controls if a shortcut shall be shown. Needed for elements where shortcut is set up in C++ code</dd></dl>
+        <dl><dt>persistent</dt><dd>(optional) <pre>boolean</pre><p>If true the menu item will remain open after menu item is clicked with mouse.</dd></dl>
         <dl><dt>icons</dt><dd>(optional) <pre><a href="#Icons">Icons</a></pre><p>Icon in PNG format encoded as base64.</dd></dl>
         </dl>
         <h3 id='Container'><a href='contextMenu.html#Container'>#</a>Container</h3><p>Container to expand<p>Properties:<dl><dl><dt>id</dt><dd><pre>integer</pre><p>The unique id of item.</dd></dl>
@@ -1021,11 +1033,12 @@
         <h2>Methods</h2>
         <h3 id='show'><a href='contextMenu.html#show'>#</a>show</h3><p>Shows a new context menu.<p>Parameters:<dl><dt>properties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>children</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>Element</ul></dd></dl>
-        <dl><dt>rect</dt><dd><pre><a href="#Rect">Rect</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>origin</dt><dd><pre><a href="#Origin">Origin</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>documentId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>icons</dt><dd><pre><a href="#Icons">Icons</a></pre><p>Default and folder icons.</dd></dl>
+        <dl><dt>forceViews</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>origin</dt><dd><pre><a href="#Origin">Origin</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>rect</dt><dd><pre><a href="#Rect">Rect</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
         <h1><a href='devtoolsPrivate.html'>devtoolsPrivate</a></h1>
 
@@ -1100,6 +1113,7 @@
         <h2>Types</h2>
         <h3 id='HistoryResultSetGrouping'><a href='historyPrivate.html#HistoryResultSetGrouping'>#</a>HistoryResultSetGrouping</h3><dl><dt><code>ENUM</code></dt><dd><p>Handling of History search results. See: DuplicateHandling enum in history_types.h<li>remove_all_duplicates<li>remove_duplicates_per_day<li>keep_all_duplicates</ul></dd></dl>
         <h3 id='TransitionType'><a href='historyPrivate.html#TransitionType'>#</a>TransitionType</h3><dl><dt><code>ENUM</code></dt><dd><p>The transition type for this visit from its referrer.<li>link<li>typed<li>auto_bookmark<li>auto_subframe<li>manual_subframe<li>generated<li>auto_toplevel<li>form_submit<li>reload<li>keyword<li>keyword_generated</ul></dd></dl>
+        <h3 id='SourceType'><a href='historyPrivate.html#SourceType'>#</a>SourceType</h3><dl><dt><code>ENUM</code></dt><dd><p>The transition type for this visit from its referrer as defined in browser/history_types.h.<li>synced<li>browsed<li>extension<li>firefox_imported<li>ie_imported<li>safari_imported<li>chromium_imported</ul></dd></dl>
         <h3 id='TypedHistoryItem'><a href='historyPrivate.html#TypedHistoryItem'>#</a>TypedHistoryItem</h3><p>An object containing informations of one typed history entry<p>Properties:<dl><dl><dt>url</dt><dd><pre>string</pre><p>The URL navigated to by a user.</dd></dl>
         <dl><dt>title</dt><dd><pre>string</pre><p>The title of the page when it was last loaded.</dd></dl>
         <dl><dt>keywordId</dt><dd><pre>string</pre><p>The database identifier of the used keyword for a search or -1 if this wasn't a search.</dd></dl>
@@ -1129,6 +1143,7 @@
         <dl><dt>transition_type</dt><dd><pre><a href="#TransitionType">TransitionType</a></pre><p>The transition type for this visit from its referrer.</dd></dl>
         <dl><dt>dateKey</dt><dd><pre>string</pre><p>Date string of the visit. Format: YYYY-MM-DD</dd></dl>
         <dl><dt>hour</dt><dd><pre>integer</pre><p>Hour of day when this url was visited.</dd></dl>
+        <dl><dt>source</dt><dd>(optional) <pre><a href="#SourceType">SourceType</a></pre><p>The origin of the link</dd></dl>
         </dl>
         <h3 id='TopUrlItem'><a href='historyPrivate.html#TopUrlItem'>#</a>TopUrlItem</h3><p>An object encapsulating one result of a top url history query.<p>Properties:<dl><dl><dt>date</dt><dd><pre>string</pre><p>The date of the visit for the top url</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p>The url visited</dd></dl>
@@ -1174,8 +1189,7 @@
         <dl><dt>resultGrouping</dt><dd>(optional) <pre><a href="#HistoryResultSetGrouping">HistoryResultSetGrouping</a></pre><p>The way the result set should be grouped.</dd></dl>
         </dd></dl>
         <h3 id='deleteVisits'><a href='historyPrivate.html#deleteVisits'>#</a>deleteVisits</h3><p>Deletes all visits of the given URL for a certain period.<p>Parameters:<dl><dt>details</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to remove.</dd></dl>
-        <dl><dt>startTime</dt><dd><pre>number</pre><p>Items added to history after this date, represented in milliseconds since the epoch.</dd></dl>
-        <dl><dt>endTime</dt><dd><pre>number</pre><p>Items added to history before this date, represented in milliseconds since the epoch.</dd></dl>
+        <dl><dt>time</dt><dd><pre>number</pre><p>The visit time of the item to remove, represented in milliseconds since the epoch. IMPORTANT: This must be the exact visit time, to the microsecond. If it is truncated, then the deletion will not be synced.</dd></dl>
         </dd></dl>
         <h3 id='getTopUrlsPerDay'><a href='historyPrivate.html#getTopUrlsPerDay'>#</a>getTopUrlsPerDay</h3><p>Retrives top url per day. Sorted by number of visits within the day <p>Parameters:<dl><dt>maxTopUrlResults</dt><dd><pre>number</pre><p>The number of top urls to return per day.</dd></dl>
         <h3 id='visitSearch'><a href='historyPrivate.html#visitSearch'>#</a>visitSearch</h3><p>Retrives all visits. Sorted by visit time descending.<p>Parameters:<dl><dt>query</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>startTime</dt><dd>(optional) <pre>number</pre><p>Limit results to those visited after this date, represented in milliseconds since the epoch. If not specified, this defaults to 24 hours in the past.</dd></dl>
@@ -1184,9 +1198,6 @@
         <h3 id='getTypedHistory'><a href='historyPrivate.html#getTypedHistory'>#</a>getTypedHistory</h3><p>Retrieves a list of items used to populate the typed URL results of the address bar<p>Parameters:<dl><dt>query</dt><dd><pre>string</pre><p>A piece of text that the results should contain</dd></dl>
         <dl><dt>prefixKeywordId</dt><dd><pre>string</pre><p>A number identifying a possible keyword prefixing the query or -1 if none.</dd></dl>
         <dl><dt>max_results</dt><dd><pre>integer</pre><p>The number of items to return</dd></dl>
-        <h3 id='migrateOldTypedUrl'><a href='historyPrivate.html#migrateOldTypedUrl'>#</a>migrateOldTypedUrl</h3><p>Add an old typed URL to history<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL that was visited</dd></dl>
-        <dl><dt>time</dt><dd><pre>number</pre><p>The time at which the visit took place as a UNIX timestamp</dd></dl>
-        <dl><dt>transitionType</dt><dd><pre><a href="#TransitionType">TransitionType</a></pre><p>Expected to be typed, keyword or generated. In the last two cases, remember to call setKeywordSearchTermsForURL.</dd></dl>
         <h3 id='getDetailedHistory'><a href='historyPrivate.html#getDetailedHistory'>#</a>getDetailedHistory</h3><p><p>Parameters:<dl><dt>query</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>text</dt><dd><pre>string</pre><p>A free-text query to the history service.  Leave empty to retrieve all pages.</dd></dl>
         <dl><dt>startTime</dt><dd>(optional) <pre>number</pre><p>Limit results to those visited after this date, represented in milliseconds since the epoch.</dd></dl>
         <dl><dt>endTime</dt><dd>(optional) <pre>number</pre><p>Limit results to those visited before this date, represented in milliseconds since the epoch.</dd></dl>
@@ -1432,9 +1443,8 @@
         <dl><dt>parameter</dt><dd><pre>string</pre><p>Free format parameter to 'command'. Can be empty.</dd></dl>
         
         <h2>Methods</h2>
-        <h3 id='setup'><a href='menubar.html#setup'>#</a>setup</h3><p>Setup application's main menu.<p>Parameters:<dl><dt>items</dt><dd><p>Menu items with string label.<p><code>Array</code> of:
+        <h3 id='getHasWindows'><a href='menubar.html#getHasWindows'>#</a>getHasWindows</h3><p>Returns true if there is one or more windows present in any profile.<h3 id='setup'><a href='menubar.html#setup'>#</a>setup</h3><p>Setup application's main menu.<p>Parameters:<dl><dt>items</dt><dd><p>Menu items with string label.<p><code>Array</code> of:
         <ul><li>MenuItem</ul></dd></dl>
-        <dl><dt>mode</dt><dd><pre><a href="#Mode">Mode</a></pre><p>What part of menu to set up.</dd></dl>
         <h1><a href='menubarMenu.html'>menubarMenu</a></h1>
 
     
@@ -2112,7 +2122,7 @@
         <h3 id='EngineState'><a href='sync.html#EngineState'>#</a>EngineState</h3><dl><dt><code>ENUM</code></dt><dd><p>The state of the sync engine.<li>stopped: Sync has not been requested by the user<li>starting: Sync has been requested but the engine is not done starting<li>starting_server_error: Sync has been requested but the engine is not done starting and can't do so because of a server issue<li>started: The sync engine is running normally<li>clearing_data: The sync engine is running, but it is in the process of requesting server data to be cleared.<li>configuration_pending: The sync engine is running, but it is waiting for the current setup to be complete before actually syncing anything<li>failed: The sync engine encountered an error that forced it to stop.</ul></dd></dl>
         <h3 id='DisableReason'><a href='sync.html#DisableReason'>#</a>DisableReason</h3><dl><dt><code>ENUM</code></dt><dd><p>The reason why the sync engine is in a failed state. This should be kept in sync with SyncService::DisableReason (chromium/components/sync/driver/sync_service.h)<li>enterprise_policy<li>not_signed_in<li>unrecoverable_error<li>flag</ul></dd></dl>
         <h3 id='CycleStatus'><a href='sync.html#CycleStatus'>#</a>CycleStatus</h3><dl><dt><code>ENUM</code></dt><dd><p>Error occuring as part of the sync cycle. This should be kept in sync with VivaldiSyncUIHelper::CycleStatus (sync/vivaldi_sync_ui_helper.h)<li>not_synced<li>success<li>auth_error<li>server_error<li>network_error<li>conflict<li>throttled<li>other_error</ul></dd></dl>
-        <h3 id='ProtocolErrorType'><a href='sync.html#ProtocolErrorType'>#</a>ProtocolErrorType</h3><dl><dt><code>ENUM</code></dt><dd><p>Possible error types for errors returned as part of sync server responses. This should be kept in sync with syncer::SyncProtocolErrorType (chromium/components/sync/protocol/sync_protocol_error.h)<li>success<li>not_my_birthday<li>throttled<li>clear_pending<li>transient_error<li>migration_done<li>disabled_by_admin<li>partial_failure<li>client_data_obsolete<li>encryption_obsolete<li>unknown</ul></dd></dl>
+        <h3 id='ProtocolErrorType'><a href='sync.html#ProtocolErrorType'>#</a>ProtocolErrorType</h3><dl><dt><code>ENUM</code></dt><dd><p>Possible error types for errors returned as part of sync server responses. This should be kept in sync with syncer::SyncProtocolErrorType (chromium/components/sync/protocol/sync_protocol_error.h)<li>success<li>not_my_birthday<li>throttled<li>transient_error<li>migration_done<li>disabled_by_admin<li>partial_failure<li>client_data_obsolete<li>encryption_obsolete<li>conflict<li>invalid_message<li>unknown</ul></dd></dl>
         <h3 id='ClientAction'><a href='sync.html#ClientAction'>#</a>ClientAction</h3><dl><dt><code>ENUM</code></dt><dd><p>Possible action that the client can take to fix the last server-returned error. This should be kept in sync with syncer::ClientAction (chromium/components/sync/protocol/sync_protocol_error.h)<li>upgrade_client<li>disable_sync_on_client<li>stop_sync_for_disabled_account<li>reset_local_sync_data<li>unknown</ul></dd></dl>
         <h3 id='DataType'><a href='sync.html#DataType'>#</a>DataType</h3><dl><dt><code>ENUM</code></dt><dd><p>User selectable data types that we support<li>bookmarks<li>preferences<li>passwords<li>autofill<li>history<li>extensions<li>apps<li>reading_list<li>tabs<li>notes</ul></dd></dl>
         <h3 id='DataTypeSelection'><a href='sync.html#DataTypeSelection'>#</a>DataTypeSelection</h3><p>A structure containing the system status of a data type.<p>Properties:<dl><dl><dt>dataType</dt><dd><pre><a href="#DataType">DataType</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2857,6 +2867,8 @@
         </dl>
         <h3 id='ProxyPlatformSupport'><a href='utilities.html#ProxyPlatformSupport'>#</a>ProxyPlatformSupport</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>support</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
+        <h3 id='ProxyInfo'><a href='utilities.html#ProxyInfo'>#</a>ProxyInfo</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>hasOther</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
         <h3 id='ProxyHost'><a href='utilities.html#ProxyHost'>#</a>ProxyHost</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>host</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>port</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
@@ -2867,6 +2879,10 @@
         <h3 id='ProxyOptions'><a href='utilities.html#ProxyOptions'>#</a>ProxyOptions</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>local</dt><dd><pre><a href="#ProxyHost">ProxyHost</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>remote</dt><dd><pre><a href="#ProxyHost">ProxyHost</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>token</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='ReadImageData'><a href='utilities.html#ReadImageData'>#</a>ReadImageData</h3><p>An object that defines the data read from the image file.<p>Properties:<dl><dl><dt>data</dt><dd><p>Read image as raw bytes.<p><code>Array</code> of:
+        <ul><li>integer</ul></dd></dl>
+        <dl><dt>type</dt><dd><pre>string</pre><p>Mime type of the read image.</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -2914,7 +2930,8 @@
         <h3 id='getSelectedText'><a href='utilities.html#getSelectedText'>#</a>getSelectedText</h3><p>Returns selected text in page with given id<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The page to examine</dd></dl>
         <h3 id='selectFile'><a href='utilities.html#selectFile'>#</a>selectFile</h3><p>Select a single file and returns the file name.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#SelectFileOptions">SelectFileOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='selectLocalImage'><a href='utilities.html#selectLocalImage'>#</a>selectLocalImage</h3><p>Ask the user to select an image file and store its path as a data mapping URL in a bookmark or a preference.<p>Parameters:<dl><dt>params</dt><dd><pre><a href="#SelectLocalImageParams">SelectLocalImageParams</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='storeImage'><a href='utilities.html#storeImage'>#</a>storeImage</h3><p>Save image from a memory blob to image store and put its URL to preferences or bookmarks.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#StoreImageOptions">StoreImageOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='cleanUnusedImages'><a href='utilities.html#cleanUnusedImages'>#</a>cleanUnusedImages</h3><p>Cleans unused images (thumbnails)<p>Parameters:<dl><dt>createdBefore</dt><dd><pre>integer</pre><p>Run only if createdBefore <= the number of the images created sinct the last cleanup.</dd></dl>
+        <h3 id='storeImage'><a href='utilities.html#storeImage'>#</a>storeImage</h3><p>Save image from the memory blob to the image store and return related chrome:// URL.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#StoreImageOptions">StoreImageOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='getVersion'><a href='utilities.html#getVersion'>#</a>getVersion</h3><p>Gets the Vivaldi version and Chromium versions.<h3 id='getFFMPEGState'><a href='utilities.html#getFFMPEGState'>#</a>getFFMPEGState</h3><p>Helper function for Linux. Reads the env. variable VIVALDI_FFMPEG_FOUND and returns the result<h3 id='getMediaAvailableState'><a href='utilities.html#getMediaAvailableState'>#</a>getMediaAvailableState</h3><p>Windows: Returns whether this version of the OS has media codecs installed. Might return false on N versions of Windows.<h3 id='setSharedData'><a href='utilities.html#setSharedData'>#</a>setSharedData</h3><p>Sets the given data to be kept in-memory for the duration of the Vivaldi setting (until Vivaldi exits).<p>Parameters:<dl><dt>keyValuePair</dt><dd><pre><a href="#SharedDataValue">SharedDataValue</a></pre><p>The Key-value.</dd></dl>
         <h3 id='getSharedData'><a href='utilities.html#getSharedData'>#</a>getSharedData</h3><p>Gets the given data from the in-memory storage.<p>Parameters:<dl><dt>keyValuePair</dt><dd><pre><a href="#SharedDataValue">SharedDataValue</a></pre><p>The Key-value, the value is the default value returned if the key does not exist.</dd></dl>
         <h3 id='takeMutex'><a href='utilities.html#takeMutex'>#</a>takeMutex</h3><p>Uses the in-memory storage to synchronize access to a resource accross several vivaldi extension processes (until Vivaldi exits).<p>Parameters:<dl><dt>name</dt><dd><pre>string</pre><p>A name uniquely identifying the mutex.</dd></dl>
@@ -2966,8 +2983,11 @@
         <ul><li>string</ul></dd></dl>
         <h3 id='showManageSSLCertificates'><a href='utilities.html#showManageSSLCertificates'>#</a>showManageSSLCertificates</h3><p>Show the OS manage certificates dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window to use as parent window for the dialog</dd></dl>
         <h3 id='setProtocolHandling'><a href='utilities.html#setProtocolHandling'>#</a>setProtocolHandling</h3><p>Turn on/off protocol handling for web pages.<p>Parameters:<dl><dt>enabled</dt><dd><pre>boolean</pre><p>Turn on/off protocol handling for web pages.</dd></dl>
-        <h3 id='supportsProxy'><a href='utilities.html#supportsProxy'>#</a>supportsProxy</h3><p>Returns true or false depending on invisiv proxy can be used or not. This is a platform test, not a test of other condtitions.<h3 id='connectProxy'><a href='utilities.html#connectProxy'>#</a>connectProxy</h3><p>Connects to invisiv proxy.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#ProxyOptions">ProxyOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='disconnectProxy'><a href='utilities.html#disconnectProxy'>#</a>disconnectProxy</h3><p>Disconnects from invisiv proxy.<h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
+        <h3 id='supportsProxy'><a href='utilities.html#supportsProxy'>#</a>supportsProxy</h3><p>Returns true or false depending on invisv proxy can be used or not. This is a platform test, not a test of other condtitions.<h3 id='getOtherProxies'><a href='utilities.html#getOtherProxies'>#</a>getOtherProxies</h3><p>Get information of other proxies running.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#ProxyHost">ProxyHost</a></pre><p>Ignore this proxy. Can be used to filter out our own.</dd></dl>
+        <h3 id='connectProxy'><a href='utilities.html#connectProxy'>#</a>connectProxy</h3><p>Connects to invisv proxy.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#ProxyOptions">ProxyOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='disconnectProxy'><a href='utilities.html#disconnectProxy'>#</a>disconnectProxy</h3><p>Disconnects from invisv proxy.<h3 id='browserWindowReady'><a href='utilities.html#browserWindowReady'>#</a>browserWindowReady</h3><p>Signals that JS has fully set up browser window and its event listeners.<p>Parameters:<dl><dt>windowId</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='readImage'><a href='utilities.html#readImage'>#</a>readImage</h3><p>Reads an image file from the file system from the specified URL to the object.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
 
     
         <h2>Types</h2>
@@ -3064,7 +3084,6 @@
         <h3 id='onBeforeUnloadDialogOpened'><a href='windowPrivate.html#onBeforeUnloadDialogOpened'>#</a>onBeforeUnloadDialogOpened</h3><p>Fired when a beforeunload dialog is shown for a tab.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onWindowClosed'><a href='windowPrivate.html#onWindowClosed'>#</a>onWindowClosed</h3><p>Fired when a window is closed, even for guest windows.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='onWindowCloseCanceled'><a href='windowPrivate.html#onWindowCloseCanceled'>#</a>onWindowCloseCanceled</h3><p>Fired when a window close sqeuence is canceled. Note that the close action may not have been started from JS.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onPageInfoPopupChanged'><a href='windowPrivate.html#onPageInfoPopupChanged'>#</a>onPageInfoPopupChanged</h3><p>Fired when a page information popup visibility changes.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>visible</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onActiveTabStatusText'><a href='windowPrivate.html#onActiveTabStatusText'>#</a>onActiveTabStatusText</h3><p>Fired when the active tab has new loadstate text. Will reset to <empty> string<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
