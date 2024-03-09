@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 6.5
+    <p>Version 6.6
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -227,6 +227,7 @@
         <h3 id='ActionType'><a href='extensionActionUtils.html#ActionType'>#</a>ActionType</h3><dl><dt><code>ENUM</code></dt><dd><p>browser- or pageAction.<li>browser<li>page</ul></dd></dl>
         <h3 id='ExtensionType'><a href='extensionActionUtils.html#ExtensionType'>#</a>ExtensionType</h3><dl><dt><code>ENUM</code></dt><dd><p>Regular extension- or componentAction. Component actions will go through ToolbarActionViewController<li>extensionAction<li>componentAction</ul></dd></dl>
         <h3 id='MenuType'><a href='extensionActionUtils.html#MenuType'>#</a>MenuType</h3><dl><dt><code>ENUM</code></dt><dd><p>What type of menu item.<li>normal<li>checkbox<li>radio<li>separator</ul></dd></dl>
+        <h3 id='GlobalErrorType'><a href='extensionActionUtils.html#GlobalErrorType'>#</a>GlobalErrorType</h3><dl><dt><code>ENUM</code></dt><dd><p>Type of global error. Disabled because of permission increase, or installed by third-party.<li>installed<li>upgrade</ul></dd></dl>
         <h3 id='MenuItem'><a href='extensionActionUtils.html#MenuItem'>#</a>MenuItem</h3><p>Menu item representing a single menu item.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>The name of the item as shown in the menu.</dd></dl>
         <dl><dt>id</dt><dd><pre>string</pre><p>The id for the item.</dd></dl>
         <dl><dt>enabled</dt><dd><pre>boolean</pre><p>Is the item enabled.</dd></dl>
@@ -235,6 +236,15 @@
         <dl><dt>menuType</dt><dd><pre><a href="#MenuType">MenuType</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>submenu</dt><dd>(optional) <p>Sub menu items if the extension supplies a custom menu.<p><code>Array</code> of:
         <ul><li>MenuItem</ul></dd></dl>
+        </dl>
+        <h3 id='SidePanelInfo'><a href='extensionActionUtils.html#SidePanelInfo'>#</a>SidePanelInfo</h3><p>Side Panel description (if exists).<p>Properties:<dl><dl><dt>url</dt><dd><pre>string</pre><p>Side Panel URL.</dd></dl>
+        <dl><dt>activeUrl</dt><dd><pre>string</pre><p>Side Panel URL.</dd></dl>
+        </dl>
+        <h3 id='SidePanelOptions'><a href='extensionActionUtils.html#SidePanelOptions'>#</a>SidePanelOptions</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>tabId</dt><dd>(optional) <pre>integer</pre><p>If specified, the side panel options will only apply to the tab with this id. If omitted, these options set the default behavior (used for any tab that doesn't have specific settings). Note: if the same path is set for this tabId and the default tabId, then the panel for this tabId will be a different instance than the panel for the default tabId.</dd></dl>
+        <dl><dt>path</dt><dd>(optional) <pre>string</pre><p>The path to the side panel HTML file to use. This must be a local resource within the extension package.</dd></dl>
+        <dl><dt>extensionId</dt><dd>(optional) <pre>string</pre><p>The path to the side panel HTML file to use. This must be a local resource within the extension package.</dd></dl>
+        <dl><dt>resourceUrl</dt><dd>(optional) <pre>string</pre><p>The path to the side panel HTML file to use. This must be a local resource within the extension package.</dd></dl>
+        <dl><dt>enabled</dt><dd>(optional) <pre>boolean</pre><p>Whether the side panel should be enabled. This is optional. The default value is true.</dd></dl>
         </dl>
         <h3 id='ExtensionInfo'><a href='extensionActionUtils.html#ExtensionInfo'>#</a>ExtensionInfo</h3><p>Extension action per tab id.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique extension identifier.</dd></dl>
         <dl><dt>badgeTooltip</dt><dd>(optional) <pre>string</pre><p>Tooltip for the button.</dd></dl>
@@ -253,9 +263,11 @@
         <dl><dt>optionspage</dt><dd>(optional) <pre>string</pre><p>Address of extension options page.</dd></dl>
         <dl><dt>optionsInNewTab</dt><dd>(optional) <pre>boolean</pre><p>false if the options page should be opened embedded, true if it opens in a new tab.</dd></dl>
         <dl><dt>keyboardShortcut</dt><dd>(optional) <pre>string</pre><p>Keyboard shortcut to toggle this extension.</dd></dl>
+        <dl><dt>sidePanel</dt><dd>(optional) <pre><a href="#SidePanelInfo">SidePanelInfo</a></pre><p>contains sidepanel URL.</dd></dl>
         </dl>
         <h3 id='ExtensionInstallError'><a href='extensionActionUtils.html#ExtensionInstallError'>#</a>ExtensionInstallError</h3><p>Extension error.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique extension identifier.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>Extension name.</dd></dl>
+        <dl><dt>errorType</dt><dd>(optional) <pre><a href="#GlobalErrorType">GlobalErrorType</a></pre><p>The type of the extensionAction, either pageaction or browseraction. Defaults to |extensionAction|.</dd></dl>
         <dl><dt>commandId</dt><dd><pre>integer</pre><p>Int id to lookup an error on action.</dd></dl>
         </dl>
         
@@ -297,6 +309,8 @@
         <h3 id='onIconLoaded'><a href='extensionActionUtils.html#onIconLoaded'>#</a>onIconLoaded</h3><p>Fired when an extension-icon is fully loaded. Note that only ExtensionInfo.id and ExtensionInfo.badgeIcon is filled!<p>Parameters:<dl><dt>extension</dt><dd><pre><a href="#ExtensionInfo">ExtensionInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onExtensionDisabledInstallErrorAdded'><a href='extensionActionUtils.html#onExtensionDisabledInstallErrorAdded'>#</a>onExtensionDisabledInstallErrorAdded</h3><p>Fired when an extensionerror is created. Can be of various kinds of GlobalErrors<p>Parameters:<dl><dt>error</dt><dd><pre><a href="#ExtensionInstallError">ExtensionInstallError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onExtensionDisabledInstallErrorRemoved'><a href='extensionActionUtils.html#onExtensionDisabledInstallErrorRemoved'>#</a>onExtensionDisabledInstallErrorRemoved</h3><p>Fired when an extensionerror is handled or removed. Can be of various kinds of GlobalErrors.<p>Parameters:<dl><dt>error</dt><dd><pre><a href="#ExtensionInstallError">ExtensionInstallError</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onSidePanelOptionChanged'><a href='extensionActionUtils.html#onSidePanelOptionChanged'>#</a>onSidePanelOptionChanged</h3><p>Fired when side panel opetion changed<p>Parameters:<dl><dt>extendionId</dt><dd><pre>string</pre><p>The unique extension identifier.</dd></dl>
+        <dl><dt>options</dt><dd><pre><a href="#SidePanelOptions">SidePanelOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='getToolbarExtensions'><a href='extensionActionUtils.html#getToolbarExtensions'>#</a>getToolbarExtensions</h3><p><h3 id='executeExtensionAction'><a href='extensionActionUtils.html#executeExtensionAction'>#</a>executeExtensionAction</h3><p>execute browserAction or pageAction for extension<p>Parameters:<dl><dt>extensionId</dt><dd><pre>string</pre><p></dd></dl>
@@ -1341,13 +1355,48 @@
     
         <h2>Types</h2>
         <h3 id='message'><a href='mailPrivate.html#message'>#</a>message</h3><p>Message object. Used to create message in full text database table.<p>Properties:<dl><dl><dt>searchListId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>subject</dt><dd>(optional) <pre>string</pre><p>The message subject.</dd></dl>
-        <dl><dt>body</dt><dd>(optional) <pre>string</pre><p>The message body.</dd></dl>
-        <dl><dt>to</dt><dd>(optional) <pre>string</pre><p>The message to address .</dd></dl>
-        <dl><dt>cc</dt><dd>(optional) <pre>string</pre><p>The message cc address .</dd></dl>
-        <dl><dt>from</dt><dd>(optional) <pre>string</pre><p>The message from address .</dd></dl>
-        <dl><dt>replyTo</dt><dd>(optional) <pre>string</pre><p>The message reply address .</dd></dl>
+        <dl><dt>subject</dt><dd><pre>string</pre><p>The message subject.</dd></dl>
+        <dl><dt>body</dt><dd><pre>string</pre><p>The message body.</dd></dl>
+        <dl><dt>to</dt><dd><pre>string</pre><p>The message to address .</dd></dl>
+        <dl><dt>cc</dt><dd><pre>string</pre><p>The message cc address .</dd></dl>
+        <dl><dt>from</dt><dd><pre>string</pre><p>The message from address .</dd></dl>
+        <dl><dt>replyTo</dt><dd><pre>string</pre><p>The message reply address .</dd></dl>
         </dl>
+        <h3 id='migration'><a href='mailPrivate.html#migration'>#</a>migration</h3><p>Migration object. Returns search db version and if migration of search db is needed.<p>Properties:<dl><dl><dt>dbVersion</dt><dd><pre>integer</pre><p>The mail search db version.</dd></dl>
+        <dl><dt>migrationNeeded</dt><dd><pre>boolean</pre><p>If database migration is needed.</dd></dl>
+        </dl>
+        
+        <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
+        <h3 id='onUpgradeProgress'><a href='mailPrivate.html#onUpgradeProgress'>#</a>onUpgradeProgress</h3><p>Reports import progress.<p>Parameters:<dl><dt>progress</dt><dd><pre>integer</pre><p>Number of rows upgraded.</dd></dl>
+        <dl><dt>total</dt><dd><pre>integer</pre><p>Total number of rows to be upgraded.</dd></dl>
+        <dl><dt>msg</dt><dd><pre>string</pre><p>Message to be printed out.</dd></dl>
+        <h3 id='onDeleteMessagesProgress'><a href='mailPrivate.html#onDeleteMessagesProgress'>#</a>onDeleteMessagesProgress</h3><p>Reports progress when deleting messages.<p>Parameters:<dl><dt>delete_progress_count</dt><dd><pre>integer</pre><p>Number of messages deleted.</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='getFilePaths'><a href='mailPrivate.html#getFilePaths'>#</a>getFilePaths</h3><p>Returns array of file paths under a given directory.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The root folder from where to build up the file paths.</dd></dl>
@@ -1366,6 +1415,10 @@
         <h3 id='deleteMessageFile'><a href='mailPrivate.html#deleteMessageFile'>#</a>deleteMessageFile</h3><p>Deletes a file. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be deleted. With ending.</dd></dl>
+        <h3 id='renameMessageFile'><a href='mailPrivate.html#renameMessageFile'>#</a>renameMessageFile</h3><p>Renames a file. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        <dl><dt>fileName</dt><dd><pre>string</pre><p>The file name to be renamed.</dd></dl>
+        <dl><dt>newFileName</dt><dd><pre>string</pre><p>The new name for the file.</dd></dl>
         <h3 id='readFileToBuffer'><a href='mailPrivate.html#readFileToBuffer'>#</a>readFileToBuffer</h3><p>Reads the contents of a file. Returns the content as arrayBuffer<p>Parameters:<dl><dt>fileName</dt><dd><pre>string</pre><p>Absoloute path to the file to be read.</dd></dl>
         <h3 id='readMessageFileToBuffer'><a href='mailPrivate.html#readMessageFileToBuffer'>#</a>readMessageFileToBuffer</h3><p>Reads a mail. The root folder location is the profile directory of the current running instance /Mail<p>Parameters:<dl><dt>paths</dt><dd><p>String array that is used to build path to the file. Starting at user default profile/Mail.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
@@ -1378,14 +1431,13 @@
         <h3 id='createFileDirectory'><a href='mailPrivate.html#createFileDirectory'>#</a>createFileDirectory</h3><p>Creates the user mail data directory.<p>Parameters:<dl><dt>hashedAccountId</dt><dd><pre>string</pre><p>First 6 characters from the MD5 hash of the accountId. Appended to the end of the default mail data directory</dd></dl>
         <h3 id='createMessages'><a href='mailPrivate.html#createMessages'>#</a>createMessages</h3><p>Creates messages for full text search.<p>Parameters:<dl><dt>messages</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>message</ul></dd></dl>
-        <h3 id='deleteMessages'><a href='mailPrivate.html#deleteMessages'>#</a>deleteMessages</h3><p>Deletes messages from full text search.<p>Parameters:<dl><dt>searchListIds</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <h3 id='deleteMessages'><a href='mailPrivate.html#deleteMessages'>#</a>deleteMessages</h3><p>Deletes messages from full text search.<p>Parameters:<dl><dt>messages</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>integer</ul></dd></dl>
-        <h3 id='addMessageBody'><a href='mailPrivate.html#addMessageBody'>#</a>addMessageBody</h3><p>Adds a message body to the message.<p>Parameters:<dl><dt>searchListId</dt><dd><pre>integer</pre><p>The searchListId of the message to be deleted</dd></dl>
-        <dl><dt>body</dt><dd><pre>string</pre><p>The message body to add</dd></dl>
+        <h3 id='updateMessage'><a href='mailPrivate.html#updateMessage'>#</a>updateMessage</h3><p>Updates a message. All properties needs to be specified both new and previous ones.<p>Parameters:<dl><dt>message</dt><dd><pre><a href="#message">message</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='searchMessages'><a href='mailPrivate.html#searchMessages'>#</a>searchMessages</h3><p>Searches messages with certain query.<p>Parameters:<dl><dt>searchValue</dt><dd><pre>string</pre><p>The value to search for</dd></dl>
         <h3 id='matchMessage'><a href='mailPrivate.html#matchMessage'>#</a>matchMessage</h3><p>Does search value match certain message.<p>Parameters:<dl><dt>searchListId</dt><dd><pre>integer</pre><p>The searchListId of the message to be checked.</dd></dl>
         <dl><dt>searchValue</dt><dd><pre>string</pre><p>The value to search for</dd></dl>
-        <h3 id='rebuildAndVacuumDatabase'><a href='mailPrivate.html#rebuildAndVacuumDatabase'>#</a>rebuildAndVacuumDatabase</h3><p>Rebuilds the full text database index. Defragments and frees up unused space in the db file. This can be very slow.<h1><a href='menubar.html'>menubar</a></h1>
+        <h3 id='getDBVersion'><a href='mailPrivate.html#getDBVersion'>#</a>getDBVersion</h3><p>Returns SQLite database version for MailDB.<h3 id='startMigration'><a href='mailPrivate.html#startMigration'>#</a>startMigration</h3><p>Migrates the full text database index to contentless. Track progress in the listener: onUpgradeProgress. This can be slow.<h1><a href='menubar.html'>menubar</a></h1>
 
     
         <h2>Types</h2>
@@ -1667,6 +1719,7 @@
         <dl><dt>content</dt><dd>(optional) <pre>string</pre><p>The content of the note. Omitted for separators and folders. For attachments, this contains the attachment checksum.</dd></dl>
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p>A URL associated with the note. Omitted for separators and folders.</dd></dl>
         <dl><dt>dateAdded</dt><dd>(optional) <pre>number</pre><p>When this node was created, in milliseconds since the epoch (<code>new Date(dateAdded)</code>).</dd></dl>
+        <dl><dt>dateModified</dt><dd>(optional) <pre>number</pre><p>When this node was last modified, in milliseconds since the epoch (<code>new Date(dateModified)</code>).</dd></dl>
         <dl><dt>children</dt><dd>(optional) <p>An ordered list of children of this node. Only present for folders<p><code>Array</code> of:
         <ul><li>NoteTreeNode</ul></dd></dl>
         <dl><dt>type</dt><dd><pre><a href="#NodeType">NodeType</a></pre><p>Which kind of node this is.</dd></dl>
@@ -1677,6 +1730,8 @@
         <dl><dt>title</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>content</dt><dd>(optional) <pre>string</pre><p>The content of the node. For attachments, this is either a known attachment checksum copied from another attachment or a new base64-encoded attachment content</dd></dl>
+        <dl><dt>date</dt><dd>(optional) <pre>number</pre><p>A timestamp of the node's creation.</dd></dl>
+        <dl><dt>lastmod</dt><dd>(optional) <pre>number</pre><p>A timestamp of the node's last modification date.</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -1716,6 +1771,7 @@
         <dl><dt>noteAfterChange</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>title</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>content</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>dateModified</dt><dd>(optional) <pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
         <h3 id='onMoved'><a href='notes.html#onMoved'>#</a>onMoved</h3><p>Fired when a note or folder is moved.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The id of the moved note</dd></dl>
         <dl><dt>moveInfo</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>parentId</dt><dd><pre>string</pre><p>The id of the parent folder</dd></dl>
@@ -1741,7 +1797,7 @@
         <dl><dt>destination</dt><dd><pre>object</pre><p>Object describing the target location<p>Object Properties:<dl><dt>parentId</dt><dd>(optional) <pre>string</pre><p>Id of target folder</dd></dl>
         <dl><dt>index</dt><dd>(optional) <pre>integer</pre><p>The index inside the target folder</dd></dl>
         </dd></dl>
-        <h3 id='emptyTrash'><a href='notes.html#emptyTrash'>#</a>emptyTrash</h3><p>Empty the notes trash folder.<h1><a href='pageActions.html'>pageActions</a></h1>
+        <h3 id='emptyTrash'><a href='notes.html#emptyTrash'>#</a>emptyTrash</h3><p>Empty the notes trash folder.<h3 id='beginImport'><a href='notes.html#beginImport'>#</a>beginImport</h3><p>Signal that import has been started.<h3 id='endImport'><a href='notes.html#endImport'>#</a>endImport</h3><p>Signal that import has been finished.<h1><a href='pageActions.html'>pageActions</a></h1>
 
     
         <h2>Types</h2>
@@ -2014,7 +2070,7 @@
         </dl>
         
         <h2>Methods</h2>
-        <h3 id='add'><a href='savedpasswords.html#add'>#</a>add</h3><p>Stores a password in the password store.<p>Parameters:<dl><dt>isExplicit</dt><dd><pre>boolean</pre><p>The action was initiated as the result of user input</dd></dl>
+        <h3 id='createDelegate'><a href='savedpasswords.html#createDelegate'>#</a>createDelegate</h3><p>Creates a passwords_private_delegate for the current user profile.<h3 id='add'><a href='savedpasswords.html#add'>#</a>add</h3><p>Stores a password in the password store.<p>Parameters:<dl><dt>isExplicit</dt><dd><pre>boolean</pre><p>The action was initiated as the result of user input</dd></dl>
         <dl><dt>passwordForm</dt><dd><pre><a href="#PasswordForm">PasswordForm</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='get'><a href='savedpasswords.html#get'>#</a>get</h3><p>Retrieves a password in the password store.<p>Parameters:<dl><dt>passwordForm</dt><dd><pre><a href="#PasswordForm">PasswordForm</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>callback</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>found</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2922,7 +2978,9 @@
         
         <h2>Methods</h2>
         <h3 id='print'><a href='utilities.html#print'>#</a>print</h3><p>Open print preview dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>WindowId of browser printing active tab.</dd></dl>
-        <h3 id='clearAllRecentlyClosedSessions'><a href='utilities.html#clearAllRecentlyClosedSessions'>#</a>clearAllRecentlyClosedSessions</h3><p>Clears the list of recently closed tabs and/or windows.<h3 id='isTabInLastSession'><a href='utilities.html#isTabInLastSession'>#</a>isTabInLastSession</h3><p>Checks whether a given tab is part of the last loaded session<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id to check if part of the session</dd></dl>
+        <h3 id='clearAllRecentlyClosedSessions'><a href='utilities.html#clearAllRecentlyClosedSessions'>#</a>clearAllRecentlyClosedSessions</h3><p>Clears the list of recently closed tabs and/or windows.<h3 id='clearRecentlyClosedTabs'><a href='utilities.html#clearRecentlyClosedTabs'>#</a>clearRecentlyClosedTabs</h3><p>Clears one or more recently closed tabs.<p>Parameters:<dl><dt>ids</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        <h3 id='isTabInLastSession'><a href='utilities.html#isTabInLastSession'>#</a>isTabInLastSession</h3><p>Checks whether a given tab is part of the last loaded session<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id to check if part of the session</dd></dl>
         <h3 id='isUrlValid'><a href='utilities.html#isUrlValid'>#</a>isUrlValid</h3><p>Validates given URL. Returns UrlValidResults with the results.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to validate</dd></dl>
         <h3 id='canOpenUrlExternally'><a href='utilities.html#canOpenUrlExternally'>#</a>canOpenUrlExternally</h3><p>Check if the browser can potentially open the URL using an external application or an extension. This should only be called if it is already known that the URL is a valid one and is not handled by the browser directly to get a valid result.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to check</dd></dl>
         <h3 id='getUrlFragments'><a href='utilities.html#getUrlFragments'>#</a>getUrlFragments</h3><p>Splits given URL. Returns UrlFragments including top level domain which is eTLD aware.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to process.</dd></dl>
@@ -2974,7 +3032,7 @@
         <h3 id='startChromecast'><a href='utilities.html#startChromecast'>#</a>startChromecast</h3><p>Shows the Chromecast dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Window id where casting should start.</dd></dl>
         <h3 id='isFirstRun'><a href='utilities.html#isFirstRun'>#</a>isFirstRun</h3><p>chrome::IsChromeFirstRun()<h3 id='generateQRCode'><a href='utilities.html#generateQRCode'>#</a>generateQRCode</h3><p>Generate a QR image based on the given data.<p>Parameters:<dl><dt>data</dt><dd><pre>string</pre><p>Data to encode in the QR code. The maximum length of the data is 288 bytes.</dd></dl>
         <dl><dt>destination</dt><dd>(optional) <pre><a href="#CaptureQRDestination">CaptureQRDestination</a></pre><p>Destination of the QR capture, defaults to 'dataurl'.</dd></dl>
-        <h3 id='getGAPIKey'><a href='utilities.html#getGAPIKey'>#</a>getGAPIKey</h3><p>Returns G API key.<h3 id='getVivaldiNetOAuthClientSecret'><a href='utilities.html#getVivaldiNetOAuthClientSecret'>#</a>getVivaldiNetOAuthClientSecret</h3><p>Returns Vivaldi.net OAuth client secret.<h3 id='getVivaldiNetOAuthClientId'><a href='utilities.html#getVivaldiNetOAuthClientId'>#</a>getVivaldiNetOAuthClientId</h3><p>Returns Vivaldi.net OAuth client id.<h3 id='getGOAuthClientId'><a href='utilities.html#getGOAuthClientId'>#</a>getGOAuthClientId</h3><p>Returns G OAuth API client id.<h3 id='getGOAuthClientSecret'><a href='utilities.html#getGOAuthClientSecret'>#</a>getGOAuthClientSecret</h3><p>Returns G OAuth API client secret.<h3 id='getMOAuthClientId'><a href='utilities.html#getMOAuthClientId'>#</a>getMOAuthClientId</h3><p>Returns MS OAuth API client id.<h3 id='getYOAuthClientId'><a href='utilities.html#getYOAuthClientId'>#</a>getYOAuthClientId</h3><p>Returns Yahoo OAuth client id.<h3 id='getYOAuthClientSecret'><a href='utilities.html#getYOAuthClientSecret'>#</a>getYOAuthClientSecret</h3><p>Returns Yahoo OAuth client secret.<h3 id='getFOAuthClientId'><a href='utilities.html#getFOAuthClientId'>#</a>getFOAuthClientId</h3><p>Returns Fastmail OAuth client id.<h3 id='getCommandLineValue'><a href='utilities.html#getCommandLineValue'>#</a>getCommandLineValue</h3><p>Gets the command line value for the given named argument.<p>Parameters:<dl><dt>value</dt><dd><pre>string</pre><p>Name of the command line switch without initial dashes eg. translate-server-url.</dd></dl>
+        <h3 id='getGAPIKey'><a href='utilities.html#getGAPIKey'>#</a>getGAPIKey</h3><p>Returns G API key.<h3 id='getVivaldiNetOAuthClientSecret'><a href='utilities.html#getVivaldiNetOAuthClientSecret'>#</a>getVivaldiNetOAuthClientSecret</h3><p>Returns Vivaldi.net OAuth client secret.<h3 id='getVivaldiNetOAuthClientId'><a href='utilities.html#getVivaldiNetOAuthClientId'>#</a>getVivaldiNetOAuthClientId</h3><p>Returns Vivaldi.net OAuth client id.<h3 id='getGOAuthClientId'><a href='utilities.html#getGOAuthClientId'>#</a>getGOAuthClientId</h3><p>Returns G OAuth API client id.<h3 id='getGOAuthClientSecret'><a href='utilities.html#getGOAuthClientSecret'>#</a>getGOAuthClientSecret</h3><p>Returns G OAuth API client secret.<h3 id='getMOAuthClientId'><a href='utilities.html#getMOAuthClientId'>#</a>getMOAuthClientId</h3><p>Returns MS OAuth API client id.<h3 id='getYOAuthClientId'><a href='utilities.html#getYOAuthClientId'>#</a>getYOAuthClientId</h3><p>Returns Yahoo OAuth client id.<h3 id='getYOAuthClientSecret'><a href='utilities.html#getYOAuthClientSecret'>#</a>getYOAuthClientSecret</h3><p>Returns Yahoo OAuth client secret.<h3 id='getFOAuthClientId'><a href='utilities.html#getFOAuthClientId'>#</a>getFOAuthClientId</h3><p>Returns Fastmail OAuth client id.<h3 id='getAOLOAuthClientId'><a href='utilities.html#getAOLOAuthClientId'>#</a>getAOLOAuthClientId</h3><p>Returns AOL OAuth client id.<h3 id='getAOLOAuthClientSecret'><a href='utilities.html#getAOLOAuthClientSecret'>#</a>getAOLOAuthClientSecret</h3><p>Returns AOL OAuth client secret.<h3 id='getCommandLineValue'><a href='utilities.html#getCommandLineValue'>#</a>getCommandLineValue</h3><p>Gets the command line value for the given named argument.<p>Parameters:<dl><dt>value</dt><dd><pre>string</pre><p>Name of the command line switch without initial dashes eg. translate-server-url.</dd></dl>
         <h3 id='osCrypt'><a href='utilities.html#osCrypt'>#</a>osCrypt</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>plain</dt><dd><pre>string</pre><p>The content to encrypt</dd></dl>
         <h3 id='osDecrypt'><a href='utilities.html#osDecrypt'>#</a>osDecrypt</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>encrypted</dt><dd><pre>string</pre><p>The content to decrypt</dd></dl>
         <h3 id='translateText'><a href='utilities.html#translateText'>#</a>translateText</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>sourceLanguageCode</dt><dd><pre>string</pre><p>The language code of the source text, or empty if you want the server to try to detect the language.</dd></dl>
@@ -2987,7 +3045,7 @@
         <h3 id='connectProxy'><a href='utilities.html#connectProxy'>#</a>connectProxy</h3><p>Connects to invisv proxy.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#ProxyOptions">ProxyOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='disconnectProxy'><a href='utilities.html#disconnectProxy'>#</a>disconnectProxy</h3><p>Disconnects from invisv proxy.<h3 id='browserWindowReady'><a href='utilities.html#browserWindowReady'>#</a>browserWindowReady</h3><p>Signals that JS has fully set up browser window and its event listeners.<p>Parameters:<dl><dt>windowId</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='readImage'><a href='utilities.html#readImage'>#</a>readImage</h3><p>Reads an image file from the file system from the specified URL to the object.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
+        <h3 id='detectNewCrashes'><a href='utilities.html#detectNewCrashes'>#</a>detectNewCrashes</h3><p>Checks to see if there are any new crash reports since the last function call.<h1><a href='webViewPrivate.html'>webViewPrivate</a></h1>
 
     
         <h2>Types</h2>

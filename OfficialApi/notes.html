@@ -17,7 +17,7 @@
     <li><a href="accessKeys.html">accessKeys</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="calendar.html">calendar</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="infobars.html">infobars</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="notes.html">notes</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="prefs.html">prefs</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="settings.html">settings</a></li><li><a href="sync.html">sync</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="utilities.html">utilities</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="zoom.html">zoom</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 6.5
+    <p>Version 6.6
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -32,7 +32,7 @@
     <h3>Listeners</h3>
     <ul><li><a href='#onCreated'>onCreated</a><li><a href='#onRemoved'>onRemoved</a><li><a href='#onChanged'>onChanged</a><li><a href='#onMoved'>onMoved</a><li><a href='#onImportBegan'>onImportBegan</a><li><a href='#onImportEnded'>onImportEnded</a></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#get'>get</a><li><a href='#getTree'>getTree</a><li><a href='#create'>create</a><li><a href='#update'>update</a><li><a href='#remove'>remove</a><li><a href='#search'>search</a><li><a href='#move'>move</a><li><a href='#emptyTrash'>emptyTrash</a></ul></nav>
+    <ul><li><a href='#get'>get</a><li><a href='#getTree'>getTree</a><li><a href='#create'>create</a><li><a href='#update'>update</a><li><a href='#remove'>remove</a><li><a href='#search'>search</a><li><a href='#move'>move</a><li><a href='#emptyTrash'>emptyTrash</a><li><a href='#beginImport'>beginImport</a><li><a href='#endImport'>endImport</a></ul></nav>
     
         <h2>Types</h2>
         <h3 id='NodeType'><a href='#NodeType'>#</a>NodeType</h3><dl><dt><code>ENUM</code></dt><dd><p>The kind of the node.<li>note: A regular note. May have attachments as children.<li>separator: A separator<li>attachment: An attachment. Content is the attachment checksum.<li>folder: A folder. May have notes and separators as children.<li>main: The main notes folder.<li>other: The other notes folder.<li>trash: The trash.</ul></dd></dl>
@@ -43,6 +43,7 @@
         <dl><dt>content</dt><dd>(optional) <pre>string</pre><p>The content of the note. Omitted for separators and folders. For attachments, this contains the attachment checksum.</dd></dl>
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p>A URL associated with the note. Omitted for separators and folders.</dd></dl>
         <dl><dt>dateAdded</dt><dd>(optional) <pre>number</pre><p>When this node was created, in milliseconds since the epoch (<code>new Date(dateAdded)</code>).</dd></dl>
+        <dl><dt>dateModified</dt><dd>(optional) <pre>number</pre><p>When this node was last modified, in milliseconds since the epoch (<code>new Date(dateModified)</code>).</dd></dl>
         <dl><dt>children</dt><dd>(optional) <p>An ordered list of children of this node. Only present for folders<p><code>Array</code> of:
         <ul><li>NoteTreeNode</ul></dd></dl>
         <dl><dt>type</dt><dd><pre><a href="#NodeType">NodeType</a></pre><p>Which kind of node this is.</dd></dl>
@@ -53,6 +54,8 @@
         <dl><dt>title</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>content</dt><dd>(optional) <pre>string</pre><p>The content of the node. For attachments, this is either a known attachment checksum copied from another attachment or a new base64-encoded attachment content</dd></dl>
+        <dl><dt>date</dt><dd>(optional) <pre>number</pre><p>A timestamp of the node's creation.</dd></dl>
+        <dl><dt>lastmod</dt><dd>(optional) <pre>number</pre><p>A timestamp of the node's last modification date.</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -92,6 +95,7 @@
         <dl><dt>noteAfterChange</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>title</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>content</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>url</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>dateModified</dt><dd>(optional) <pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
         <h3 id='onMoved'><a href='#onMoved'>#</a>onMoved</h3><p>Fired when a note or folder is moved.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>The id of the moved note</dd></dl>
         <dl><dt>moveInfo</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>parentId</dt><dd><pre>string</pre><p>The id of the parent folder</dd></dl>
@@ -117,4 +121,4 @@
         <dl><dt>destination</dt><dd><pre>object</pre><p>Object describing the target location<p>Object Properties:<dl><dt>parentId</dt><dd>(optional) <pre>string</pre><p>Id of target folder</dd></dl>
         <dl><dt>index</dt><dd>(optional) <pre>integer</pre><p>The index inside the target folder</dd></dl>
         </dd></dl>
-        <h3 id='emptyTrash'><a href='#emptyTrash'>#</a>emptyTrash</h3><p>Empty the notes trash folder.</main></body></html>
+        <h3 id='emptyTrash'><a href='#emptyTrash'>#</a>emptyTrash</h3><p>Empty the notes trash folder.<h3 id='beginImport'><a href='#beginImport'>#</a>beginImport</h3><p>Signal that import has been started.<h3 id='endImport'><a href='#endImport'>#</a>endImport</h3><p>Signal that import has been finished.</main></body></html>
