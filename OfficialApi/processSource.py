@@ -52,6 +52,11 @@ def typeToHtml(name, prop, makeTopLevel=False):
             out += typeToHtml(name + " (overloaded)", choice)
         out += '''</dd></dl>
         '''
+    elif type(prop) is str:
+        out += f'''<dl><dt>{name}</dt><dd>'''
+        out += f'''<pre>{prop}</pre>'''
+        out += '''</dd></dl>
+        '''
     elif 'type' in prop and prop['type'] in ['number', 'integer', 'string', 'boolean', 'any', 'binary']:
         out += f'''<dl><dt>{name}</dt><dd>'''
         out += optional(prop)
@@ -352,10 +357,10 @@ def getContentOnlyForEverythingFile(deftoHtml, apiname):
     start = deftoHtml.find('</ul></nav>')+len('</ul></nav>')
     end = deftoHtml.find('</main>')
     content = deftoHtml[start:end]
-    anchorre = '''<a href='#(\w+)'>'''
-    anchorsub = f'''<a href='{apiname}.html#\\1'>'''
+    anchorre = r'''<a href='#(\w+)'>'''
+    anchorsub = rf'''<a href='{apiname}.html#\1'>'''
     resetAnchors = re.sub(anchorre, anchorsub, content)
-    wholefile = f'''<h1><a href='{apiname}.html'>{apiname}</a></h1>\n''' + resetAnchors
+    wholefile = rf'''<h1><a href='{apiname}.html'>{apiname}</a></h1>''' + '\n' + resetAnchors
     return wholefile
 
 def writeAllToFile():
