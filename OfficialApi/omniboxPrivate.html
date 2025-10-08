@@ -1,0 +1,104 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vivaldi.omniboxPrivate</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="IDR_PRODUCT_LOGO.png" rel="icon">
+    </head>
+    <body>
+    <nav class='side'>
+    <img src="IDR_PRODUCT_LOGO.png">
+    <p>Vivaldi Modders API
+    <br />Internal Documentation
+    <br /><ul>
+    <li><a href="prefs.html">prefs</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="calendar.html">calendar</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="settings.html">settings</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="directMatch.html">directMatch</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="sync.html">sync</a></li><li><a href="accessKeys.html">accessKeys</a></li><li><a href="zoom.html">zoom</a></li><li><a href="infobars.html">infobars</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="protonvpn.html">protonvpn</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="utilities.html">utilities</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="omniboxPrivate.html">omniboxPrivate</a></li><li><a href="dnsOverHttpsPrivate.html">dnsOverHttpsPrivate</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="notes.html">notes</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
+    <li><a href="everything.html">Search Everything</a></li>
+    </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
+    <p>Version 7.6
+    <p>This website is not affiliated with vivaldi.
+    <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
+    
+    <main>
+    <a id="backToTop" href="#top">Go back to top</a>
+    <h1>vivaldi.omniboxPrivate Modders API Reference</h1>
+    <p>Use the <code>vivaldi.omniboxPrivate</code> API to start queries with the address field omnibox.</a>.
+    <nav class='contents' id='top'>
+    <h2>Navigation</h2>
+    <h3>Types</h3>
+    <ul><li><a href='#OmniboxItemCategory'>OmniboxItemCategory</a><li><a href='#OmniboxProviderName'>OmniboxProviderName</a><li><a href='#OmniboxFocusType'>OmniboxFocusType</a><li><a href='#PageClassification'>PageClassification</a><li><a href='#OmniboxItem'>OmniboxItem</a></ul>
+    <h3>Listeners</h3>
+    <ul><li><a href='#onOmniboxResultChanged'>onOmniboxResultChanged</a></ul>
+    <h3>Methods</h3>
+    <ul><li><a href='#startOmnibox'>startOmnibox</a><li><a href='#addOrUpdateShortcut'>addOrUpdateShortcut</a><li><a href='#deleteShortcut'>deleteShortcut</a></ul></nav>
+    
+        <h2>Types</h2>
+        <h3 id='OmniboxItemCategory'><a href='#OmniboxItemCategory'>#</a>OmniboxItemCategory</h3><dl><dt><code>ENUM</code></dt><dd><p>The category in which the item belong.<li>search<li>history<li>search-suggestion<li>url-suggestion<li>direct-match<li>bookmark<li>nickname<li>open-tab<li>top-sites<li>clipboard<li>calculator<li>internal-message<li>other<li>recent-typed-history</ul></dd></dl>
+        <h3 id='OmniboxProviderName'><a href='#OmniboxProviderName'>#</a>OmniboxProviderName</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>Bookmark<li>Builtin<li>Clipboard<li>Document<li>HistoryQuick<li>HistoryURL<li>Keyword<li>OnDeviceHead<li>Search<li>Shortcuts<li>ZeroSuggest<li>LocalHistoryZeroSuggest<li>QueryTile<li>MostVisitedSites<li>VerbatimMatch<li>VoiceSuggest<li>HistoryFuzzy<li>OpenTab<li>HistoryCluster<li>Calculator<li>FeaturedSearch<li>HistoryEmbeddings<li>BookmarkNickname<li>DirectMatch<li>RecentTypedHistory<li>Unknown</ul></dd></dl>
+        <h3 id='OmniboxFocusType'><a href='#OmniboxFocusType'>#</a>OmniboxFocusType</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>INTERACTION_DEFAULT<li>INTERACTION_FOCUS</ul></dd></dl>
+        <h3 id='PageClassification'><a href='#PageClassification'>#</a>PageClassification</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>NTP<li>BLANK<li>OTHER</ul></dd></dl>
+        <h3 id='OmniboxItem'><a href='#OmniboxItem'>#</a>OmniboxItem</h3><p>An object encapsulating one result of a omnibox query.<p>Properties:<dl><dl><dt>allowedToBeDefaultMatch</dt><dd><pre>boolean</pre><p>Is allowed to be default match.</dd></dl>
+        <dl><dt>contents</dt><dd><pre>string</pre><p>The main text displayed in the address bar dropdown.</dd></dl>
+        <dl><dt>destinationUrl</dt><dd><pre>string</pre><p>The destination url</dd></dl>
+        <dl><dt>fillIntoEdit</dt><dd><pre>string</pre><p>The text to fill into edit.</dd></dl>
+        <dl><dt>hasTabMatch</dt><dd><pre>boolean</pre><p>Matches open tab.</dd></dl>
+        <dl><dt>relevance</dt><dd><pre>integer</pre><p>The relevance score.</dd></dl>
+        <dl><dt>providerName</dt><dd><pre><a href="#OmniboxProviderName">OmniboxProviderName</a></pre><p>The provider name.</dd></dl>
+        <dl><dt>transition</dt><dd><pre><a href="#historyPrivate.TransitionType">historyPrivate.TransitionType</a></pre><p>The transition type to use when the user opens this match.</dd></dl>
+        <dl><dt>description</dt><dd><pre>string</pre><p>Helper text, such as a title, description or search.</dd></dl>
+        <dl><dt>inlineAutocompletion</dt><dd><pre>string</pre><p>The inline autocompletion to display after the user's input in the omnibox, if this match becomes the default match.  It may be empty.</dd></dl>
+        <dl><dt>category</dt><dd><pre><a href="#OmniboxItemCategory">OmniboxItemCategory</a></pre><p>The category in which the item belong.</dd></dl>
+        <dl><dt>deletable</dt><dd><pre>boolean</pre><p>Should the user be able to delete this match.</dd></dl>
+        <dl><dt>type</dt><dd><pre>integer</pre><p>Same as AutocompleteMatch::Type. Used by AddOrUpdateShortcut.</dd></dl>
+        <dl><dt>faviconUrl</dt><dd><pre>string</pre><p>The url of the favicon.</dd></dl>
+        <dl><dt>faviconType</dt><dd><pre>string</pre><p>How to load the favicon. This is used by Favicon component.</dd></dl>
+        </dl>
+        
+        <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
+        <h3 id='onOmniboxResultChanged'><a href='#onOmniboxResultChanged'>#</a>onOmniboxResultChanged</h3><p>Fired when omnibox results are ready.<p>Parameters:<dl><dt>results</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>combinedResults</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>OmniboxItem</ul></dd></dl>
+        <dl><dt>inputText</dt><dd><pre>string</pre><p>User-provided text to be completed.</dd></dl>
+        <dl><dt>done</dt><dd><pre>boolean</pre><p>No more events for query will follow.</dd></dl>
+        </dd></dl>
+        
+        <h2>Methods</h2>
+        <h3 id='startOmnibox'><a href='#startOmnibox'>#</a>startOmnibox</h3><p><p>Parameters:<dl><dt>parameters</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>query</dt><dd><pre>string</pre><p>A piece of text entered in Omnibox</dd></dl>
+        <dl><dt>preventInlineAutocomplete</dt><dd><pre>boolean</pre><p>Prevent inline autocomplete</dd></dl>
+        <dl><dt>clearStateBeforeSearching</dt><dd><pre>boolean</pre><p>Don't reuse previous results from slow providers while waiting for their new results.</dd></dl>
+        <dl><dt>fromSearchField</dt><dd><pre>boolean</pre><p>If true, the query originated from search field. Limiting the number of providers run</dd></dl>
+        <dl><dt>searchEngineGUID</dt><dd><pre>string</pre><p>Contains the GUID of the search engine. If no search engine was specified, string will be empty</dd></dl>
+        <dl><dt>focusType</dt><dd><pre><a href="#OmniboxFocusType">OmniboxFocusType</a></pre><p>Specify the UI interaction that started autocomplete. ZeroSuggestion is only activated on specific focus</dd></dl>
+        <dl><dt>pageClassification</dt><dd><pre><a href="#PageClassification">PageClassification</a></pre><p>The type of page the user was on when they used the omnibox. Or the type of page for which suggestions were prefetched from the server</dd></dl>
+        </dd></dl>
+        <h3 id='addOrUpdateShortcut'><a href='#addOrUpdateShortcut'>#</a>addOrUpdateShortcut</h3><p><p>Parameters:<dl><dt>text</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>item</dt><dd><pre><a href="#OmniboxItem">OmniboxItem</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='deleteShortcut'><a href='#deleteShortcut'>#</a>deleteShortcut</h3><p><p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </main></body></html>

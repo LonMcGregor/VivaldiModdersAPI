@@ -4,7 +4,7 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vivaldi.accessKeys</title>
+    <title>vivaldi.dnsOverHttpsPrivate</title>
     <link rel="stylesheet" href="style.css">
     <link href="IDR_PRODUCT_LOGO.png" rel="icon">
     </head>
@@ -23,29 +23,23 @@
     
     <main>
     <a id="backToTop" href="#top">Go back to top</a>
-    <h1>vivaldi.accessKeys Modders API Reference</h1>
-    <p>Use the <code>vivaldi.accessKeys</code> API to get information about access keys on a page.
+    <h1>vivaldi.dnsOverHttpsPrivate Modders API Reference</h1>
+    <p>Function(s) to handle DNS over HTTPS data.
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul><li><a href='#AccessKeyDefinition'>AccessKeyDefinition</a></ul>
+    <ul><li><a href='#DohEntry'>DohEntry</a></ul>
     <h3>Listeners</h3>
     <ul></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#getAccessKeysForPage'>getAccessKeysForPage</a><li><a href='#action'>action</a></ul></nav>
+    <ul><li><a href='#dataFetcher'>dataFetcher</a><li><a href='#configTest'>configTest</a></ul></nav>
     
         <h2>Types</h2>
-        <h3 id='AccessKeyDefinition'><a href='#AccessKeyDefinition'>#</a>AccessKeyDefinition</h3><p>Contains the access key character and all relevant attributes from the element it belongs to<p>Properties:<dl><dl><dt>access_key</dt><dd><pre>string</pre><p>The access key itself, without modifiers</dd></dl>
-        <dl><dt>tagname</dt><dd><pre>string</pre><p>The tagname of the access key element</dd></dl>
-        <dl><dt>title</dt><dd><pre>string</pre><p>The title attribute of the access key element</dd></dl>
-        <dl><dt>href</dt><dd><pre>string</pre><p>The href attribute of the access key element</dd></dl>
-        <dl><dt>value</dt><dd><pre>string</pre><p>The value attribute of the access key element</dd></dl>
-        <dl><dt>textContent</dt><dd><pre>string</pre><p>The textContent of the access key element</dd></dl>
-        <dl><dt>id</dt><dd><pre>string</pre><p>The id attribute of the access key element</dd></dl>
+        <h3 id='DohEntry'><a href='#DohEntry'>#</a>DohEntry</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p></dd></dl>
+        <dl><dt>value</dt><dd><pre>string</pre><p></dd></dl>
+        <dl><dt>policy</dt><dd><pre>string</pre><p></dd></dl>
         </dl>
         
         <h2>Methods</h2>
-        <h3 id='getAccessKeysForPage'><a href='#getAccessKeysForPage'>#</a>getAccessKeysForPage</h3><p>Get a list of all access keys defined on this page<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='action'><a href='#action'>#</a>action</h3><p>Find the element corresponding to an access key and fire the access key action<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>id</dt><dd><pre>string</pre><p>Element ID to be used for lookup</dd></dl>
+        <h3 id='dataFetcher'><a href='#dataFetcher'>#</a>dataFetcher</h3><p><h3 id='configTest'><a href='#configTest'>#</a>configTest</h3><p><p>Parameters:<dl><dt>config</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </main></body></html>

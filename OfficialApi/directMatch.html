@@ -4,7 +4,7 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vivaldi.translateHistory</title>
+    <title>vivaldi.directMatch</title>
     <link rel="stylesheet" href="style.css">
     <link href="IDR_PRODUCT_LOGO.png" rel="icon">
     </head>
@@ -23,25 +23,30 @@
     
     <main>
     <a id="backToTop" href="#top">Go back to top</a>
-    <h1>vivaldi.translateHistory Modders API Reference</h1>
-    <p>Use <code>vivaldi.translateHistory</code> API fetch and save translate history elements.
+    <h1>vivaldi.directMatch Modders API Reference</h1>
+    <p>Use the <code>vivaldi.directMatch</code> API to call direct match service functions.</a>.
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul><li><a href='#TextItem'>TextItem</a><li><a href='#HistoryItem'>HistoryItem</a></ul>
+    <ul><li><a href='#Item'>Item</a><li><a href='#Items'>Items</a></ul>
     <h3>Listeners</h3>
-    <ul><li><a href='#onAdded'>onAdded</a><li><a href='#onMoved'>onMoved</a><li><a href='#onRemoved'>onRemoved</a></ul>
+    <ul><li><a href='#onPopularSitesReady'>onPopularSitesReady</a></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#get'>get</a><li><a href='#add'>add</a><li><a href='#remove'>remove</a><li><a href='#reset'>reset</a></ul></nav>
+    <ul><li><a href='#hide'>hide</a><li><a href='#getPopularSites'>getPopularSites</a><li><a href='#getForCategory'>getForCategory</a><li><a href='#resetHidden'>resetHidden</a></ul></nav>
     
         <h2>Types</h2>
-        <h3 id='TextItem'><a href='#TextItem'>#</a>TextItem</h3><p><p>Properties:<dl><dl><dt>code</dt><dd><pre>string</pre><p>Language code.</dd></dl>
-        <dl><dt>text</dt><dd><pre>string</pre><p>Text.</dd></dl>
+        <h3 id='Item'><a href='#Item'>#</a>Item</h3><p>A Direct match item<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>title</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>image_url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>image_path</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>category</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>display_location_address_bar</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>display_location_sd_dialog</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>redirect_url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>allowed_to_be_default_match</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
-        <h3 id='HistoryItem'><a href='#HistoryItem'>#</a>HistoryItem</h3><p><p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>Unique identifier.</dd></dl>
-        <dl><dt>srcItem</dt><dd><pre><a href="#TextItem">TextItem</a></pre><p>Text and language code of original (non-translated) data.</dd></dl>
-        <dl><dt>translatedItem</dt><dd><pre><a href="#TextItem">TextItem</a></pre><p>Text and language code of translated data.</dd></dl>
-        </dl>
+        <h3 id='Items'><a href='#Items'>#</a>Items</h3><dl><dt>Items</dt><dd><p>A Direct match items array<p><code>Array</code> of:
+        <ul><li>Item</ul></dd></dl>
         
         <h2>Listeners</h2>
             <details>
@@ -70,18 +75,8 @@
                 <p>Returns array of promises dispatched to the listener</p>
             </div>
         </details>
-        <h3 id='onAdded'><a href='#onAdded'>#</a>onAdded</h3><p>Fires when elements have been appended to the list.<p>Parameters:<dl><dt>items</dt><dd><p>Elements in the order they have been added<p><code>Array</code> of:
-        <ul><li>HistoryItem</ul></dd></dl>
-        <dl><dt>index</dt><dd><pre>number</pre><p>Index where the elements are located.</dd></dl>
-        <h3 id='onMoved'><a href='#onMoved'>#</a>onMoved</h3><p>Fires when an element has been moved within the list.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Identifier of element that has been moved.</dd></dl>
-        <dl><dt>index</dt><dd><pre>number</pre><p>Index to where element has been moved.</dd></dl>
-        <h3 id='onRemoved'><a href='#onRemoved'>#</a>onRemoved</h3><p>Fires when elements have been appended to the list.<p>Parameters:<dl><dt>ids</dt><dd><p>A list of ids that have been removed. An empty list means all.<p><code>Array</code> of:
-        <ul><li>string</ul></dd></dl>
-        
+        <h3 id='onPopularSitesReady'><a href='#onPopularSitesReady'>#</a>onPopularSitesReady</h3><p>Fires when data has become available in backend.
         <h2>Methods</h2>
-        <h3 id='get'><a href='#get'>#</a>get</h3><p>Retrieves the full history.<h3 id='add'><a href='#add'>#</a>add</h3><p>Adds an item to the list. If item already exists that item is returned without adding a duplicate. The returned item's id it set up in the call.<p>Parameters:<dl><dt>item</dt><dd><pre><a href="#HistoryItem">HistoryItem</a></pre><p>Data to add. Note, the id element is ignored.</dd></dl>
-        <dl><dt>index</dt><dd><pre>number</pre><p>Where to add element. -1 indicates end of list.</dd></dl>
-        <h3 id='remove'><a href='#remove'>#</a>remove</h3><p>Removes one or more items.<p>Parameters:<dl><dt>ids</dt><dd><p>List of identifiers representing items to be removed.<p><code>Array</code> of:
-        <ul><li>string</ul></dd></dl>
-        <h3 id='reset'><a href='#reset'>#</a>reset</h3><p>Removes items with matching timestamp.<p>Parameters:<dl><dt>since</dt><dd><pre>number</pre><p>In milliseconds since epoch. Remove all items with a timestamp greater or equal to this value.</dd></dl>
-        </main></body></html>
+        <h3 id='hide'><a href='#hide'>#</a>hide</h3><p>Hides direct match so it will not show up in omnibox.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The url of a direct match provider to hide.</dd></dl>
+        <h3 id='getPopularSites'><a href='#getPopularSites'>#</a>getPopularSites</h3><p>Fetch popular sites from DM units sorted asc by `position` where sd_dialog=true<h3 id='getForCategory'><a href='#getForCategory'>#</a>getForCategory</h3><p>Returns direct match items for provided `category_id` sorted asc by `position` and filtered by `display_locations`<p>Parameters:<dl><dt>categoryId</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='resetHidden'><a href='#resetHidden'>#</a>resetHidden</h3><p>Reset all previously hidden direct match providers.</main></body></html>
