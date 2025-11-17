@@ -14,10 +14,10 @@
     <p>Vivaldi Modders API
     <br />Internal Documentation
     <br /><ul>
-    <li><a href="prefs.html">prefs</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="calendar.html">calendar</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="settings.html">settings</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="directMatch.html">directMatch</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="sync.html">sync</a></li><li><a href="accessKeys.html">accessKeys</a></li><li><a href="zoom.html">zoom</a></li><li><a href="infobars.html">infobars</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="protonvpn.html">protonvpn</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="utilities.html">utilities</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="omniboxPrivate.html">omniboxPrivate</a></li><li><a href="dnsOverHttpsPrivate.html">dnsOverHttpsPrivate</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="notes.html">notes</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
+    <li><a href="prefs.html">prefs</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="calendar.html">calendar</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="settings.html">settings</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="directMatch.html">directMatch</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="sync.html">sync</a></li><li><a href="accessKeys.html">accessKeys</a></li><li><a href="zoom.html">zoom</a></li><li><a href="infobars.html">infobars</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="protonvpn.html">protonvpn</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="utilities.html">utilities</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="omniboxPrivate.html">omniboxPrivate</a></li><li><a href="dnsOverHttpsPrivate.html">dnsOverHttpsPrivate</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="notes.html">notes</a></li><li><a href="sitePermissions.html">sitePermissions</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 7.6
+    <p>Version 7.7
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -754,6 +754,7 @@
         <dl><dt>cursorY</dt><dd><pre>integer</pre><p>Y offset into the image for the cursor during drag.</dd></dl>
         <dl><dt>isFromTouch</dt><dd>(optional) <pre>boolean</pre><p>True if the drag was initiated from touch. Default is false.</dd></dl>
         </dl>
+        <h3 id='DragEndState'><a href='tabsPrivate.html#DragEndState'>#</a>DragEndState</h3><dl><dt><code>ENUM</code></dt><dd><p>Tells if drag was aborted (using ESC or similar), or if the drop was valid outside or inside the app window.<li>aborted<li>outsideOrWebviewInSameWindow<li>insideOrWebviewInOtherWindow</ul></dd></dl>
         <h3 id='NavigationRect'><a href='tabsPrivate.html#NavigationRect'>#</a>NavigationRect</h3><p>Rect struct for spatial navigation.<p>Properties:<dl><dl><dt>left</dt><dd><pre>integer</pre><p>left</dd></dl>
         <dl><dt>top</dt><dd><pre>integer</pre><p>top</dd></dl>
         <dl><dt>width</dt><dd><pre>integer</pre><p>width</dd></dl>
@@ -834,10 +835,9 @@
         <h3 id='onTabUpdated'><a href='tabsPrivate.html#onTabUpdated'>#</a>onTabUpdated</h3><p>Fires when a |WebContent| is changed in some way.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tabInfo</dt><dd><pre><a href="#UpdateTabInfo">UpdateTabInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='onDragEnd'><a href='tabsPrivate.html#onDragEnd'>#</a>onDragEnd</h3><p>Fires when tab dragging ends.<p>Parameters:<dl><dt>dragAborted</dt><dd><pre>boolean</pre><p>This is an aborted drag (using ESC or similar).</dd></dl>
-        <dl><dt>dropOutsideWindow</dt><dd><pre>boolean</pre><p>This is a valid drop outside any app window.</dd></dl>
-        <dl><dt>posX</dt><dd><pre>integer</pre><p>X position of the drop in screen coordinates.</dd></dl>
-        <dl><dt>posY</dt><dd><pre>integer</pre><p>Y position of the drop in screen coordinates.</dd></dl>
+        <h3 id='onDragEnd'><a href='tabsPrivate.html#onDragEnd'>#</a>onDragEnd</h3><p>Fires when tab dragging ends.<p>Parameters:<dl><dt>dragEndState</dt><dd><pre><a href="#DragEndState">DragEndState</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>posX</dt><dd><pre>integer</pre><p>X position of the drop relative to drag source client.</dd></dl>
+        <dl><dt>posY</dt><dd><pre>integer</pre><p>Y position of the drop relative to drag source client.</dd></dl>
         <h3 id='onPermissionAccessed'><a href='tabsPrivate.html#onPermissionAccessed'>#</a>onPermissionAccessed</h3><p>Fires when a |permission| is accessed.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -1246,6 +1246,8 @@
         <h3 id='open'><a href='sessionsPrivate.html#open'>#</a>open</h3><p>Open a specific named session.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session to open.</dd></dl>
         <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>options</dt><dd><pre><a href="#SessionOpenOptions">SessionOpenOptions</a></pre><p>Session open options.</dd></dl>
+        <h3 id='restoreSyncTabs'><a href='sessionsPrivate.html#restoreSyncTabs'>#</a>restoreSyncTabs</h3><p>Opens synced tabs in the active window. Only the last tab is activated.<p>Parameters:<dl><dt>ids</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
         <h3 id='rename'><a href='sessionsPrivate.html#rename'>#</a>rename</h3><p>Renames the named session.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session to rename.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>New name.</dd></dl>
         <h3 id='update'><a href='sessionsPrivate.html#update'>#</a>update</h3><p>Updates a session with current open tabs.<p>Parameters:<dl><dt>id</dt><dd><pre>number</pre><p>Identifier of session to update.</dd></dl>
@@ -1334,9 +1336,9 @@
         <dl><dt>rect</dt><dd><pre><a href="#Rect">Rect</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='SortOrder'><a href='bookmarkContextMenu.html#SortOrder'>#</a>SortOrder</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines how to sort container items.<li>ascending<li>descending</ul></dd></dl>
-        <h3 id='SortField'><a href='bookmarkContextMenu.html#SortField'>#</a>SortField</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines what element to use as sort key<li>title<li>url<li>nickname<li>description<li>dateAdded</ul></dd></dl>
+        <h3 id='SortField'><a href='bookmarkContextMenu.html#SortField'>#</a>SortField</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines what element to use as sort key.<li>title<li>url<li>nickname<li>description<li>dateAdded</ul></dd></dl>
         <h3 id='Edge'><a href='bookmarkContextMenu.html#Edge'>#</a>Edge</h3><dl><dt><code>ENUM</code></dt><dd><p>Defines position of menu items added in chrome code wrt bookmark items.<li>above<li>below<li>off</ul></dd></dl>
-        <h3 id='Icons'><a href='bookmarkContextMenu.html#Icons'>#</a>Icons</h3><dl><dt>Icons</dt><dd><p>Icons encoded as base64<p><code>Array</code> of:
+        <h3 id='Icons'><a href='bookmarkContextMenu.html#Icons'>#</a>Icons</h3><dl><dt>Icons</dt><dd><p>Icons encoded as base64.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         
         <h2>Listeners</h2>
@@ -1367,7 +1369,8 @@
             </div>
         </details>
         <h3 id='onOpen'><a href='bookmarkContextMenu.html#onOpen'>#</a>onOpen</h3><p>Fires before menu opens.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Menu id, same as the bookmark folder to be shown.</dd></dl>
-        <h3 id='onClose'><a href='bookmarkContextMenu.html#onClose'>#</a>onClose</h3><p>Fires before menu closes.
+        <h3 id='onClose'><a href='bookmarkContextMenu.html#onClose'>#</a>onClose</h3><p>Fires before menu closes.<h3 id='onDragStart'><a href='bookmarkContextMenu.html#onDragStart'>#</a>onDragStart</h3><p>Fires when drag starts.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>Bookmark or folder id.</dd></dl>
+        
         <h2>Methods</h2>
         <h3 id='show'><a href='bookmarkContextMenu.html#show'>#</a>show</h3><p>Shows a context menu.<p>Parameters:<dl><dt>properties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>siblings</dt><dd><p>List of menu entries.<p><code>Array</code> of:
@@ -1377,8 +1380,10 @@
         <dl><dt>sortField</dt><dd>(optional) <pre><a href="#SortField">SortField</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>sortOrder</dt><dd>(optional) <pre><a href="#SortOrder">SortOrder</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>icons</dt><dd><pre><a href="#Icons">Icons</a></pre><p>Default and folder icons.</dd></dl>
+        <dl><dt>dragged</dt><dd><p>List of bookmark and/or folder ids.<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
         </dd></dl>
-        <h1><a href='vivaldiAccount.html'>vivaldiAccount</a></h1>
+        <h3 id='close'><a href='bookmarkContextMenu.html#close'>#</a>close</h3><p>Closes active context menu.<h1><a href='vivaldiAccount.html'>vivaldiAccount</a></h1>
 
     
         <h2>Types</h2>
@@ -1794,6 +1799,14 @@
         <dl><dt>ads_blocked</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>trackers_blocked</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
+        <h3 id='AdBlockingStatsData'><a href='contentBlocking.html#AdBlockingStatsData'>#</a>AdBlockingStatsData</h3><p>Statistics for trackers and ads blocked.<p>Properties:<dl><dl><dt>reporting_start</dt><dd><pre>number</pre><p>The time at which the counters have been initialized or reset.</dd></dl>
+        <dl><dt>total_ads_blocked</dt><dd><pre>integer</pre><p>Number of ads blocked.</dd></dl>
+        <dl><dt>total_trackers_blocked</dt><dd><pre>integer</pre><p>Number of trackers blocked.</dd></dl>
+        <dl><dt>blocked_domains</dt><dd><p>Counter with domains blocked.<p><code>Array</code> of:
+        <ul><li>BlockedCounter</ul></dd></dl>
+        <dl><dt>blocked_for_origin</dt><dd><p>Counter with a domain that was an origin for blocking.<p><code>Array</code> of:
+        <ul><li>BlockedCounter</ul></dd></dl>
+        </dl>
         <h3 id='BlockedUrlsInfo'><a href='contentBlocking.html#BlockedUrlsInfo'>#</a>BlockedUrlsInfo</h3><p>Information about a blocked URL<p>Properties:<dl><dl><dt>url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>blocked_count</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
@@ -1911,7 +1924,8 @@
         <h3 id='getAllExceptionLists'><a href='contentBlocking.html#getAllExceptionLists'>#</a>getAllExceptionLists</h3><p>Retrieves all the exception lists<h3 id='getBlockedUrlsInfo'><a href='contentBlocking.html#getBlockedUrlsInfo'>#</a>getBlockedUrlsInfo</h3><p>Retrieves information about which URLs have been blocked from loading in a given tab<p>Parameters:<dl><dt>rule_group</dt><dd><pre><a href="#RuleGroup">RuleGroup</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tab_ids</dt><dd><p>A list of tabs for which to retrieve blocked urls information.<p><code>Array</code> of:
         <ul><li>integer</ul></dd></dl>
-        <h3 id='getAdBlockingStats'><a href='contentBlocking.html#getAdBlockingStats'>#</a>getAdBlockingStats</h3><p>Retrieves the stats for ads and trackers blocked.<h3 id='clearAdBlockingStats'><a href='contentBlocking.html#clearAdBlockingStats'>#</a>clearAdBlockingStats</h3><p>Resets ad blocking stats.<h3 id='isExemptOfFiltering'><a href='contentBlocking.html#isExemptOfFiltering'>#</a>isExemptOfFiltering</h3><p>Returns whether a page URL will be exempt from filtering by a given rule group, based on the active exception list.<p>Parameters:<dl><dt>rule_group</dt><dd><pre><a href="#RuleGroup">RuleGroup</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getAdBlockingStats'><a href='contentBlocking.html#getAdBlockingStats'>#</a>getAdBlockingStats</h3><p>Retrieves the stats for ads and trackers blocked.<p>Parameters:<dl><dt>number_of_days</dt><dd><pre>integer</pre><p>Number of days to return statistic data. 0 or less returns all data.</dd></dl>
+        <h3 id='clearAdBlockingStats'><a href='contentBlocking.html#clearAdBlockingStats'>#</a>clearAdBlockingStats</h3><p>Resets ad blocking stats.<h3 id='isExemptOfFiltering'><a href='contentBlocking.html#isExemptOfFiltering'>#</a>isExemptOfFiltering</h3><p>Returns whether a page URL will be exempt from filtering by a given rule group, based on the active exception list.<p>Parameters:<dl><dt>rule_group</dt><dd><pre><a href="#RuleGroup">RuleGroup</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='isExemptByPartnerURL'><a href='contentBlocking.html#isExemptByPartnerURL'>#</a>isExemptByPartnerURL</h3><p>Returns whether a page URL will be exempt from filtering by a partnership exception.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tab_id</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2019,7 +2033,7 @@
         <h3 id='searchMessages'><a href='mailPrivate.html#searchMessages'>#</a>searchMessages</h3><p>Searches messages with certain query.<p>Parameters:<dl><dt>searchValue</dt><dd><pre>string</pre><p>The value to search for</dd></dl>
         <h3 id='matchMessage'><a href='mailPrivate.html#matchMessage'>#</a>matchMessage</h3><p>Does search value match certain message.<p>Parameters:<dl><dt>searchListId</dt><dd><pre>integer</pre><p>The searchListId of the message to be checked.</dd></dl>
         <dl><dt>searchValue</dt><dd><pre>string</pre><p>The value to search for</dd></dl>
-        <h3 id='getDBVersion'><a href='mailPrivate.html#getDBVersion'>#</a>getDBVersion</h3><p>Returns SQLite database version for MailDB.<h3 id='startMigration'><a href='mailPrivate.html#startMigration'>#</a>startMigration</h3><p>Migrates the full text database index to contentless. Track progress in the listener: onUpgradeProgress. This can be slow.<h3 id='deleteMailSearchDB'><a href='mailPrivate.html#deleteMailSearchDB'>#</a>deleteMailSearchDB</h3><p>Deletes MailSearchDB and MaildSearchDB-journal file. Re-creates the files afterwards. This action cannot be reverted.<h3 id='checkMailSearchDBHealth'><a href='mailPrivate.html#checkMailSearchDBHealth'>#</a>checkMailSearchDBHealth</h3><p>Checks mail search db for errors.<h1><a href='menubar.html'>menubar</a></h1>
+        <h3 id='getDBVersion'><a href='mailPrivate.html#getDBVersion'>#</a>getDBVersion</h3><p>Returns SQLite database version for MailDB.<h3 id='startMigration'><a href='mailPrivate.html#startMigration'>#</a>startMigration</h3><p>Migrates the full text database index to contentless. Track progress in the listener: onUpgradeProgress. This can be slow.<h3 id='deleteMailSearchDB'><a href='mailPrivate.html#deleteMailSearchDB'>#</a>deleteMailSearchDB</h3><p>Deletes MailSearchDB and MaildSearchDB-journal file. Re-creates the files afterwards. This action cannot be reverted.<h3 id='checkMailSearchDBHealth'><a href='mailPrivate.html#checkMailSearchDBHealth'>#</a>checkMailSearchDBHealth</h3><p>Checks mail search db for errors.<h3 id='getMailSearchDBCount'><a href='mailPrivate.html#getMailSearchDBCount'>#</a>getMailSearchDBCount</h3><p>Returns count of messages in the mail search database.<h1><a href='menubar.html'>menubar</a></h1>
 
     
         <h2>Types</h2>
@@ -2198,6 +2212,8 @@
         <h3 id='ExtensionInstallResult'><a href='utilities.html#ExtensionInstallResult'>#</a>ExtensionInstallResult</h3><p>An object holding result of extension installation request.<p>Properties:<dl><dl><dt>success</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>error</dt><dd><pre>string</pre><p>Installation error description, in case installation failed.</dd></dl>
         </dl>
+        <h3 id='CopyToClipboardOptions'><a href='utilities.html#CopyToClipboardOptions'>#</a>CopyToClipboardOptions</h3><p>Option object for copyToClipboard.<p>Properties:<dl><dl><dt>confidential</dt><dd>(optional) <pre>boolean</pre><p>Mark copy as confidential.</dd></dl>
+        </dl>
         
         <h2>Listeners</h2>
             <details>
@@ -2247,6 +2263,7 @@
         <h3 id='urlToThumbnailText'><a href='utilities.html#urlToThumbnailText'>#</a>urlToThumbnailText</h3><p>Gets the text for a fallback speeddial thumbnail<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>The URL to get the text from.</dd></dl>
         <h3 id='getSelectedText'><a href='utilities.html#getSelectedText'>#</a>getSelectedText</h3><p>Returns selected text in page with given id<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The page to examine</dd></dl>
         <h3 id='selectFile'><a href='utilities.html#selectFile'>#</a>selectFile</h3><p>Select a single file and returns the file name.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#SelectFileOptions">SelectFileOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='openFolder'><a href='utilities.html#openFolder'>#</a>openFolder</h3><p>Opens file manager with given folder path.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>Folder path to open.</dd></dl>
         <h3 id='selectLocalImage'><a href='utilities.html#selectLocalImage'>#</a>selectLocalImage</h3><p>Ask the user to select an image file and store its path as a data mapping URL in a bookmark or a preference.<p>Parameters:<dl><dt>params</dt><dd><pre><a href="#SelectLocalImageParams">SelectLocalImageParams</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='cleanUnusedImages'><a href='utilities.html#cleanUnusedImages'>#</a>cleanUnusedImages</h3><p>Cleans unused images (thumbnails)<p>Parameters:<dl><dt>createdBefore</dt><dd><pre>integer</pre><p>Run only if createdBefore <= the number of the images created sinct the last cleanup.</dd></dl>
         <h3 id='storeImage'><a href='utilities.html#storeImage'>#</a>storeImage</h3><p>Save image from the memory blob to the image store and return related chrome:// URL.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#StoreImageOptions">StoreImageOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2314,6 +2331,8 @@
         <dl><dt>reenableExtensions</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='silentlyInstallExtension'><a href='utilities.html#silentlyInstallExtension'>#</a>silentlyInstallExtension</h3><p>Handles silent installation of an extension, disabled after install, given it's id.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='allowVPNIncognito'><a href='utilities.html#allowVPNIncognito'>#</a>allowVPNIncognito</h3><p>A single-purpose call that grants incognito access to ProtonVPN extension.<h3 id='requestVivaldiSyncStatus'><a href='utilities.html#requestVivaldiSyncStatus'>#</a>requestVivaldiSyncStatus</h3><p>Looks up status. Status can be returned in callback, but if not, arrive later as an onVivaldiSyncStatusChange event.<h3 id='openPrivacyReportDialog'><a href='utilities.html#openPrivacyReportDialog'>#</a>openPrivacyReportDialog</h3><p>Opens privacy report dialog<h3 id='updatePrimarySelection'><a href='utilities.html#updatePrimarySelection'>#</a>updatePrimarySelection</h3><p>Writes text to the primary selection buffer. This buffer is only used on Linux and allows pasting with middle mouse button.<p>Parameters:<dl><dt>text</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='showAdditionalStartupPages'><a href='utilities.html#showAdditionalStartupPages'>#</a>showAdditionalStartupPages</h3><p>Checks whether should show additional startup pages.<h3 id='copyToClipboard'><a href='utilities.html#copyToClipboard'>#</a>copyToClipboard</h3><p>Copy text to clipboard using ScopedClipboardWriter.<p>Parameters:<dl><dt>text</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>options</dt><dd><pre><a href="#CopyToClipboardOptions">CopyToClipboardOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h1><a href='pipPrivate.html'>pipPrivate</a></h1>
 
     
@@ -2371,7 +2390,7 @@
         <dl><dt>editable</dt><dd><pre>boolean</pre><p>True if element is editable.</dd></dl>
         <dl><dt>role</dt><dd><pre>string</pre><p>Element role</dd></dl>
         </dl>
-        <h3 id='ControlButtonsPadding'><a href='windowPrivate.html#ControlButtonsPadding'>#</a>ControlButtonsPadding</h3><dl><dt><code>ENUM</code></dt><dd><p>The padding type used for drawing control buttons (macOS only)<li>native:  ⚠ NO DESCRIPTION PROVIDED<li>lightPadding:  ⚠ NO DESCRIPTION PROVIDED<li>mediumPadding:  ⚠ NO DESCRIPTION PROVIDED<li>heavyPadding:  ⚠ NO DESCRIPTION PROVIDED</ul></dd></dl>
+        <h3 id='ControlButtonsPosition'><a href='windowPrivate.html#ControlButtonsPosition'>#</a>ControlButtonsPosition</h3><dl><dt><code>ENUM</code></dt><dd><p>The control buttons position. (used only on macOS for 'traffic lights')<li>hidden:  ⚠ NO DESCRIPTION PROVIDED<li>native:  ⚠ NO DESCRIPTION PROVIDED<li>lightPadding:  ⚠ NO DESCRIPTION PROVIDED<li>mediumPadding:  ⚠ NO DESCRIPTION PROVIDED<li>heavyPadding:  ⚠ NO DESCRIPTION PROVIDED</ul></dd></dl>
         <h3 id='ToastParameters'><a href='windowPrivate.html#ToastParameters'>#</a>ToastParameters</h3><p>Parameters used to create a toast notification, typically showed as an overlay above the browser window.<p>Properties:<dl><dl><dt>body</dt><dd><pre>string</pre><p>Message to present.</dd></dl>
         <dl><dt>action</dt><dd>(optional) <pre>string</pre><p>If an action button is needed, this is the buttone text.</dd></dl>
         <dl><dt>image</dt><dd><pre>string</pre><p>Image to show as base64 encoded.</dd></dl>
@@ -2435,8 +2454,8 @@
         <dl><dt>height</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='getFocusedElementInfo'><a href='windowPrivate.html#getFocusedElementInfo'>#</a>getFocusedElementInfo</h3><p>Get information about currently focused element in Vivaldi window or any of its webviews.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='isOnScreenWithNotch'><a href='windowPrivate.html#isOnScreenWithNotch'>#</a>isOnScreenWithNotch</h3><p>Returns true if the screen the window is on has a notch.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='setControlButtonsPadding'><a href='windowPrivate.html#setControlButtonsPadding'>#</a>setControlButtonsPadding</h3><p>Request a new control buttons position.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>padding</dt><dd><pre><a href="#ControlButtonsPadding">ControlButtonsPadding</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='setControlButtonsPosition'><a href='windowPrivate.html#setControlButtonsPosition'>#</a>setControlButtonsPosition</h3><p>Request a new control buttons position.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>position</dt><dd><pre><a href="#ControlButtonsPosition">ControlButtonsPosition</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='performHapticFeedback'><a href='windowPrivate.html#performHapticFeedback'>#</a>performHapticFeedback</h3><p>Performs a haptic feedback.<h1><a href='menuContent.html'>menuContent</a></h1>
 
     
@@ -2545,6 +2564,7 @@
         <dl><dt>category</dt><dd><pre><a href="#OmniboxItemCategory">OmniboxItemCategory</a></pre><p>The category in which the item belong.</dd></dl>
         <dl><dt>deletable</dt><dd><pre>boolean</pre><p>Should the user be able to delete this match.</dd></dl>
         <dl><dt>type</dt><dd><pre>integer</pre><p>Same as AutocompleteMatch::Type. Used by AddOrUpdateShortcut.</dd></dl>
+        <dl><dt>folderId</dt><dd><pre>integer</pre><p>Folder id. Set for bookmark folders that match a nickname, otherwise 0.</dd></dl>
         <dl><dt>faviconUrl</dt><dd><pre>string</pre><p>The url of the favicon.</dd></dl>
         <dl><dt>faviconType</dt><dd><pre>string</pre><p>How to load the favicon. This is used by Favicon component.</dd></dl>
         </dl>
@@ -2842,6 +2862,7 @@
         <dl><dt>dateAdded</dt><dd>(optional) <pre>number</pre><p>When this node was created, in milliseconds since the epoch (<code>new Date(dateAdded)</code>).</dd></dl>
         <dl><dt>dateGroupModified</dt><dd>(optional) <pre>number</pre><p>When the contents of this folder last changed, in milliseconds since the epoch.</dd></dl>
         <dl><dt>faviconUrl</dt><dd>(optional) <pre>string</pre><p>If present this url should be used to retrive a favicon.</dd></dl>
+        <dl><dt>uuid</dt><dd><pre>string</pre><p>The unique identifier for the node. IDs are unique within the current profile, and they remain valid even after the browser is restarted.</dd></dl>
         <dl><dt>children</dt><dd>(optional) <p>An ordered list of children of this node.<p><code>Array</code> of:
         <ul><li>BookmarkTreeNode</ul></dd></dl>
         </dl>
@@ -3072,7 +3093,7 @@
 
     
         <h2>Types</h2>
-        <h3 id='import_types'><a href='importData.html#import_types'>#</a>import_types</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>internet_explorer<li>firefox<li>safari<li>bookmarks_file<li>opera<li>chrome<li>chromium<li>vivaldi<li>yandex<li>opera_opium_beta<li>opera_opium_dev<li>brave<li>edge<li>edge_chromium<li>thunderbird<li>opera_opium<li>arc<li>opera_gx<li>unknown</ul></dd></dl>
+        <h3 id='import_types'><a href='importData.html#import_types'>#</a>import_types</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>internet_explorer<li>firefox<li>safari<li>bookmarks_file<li>opera<li>opera_bookmark<li>chrome<li>chromium<li>vivaldi<li>yandex<li>opera_opium_beta<li>opera_opium_dev<li>brave<li>edge<li>edge_chromium<li>thunderbird<li>opera_opium<li>arc<li>opera_gx<li>unknown</ul></dd></dl>
         <h3 id='UserProfileItem'><a href='importData.html#UserProfileItem'>#</a>UserProfileItem</h3><p>UserProfileItem. Contains info for userprofile<p>Properties:<dl><dl><dt>profileDisplayName</dt><dd><pre>string</pre><p>The profile display name.</dd></dl>
         <dl><dt>profileName</dt><dd><pre>string</pre><p>The profile name.</dd></dl>
         <dl><dt>profilePath</dt><dd>(optional) <pre>string</pre><p>The profile path, if it is different than parent profile.</dd></dl>
@@ -3312,7 +3333,60 @@
         <dl><dt>destination</dt><dd><pre>object</pre><p>Object describing the target location<p>Object Properties:<dl><dt>parentId</dt><dd>(optional) <pre>string</pre><p>Id of target folder</dd></dl>
         <dl><dt>index</dt><dd>(optional) <pre>integer</pre><p>The index inside the target folder</dd></dl>
         </dd></dl>
-        <h3 id='emptyTrash'><a href='notes.html#emptyTrash'>#</a>emptyTrash</h3><p>Empty the notes trash folder.<h3 id='beginImport'><a href='notes.html#beginImport'>#</a>beginImport</h3><p>Signal that import has been started.<h3 id='endImport'><a href='notes.html#endImport'>#</a>endImport</h3><p>Signal that import has been finished.<h1><a href='editcommand.html'>editcommand</a></h1>
+        <h3 id='emptyTrash'><a href='notes.html#emptyTrash'>#</a>emptyTrash</h3><p>Empty the notes trash folder.<h3 id='beginImport'><a href='notes.html#beginImport'>#</a>beginImport</h3><p>Signal that import has been started.<h3 id='endImport'><a href='notes.html#endImport'>#</a>endImport</h3><p>Signal that import has been finished.<h1><a href='sitePermissions.html'>sitePermissions</a></h1>
+
+    
+        <h2>Types</h2>
+        <h3 id='PermissionSetting'><a href='sitePermissions.html#PermissionSetting'>#</a>PermissionSetting</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>allow<li>block<li>ask<li>sessionOnly</ul></dd></dl>
+        <h3 id='Permission'><a href='sitePermissions.html#Permission'>#</a>Permission</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>setting</dt><dd><pre><a href="#PermissionSetting">PermissionSetting</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='PermissionOptions'><a href='sitePermissions.html#PermissionOptions'>#</a>PermissionOptions</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>options</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>PermissionSetting</ul></dd></dl>
+        <dl><dt>default</dt><dd><pre><a href="#PermissionSetting">PermissionSetting</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='PermissionChangeEvent'><a href='sitePermissions.html#PermissionChangeEvent'>#</a>PermissionChangeEvent</h3><p>Fired when site permission changes.<p>Properties:<dl><dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        
+        <h2>Listeners</h2>
+            <details>
+            <summary>
+                <h3 id="listenerHelp">How to use listeners</h2>
+            </summary>
+            <p>Each listener type has the same functions, used for each listener API in the same way:</p>
+            <div class="method">
+                <h4>.addListener(<code>function</code> callback)</h4>
+                <p>Adds a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.removeListener(<code>function</code> callback)</h4>
+                <p>Removes a function to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListener(<code>function</code> callback)</h4>
+                <p>Returns a boolean if a function is attached to a listener for an event</p>
+            </div>
+            <div class="method">
+                <h4>.hasListeners()</h4>
+                <p>Returns a boolean if a listener has any attached functions</p>
+            </div>
+            <div class="method">
+                <h4>.dispatch()</h4>
+                <p>Returns array of promises dispatched to the listener</p>
+            </div>
+        </details>
+        <h3 id='onPermissionChanged'><a href='sitePermissions.html#onPermissionChanged'>#</a>onPermissionChanged</h3><p>Fired when a site permission changes.<p>Parameters:<dl><dt>event</dt><dd><pre><a href="#PermissionChangeEvent">PermissionChangeEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        
+        <h2>Methods</h2>
+        <h3 id='getAvailablePermissions'><a href='sitePermissions.html#getAvailablePermissions'>#</a>getAvailablePermissions</h3><p>Returns all available site permissions and their possible settings, including the default.<h3 id='getOverriddenSites'><a href='sitePermissions.html#getOverriddenSites'>#</a>getOverriddenSites</h3><p>Returns a list of all sites with overridden permissions.<h3 id='getOverridesForSite'><a href='sitePermissions.html#getOverridesForSite'>#</a>getOverridesForSite</h3><p>Returns a list of permission overrides for a specific site.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='setSitePermission'><a href='sitePermissions.html#setSitePermission'>#</a>setSitePermission</h3><p>Sets the permission override for a given site.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>setting</dt><dd><pre><a href="#PermissionSetting">PermissionSetting</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='resetSitePermissions'><a href='sitePermissions.html#resetSitePermissions'>#</a>resetSitePermissions</h3><p>Resets all site permissions to default.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h1><a href='editcommand.html'>editcommand</a></h1>
 
     
         <h2>Methods</h2>
@@ -3322,12 +3396,27 @@
 
     
         <h2>Types</h2>
-        <h3 id='UpdateOperationStatusEnum'><a href='autoUpdate.html#UpdateOperationStatusEnum'>#</a>UpdateOperationStatusEnum</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>noUpdate<li>didAbortWithError<li>didFindValidUpdate<li>willDownloadUpdate<li>didDownloadUpdate<li>willInstallUpdateOnQuit<li>updaterDidRelaunchApplication</ul></dd></dl>
+        <h3 id='UpdateOperationStatusEnum'><a href='autoUpdate.html#UpdateOperationStatusEnum'>#</a>UpdateOperationStatusEnum</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>noUpdate<li>didAbortWithError<li>didFindValidUpdate<li>willDownloadUpdate<li>didDownloadUpdate<li>willInstallUpdateOnQuit<li>updaterDidRelaunchApplication<li>needRestartToReloadCodecs<li>error</ul></dd></dl>
         <h3 id='UpdateOperationStatus'><a href='autoUpdate.html#UpdateOperationStatus'>#</a>UpdateOperationStatus</h3><p>A structure describing the status of an update operation if any.<p>Properties:<dl><dl><dt>status</dt><dd><pre><a href="#UpdateOperationStatusEnum">UpdateOperationStatusEnum</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>version</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>releaseNotesUrl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='UpdateNotFoundReason'><a href='autoUpdate.html#UpdateNotFoundReason'>#</a>UpdateNotFoundReason</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>Unknown<li>OnLatestVersion<li>OnNewerThanLatestVersion<li>SystemIsTooOld<li>SystemIsTooNew</ul></dd></dl>
+        <h3 id='About'><a href='autoUpdate.html#About'>#</a>About</h3><p>A structure describing various properties of Vivaldi.<p>Properties:<dl><dl><dt>userAgent</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>commandLine</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>macLinker</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>JSVersion</dt><dd><pre>string</pre><p>Javascript version.</dd></dl>
+        <dl><dt>JSEngine</dt><dd><pre>string</pre><p>Javascript engine version. Currently hardcoded to V8. See version_ui.cc #237</dd></dl>
+        <dl><dt>channel</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>cl</dt><dd><pre>string</pre><p>Version control specific identifier of this release.</dd></dl>
+        <dl><dt>annotatedVersion</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>copyright</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>companyName</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='AboutPaths'><a href='autoUpdate.html#AboutPaths'>#</a>AboutPaths</h3><p>A structure showing file paths. Runs async on FILE thread<p>Properties:<dl><dl><dt>exePath</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>profilePath</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>fullOSVersion</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
         
         <h2>Listeners</h2>
             <details>
@@ -3364,20 +3453,39 @@
         <h3 id='onWillInstallUpdateOnQuit'><a href='autoUpdate.html#onWillInstallUpdateOnQuit'>#</a>onWillInstallUpdateOnQuit</h3><p>Fired when an update will be installed on restart or quit.<p>Parameters:<dl><dt>version</dt><dd><pre>string</pre><p>The version that will be installed on quit or an empty string if not known</dd></dl>
         <h3 id='onNeedRestartToReloadCodecs'><a href='autoUpdate.html#onNeedRestartToReloadCodecs'>#</a>onNeedRestartToReloadCodecs</h3><p>Fired when an update to audio/video support (including Widevine) happened while the application was running, and restart is needed to reload.<h3 id='onUpdaterWillRelaunchApplication'><a href='autoUpdate.html#onUpdaterWillRelaunchApplication'>#</a>onUpdaterWillRelaunchApplication</h3><p>Fired just before the updater restarts the application.<h3 id='onUpdaterDidRelaunchApplication'><a href='autoUpdate.html#onUpdaterDidRelaunchApplication'>#</a>onUpdaterDidRelaunchApplication</h3><p>Fired when an application has been restarted due to an update.<h3 id='onDidAbortWithError'><a href='autoUpdate.html#onDidAbortWithError'>#</a>onDidAbortWithError</h3><p>Fired when an update fails.<p>Parameters:<dl><dt>description</dt><dd><pre>string</pre><p>Description of the error.</dd></dl>
         <dl><dt>reason</dt><dd><pre>string</pre><p>The reason for the error.</dd></dl>
-        <h3 id='onUpdateFinished'><a href='autoUpdate.html#onUpdateFinished'>#</a>onUpdateFinished</h3><p>Signal sent when update completed without installation. Currently, only sent by macOS for exit on silent error.
+        <h3 id='onUpdateFinished'><a href='autoUpdate.html#onUpdateFinished'>#</a>onUpdateFinished</h3><p>Signal sent when update completed without installation. Currently, only sent by macOS for exit on silent error.<h3 id='onUpdateProgress'><a href='autoUpdate.html#onUpdateProgress'>#</a>onUpdateProgress</h3><p>Progress listener during update and install.<p>Parameters:<dl><dt>status</dt><dd><pre><a href="#UpdateOperationStatusEnum">UpdateOperationStatusEnum</a></pre><p>Status of update.</dd></dl>
+        <dl><dt>version</dt><dd><pre>string</pre><p>Version to upgrade to.</dd></dl>
+        <dl><dt>progress</dt><dd><pre>number</pre><p>The progress of download/installation.</dd></dl>
+        
         <h2>Methods</h2>
         <h3 id='checkForUpdates'><a href='autoUpdate.html#checkForUpdates'>#</a>checkForUpdates</h3><p>Check for Vivaldi browser updates.<p>Parameters:<dl><dt>withUi</dt><dd><pre>boolean</pre><p>Indicates whether we want the auto-update ui to appear.</dd></dl>
+        <h3 id='startUpdate'><a href='autoUpdate.html#startUpdate'>#</a>startUpdate</h3><p>Start Vivaldi update check.<p>Parameters:<dl><dt>shouldStartUpdate</dt><dd><pre>boolean</pre><p>Should the update check start downloading the update.</dd></dl>
         <h3 id='isUpdateNotifierEnabled'><a href='autoUpdate.html#isUpdateNotifierEnabled'>#</a>isUpdateNotifierEnabled</h3><p>Checks whether the update notifier is set to run on startup.<h3 id='enableUpdateNotifier'><a href='autoUpdate.html#enableUpdateNotifier'>#</a>enableUpdateNotifier</h3><p>Sets the update notifier to run on startup and launches it.<h3 id='disableUpdateNotifier'><a href='autoUpdate.html#disableUpdateNotifier'>#</a>disableUpdateNotifier</h3><p>Removes the update notifier from autorun and attempts to terminate it.<h3 id='installUpdateAndRestart'><a href='autoUpdate.html#installUpdateAndRestart'>#</a>installUpdateAndRestart</h3><p>Installs update & restart. Should be called after an onWillInstallUpdateOnQuit event has occurred.<h3 id='getAutoInstallUpdates'><a href='autoUpdate.html#getAutoInstallUpdates'>#</a>getAutoInstallUpdates</h3><p>Checks whether we automatically install updates<h3 id='setAutoInstallUpdates'><a href='autoUpdate.html#setAutoInstallUpdates'>#</a>setAutoInstallUpdates</h3><p>Change automatically install updates setting<p>Parameters:<dl><dt>autoinstall</dt><dd><pre>boolean</pre><p>Indicates whether we want to automatically install updates.</dd></dl>
-        <h3 id='getLastCheckTime'><a href='autoUpdate.html#getLastCheckTime'>#</a>getLastCheckTime</h3><p>Get the date & time we last checked for an update. Returns milliseconds since epoch.<h3 id='getUpdateStatus'><a href='autoUpdate.html#getUpdateStatus'>#</a>getUpdateStatus</h3><p>Get a status of an update operation if any<h3 id='hasAutoUpdates'><a href='autoUpdate.html#hasAutoUpdates'>#</a>hasAutoUpdates</h3><p>Return true if automatic updates are supported.<h3 id='needsCodecRestart'><a href='autoUpdate.html#needsCodecRestart'>#</a>needsCodecRestart</h3><p>Return true if restart is needed due to codec update.<h3 id='runStartupChecks'><a href='autoUpdate.html#runStartupChecks'>#</a>runStartupChecks</h3><p>Runs startup checks after the autoupdate UI is prepared.<h1><a href='preferenceDefinitions.html'>preferenceDefinitions</a></h1>
+        <h3 id='getLastCheckTime'><a href='autoUpdate.html#getLastCheckTime'>#</a>getLastCheckTime</h3><p>Get the date & time we last checked for an update. Returns milliseconds since epoch.<h3 id='getUpdateStatus'><a href='autoUpdate.html#getUpdateStatus'>#</a>getUpdateStatus</h3><p>Get a status of an update operation if any<h3 id='hasAutoUpdates'><a href='autoUpdate.html#hasAutoUpdates'>#</a>hasAutoUpdates</h3><p>Return true if automatic updates are supported.<h3 id='needsCodecRestart'><a href='autoUpdate.html#needsCodecRestart'>#</a>needsCodecRestart</h3><p>Return true if restart is needed due to codec update.<h3 id='runStartupChecks'><a href='autoUpdate.html#runStartupChecks'>#</a>runStartupChecks</h3><p>Runs startup checks after the autoupdate UI is prepared.<h3 id='getAboutInfo'><a href='autoUpdate.html#getAboutInfo'>#</a>getAboutInfo</h3><p>Return various system information. OS, command line parameters etc..<h3 id='getAboutPathsInfo'><a href='autoUpdate.html#getAboutPathsInfo'>#</a>getAboutPathsInfo</h3><p>Return various system information. OS, command line parameters etc..<h1><a href='preferenceDefinitions.html'>preferenceDefinitions</a></h1>
 
     
         <h2>Types</h2>
-        <h3 id='UpdateOperationStatusEnum'><a href='preferenceDefinitions.html#UpdateOperationStatusEnum'>#</a>UpdateOperationStatusEnum</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>noUpdate<li>didAbortWithError<li>didFindValidUpdate<li>willDownloadUpdate<li>didDownloadUpdate<li>willInstallUpdateOnQuit<li>updaterDidRelaunchApplication</ul></dd></dl>
+        <h3 id='UpdateOperationStatusEnum'><a href='preferenceDefinitions.html#UpdateOperationStatusEnum'>#</a>UpdateOperationStatusEnum</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>noUpdate<li>didAbortWithError<li>didFindValidUpdate<li>willDownloadUpdate<li>didDownloadUpdate<li>willInstallUpdateOnQuit<li>updaterDidRelaunchApplication<li>needRestartToReloadCodecs<li>error</ul></dd></dl>
         <h3 id='UpdateOperationStatus'><a href='preferenceDefinitions.html#UpdateOperationStatus'>#</a>UpdateOperationStatus</h3><p>A structure describing the status of an update operation if any.<p>Properties:<dl><dl><dt>status</dt><dd><pre><a href="#UpdateOperationStatusEnum">UpdateOperationStatusEnum</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>version</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>releaseNotesUrl</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='UpdateNotFoundReason'><a href='preferenceDefinitions.html#UpdateNotFoundReason'>#</a>UpdateNotFoundReason</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>Unknown<li>OnLatestVersion<li>OnNewerThanLatestVersion<li>SystemIsTooOld<li>SystemIsTooNew</ul></dd></dl>
+        <h3 id='About'><a href='preferenceDefinitions.html#About'>#</a>About</h3><p>A structure describing various properties of Vivaldi.<p>Properties:<dl><dl><dt>userAgent</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>commandLine</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>macLinker</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>JSVersion</dt><dd><pre>string</pre><p>Javascript version.</dd></dl>
+        <dl><dt>JSEngine</dt><dd><pre>string</pre><p>Javascript engine version. Currently hardcoded to V8. See version_ui.cc #237</dd></dl>
+        <dl><dt>channel</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>cl</dt><dd><pre>string</pre><p>Version control specific identifier of this release.</dd></dl>
+        <dl><dt>annotatedVersion</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>copyright</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>companyName</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='AboutPaths'><a href='preferenceDefinitions.html#AboutPaths'>#</a>AboutPaths</h3><p>A structure showing file paths. Runs async on FILE thread<p>Properties:<dl><dl><dt>exePath</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>profilePath</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>fullOSVersion</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
         
         <h2>Listeners</h2>
             <details>
@@ -3414,8 +3522,12 @@
         <h3 id='onWillInstallUpdateOnQuit'><a href='preferenceDefinitions.html#onWillInstallUpdateOnQuit'>#</a>onWillInstallUpdateOnQuit</h3><p>Fired when an update will be installed on restart or quit.<p>Parameters:<dl><dt>version</dt><dd><pre>string</pre><p>The version that will be installed on quit or an empty string if not known</dd></dl>
         <h3 id='onNeedRestartToReloadCodecs'><a href='preferenceDefinitions.html#onNeedRestartToReloadCodecs'>#</a>onNeedRestartToReloadCodecs</h3><p>Fired when an update to audio/video support (including Widevine) happened while the application was running, and restart is needed to reload.<h3 id='onUpdaterWillRelaunchApplication'><a href='preferenceDefinitions.html#onUpdaterWillRelaunchApplication'>#</a>onUpdaterWillRelaunchApplication</h3><p>Fired just before the updater restarts the application.<h3 id='onUpdaterDidRelaunchApplication'><a href='preferenceDefinitions.html#onUpdaterDidRelaunchApplication'>#</a>onUpdaterDidRelaunchApplication</h3><p>Fired when an application has been restarted due to an update.<h3 id='onDidAbortWithError'><a href='preferenceDefinitions.html#onDidAbortWithError'>#</a>onDidAbortWithError</h3><p>Fired when an update fails.<p>Parameters:<dl><dt>description</dt><dd><pre>string</pre><p>Description of the error.</dd></dl>
         <dl><dt>reason</dt><dd><pre>string</pre><p>The reason for the error.</dd></dl>
-        <h3 id='onUpdateFinished'><a href='preferenceDefinitions.html#onUpdateFinished'>#</a>onUpdateFinished</h3><p>Signal sent when update completed without installation. Currently, only sent by macOS for exit on silent error.
+        <h3 id='onUpdateFinished'><a href='preferenceDefinitions.html#onUpdateFinished'>#</a>onUpdateFinished</h3><p>Signal sent when update completed without installation. Currently, only sent by macOS for exit on silent error.<h3 id='onUpdateProgress'><a href='preferenceDefinitions.html#onUpdateProgress'>#</a>onUpdateProgress</h3><p>Progress listener during update and install.<p>Parameters:<dl><dt>status</dt><dd><pre><a href="#UpdateOperationStatusEnum">UpdateOperationStatusEnum</a></pre><p>Status of update.</dd></dl>
+        <dl><dt>version</dt><dd><pre>string</pre><p>Version to upgrade to.</dd></dl>
+        <dl><dt>progress</dt><dd><pre>number</pre><p>The progress of download/installation.</dd></dl>
+        
         <h2>Methods</h2>
         <h3 id='checkForUpdates'><a href='preferenceDefinitions.html#checkForUpdates'>#</a>checkForUpdates</h3><p>Check for Vivaldi browser updates.<p>Parameters:<dl><dt>withUi</dt><dd><pre>boolean</pre><p>Indicates whether we want the auto-update ui to appear.</dd></dl>
+        <h3 id='startUpdate'><a href='preferenceDefinitions.html#startUpdate'>#</a>startUpdate</h3><p>Start Vivaldi update check.<p>Parameters:<dl><dt>shouldStartUpdate</dt><dd><pre>boolean</pre><p>Should the update check start downloading the update.</dd></dl>
         <h3 id='isUpdateNotifierEnabled'><a href='preferenceDefinitions.html#isUpdateNotifierEnabled'>#</a>isUpdateNotifierEnabled</h3><p>Checks whether the update notifier is set to run on startup.<h3 id='enableUpdateNotifier'><a href='preferenceDefinitions.html#enableUpdateNotifier'>#</a>enableUpdateNotifier</h3><p>Sets the update notifier to run on startup and launches it.<h3 id='disableUpdateNotifier'><a href='preferenceDefinitions.html#disableUpdateNotifier'>#</a>disableUpdateNotifier</h3><p>Removes the update notifier from autorun and attempts to terminate it.<h3 id='installUpdateAndRestart'><a href='preferenceDefinitions.html#installUpdateAndRestart'>#</a>installUpdateAndRestart</h3><p>Installs update & restart. Should be called after an onWillInstallUpdateOnQuit event has occurred.<h3 id='getAutoInstallUpdates'><a href='preferenceDefinitions.html#getAutoInstallUpdates'>#</a>getAutoInstallUpdates</h3><p>Checks whether we automatically install updates<h3 id='setAutoInstallUpdates'><a href='preferenceDefinitions.html#setAutoInstallUpdates'>#</a>setAutoInstallUpdates</h3><p>Change automatically install updates setting<p>Parameters:<dl><dt>autoinstall</dt><dd><pre>boolean</pre><p>Indicates whether we want to automatically install updates.</dd></dl>
-        <h3 id='getLastCheckTime'><a href='preferenceDefinitions.html#getLastCheckTime'>#</a>getLastCheckTime</h3><p>Get the date & time we last checked for an update. Returns milliseconds since epoch.<h3 id='getUpdateStatus'><a href='preferenceDefinitions.html#getUpdateStatus'>#</a>getUpdateStatus</h3><p>Get a status of an update operation if any<h3 id='hasAutoUpdates'><a href='preferenceDefinitions.html#hasAutoUpdates'>#</a>hasAutoUpdates</h3><p>Return true if automatic updates are supported.<h3 id='needsCodecRestart'><a href='preferenceDefinitions.html#needsCodecRestart'>#</a>needsCodecRestart</h3><p>Return true if restart is needed due to codec update.<h3 id='runStartupChecks'><a href='preferenceDefinitions.html#runStartupChecks'>#</a>runStartupChecks</h3><p>Runs startup checks after the autoupdate UI is prepared.</main></body></html>
+        <h3 id='getLastCheckTime'><a href='preferenceDefinitions.html#getLastCheckTime'>#</a>getLastCheckTime</h3><p>Get the date & time we last checked for an update. Returns milliseconds since epoch.<h3 id='getUpdateStatus'><a href='preferenceDefinitions.html#getUpdateStatus'>#</a>getUpdateStatus</h3><p>Get a status of an update operation if any<h3 id='hasAutoUpdates'><a href='preferenceDefinitions.html#hasAutoUpdates'>#</a>hasAutoUpdates</h3><p>Return true if automatic updates are supported.<h3 id='needsCodecRestart'><a href='preferenceDefinitions.html#needsCodecRestart'>#</a>needsCodecRestart</h3><p>Return true if restart is needed due to codec update.<h3 id='runStartupChecks'><a href='preferenceDefinitions.html#runStartupChecks'>#</a>runStartupChecks</h3><p>Runs startup checks after the autoupdate UI is prepared.<h3 id='getAboutInfo'><a href='preferenceDefinitions.html#getAboutInfo'>#</a>getAboutInfo</h3><p>Return various system information. OS, command line parameters etc..<h3 id='getAboutPathsInfo'><a href='preferenceDefinitions.html#getAboutPathsInfo'>#</a>getAboutPathsInfo</h3><p>Return various system information. OS, command line parameters etc..</main></body></html>
