@@ -17,7 +17,7 @@
     <li><a href="prefs.html">prefs</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="calendar.html">calendar</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="settings.html">settings</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="directMatch.html">directMatch</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="sync.html">sync</a></li><li><a href="accessKeys.html">accessKeys</a></li><li><a href="zoom.html">zoom</a></li><li><a href="infobars.html">infobars</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="protonvpn.html">protonvpn</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="utilities.html">utilities</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="omniboxPrivate.html">omniboxPrivate</a></li><li><a href="dnsOverHttpsPrivate.html">dnsOverHttpsPrivate</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="notes.html">notes</a></li><li><a href="sitePermissions.html">sitePermissions</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 7.7
+    <p>Version 8.0
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -28,15 +28,17 @@
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul><li><a href='#PermissionSetting'>PermissionSetting</a><li><a href='#Permission'>Permission</a><li><a href='#PermissionOptions'>PermissionOptions</a><li><a href='#PermissionChangeEvent'>PermissionChangeEvent</a></ul>
+    <ul><li><a href='#PermissionSetting'>PermissionSetting</a><li><a href='#CookieSetting'>CookieSetting</a><li><a href='#Permission'>Permission</a><li><a href='#PermissionOptions'>PermissionOptions</a><li><a href='#SitePermissionInfo'>SitePermissionInfo</a><li><a href='#PermissionChangeEvent'>PermissionChangeEvent</a><li><a href='#DeviceGrantChangeEvent'>DeviceGrantChangeEvent</a><li><a href='#DeviceInfo'>DeviceInfo</a><li><a href='#PermissionRequestEvent'>PermissionRequestEvent</a><li><a href='#DeviceChooserUpdate'>DeviceChooserUpdate</a><li><a href='#PermissionRequestResponse'>PermissionRequestResponse</a><li><a href='#PermissionAccessedEvent'>PermissionAccessedEvent</a><li><a href='#ConnectionStatus'>ConnectionStatus</a><li><a href='#SafeBrowsingStatus'>SafeBrowsingStatus</a><li><a href='#IdentityStatus'>IdentityStatus</a><li><a href='#SecurityInfo'>SecurityInfo</a><li><a href='#SiteDataSummary'>SiteDataSummary</a><li><a href='#SiteDataSettings'>SiteDataSettings</a><li><a href='#DeviceGrant'>DeviceGrant</a></ul>
     <h3>Listeners</h3>
-    <ul><li><a href='#onPermissionChanged'>onPermissionChanged</a></ul>
+    <ul><li><a href='#onPermissionChanged'>onPermissionChanged</a><li><a href='#onPermissionRequest'>onPermissionRequest</a><li><a href='#onPermissionAccessed'>onPermissionAccessed</a><li><a href='#onPermissionCleared'>onPermissionCleared</a><li><a href='#onDeviceGrantChanged'>onDeviceGrantChanged</a><li><a href='#onDeviceChooserUpdate'>onDeviceChooserUpdate</a></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#getAvailablePermissions'>getAvailablePermissions</a><li><a href='#getOverriddenSites'>getOverriddenSites</a><li><a href='#getOverridesForSite'>getOverridesForSite</a><li><a href='#setSitePermission'>setSitePermission</a><li><a href='#resetSitePermissions'>resetSitePermissions</a></ul></nav>
+    <ul><li><a href='#getAvailablePermissions'>getAvailablePermissions</a><li><a href='#getOverriddenSites'>getOverriddenSites</a><li><a href='#getOverridesForSite'>getOverridesForSite</a><li><a href='#getOverridesForPattern'>getOverridesForPattern</a><li><a href='#setSitePermission'>setSitePermission</a><li><a href='#resetSitePermissions'>resetSitePermissions</a><li><a href='#respondToPermissionRequest'>respondToPermissionRequest</a><li><a href='#getAllowedDevices'>getAllowedDevices</a><li><a href='#getDeviceGrants'>getDeviceGrants</a><li><a href='#revokeDeviceGrant'>revokeDeviceGrant</a><li><a href='#getDeviceGrantSites'>getDeviceGrantSites</a><li><a href='#getSecurityInfo'>getSecurityInfo</a><li><a href='#getSiteData'>getSiteData</a><li><a href='#setSiteData'>setSiteData</a><li><a href='#showCertificateDialog'>showCertificateDialog</a><li><a href='#showSiteDataDialog'>showSiteDataDialog</a></ul></nav>
     
         <h2>Types</h2>
-        <h3 id='PermissionSetting'><a href='#PermissionSetting'>#</a>PermissionSetting</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>allow<li>block<li>ask<li>sessionOnly</ul></dd></dl>
+        <h3 id='PermissionSetting'><a href='#PermissionSetting'>#</a>PermissionSetting</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>allow<li>block<li>ask<li>sessionOnly<li>default</ul></dd></dl>
+        <h3 id='CookieSetting'><a href='#CookieSetting'>#</a>CookieSetting</h3><dl><dt><code>ENUM</code></dt><dd><p>Cookie retention setting: 'allow' (persistent), 'session_only' (deleted on exit), 'block' (no cookies).<li>allow<li>session_only<li>block</ul></dd></dl>
         <h3 id='Permission'><a href='#Permission'>#</a>Permission</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>secondaryOrigin</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>setting</dt><dd><pre><a href="#PermissionSetting">PermissionSetting</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
@@ -44,9 +46,69 @@
         <dl><dt>options</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>PermissionSetting</ul></dd></dl>
         <dl><dt>default</dt><dd><pre><a href="#PermissionSetting">PermissionSetting</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>requiresSecondaryOrigin</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='SitePermissionInfo'><a href='#SitePermissionInfo'>#</a>SitePermissionInfo</h3><p>Information about a site with overridden permissions.<p>Properties:<dl><dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>count</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='PermissionChangeEvent'><a href='#PermissionChangeEvent'>#</a>PermissionChangeEvent</h3><p>Fired when site permission changes.<p>Properties:<dl><dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='DeviceGrantChangeEvent'><a href='#DeviceGrantChangeEvent'>#</a>DeviceGrantChangeEvent</h3><p>Fired when device grants change for an origin.<p>Properties:<dl><dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='DeviceInfo'><a href='#DeviceInfo'>#</a>DeviceInfo</h3><p>Information about a device available for chooser selection.<p>Properties:<dl><dl><dt>index</dt><dd><pre>integer</pre><p>The index of this device in the chooser's device list.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>The display name of the device (e.g., 'USB Device #1').</dd></dl>
+        <dl><dt>isPaired</dt><dd><pre>boolean</pre><p>Whether the device is already paired (for Bluetooth devices).</dd></dl>
+        </dl>
+        <h3 id='PermissionRequestEvent'><a href='#PermissionRequestEvent'>#</a>PermissionRequestEvent</h3><p>Fired when a page requests permission (e.g., geolocation, camera, notifications).<p>Properties:<dl><dl><dt>requestId</dt><dd><pre>string</pre><p>Unique identifier for this request. Use with respondToPermissionRequest().</dd></dl>
+        <dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID where the permission was requested.</dd></dl>
+        <dl><dt>permission</dt><dd><pre>string</pre><p>The permission type being requested (e.g., 'geolocation', 'camera', 'notifications').</dd></dl>
+        <dl><dt>origin</dt><dd><pre>string</pre><p>The origin requesting the permission.</dd></dl>
+        <dl><dt>embeddingOrigin</dt><dd>(optional) <pre>string</pre><p>For two-origin permissions like storage-access, the top-level origin embedding the requesting origin.</dd></dl>
+        <dl><dt>protocolName</dt><dd>(optional) <pre>string</pre><p>For protocol handler requests, the protocol being registered (e.g., 'web+permissionsite').</dd></dl>
+        <dl><dt>protocolUrl</dt><dd>(optional) <pre>string</pre><p>For protocol handler requests, the URL template (e.g., 'https://permission.site/%s').</dd></dl>
+        <dl><dt>deviceChooserPending</dt><dd>(optional) <pre>boolean</pre><p>For device chooser requests (USB, Serial, HID, Bluetooth), whether devices will arrive asynchronously. When true, devices will be sent via onDeviceChooserUpdate events.</dd></dl>
+        <dl><dt>allowMultipleSelection</dt><dd>(optional) <pre>boolean</pre><p>For device chooser requests, whether multiple devices can be selected. Defaults to false (single selection).</dd></dl>
+        <dl><dt>devices</dt><dd>(optional) <p>For device chooser requests, list of initially available devices. Additional devices may come via onDeviceChooserUpdate if deviceChooserPending is true.<p><code>Array</code> of:
+        <ul><li>DeviceInfo</ul></dd></dl>
+        </dl>
+        <h3 id='DeviceChooserUpdate'><a href='#DeviceChooserUpdate'>#</a>DeviceChooserUpdate</h3><p>Update for a device chooser request with devices and completion status.<p>Properties:<dl><dl><dt>requestId</dt><dd><pre>string</pre><p>The request ID from the original onPermissionRequest event.</dd></dl>
+        <dl><dt>devices</dt><dd><p>List of available devices discovered so far.<p><code>Array</code> of:
+        <ul><li>DeviceInfo</ul></dd></dl>
+        <dl><dt>isComplete</dt><dd><pre>boolean</pre><p>Whether device enumeration is complete. When true, no more devices will be added.</dd></dl>
+        </dl>
+        <h3 id='PermissionRequestResponse'><a href='#PermissionRequestResponse'>#</a>PermissionRequestResponse</h3><dl><dt><code>ENUM</code></dt><dd><p>Permission decision: 'allow' (remember), 'allow_this_time' (one-time), 'deny' (block), 'ask' (cancel/dismiss).<li>allow<li>allow_this_time<li>deny<li>ask</ul></dd></dl>
+        <h3 id='PermissionAccessedEvent'><a href='#PermissionAccessedEvent'>#</a>PermissionAccessedEvent</h3><p>Fired when a page accesses a resource controlled by a permission.<p>Properties:<dl><dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID where the permission was accessed.</dd></dl>
+        <dl><dt>permission</dt><dd><pre>string</pre><p>The permission type that was accessed.</dd></dl>
+        <dl><dt>origin</dt><dd><pre>string</pre><p>The origin that accessed the permission.</dd></dl>
+        <dl><dt>setting</dt><dd><pre>string</pre><p>Current permission setting: 'allow', 'block', 'ask', or 'default'.</dd></dl>
+        <dl><dt>devices</dt><dd>(optional) <p>Device names accessed for device chooser permissions.<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        </dl>
+        <h3 id='ConnectionStatus'><a href='#ConnectionStatus'>#</a>ConnectionStatus</h3><dl><dt><code>ENUM</code></dt><dd><p>The security status of the connection.<li>encrypted<li>insecure_passive<li>insecure_active<li>unencrypted<li>error<li>internal<li>isolated_web_app</ul></dd></dl>
+        <h3 id='SafeBrowsingStatus'><a href='#SafeBrowsingStatus'>#</a>SafeBrowsingStatus</h3><dl><dt><code>ENUM</code></dt><dd><p>Describes whether the page contains malicious resources such as malware or phishing attacks.<li>malware<li>unwanted_software<li>social_engineering<li>saved_password_reuse<li>signed_in_sync_password_reuse<li>signed_in_non_sync_password_reuse<li>enterprise_password_reuse<li>billing<li>managed_policy_warn<li>managed_policy_block</ul></dd></dl>
+        <h3 id='IdentityStatus'><a href='#IdentityStatus'>#</a>IdentityStatus</h3><dl><dt><code>ENUM</code></dt><dd><p>The identity verification status of the certificate.<li>cert<li>ev_cert<li>qwac_cert<li>no_cert<li>error<li>internal<li>deprecated_signature</ul></dd></dl>
+        <h3 id='SecurityInfo'><a href='#SecurityInfo'>#</a>SecurityInfo</h3><p>Security and certificate information for a page.<p>Properties:<dl><dl><dt>connectionStatus</dt><dd><pre><a href="#ConnectionStatus">ConnectionStatus</a></pre><p>The security status of the connection.</dd></dl>
+        <dl><dt>identityStatus</dt><dd><pre><a href="#IdentityStatus">IdentityStatus</a></pre><p>The identity verification status of the certificate.</dd></dl>
+        <dl><dt>issuerName</dt><dd><pre>string</pre><p>The issuer name from the certificate.</dd></dl>
+        <dl><dt>isSecure</dt><dd><pre>boolean</pre><p>Whether the connection is considered secure.</dd></dl>
+        <dl><dt>safeBrowsingStatus</dt><dd><pre><a href="#SafeBrowsingStatus">SafeBrowsingStatus</a></pre><p>The status of safe browsing evaluation for the page.</dd></dl>
+        </dl>
+        <h3 id='SiteDataSummary'><a href='#SiteDataSummary'>#</a>SiteDataSummary</h3><p>Summary of site data (cookies and storage).<p>Properties:<dl><dl><dt>cookieCount</dt><dd><pre>integer</pre><p>Number of cookies.</dd></dl>
+        <dl><dt>storageCount</dt><dd><pre>integer</pre><p>Number of storage entries (localStorage, sessionStorage, indexedDB, etc.).</dd></dl>
+        <dl><dt>totalSize</dt><dd><pre>integer</pre><p>Total size of all site data in bytes.</dd></dl>
+        <dl><dt>thirdPartyCookiesAllowed</dt><dd><pre>boolean</pre><p>Whether third-party cookies are allowed globally (i.e. not blocked by the user's cookie mode setting).</dd></dl>
+        <dl><dt>thirdPartyCookiesBypassActive</dt><dd>(optional) <pre>boolean</pre><p>Whether a per-site exception is active that overrides the global third-party cookie block for this page.</dd></dl>
+        <dl><dt>thirdPartyCookiesBypassExpiration</dt><dd>(optional) <pre>number</pre><p>Expiration of the temporary third-party cookie bypass in milliseconds since the Unix epoch. Only present when thirdPartyCookiesBypassActive is true and the exception is time-limited.</dd></dl>
+        <dl><dt>cookieSetting</dt><dd><pre><a href="#CookieSetting">CookieSetting</a></pre><p>Cookie retention setting.</dd></dl>
+        </dl>
+        <h3 id='SiteDataSettings'><a href='#SiteDataSettings'>#</a>SiteDataSettings</h3><p>Settings to configure for a site.<p>Properties:<dl><dl><dt>thirdPartyCookiesAllowed</dt><dd>(optional) <pre>boolean</pre><p>Whether third-party cookies are allowed for this site.</dd></dl>
+        </dl>
+        <h3 id='DeviceGrant'><a href='#DeviceGrant'>#</a>DeviceGrant</h3><p>Information about a granted device permission.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Display name of the device.</dd></dl>
+        <dl><dt>key</dt><dd><pre>string</pre><p>Unique key identifying this grant (for revocation).</dd></dl>
+        <dl><dt>origin</dt><dd><pre>string</pre><p>The origin this grant belongs to.</dd></dl>
+        <dl><dt>permissionType</dt><dd><pre>string</pre><p>The permission type (e.g. 'usb-guard').</dd></dl>
+        <dl><dt>isPolicy</dt><dd><pre>boolean</pre><p>Whether this grant is enforced by policy.</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -77,11 +139,36 @@
             </div>
         </details>
         <h3 id='onPermissionChanged'><a href='#onPermissionChanged'>#</a>onPermissionChanged</h3><p>Fired when a site permission changes.<p>Parameters:<dl><dt>event</dt><dd><pre><a href="#PermissionChangeEvent">PermissionChangeEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onPermissionRequest'><a href='#onPermissionRequest'>#</a>onPermissionRequest</h3><p>Fired when a page requests permission. The UI should show a permission prompt and call respondToPermissionRequest() with the decision.<p>Parameters:<dl><dt>event</dt><dd><pre><a href="#PermissionRequestEvent">PermissionRequestEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onPermissionAccessed'><a href='#onPermissionAccessed'>#</a>onPermissionAccessed</h3><p>Fired when a page accesses a resource controlled by a permission.<p>Parameters:<dl><dt>event</dt><dd><pre><a href="#PermissionAccessedEvent">PermissionAccessedEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onPermissionCleared'><a href='#onPermissionCleared'>#</a>onPermissionCleared</h3><p>Fired when permissions should be cleared for a tab (e.g., due to navigation).<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID whose permissions should be cleared.</dd></dl>
+        <h3 id='onDeviceGrantChanged'><a href='#onDeviceGrantChanged'>#</a>onDeviceGrantChanged</h3><p>Fired when device grants change for an origin (granted or revoked).<p>Parameters:<dl><dt>event</dt><dd><pre><a href="#DeviceGrantChangeEvent">DeviceGrantChangeEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onDeviceChooserUpdate'><a href='#onDeviceChooserUpdate'>#</a>onDeviceChooserUpdate</h3><p>Fired when devices become available for a device chooser request. Sent after onPermissionRequest with deviceChooserPending=true.<p>Parameters:<dl><dt>event</dt><dd><pre><a href="#DeviceChooserUpdate">DeviceChooserUpdate</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         
         <h2>Methods</h2>
-        <h3 id='getAvailablePermissions'><a href='#getAvailablePermissions'>#</a>getAvailablePermissions</h3><p>Returns all available site permissions and their possible settings, including the default.<h3 id='getOverriddenSites'><a href='#getOverriddenSites'>#</a>getOverriddenSites</h3><p>Returns a list of all sites with overridden permissions.<h3 id='getOverridesForSite'><a href='#getOverridesForSite'>#</a>getOverridesForSite</h3><p>Returns a list of permission overrides for a specific site.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='setSitePermission'><a href='#setSitePermission'>#</a>setSitePermission</h3><p>Sets the permission override for a given site.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getAvailablePermissions'><a href='#getAvailablePermissions'>#</a>getAvailablePermissions</h3><p>Returns all available site permissions and their possible settings, including the default.<h3 id='getOverriddenSites'><a href='#getOverriddenSites'>#</a>getOverriddenSites</h3><p>Returns a list of all sites with overridden permissions, including the count of overridden permissions for each site.<h3 id='getOverridesForSite'><a href='#getOverridesForSite'>#</a>getOverridesForSite</h3><p>Returns a list of effective permission settings for a specific site. For permissions with secondary origins, all secondary origins are included in the result array.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getOverridesForPattern'><a href='#getOverridesForPattern'>#</a>getOverridesForPattern</h3><p>Returns a list of permission overrides for a specific pattern returned from getOverridenSites. For permissions with secondary origins, all secondary origins are included in the result array.<p>Parameters:<dl><dt>pattern</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='setSitePermission'><a href='#setSitePermission'>#</a>setSitePermission</h3><p>Sets the permission override for a given site. For permissions that support secondary origins, secondaryOrigin must be provided.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>secondaryOrigin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>setting</dt><dd><pre><a href="#PermissionSetting">PermissionSetting</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='resetSitePermissions'><a href='#resetSitePermissions'>#</a>resetSitePermissions</h3><p>Resets all site permissions to default.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='resetSitePermissions'><a href='#resetSitePermissions'>#</a>resetSitePermissions</h3><p>Resets all site permissions to default. This includes all permissions where the primary pattern matches the origin, including all secondary origins (wildcard match).<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='respondToPermissionRequest'><a href='#respondToPermissionRequest'>#</a>respondToPermissionRequest</h3><p>Respond to a permission request from onPermissionRequest event.<p>Parameters:<dl><dt>requestId</dt><dd><pre>string</pre><p>The request ID from onPermissionRequest.</dd></dl>
+        <dl><dt>setting</dt><dd><pre><a href="#PermissionRequestResponse">PermissionRequestResponse</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>deviceIndices</dt><dd>(optional) <p>For device chooser requests, indices of devices to allow (only used when setting='allow'). Empty array means allow request without device selection.<p><code>Array</code> of:
+        <ul><li>integer</ul></dd></dl>
+        <h3 id='getAllowedDevices'><a href='#getAllowedDevices'>#</a>getAllowedDevices</h3><p>Get the list of allowed device names for a device chooser permission type on an origin.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p>The origin (e.g., 'https://example.com').</dd></dl>
+        <dl><dt>permissionType</dt><dd><pre>string</pre><p>The permission type (e.g., 'usb-guard', 'serial-guard', 'hid-guard', 'bluetooth-guard').</dd></dl>
+        <h3 id='getDeviceGrants'><a href='#getDeviceGrants'>#</a>getDeviceGrants</h3><p>Get detailed device grant information for an origin. If permissionType is omitted, returns grants across all device types.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p>The origin (e.g., 'https://example.com').</dd></dl>
+        <dl><dt>permissionType</dt><dd>(optional) <pre>string</pre><p>The permission type (e.g., 'usb-guard'). If omitted, returns grants for all device types.</dd></dl>
+        <h3 id='revokeDeviceGrant'><a href='#revokeDeviceGrant'>#</a>revokeDeviceGrant</h3><p>Revoke a single device grant by key.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p>The origin (e.g., 'https://example.com').</dd></dl>
+        <dl><dt>permissionType</dt><dd><pre>string</pre><p>The permission type (e.g., 'usb-guard').</dd></dl>
+        <dl><dt>key</dt><dd><pre>string</pre><p>The unique key identifying the grant to revoke.</dd></dl>
+        <h3 id='getDeviceGrantSites'><a href='#getDeviceGrantSites'>#</a>getDeviceGrantSites</h3><p>Get a list of origins that have device grants. If permissionType is omitted, checks all device types.<p>Parameters:<dl><dt>permissionType</dt><dd>(optional) <pre>string</pre><p>The permission type (e.g., 'usb-guard'). If omitted, checks all device types.</dd></dl>
+        <h3 id='getSecurityInfo'><a href='#getSecurityInfo'>#</a>getSecurityInfo</h3><p>Get security and certificate information for a tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID.</dd></dl>
+        <h3 id='getSiteData'><a href='#getSiteData'>#</a>getSiteData</h3><p>Get summary of cookies and site data for a tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID.</dd></dl>
+        <h3 id='setSiteData'><a href='#setSiteData'>#</a>setSiteData</h3><p>Set data and settings for a specific site.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p>The site origin (e.g., 'https://example.com').</dd></dl>
+        <dl><dt>settings</dt><dd><pre><a href="#SiteDataSettings">SiteDataSettings</a></pre><p>The site settings to apply.</dd></dl>
+        <h3 id='showCertificateDialog'><a href='#showCertificateDialog'>#</a>showCertificateDialog</h3><p>Show Chromium's certificate viewer for a tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID.</dd></dl>
+        <h3 id='showSiteDataDialog'><a href='#showSiteDataDialog'>#</a>showSiteDataDialog</h3><p>Show Chromium's on-device site data dialog for a tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID.</dd></dl>
         </main></body></html>

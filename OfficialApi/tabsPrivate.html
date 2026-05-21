@@ -17,7 +17,7 @@
     <li><a href="prefs.html">prefs</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="calendar.html">calendar</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="settings.html">settings</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="directMatch.html">directMatch</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="sync.html">sync</a></li><li><a href="accessKeys.html">accessKeys</a></li><li><a href="zoom.html">zoom</a></li><li><a href="infobars.html">infobars</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="protonvpn.html">protonvpn</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="utilities.html">utilities</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="omniboxPrivate.html">omniboxPrivate</a></li><li><a href="dnsOverHttpsPrivate.html">dnsOverHttpsPrivate</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="notes.html">notes</a></li><li><a href="sitePermissions.html">sitePermissions</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 7.7
+    <p>Version 8.0
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -28,13 +28,19 @@
     <nav class='contents' id='top'>
     <h2>Navigation</h2>
     <h3>Types</h3>
-    <ul><li><a href='#TabAlertState'>TabAlertState</a><li><a href='#TranslateStep'>TranslateStep</a><li><a href='#TranslateError'>TranslateError</a><li><a href='#UpdateTabInfo'>UpdateTabInfo</a><li><a href='#DragData'>DragData</a><li><a href='#DragEndState'>DragEndState</a><li><a href='#NavigationRect'>NavigationRect</a><li><a href='#NavigationDirection'>NavigationDirection</a><li><a href='#LanguageDetectionDetails'>LanguageDetectionDetails</a><li><a href='#CloseSpatnavParams'>CloseSpatnavParams</a><li><a href='#TabPerformanceData'>TabPerformanceData</a><li><a href='#SendTabToSelfAction'>SendTabToSelfAction</a><li><a href='#SendTabToSelfTargetType'>SendTabToSelfTargetType</a><li><a href='#SendTabToSelfTarget'>SendTabToSelfTarget</a><li><a href='#SendTabToSelfTargets'>SendTabToSelfTargets</a><li><a href='#SendTabToSelfEntry'>SendTabToSelfEntry</a></ul>
+    <ul><li><a href='#VivaldiTabsMoveResult'>VivaldiTabsMoveResult</a><li><a href='#TabMotionTweaks'>TabMotionTweaks</a><li><a href='#TabAlertState'>TabAlertState</a><li><a href='#TranslateStep'>TranslateStep</a><li><a href='#TranslateError'>TranslateError</a><li><a href='#UpdateTabInfo'>UpdateTabInfo</a><li><a href='#DragData'>DragData</a><li><a href='#NavigationRect'>NavigationRect</a><li><a href='#NavigationDirection'>NavigationDirection</a><li><a href='#LanguageDetectionDetails'>LanguageDetectionDetails</a><li><a href='#CloseSpatnavParams'>CloseSpatnavParams</a><li><a href='#TabPerformanceData'>TabPerformanceData</a><li><a href='#SendTabToSelfAction'>SendTabToSelfAction</a><li><a href='#SendTabToSelfTargetType'>SendTabToSelfTargetType</a><li><a href='#SendTabToSelfTarget'>SendTabToSelfTarget</a><li><a href='#SendTabToSelfTargets'>SendTabToSelfTargets</a><li><a href='#SendTabToSelfEntry'>SendTabToSelfEntry</a><li><a href='#CloneTabInfo'>CloneTabInfo</a></ul>
     <h3>Listeners</h3>
-    <ul><li><a href='#onSendTabToSelfAdded'>onSendTabToSelfAdded</a><li><a href='#onSendTabToSelfDismissed'>onSendTabToSelfDismissed</a><li><a href='#onMediaStateChanged'>onMediaStateChanged</a><li><a href='#onThemeColorChanged'>onThemeColorChanged</a><li><a href='#onTabUpdated'>onTabUpdated</a><li><a href='#onDragEnd'>onDragEnd</a><li><a href='#onPermissionAccessed'>onPermissionAccessed</a><li><a href='#onKeyboardChanged'>onKeyboardChanged</a><li><a href='#onMouseChanged'>onMouseChanged</a><li><a href='#onKeyboardShortcut'>onKeyboardShortcut</a><li><a href='#onMouseGestureDetection'>onMouseGestureDetection</a><li><a href='#onMouseGesture'>onMouseGesture</a><li><a href='#onTabSwitchEnd'>onTabSwitchEnd</a><li><a href='#onRockerGesture'>onRockerGesture</a><li><a href='#onWebviewClickCheck'>onWebviewClickCheck</a><li><a href='#onPageZoom'>onPageZoom</a><li><a href='#onBeforeUnloadDialogClosed'>onBeforeUnloadDialogClosed</a><li><a href='#onLanguageDetermined'>onLanguageDetermined</a><li><a href='#onShowTranslationUI'>onShowTranslationUI</a><li><a href='#onPageTranslated'>onPageTranslated</a><li><a href='#onIsPageTranslatedChanged'>onIsPageTranslatedChanged</a><li><a href='#onTabResourceMetricsRefreshed'>onTabResourceMetricsRefreshed</a></ul>
+    <ul><li><a href='#onExtDataChanged'>onExtDataChanged</a><li><a href='#onSendTabToSelfAdded'>onSendTabToSelfAdded</a><li><a href='#onSendTabToSelfDismissed'>onSendTabToSelfDismissed</a><li><a href='#onMediaStateChanged'>onMediaStateChanged</a><li><a href='#onThemeColorChanged'>onThemeColorChanged</a><li><a href='#onTabUpdated'>onTabUpdated</a><li><a href='#onDragEnd'>onDragEnd</a><li><a href='#onKeyboardChanged'>onKeyboardChanged</a><li><a href='#onMouseChanged'>onMouseChanged</a><li><a href='#onKeyboardShortcut'>onKeyboardShortcut</a><li><a href='#onMouseGestureDetection'>onMouseGestureDetection</a><li><a href='#onMouseGesture'>onMouseGesture</a><li><a href='#onTabSwitchEnd'>onTabSwitchEnd</a><li><a href='#onRockerGesture'>onRockerGesture</a><li><a href='#onWebviewClickCheck'>onWebviewClickCheck</a><li><a href='#onPageZoom'>onPageZoom</a><li><a href='#onBeforeUnloadDialogClosed'>onBeforeUnloadDialogClosed</a><li><a href='#onLanguageDetermined'>onLanguageDetermined</a><li><a href='#onShowTranslationUI'>onShowTranslationUI</a><li><a href='#onPageTranslated'>onPageTranslated</a><li><a href='#onIsPageTranslatedChanged'>onIsPageTranslatedChanged</a><li><a href='#onTabResourceMetricsRefreshed'>onTabResourceMetricsRefreshed</a></ul>
     <h3>Methods</h3>
-    <ul><li><a href='#update'>update</a><li><a href='#get'>get</a><li><a href='#insertText'>insertText</a><li><a href='#startDrag'>startDrag</a><li><a href='#scrollPage'>scrollPage</a><li><a href='#moveSpatnavRect'>moveSpatnavRect</a><li><a href='#activateSpatnavElement'>activateSpatnavElement</a><li><a href='#closeSpatnavOrCurrentOpenMenu'>closeSpatnavOrCurrentOpenMenu</a><li><a href='#hasBeforeUnloadOrUnload'>hasBeforeUnloadOrUnload</a><li><a href='#translatePage'>translatePage</a><li><a href='#revertTranslatePage'>revertTranslatePage</a><li><a href='#determineTextLanguage'>determineTextLanguage</a><li><a href='#loadViaLifeCycleUnit'>loadViaLifeCycleUnit</a><li><a href='#getTabPerformanceData'>getTabPerformanceData</a><li><a href='#getSendTabToSelfTargets'>getSendTabToSelfTargets</a><li><a href='#sendSendTabToSelfTarget'>sendSendTabToSelfTarget</a><li><a href='#getSendTabToSelfEntries'>getSendTabToSelfEntries</a><li><a href='#execSendTabToSelfAction'>execSendTabToSelfAction</a><li><a href='#dismissSendTabToSelfEntries'>dismissSendTabToSelfEntries</a></ul></nav>
+    <ul><li><a href='#unstack'>unstack</a><li><a href='#notifyCollapse'>notifyCollapse</a><li><a href='#setExtData'>setExtData</a><li><a href='#notifyActiveWorkspace'>notifyActiveWorkspace</a><li><a href='#move'>move</a><li><a href='#clone'>clone</a><li><a href='#update'>update</a><li><a href='#get'>get</a><li><a href='#insertText'>insertText</a><li><a href='#startDrag'>startDrag</a><li><a href='#scrollPage'>scrollPage</a><li><a href='#moveSpatnavRect'>moveSpatnavRect</a><li><a href='#activateSpatnavElement'>activateSpatnavElement</a><li><a href='#closeSpatnavOrCurrentOpenMenu'>closeSpatnavOrCurrentOpenMenu</a><li><a href='#hasBeforeUnloadOrUnload'>hasBeforeUnloadOrUnload</a><li><a href='#translatePage'>translatePage</a><li><a href='#revertTranslatePage'>revertTranslatePage</a><li><a href='#determineTextLanguage'>determineTextLanguage</a><li><a href='#loadViaLifeCycleUnit'>loadViaLifeCycleUnit</a><li><a href='#getTabPerformanceData'>getTabPerformanceData</a><li><a href='#getSendTabToSelfTargets'>getSendTabToSelfTargets</a><li><a href='#sendSendTabToSelfTarget'>sendSendTabToSelfTarget</a><li><a href='#getSendTabToSelfEntries'>getSendTabToSelfEntries</a><li><a href='#execSendTabToSelfAction'>execSendTabToSelfAction</a><li><a href='#dismissSendTabToSelfEntries'>dismissSendTabToSelfEntries</a></ul></nav>
     
         <h2>Types</h2>
+        <h3 id='VivaldiTabsMoveResult'><a href='#VivaldiTabsMoveResult'>#</a>VivaldiTabsMoveResult</h3><p>move result<p>Properties:<dl><dl><dt>message</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>group</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>existingGroup</dt><dd>(optional) <pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>success</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='TabMotionTweaks'><a href='#TabMotionTweaks'>#</a>TabMotionTweaks</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>target-is-tab<li>strip-up<li>strip-down<li>below<li>above<li>on<li>into<li>group-follows-target<li>preserve-group<li>create-group<li>create-new-group<li>do-not-reparent<li>untile<li>ungroup<li>expand-related<li>collapsed-above</ul></dd></dl>
         <h3 id='TabAlertState'><a href='#TabAlertState'>#</a>TabAlertState</h3><dl><dt><code>ENUM</code></dt><dd><p>The active media type.<li>recording<li>capturing<li>playing<li>muting<li>bluetooth<li>usb<li>pip<li>desktop_capturing<li>vr_presenting_in_headset<li>serial_connected<li>bluetooth_scan<li>hid_connected<li>audio_recording<li>video_recording</ul></dd></dl>
         <h3 id='TranslateStep'><a href='#TranslateStep'>#</a>TranslateStep</h3><dl><dt><code>ENUM</code></dt><dd><p>Denotes which state the page is in with respect to translate.<li>idle<li>before_translate<li>translating<li>after_translate<li>translate_error</ul></dd></dl>
         <h3 id='TranslateError'><a href='#TranslateError'>#</a>TranslateError</h3><dl><dt><code>ENUM</code></dt><dd><p>Signals translation errors.<li>no_error<li>network<li>init_error<li>unknown_language<li>unsupported_language<li>identical_languages<li>translation_error<li>translation_timeout<li>unexpected_script_error<li>bad_origin<li>script_load_error</ul></dd></dl>
@@ -57,7 +63,6 @@
         <dl><dt>cursorY</dt><dd><pre>integer</pre><p>Y offset into the image for the cursor during drag.</dd></dl>
         <dl><dt>isFromTouch</dt><dd>(optional) <pre>boolean</pre><p>True if the drag was initiated from touch. Default is false.</dd></dl>
         </dl>
-        <h3 id='DragEndState'><a href='#DragEndState'>#</a>DragEndState</h3><dl><dt><code>ENUM</code></dt><dd><p>Tells if drag was aborted (using ESC or similar), or if the drop was valid outside or inside the app window.<li>aborted<li>outsideOrWebviewInSameWindow<li>insideOrWebviewInOtherWindow</ul></dd></dl>
         <h3 id='NavigationRect'><a href='#NavigationRect'>#</a>NavigationRect</h3><p>Rect struct for spatial navigation.<p>Properties:<dl><dl><dt>left</dt><dd><pre>integer</pre><p>left</dd></dl>
         <dl><dt>top</dt><dd><pre>integer</pre><p>top</dd></dl>
         <dl><dt>width</dt><dd><pre>integer</pre><p>width</dd></dl>
@@ -97,6 +102,9 @@
         <dl><dt>deviceName</dt><dd><pre>string</pre><p>Sharing device name.</dd></dl>
         <dl><dt>sharedTime</dt><dd><pre>number</pre><p>Sharing time.</dd></dl>
         </dl>
+        <h3 id='CloneTabInfo'><a href='#CloneTabInfo'>#</a>CloneTabInfo</h3><p>Information of a cloned tab.<p>Properties:<dl><dl><dt>id</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>index</dt><dd><pre>integer</pre><p>The zero-based index of the tab within its window.</dd></dl>
+        </dl>
         
         <h2>Listeners</h2>
             <details>
@@ -125,6 +133,8 @@
                 <p>Returns array of promises dispatched to the listener</p>
             </div>
         </details>
+        <h3 id='onExtDataChanged'><a href='#onExtDataChanged'>#</a>onExtDataChanged</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>extData</dt><dd><pre>any</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onSendTabToSelfAdded'><a href='#onSendTabToSelfAdded'>#</a>onSendTabToSelfAdded</h3><p>Fired when one or more urls are received from a remote instance.<p>Parameters:<dl><dt>entries</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>SendTabToSelfEntry</ul></dd></dl>
         <h3 id='onSendTabToSelfDismissed'><a href='#onSendTabToSelfDismissed'>#</a>onSendTabToSelfDismissed</h3><p>Fired when one or more entries not to be used anymore.<p>Parameters:<dl><dt>guids</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
@@ -138,13 +148,10 @@
         <h3 id='onTabUpdated'><a href='#onTabUpdated'>#</a>onTabUpdated</h3><p>Fires when a |WebContent| is changed in some way.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tabInfo</dt><dd><pre><a href="#UpdateTabInfo">UpdateTabInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='onDragEnd'><a href='#onDragEnd'>#</a>onDragEnd</h3><p>Fires when tab dragging ends.<p>Parameters:<dl><dt>dragEndState</dt><dd><pre><a href="#DragEndState">DragEndState</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>posX</dt><dd><pre>integer</pre><p>X position of the drop relative to drag source client.</dd></dl>
-        <dl><dt>posY</dt><dd><pre>integer</pre><p>Y position of the drop relative to drag source client.</dd></dl>
-        <h3 id='onPermissionAccessed'><a href='#onPermissionAccessed'>#</a>onPermissionAccessed</h3><p>Fires when a |permission| is accessed.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>blocked</dt><dd><pre>string</pre><p>Current permission setting. 'allow', 'block', 'ask' or 'default'</dd></dl>
+        <h3 id='onDragEnd'><a href='#onDragEnd'>#</a>onDragEnd</h3><p>Fires when tab dragging ends.<p>Parameters:<dl><dt>canceled</dt><dd><pre>boolean</pre><p>True if drag was aborted (using ESC or similar), false if completed normally.</dd></dl>
+        <dl><dt>clientX</dt><dd><pre>integer</pre><p>X position of the drop relative to drag source client.</dd></dl>
+        <dl><dt>clientY</dt><dd><pre>integer</pre><p>Y position of the drop relative to drag source client.</dd></dl>
+        <dl><dt>targetWindowId</dt><dd><pre>integer</pre><p>Id of the window where the drop occurred, or 0 if dropped outside all browser windows.</dd></dl>
         <h3 id='onKeyboardChanged'><a href='#onKeyboardChanged'>#</a>onKeyboardChanged</h3><p>Fires for all keyboard changes that have not been consumed by the browser<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Id of the browser window this keyboard event originates from.</dd></dl>
         <dl><dt>down</dt><dd><pre>boolean</pre><p>True when pressed, false when released</dd></dl>
         <dl><dt>modifiers</dt><dd><pre>integer</pre><p>Modifier state when change occured</dd></dl>
@@ -192,6 +199,39 @@
         <h3 id='onTabResourceMetricsRefreshed'><a href='#onTabResourceMetricsRefreshed'>#</a>onTabResourceMetricsRefreshed</h3><p>Fired when resource metrics are updated.<p>Parameters:<dl><dt>info</dt><dd><pre><a href="#TabPerformanceData">TabPerformanceData</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         
         <h2>Methods</h2>
+        <h3 id='unstack'><a href='#unstack'>#</a>unstack</h3><p>Call to unstack the group.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>extId if the group</dd></dl>
+        <h3 id='notifyCollapse'><a href='#notifyCollapse'>#</a>notifyCollapse</h3><p>Call this to notify when the user collapses the tree node in the UI to keep the change persistent in extData.<p>Parameters:<dl><dt>extId</dt><dd><pre>string</pre><p>extId if the tab</dd></dl>
+        <dl><dt>collapsed</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='setExtData'><a href='#setExtData'>#</a>setExtData</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>extData</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>tabId</dt><dd>(optional) <pre>integer</pre><p>tab</dd></dl>
+        <dl><dt>extId</dt><dd>(optional) <pre>string</pre><p>tab or group extId</dd></dl>
+        <dl><dt>groupColor</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>groupTitle</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+        <h3 id='notifyActiveWorkspace'><a href='#notifyActiveWorkspace'>#</a>notifyActiveWorkspace</h3><p>Call when the workspace changed.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>workspaceId</dt><dd><pre>number</pre><p>workspace id</dd></dl>
+        <h3 id='move'><a href='#move'>#</a>move</h3><p>Moves one or more tabs to a new position within its window, or to a new window. Note that tabs can only be moved to and from normal (window.type === "normal") windows.<p>Parameters:<dl><dt>moveProperties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>tabIds (overloaded)</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>tabIds (overloaded)</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>integer<li>0</ul></dd></dl>
+        </dd></dl>
+        <dl><dt>extIds (overloaded)</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>extIds (overloaded)</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        </dd></dl>
+        <dl><dt>windowId</dt><dd>(optional) <pre>integer</pre><p>Target window id. Makes sense only if the target is an index.</dd></dl>
+        <dl><dt>target (overloaded)</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>target (overloaded)</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+        <dl><dt>groupHint</dt><dd>(optional) <pre>string</pre><p>Put into this group if possible.</dd></dl>
+        <dl><dt>tweaks</dt><dd>(optional) <p>Vivaldi specific tweaks, the parameter how to move the tabs.<p><code>Array</code> of:
+        <ul><li>TabMotionTweaks</ul></dd></dl>
+        <dl><dt>workspaceId</dt><dd>(optional) <pre>number</pre><p>Target workspace id</dd></dl>
+        <dl><dt>debug</dt><dd>(optional) <pre>string</pre><p>Any log message for tracing from where the function was called in JS; this should be removed when we realize, we don't need it (VB-124883)</dd></dl>
+        </dd></dl>
+        <h3 id='clone'><a href='#clone'>#</a>clone</h3><p>Duplicates one or more tabs. Destination can be in a another window.<p>Parameters:<dl><dt>ids</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>integer</ul></dd></dl>
+        <dl><dt>windowId</dt><dd><pre>integer</pre><p>Target window.</dd></dl>
+        <dl><dt>index</dt><dd><pre>integer</pre><p>Target index in target window.</dd></dl>
+        <dl><dt>pinned</dt><dd><pre>boolean</pre><p>Specifies the pinned state of the cloned tab.</dd></dl>
         <h3 id='update'><a href='#update'>#</a>update</h3><p>Update the given tab with Vivaldi-specific properties.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tabInfo</dt><dd><pre><a href="#UpdateTabInfo">UpdateTabInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='get'><a href='#get'>#</a>get</h3><p>Get Vivaldi-specific properties from the tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>

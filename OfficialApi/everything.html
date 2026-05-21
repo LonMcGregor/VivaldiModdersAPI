@@ -17,7 +17,7 @@
     <li><a href="prefs.html">prefs</a></li><li><a href="contacts.html">contacts</a></li><li><a href="contextMenu.html">contextMenu</a></li><li><a href="calendar.html">calendar</a></li><li><a href="mousegestures.html">mousegestures</a></li><li><a href="pageActions.html">pageActions</a></li><li><a href="settings.html">settings</a></li><li><a href="tabsPrivate.html">tabsPrivate</a></li><li><a href="runtimePrivate.html">runtimePrivate</a></li><li><a href="searchEngines.html">searchEngines</a></li><li><a href="sessionsPrivate.html">sessionsPrivate</a></li><li><a href="webViewPrivate.html">webViewPrivate</a></li><li><a href="thumbnails.html">thumbnails</a></li><li><a href="bookmarkContextMenu.html">bookmarkContextMenu</a></li><li><a href="vivaldiAccount.html">vivaldiAccount</a></li><li><a href="savedpasswords.html">savedpasswords</a></li><li><a href="directMatch.html">directMatch</a></li><li><a href="historyPrivate.html">historyPrivate</a></li><li><a href="sync.html">sync</a></li><li><a href="accessKeys.html">accessKeys</a></li><li><a href="zoom.html">zoom</a></li><li><a href="infobars.html">infobars</a></li><li><a href="contentBlocking.html">contentBlocking</a></li><li><a href="protonvpn.html">protonvpn</a></li><li><a href="mailPrivate.html">mailPrivate</a></li><li><a href="menubar.html">menubar</a></li><li><a href="utilities.html">utilities</a></li><li><a href="pipPrivate.html">pipPrivate</a></li><li><a href="windowPrivate.html">windowPrivate</a></li><li><a href="menuContent.html">menuContent</a></li><li><a href="omniboxPrivate.html">omniboxPrivate</a></li><li><a href="dnsOverHttpsPrivate.html">dnsOverHttpsPrivate</a></li><li><a href="translateHistory.html">translateHistory</a></li><li><a href="extensionActionUtils.html">extensionActionUtils</a></li><li><a href="readingListPrivate.html">readingListPrivate</a></li><li><a href="bookmarksPrivate.html">bookmarksPrivate</a></li><li><a href="menubarMenu.html">menubarMenu</a></li><li><a href="devtoolsPrivate.html">devtoolsPrivate</a></li><li><a href="importData.html">importData</a></li><li><a href="themePrivate.html">themePrivate</a></li><li><a href="notes.html">notes</a></li><li><a href="sitePermissions.html">sitePermissions</a></li><li><a href="editcommand.html">editcommand</a></li><li><a href="autoUpdate.html">autoUpdate</a></li><li><a href="preferenceDefinitions.html">Preference Definitions</a></li>
     <li><a href="everything.html">Search Everything</a></li>
     </ul><footer>Generated from official <a href="https://vivaldi.com/source">Sources</a>
-    <p>Version 7.7
+    <p>Version 8.0
     <p>This website is not affiliated with vivaldi.
     <p><a href="https://github.com/LonMcGregor/VivaldiModdersAPI">Discuss this project on GitHub</a></footer></nav>
     
@@ -26,7 +26,7 @@
 
     
         <h2>Types</h2>
-        <h3 id='PreferenceValue'><a href='prefs.html#PreferenceValue'>#</a>PreferenceValue</h3><p>Preference with its new desired value.<p>Properties:<dl><dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
+        <h3 id='SetPreferenceValue'><a href='prefs.html#SetPreferenceValue'>#</a>SetPreferenceValue</h3><p>Preference with its new desired value.<p>Properties:<dl><dl><dt>path</dt><dd><pre>string</pre><p>The preference path.</dd></dl>
         <dl><dt>value</dt><dd>(optional) <pre>any</pre><p>Preference value. None indicate to use the default.</dd></dl>
         </dl>
         <h3 id='TranslateLanguageSettings'><a href='prefs.html#TranslateLanguageSettings'>#</a>TranslateLanguageSettings</h3><p>Current settings active for the given language pair or just the source language.<p>Properties:<dl><dl><dt>isLanguagePairOnAlwaysTranslateList</dt><dd><pre>boolean</pre><p>Is the given language pair on the always translate list.</dd></dl>
@@ -34,6 +34,10 @@
         <dl><dt>isSiteOnNeverTranslateList</dt><dd><pre>boolean</pre><p>Is the given site on the never translate list.</dd></dl>
         <dl><dt>shouldShowAlwaysTranslateShortcut</dt><dd><pre>boolean</pre><p>Should show always translate shortcut for this language.</dd></dl>
         <dl><dt>shouldShowNeverTranslateShortcut</dt><dd><pre>boolean</pre><p>Should show never translate shortcut for this language.</dd></dl>
+        </dl>
+        <h3 id='PreferenceValue'><a href='prefs.html#PreferenceValue'>#</a>PreferenceValue</h3><p>Preference with its values.<p>Properties:<dl><dl><dt>value</dt><dd>(optional) <pre>any</pre><p>Preference value or none if it's using the default value.</dd></dl>
+        <dl><dt>defaultValue</dt><dd><pre>any</pre><p>Default value of the pref.</dd></dl>
+        <dl><dt>managed</dt><dd>(optional) <pre>boolean</pre><p>The preference is managed by an enterprise.</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -63,11 +67,12 @@
                 <p>Returns array of promises dispatched to the listener</p>
             </div>
         </details>
-        <h3 id='onChanged'><a href='prefs.html#onChanged'>#</a>onChanged</h3><p>Fired when a preference value has changed.<p>Parameters:<dl><dt>newValue</dt><dd><pre><a href="#PreferenceValue">PreferenceValue</a></pre><p>Information about the changed preference.</dd></dl>
+        <h3 id='onChanged'><a href='prefs.html#onChanged'>#</a>onChanged</h3><p>Fired when a preference value has changed.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The preference path.</dd></dl>
+        <dl><dt>newValue</dt><dd><pre><a href="#PreferenceValue">PreferenceValue</a></pre><p>Information about the changed preference.</dd></dl>
         
         <h2>Methods</h2>
         <h3 id='get'><a href='prefs.html#get'>#</a>get</h3><p>Get a specific named preference value.<p>Parameters:<dl><dt>path</dt><dd><pre>string</pre><p>The preference path</dd></dl>
-        <h3 id='set'><a href='prefs.html#set'>#</a>set</h3><p>Set a specific preference.<p>Parameters:<dl><dt>newValue</dt><dd><pre><a href="#PreferenceValue">PreferenceValue</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='set'><a href='prefs.html#set'>#</a>set</h3><p>Set a specific preference.<p>Parameters:<dl><dt>newValue</dt><dd><pre><a href="#SetPreferenceValue">SetPreferenceValue</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='getForCache'><a href='prefs.html#getForCache'>#</a>getForCache</h3><p>Get all preferences to be cached on the JS side with one call. Only changes to these will be reported by onChanged. The result type is optimized for bulk transfer of over 450 values<p>Parameters:<dl><dt>paths</dt><dd><p>Which preferences are needed<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
         <h3 id='setLanguagePairToAlwaysTranslate'><a href='prefs.html#setLanguagePairToAlwaysTranslate'>#</a>setLanguagePairToAlwaysTranslate</h3><p>Translate: Add or remove a pair of languages to the preference for automatic translation.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab id used to look up the translate manager stored in the WebContents data. Not used for anything else.</dd></dl>
@@ -732,6 +737,12 @@
 
     
         <h2>Types</h2>
+        <h3 id='VivaldiTabsMoveResult'><a href='tabsPrivate.html#VivaldiTabsMoveResult'>#</a>VivaldiTabsMoveResult</h3><p>move result<p>Properties:<dl><dl><dt>message</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>group</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>existingGroup</dt><dd>(optional) <pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>success</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='TabMotionTweaks'><a href='tabsPrivate.html#TabMotionTweaks'>#</a>TabMotionTweaks</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>target-is-tab<li>strip-up<li>strip-down<li>below<li>above<li>on<li>into<li>group-follows-target<li>preserve-group<li>create-group<li>create-new-group<li>do-not-reparent<li>untile<li>ungroup<li>expand-related<li>collapsed-above</ul></dd></dl>
         <h3 id='TabAlertState'><a href='tabsPrivate.html#TabAlertState'>#</a>TabAlertState</h3><dl><dt><code>ENUM</code></dt><dd><p>The active media type.<li>recording<li>capturing<li>playing<li>muting<li>bluetooth<li>usb<li>pip<li>desktop_capturing<li>vr_presenting_in_headset<li>serial_connected<li>bluetooth_scan<li>hid_connected<li>audio_recording<li>video_recording</ul></dd></dl>
         <h3 id='TranslateStep'><a href='tabsPrivate.html#TranslateStep'>#</a>TranslateStep</h3><dl><dt><code>ENUM</code></dt><dd><p>Denotes which state the page is in with respect to translate.<li>idle<li>before_translate<li>translating<li>after_translate<li>translate_error</ul></dd></dl>
         <h3 id='TranslateError'><a href='tabsPrivate.html#TranslateError'>#</a>TranslateError</h3><dl><dt><code>ENUM</code></dt><dd><p>Signals translation errors.<li>no_error<li>network<li>init_error<li>unknown_language<li>unsupported_language<li>identical_languages<li>translation_error<li>translation_timeout<li>unexpected_script_error<li>bad_origin<li>script_load_error</ul></dd></dl>
@@ -754,7 +765,6 @@
         <dl><dt>cursorY</dt><dd><pre>integer</pre><p>Y offset into the image for the cursor during drag.</dd></dl>
         <dl><dt>isFromTouch</dt><dd>(optional) <pre>boolean</pre><p>True if the drag was initiated from touch. Default is false.</dd></dl>
         </dl>
-        <h3 id='DragEndState'><a href='tabsPrivate.html#DragEndState'>#</a>DragEndState</h3><dl><dt><code>ENUM</code></dt><dd><p>Tells if drag was aborted (using ESC or similar), or if the drop was valid outside or inside the app window.<li>aborted<li>outsideOrWebviewInSameWindow<li>insideOrWebviewInOtherWindow</ul></dd></dl>
         <h3 id='NavigationRect'><a href='tabsPrivate.html#NavigationRect'>#</a>NavigationRect</h3><p>Rect struct for spatial navigation.<p>Properties:<dl><dl><dt>left</dt><dd><pre>integer</pre><p>left</dd></dl>
         <dl><dt>top</dt><dd><pre>integer</pre><p>top</dd></dl>
         <dl><dt>width</dt><dd><pre>integer</pre><p>width</dd></dl>
@@ -794,6 +804,9 @@
         <dl><dt>deviceName</dt><dd><pre>string</pre><p>Sharing device name.</dd></dl>
         <dl><dt>sharedTime</dt><dd><pre>number</pre><p>Sharing time.</dd></dl>
         </dl>
+        <h3 id='CloneTabInfo'><a href='tabsPrivate.html#CloneTabInfo'>#</a>CloneTabInfo</h3><p>Information of a cloned tab.<p>Properties:<dl><dl><dt>id</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>index</dt><dd><pre>integer</pre><p>The zero-based index of the tab within its window.</dd></dl>
+        </dl>
         
         <h2>Listeners</h2>
             <details>
@@ -822,6 +835,8 @@
                 <p>Returns array of promises dispatched to the listener</p>
             </div>
         </details>
+        <h3 id='onExtDataChanged'><a href='tabsPrivate.html#onExtDataChanged'>#</a>onExtDataChanged</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>extData</dt><dd><pre>any</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onSendTabToSelfAdded'><a href='tabsPrivate.html#onSendTabToSelfAdded'>#</a>onSendTabToSelfAdded</h3><p>Fired when one or more urls are received from a remote instance.<p>Parameters:<dl><dt>entries</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>SendTabToSelfEntry</ul></dd></dl>
         <h3 id='onSendTabToSelfDismissed'><a href='tabsPrivate.html#onSendTabToSelfDismissed'>#</a>onSendTabToSelfDismissed</h3><p>Fired when one or more entries not to be used anymore.<p>Parameters:<dl><dt>guids</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
@@ -835,13 +850,10 @@
         <h3 id='onTabUpdated'><a href='tabsPrivate.html#onTabUpdated'>#</a>onTabUpdated</h3><p>Fires when a |WebContent| is changed in some way.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tabInfo</dt><dd><pre><a href="#UpdateTabInfo">UpdateTabInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='onDragEnd'><a href='tabsPrivate.html#onDragEnd'>#</a>onDragEnd</h3><p>Fires when tab dragging ends.<p>Parameters:<dl><dt>dragEndState</dt><dd><pre><a href="#DragEndState">DragEndState</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>posX</dt><dd><pre>integer</pre><p>X position of the drop relative to drag source client.</dd></dl>
-        <dl><dt>posY</dt><dd><pre>integer</pre><p>Y position of the drop relative to drag source client.</dd></dl>
-        <h3 id='onPermissionAccessed'><a href='tabsPrivate.html#onPermissionAccessed'>#</a>onPermissionAccessed</h3><p>Fires when a |permission| is accessed.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>blocked</dt><dd><pre>string</pre><p>Current permission setting. 'allow', 'block', 'ask' or 'default'</dd></dl>
+        <h3 id='onDragEnd'><a href='tabsPrivate.html#onDragEnd'>#</a>onDragEnd</h3><p>Fires when tab dragging ends.<p>Parameters:<dl><dt>canceled</dt><dd><pre>boolean</pre><p>True if drag was aborted (using ESC or similar), false if completed normally.</dd></dl>
+        <dl><dt>clientX</dt><dd><pre>integer</pre><p>X position of the drop relative to drag source client.</dd></dl>
+        <dl><dt>clientY</dt><dd><pre>integer</pre><p>Y position of the drop relative to drag source client.</dd></dl>
+        <dl><dt>targetWindowId</dt><dd><pre>integer</pre><p>Id of the window where the drop occurred, or 0 if dropped outside all browser windows.</dd></dl>
         <h3 id='onKeyboardChanged'><a href='tabsPrivate.html#onKeyboardChanged'>#</a>onKeyboardChanged</h3><p>Fires for all keyboard changes that have not been consumed by the browser<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Id of the browser window this keyboard event originates from.</dd></dl>
         <dl><dt>down</dt><dd><pre>boolean</pre><p>True when pressed, false when released</dd></dl>
         <dl><dt>modifiers</dt><dd><pre>integer</pre><p>Modifier state when change occured</dd></dl>
@@ -889,6 +901,39 @@
         <h3 id='onTabResourceMetricsRefreshed'><a href='tabsPrivate.html#onTabResourceMetricsRefreshed'>#</a>onTabResourceMetricsRefreshed</h3><p>Fired when resource metrics are updated.<p>Parameters:<dl><dt>info</dt><dd><pre><a href="#TabPerformanceData">TabPerformanceData</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         
         <h2>Methods</h2>
+        <h3 id='unstack'><a href='tabsPrivate.html#unstack'>#</a>unstack</h3><p>Call to unstack the group.<p>Parameters:<dl><dt>id</dt><dd><pre>string</pre><p>extId if the group</dd></dl>
+        <h3 id='notifyCollapse'><a href='tabsPrivate.html#notifyCollapse'>#</a>notifyCollapse</h3><p>Call this to notify when the user collapses the tree node in the UI to keep the change persistent in extData.<p>Parameters:<dl><dt>extId</dt><dd><pre>string</pre><p>extId if the tab</dd></dl>
+        <dl><dt>collapsed</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='setExtData'><a href='tabsPrivate.html#setExtData'>#</a>setExtData</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Parameters:<dl><dt>extData</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>tabId</dt><dd>(optional) <pre>integer</pre><p>tab</dd></dl>
+        <dl><dt>extId</dt><dd>(optional) <pre>string</pre><p>tab or group extId</dd></dl>
+        <dl><dt>groupColor</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>groupTitle</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+        <h3 id='notifyActiveWorkspace'><a href='tabsPrivate.html#notifyActiveWorkspace'>#</a>notifyActiveWorkspace</h3><p>Call when the workspace changed.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>workspaceId</dt><dd><pre>number</pre><p>workspace id</dd></dl>
+        <h3 id='move'><a href='tabsPrivate.html#move'>#</a>move</h3><p>Moves one or more tabs to a new position within its window, or to a new window. Note that tabs can only be moved to and from normal (window.type === "normal") windows.<p>Parameters:<dl><dt>moveProperties</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>tabIds (overloaded)</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>tabIds (overloaded)</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>integer<li>0</ul></dd></dl>
+        </dd></dl>
+        <dl><dt>extIds (overloaded)</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>extIds (overloaded)</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        </dd></dl>
+        <dl><dt>windowId</dt><dd>(optional) <pre>integer</pre><p>Target window id. Makes sense only if the target is an index.</dd></dl>
+        <dl><dt>target (overloaded)</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>target (overloaded)</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dd></dl>
+        <dl><dt>groupHint</dt><dd>(optional) <pre>string</pre><p>Put into this group if possible.</dd></dl>
+        <dl><dt>tweaks</dt><dd>(optional) <p>Vivaldi specific tweaks, the parameter how to move the tabs.<p><code>Array</code> of:
+        <ul><li>TabMotionTweaks</ul></dd></dl>
+        <dl><dt>workspaceId</dt><dd>(optional) <pre>number</pre><p>Target workspace id</dd></dl>
+        <dl><dt>debug</dt><dd>(optional) <pre>string</pre><p>Any log message for tracing from where the function was called in JS; this should be removed when we realize, we don't need it (VB-124883)</dd></dl>
+        </dd></dl>
+        <h3 id='clone'><a href='tabsPrivate.html#clone'>#</a>clone</h3><p>Duplicates one or more tabs. Destination can be in a another window.<p>Parameters:<dl><dt>ids</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>integer</ul></dd></dl>
+        <dl><dt>windowId</dt><dd><pre>integer</pre><p>Target window.</dd></dl>
+        <dl><dt>index</dt><dd><pre>integer</pre><p>Target index in target window.</dd></dl>
+        <dl><dt>pinned</dt><dd><pre>boolean</pre><p>Specifies the pinned state of the cloned tab.</dd></dl>
         <h3 id='update'><a href='tabsPrivate.html#update'>#</a>update</h3><p>Update the given tab with Vivaldi-specific properties.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>tabInfo</dt><dd><pre><a href="#UpdateTabInfo">UpdateTabInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='get'><a href='tabsPrivate.html#get'>#</a>get</h3><p>Get Vivaldi-specific properties from the tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -985,7 +1030,7 @@
         <dl><dt>createDesktopIcon</dt><dd><pre>boolean</pre><p>Create desktop icon.</dd></dl>
         <h3 id='getProfileStatistics'><a href='runtimePrivate.html#getProfileStatistics'>#</a>getProfileStatistics</h3><p>Returns statistics for the profile associated with the given profile path.<p>Parameters:<dl><dt>profilePath</dt><dd><pre>string</pre><p>Path of the profile, unique per profile.</dd></dl>
         <h3 id='deleteProfile'><a href='runtimePrivate.html#deleteProfile'>#</a>deleteProfile</h3><p>Deletes a profile after closing all open windows for that profile.<p>Parameters:<dl><dt>profilePath</dt><dd><pre>string</pre><p>Path of the profile, unique per profile.</dd></dl>
-        <h1><a href='searchEngines.html'>searchEngines</a></h1>
+        <h3 id='isProfileManaged'><a href='runtimePrivate.html#isProfileManaged'>#</a>isProfileManaged</h3><p>Checks whether the current profile is managed by an enterprise.<h1><a href='searchEngines.html'>searchEngines</a></h1>
 
     
         <h2>Types</h2>
@@ -1024,8 +1069,11 @@
         <dl><dt>postParams</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='SwitchPromptData'><a href='searchEngines.html#SwitchPromptData'>#</a>SwitchPromptData</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>shouldPrompt</dt><dd><pre>boolean</pre><p>True if the user should be prompted to switch search engines.</dd></dl>
-        <dl><dt>promptType</dt><dd><pre>string</pre><p>Type of the dialog that should be displayed.</dd></dl>
+        <dl><dt>isQuarantined</dt><dd><pre>boolean</pre><p>True if the user is quarantined (seen the prompt recently).</dd></dl>
+        <dl><dt>promptType</dt><dd>(optional) <pre>string</pre><p>Type of the dialog that should be displayed.</dd></dl>
         <dl><dt>currentSearchEngine</dt><dd><pre><a href="#TemplateURL">TemplateURL</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>searchEnginesToPrompt</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
+        <ul><li>TemplateURL</ul></dd></dl>
         <dl><dt>partnerSearchEngines</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>TemplateURL</ul></dd></dl>
         </dl>
@@ -1070,7 +1118,8 @@
         <h3 id='getSearchRequest'><a href='searchEngines.html#getSearchRequest'>#</a>getSearchRequest</h3><p>Provides the request info to use for performing a search<p>Parameters:<dl><dt>guid</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>searchTerms</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='repairPrepopulatedTemplateUrls'><a href='searchEngines.html#repairPrepopulatedTemplateUrls'>#</a>repairPrepopulatedTemplateUrls</h3><p>resets the prepopulated template urls and the default search<p>Parameters:<dl><dt>onlyKeepPrepopulated</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='getSwitchPromptData'><a href='searchEngines.html#getSwitchPromptData'>#</a>getSwitchPromptData</h3><p>Gathers and returns the needed info for partner search engine switch dialog.<h3 id='acknowledgeSwitchPrompt'><a href='searchEngines.html#acknowledgeSwitchPrompt'>#</a>acknowledgeSwitchPrompt</h3><p>Mark current switch prompt as seen.<h3 id='setIsActive'><a href='searchEngines.html#setIsActive'>#</a>setIsActive</h3><p>Used to enable or disable a starter pack engine.<p>Parameters:<dl><dt>guid</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getSwitchPromptData'><a href='searchEngines.html#getSwitchPromptData'>#</a>getSwitchPromptData</h3><p>Gathers and returns the needed info for partner search engine switch dialog.<h3 id='acknowledgeSwitchPrompt'><a href='searchEngines.html#acknowledgeSwitchPrompt'>#</a>acknowledgeSwitchPrompt</h3><p>Mark current switch prompt as seen.<p>Parameters:<dl><dt>specialPromptType</dt><dd>(optional) <pre>boolean</pre><p>Mark switch prompt as seen for a special type (this internally puts a profile to quarantine).</dd></dl>
+        <h3 id='setIsActive'><a href='searchEngines.html#setIsActive'>#</a>setIsActive</h3><p>Used to enable or disable a starter pack engine.<p>Parameters:<dl><dt>guid</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>isActive</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h1><a href='sessionsPrivate.html'>sessionsPrivate</a></h1>
 
@@ -1763,33 +1812,31 @@
         <h3 id='RuleGroup'><a href='contentBlocking.html#RuleGroup'>#</a>RuleGroup</h3><dl><dt><code>ENUM</code></dt><dd><p>Used to specify whether a specific operation should apply to tracking blocking or adblocking.<li>tracking<li>ad_blocking</ul></dd></dl>
         <h3 id='ExceptionList'><a href='contentBlocking.html#ExceptionList'>#</a>ExceptionList</h3><dl><dt><code>ENUM</code></dt><dd><p>Used to inform whether the exception list used in a rule group is a list of exemptions or a list for which process is enabled<li>process_list<li>exempt_list</ul></dd></dl>
         <h3 id='PresetKind'><a href='contentBlocking.html#PresetKind'>#</a>PresetKind</h3><dl><dt><code>ENUM</code></dt><dd><p>Which rough category a given preset list falls in<li>ads<li>trackers<li>partners<li>annoyances<li>cookie_notices<li>other<li>regional</ul></dd></dl>
-        <h3 id='FetchResult'><a href='contentBlocking.html#FetchResult'>#</a>FetchResult</h3><dl><dt><code>ENUM</code></dt><dd><p>The result of a fetch operation on a rule source.<li>success: Fetch completed successfully.<li>download_failed: For an online source, failed to download using the provided URL.<li>file_not_found: For a local source, the file provided didn't seem to exist.<li>file_read_error: For a local source, the file provided couldn't be read.<li>file_unsupported: The rules file is of an invalid format or doesn't contain any valid rule.<li>failed_saving_parsed_rules: The rules were fetched and compiled properly, but the result couldn't be saved to the profile.<li>unknown: No fetching attempt has completed yet.</ul></dd></dl>
-        <h3 id='RulesInfo'><a href='contentBlocking.html#RulesInfo'>#</a>RulesInfo</h3><p>Information about the rules themselves and more detailed parsing results<p>Properties:<dl><dl><dt>valid_rules</dt><dd><pre>integer</pre><p>The number of entries in the file that resulted in a rule being compiled.</dd></dl>
+        <h3 id='DownloadResult'><a href='contentBlocking.html#DownloadResult'>#</a>DownloadResult</h3><dl><dt><code>ENUM</code></dt><dd><p>The result of downloading an online rule source.<li>success: Download completed successfully.<li>download_failed: Failed to download using the provided URL.<li>replace_failed: Failed to move the downloaded file to its final path, replacing the previous one.<li>unknown: No download has been attempted yet, or the rule source uses a local file and doesn't need download.</ul></dd></dl>
+        <h3 id='ReadResult'><a href='contentBlocking.html#ReadResult'>#</a>ReadResult</h3><dl><dt><code>ENUM</code></dt><dd><p>The result of a reading a downloaded or local rule source.<li>success: Fetch completed successfully.<li>file_not_found: For a local source, the file provided didn't seem to exist.<li>file_read_error: For a local source, the file provided couldn't be read.<li>file_unsupported: The rules file is of an invalid format or doesn't contain any valid rule.<li>failed_saving_parsed_rules: The rules were fetched and compiled properly, but the result couldn't be saved to the profile.<li>unknown: No reading has been attempted yet.</ul></dd></dl>
+        <h3 id='ParsedMetadata'><a href='contentBlocking.html#ParsedMetadata'>#</a>ParsedMetadata</h3><p>Information extracted by the parser in addition to the rules themselves. These include information about the number of rules parsed and metadata from the adblock file comments.<p>Properties:<dl><dl><dt>homepage</dt><dd>(optional) <pre>string</pre><p>URL pointing to the original website for this list.</dd></dl>
+        <dl><dt>title</dt><dd>(optional) <pre>string</pre><p>List name.</dd></dl>
+        <dl><dt>expires</dt><dd>(optional) <pre>integer</pre><p>How often the list is refreshed, in hours.</dd></dl>
+        <dl><dt>license</dt><dd>(optional) <pre>string</pre><p>URL pointing to licensing info for the list.</dd></dl>
+        <dl><dt>version</dt><dd>(optional) <pre>integer</pre><p>Version number of the list.</dd></dl>
+        <dl><dt>valid_rules</dt><dd><pre>integer</pre><p>The number of entries in the file that resulted in a rule being compiled.</dd></dl>
         <dl><dt>unsupported_rules</dt><dd><pre>integer</pre><p>The number of entries in the file that resolved to valid rules that either didn't make sense or are not supported at this time.</dd></dl>
         <dl><dt>invalid_rules</dt><dd><pre>integer</pre><p>The number of entries in the file that resolved to valid rules that could not be parsed to a rule or were explicitly against the spec.</dd></dl>
-        </dl>
-        <h3 id='AdBlockMetadata'><a href='contentBlocking.html#AdBlockMetadata'>#</a>AdBlockMetadata</h3><p>Information extracted from the adblock file comments. If the user added a malicous source, these could be anything. Handle with care.<p>Properties:<dl><dl><dt>homepage</dt><dd><pre>string</pre><p>URL pointing to the original website for this list.</dd></dl>
-        <dl><dt>title</dt><dd><pre>string</pre><p>List name.</dd></dl>
-        <dl><dt>expires</dt><dd><pre>integer</pre><p>How often the list is refreshed, in hours.</dd></dl>
-        <dl><dt>license</dt><dd><pre>string</pre><p>URL pointing to licensing info for the list.</dd></dl>
-        <dl><dt>version</dt><dd><pre>integer</pre><p>Version number of the list.</dd></dl>
         </dl>
         <h3 id='RuleSourceSettings'><a href='contentBlocking.html#RuleSourceSettings'>#</a>RuleSourceSettings</h3><p>Parameters used when parsing the rules list. Can only be modified when the source is disabled<p>Properties:<dl><dl><dt>allow_abp_snippets</dt><dd><pre>boolean</pre><p>If false, any present abp snippet rules will be ignored.</dd></dl>
         <dl><dt>naked_hostname_is_pure_host</dt><dd><pre>boolean</pre><p>If true, any rule that looks like just a host name will be converted to match only the host part of the url.</dd></dl>
         <dl><dt>use_whole_document_allow</dt><dd><pre>boolean</pre><p>If true, any allow rule using the document type will cause all resources loaded by matching documents to be allowed (ABP beahvior).</dd></dl>
         </dl>
-        <h3 id='RuleSource'><a href='contentBlocking.html#RuleSource'>#</a>RuleSource</h3><p>Information about a loaded rule source, including its fetching status and metadata retrieved when extracting rules from it<p>Properties:<dl><dl><dt>source_url</dt><dd><pre>string</pre><p>For an online source, this is the url that was provided when setting it up.</dd></dl>
-        <dl><dt>source_file</dt><dd><pre>string</pre><p>For an local source, this is the file that was provided when setting it up.</dd></dl>
-        <dl><dt>is_from_url</dt><dd><pre>boolean</pre><p>indicates whether the rule source is online or local, and which of the source_url and source_file fields is valid</dd></dl>
+        <h3 id='RuleSource'><a href='contentBlocking.html#RuleSource'>#</a>RuleSource</h3><p>Information about a loaded rule source, including its fetching status and metadata retrieved when extracting rules from it<p>Properties:<dl><dl><dt>source_location</dt><dd><pre>string</pre><p>Either the url or the path to the file that was used to create this ource.</dd></dl>
         <dl><dt>settings</dt><dd><pre><a href="#RuleSourceSettings">RuleSourceSettings</a></pre><p>See RuleSourceSettings.</dd></dl>
         <dl><dt>id</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>rules_list_checksum</dt><dd><pre>string</pre><p>Checksum of the compiled rule file derived from this source. This will be the empty string if the rule source has never been fetched succesfully.</dd></dl>
-        <dl><dt>unsafe_adblock_metadata</dt><dd><pre><a href="#AdBlockMetadata">AdBlockMetadata</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>parsed_metadata</dt><dd><pre><a href="#ParsedMetadata">ParsedMetadata</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>last_update</dt><dd><pre>number</pre><p>The last time the source was successfully fetched and the corresponding rules updated. Represented in milliseconds since the epoch.</dd></dl>
         <dl><dt>next_fetch</dt><dd><pre>number</pre><p>The next time a fetching and updating from the rule source will be attempted. Represented in milliseconds since the epoch.</dd></dl>
         <dl><dt>is_fetching</dt><dd><pre>boolean</pre><p>Whether fetching of the rule source is in progress</dd></dl>
-        <dl><dt>last_fetch_result</dt><dd><pre><a href="#FetchResult">FetchResult</a></pre><p>The result of the last fetch attempt</dd></dl>
-        <dl><dt>rules_info</dt><dd><pre><a href="#RulesInfo">RulesInfo</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>last_download_result</dt><dd><pre><a href="#DownloadResult">DownloadResult</a></pre><p>The result of the last fetch attempt</dd></dl>
+        <dl><dt>last_read_result</dt><dd><pre><a href="#ReadResult">ReadResult</a></pre><p>The result of the last fetch attempt</dd></dl>
         <dl><dt>preset_id</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>preset_kind</dt><dd>(optional) <pre><a href="#PresetKind">PresetKind</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>removable</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -1810,21 +1857,9 @@
         <h3 id='BlockedUrlsInfo'><a href='contentBlocking.html#BlockedUrlsInfo'>#</a>BlockedUrlsInfo</h3><p>Information about a blocked URL<p>Properties:<dl><dl><dt>url</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>blocked_count</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
-        <h3 id='TrackerInfo'><a href='contentBlocking.html#TrackerInfo'>#</a>TrackerInfo</h3><p>Information for a given tracker<p>Properties:<dl><dl><dt>source_id</dt><dd><pre>integer</pre><p>The id of the rule source from which this info was obtained.</dd></dl>
-        <dl><dt>info</dt><dd><pre>any</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dl>
-        <h3 id='BlockedTrackersInfo'><a href='contentBlocking.html#BlockedTrackersInfo'>#</a>BlockedTrackersInfo</h3><p>Information about a blocked tracker<p>Properties:<dl><dl><dt>domain</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>blocked_urls</dt><dd><p>blocked urls that belong to this tracker<p><code>Array</code> of:
-        <ul><li>BlockedUrlsInfo</ul></dd></dl>
-        <dl><dt>tracker_info</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
-        <ul><li>TrackerInfo</ul></dd></dl>
-        <dl><dt>blocked_count</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        </dl>
         <h3 id='TabBlockedUrlsInfo'><a href='contentBlocking.html#TabBlockedUrlsInfo'>#</a>TabBlockedUrlsInfo</h3><p>Information about urls that got blocked, per tab<p>Properties:<dl><dl><dt>tab_id</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>total_blocked_count</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>blocked_trackers_info</dt><dd><p>blocked urls that belong to a known tracker, alongside with tracker information.<p><code>Array</code> of:
-        <ul><li>BlockedTrackersInfo</ul></dd></dl>
-        <dl><dt>blocked_urls_info</dt><dd><p>blocked urls for which there is no tracker information.<p><code>Array</code> of:
+        <dl><dt>blocked_urls_info</dt><dd><p>blocked urls.<p><code>Array</code> of:
         <ul><li>BlockedUrlsInfo</ul></dd></dl>
         </dl>
         <h3 id='AdAttributionDomain'><a href='contentBlocking.html#AdAttributionDomain'>#</a>AdAttributionDomain</h3><p>Information about which domain ad attribution is enabled for, if any, for a given tab<p>Properties:<dl><dl><dt>tab_id</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -1958,7 +1993,7 @@
         </dl>
         <h3 id='SearchResults'><a href='mailPrivate.html#SearchResults'>#</a>SearchResults</h3><p>Results object from mail search.<p>Properties:<dl><dl><dt>message</dt><dd><pre>string</pre><p>Error message. If any.</dd></dl>
         <dl><dt>search_list_ids</dt><dd><p>Resulting search list ids.<p><code>Array</code> of:
-        <ul><li>number</ul></dd></dl>
+        <ul><li>integer</ul></dd></dl>
         <dl><dt>success</dt><dd><pre>boolean</pre><p>Indicates if error occurred.</dd></dl>
         </dl>
         
@@ -2033,7 +2068,7 @@
         <h3 id='searchMessages'><a href='mailPrivate.html#searchMessages'>#</a>searchMessages</h3><p>Searches messages with certain query.<p>Parameters:<dl><dt>searchValue</dt><dd><pre>string</pre><p>The value to search for</dd></dl>
         <h3 id='matchMessage'><a href='mailPrivate.html#matchMessage'>#</a>matchMessage</h3><p>Does search value match certain message.<p>Parameters:<dl><dt>searchListId</dt><dd><pre>integer</pre><p>The searchListId of the message to be checked.</dd></dl>
         <dl><dt>searchValue</dt><dd><pre>string</pre><p>The value to search for</dd></dl>
-        <h3 id='getDBVersion'><a href='mailPrivate.html#getDBVersion'>#</a>getDBVersion</h3><p>Returns SQLite database version for MailDB.<h3 id='startMigration'><a href='mailPrivate.html#startMigration'>#</a>startMigration</h3><p>Migrates the full text database index to contentless. Track progress in the listener: onUpgradeProgress. This can be slow.<h3 id='deleteMailSearchDB'><a href='mailPrivate.html#deleteMailSearchDB'>#</a>deleteMailSearchDB</h3><p>Deletes MailSearchDB and MaildSearchDB-journal file. Re-creates the files afterwards. This action cannot be reverted.<h3 id='checkMailSearchDBHealth'><a href='mailPrivate.html#checkMailSearchDBHealth'>#</a>checkMailSearchDBHealth</h3><p>Checks mail search db for errors.<h3 id='getMailSearchDBCount'><a href='mailPrivate.html#getMailSearchDBCount'>#</a>getMailSearchDBCount</h3><p>Returns count of messages in the mail search database.<h1><a href='menubar.html'>menubar</a></h1>
+        <h3 id='getDBVersion'><a href='mailPrivate.html#getDBVersion'>#</a>getDBVersion</h3><p>Returns SQLite database version for MailDB.<h3 id='startMigration'><a href='mailPrivate.html#startMigration'>#</a>startMigration</h3><p>Migrates the full text database index to contentless. Track progress in the listener: onUpgradeProgress. This can be slow.<h3 id='deleteMailSearchDB'><a href='mailPrivate.html#deleteMailSearchDB'>#</a>deleteMailSearchDB</h3><p>Deletes MailSearchDB and MaildSearchDB-journal file. Re-creates the files afterwards. This action cannot be reverted.<h3 id='checkMailSearchDBHealth'><a href='mailPrivate.html#checkMailSearchDBHealth'>#</a>checkMailSearchDBHealth</h3><p>Checks mail search db for errors.<h3 id='getMailSearchDBCount'><a href='mailPrivate.html#getMailSearchDBCount'>#</a>getMailSearchDBCount</h3><p>Returns count of messages in the mail search database.<h3 id='getMailSearchDBIds'><a href='mailPrivate.html#getMailSearchDBIds'>#</a>getMailSearchDBIds</h3><p>Returns a list of SearchListIds in the mail search database.<h1><a href='menubar.html'>menubar</a></h1>
 
     
         <h2>Types</h2>
@@ -2115,6 +2150,7 @@
         <dl><dt>nativeDecorations</dt><dd><pre>boolean</pre><p>Window is uses native window-controls.</dd></dl>
         <dl><dt>incognito</dt><dd><pre>boolean</pre><p>Window is incognito.</dd></dl>
         <dl><dt>guest</dt><dd><pre>boolean</pre><p>Window is guest.</dd></dl>
+        <dl><dt>fullscreenMenubarVisible</dt><dd><pre>boolean</pre><p>MacOS window has menubar visible in fullscreen.</dd></dl>
         <dl><dt>html5FullScreen</dt><dd><pre>boolean</pre><p>Window is fullscreened through htmlelement.requestFullScreen.</dd></dl>
         <dl><dt>active</dt><dd><pre>boolean</pre><p>Window is active.</dd></dl>
         <dl><dt>minimalUI</dt><dd>(optional) <pre>boolean</pre><p>Window is incognito.</dd></dl>
@@ -2125,9 +2161,7 @@
         <dl><dt>statusBar</dt><dd><pre><a href="#StatusbarMode">StatusbarMode</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dd></dl>
         </dl>
-        <h3 id='BroadcastAction'><a href='utilities.html#BroadcastAction'>#</a>BroadcastAction</h3><p>Identifies broadcast type. Only one property should be used.<p>Properties:<dl><dl><dt>startDragging</dt><dd>(optional) <pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>endDragging</dt><dd>(optional) <pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <dl><dt>translate</dt><dd>(optional) <pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>winId</dt><dd><pre>number</pre><p>The window where translation takes place.</dd></dl>
+        <h3 id='BroadcastAction'><a href='utilities.html#BroadcastAction'>#</a>BroadcastAction</h3><p>Identifies broadcast type. Only one property should be used.<p>Properties:<dl><dl><dt>translate</dt><dd>(optional) <pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>winId</dt><dd><pre>number</pre><p>The window where translation takes place.</dd></dl>
         <dl><dt>lang</dt><dd><pre>string</pre><p>Language of text to be translated.</dd></dl>
         <dl><dt>text</dt><dd><pre>string</pre><p>Text to be translated.</dd></dl>
         </dd></dl>
@@ -2214,6 +2248,7 @@
         </dl>
         <h3 id='CopyToClipboardOptions'><a href='utilities.html#CopyToClipboardOptions'>#</a>CopyToClipboardOptions</h3><p>Option object for copyToClipboard.<p>Properties:<dl><dl><dt>confidential</dt><dd>(optional) <pre>boolean</pre><p>Mark copy as confidential.</dd></dl>
         </dl>
+        <h3 id='CrashType'><a href='utilities.html#CrashType'>#</a>CrashType</h3><dl><dt><code>ENUM</code></dt><dd><p>Type of a crash. Either browser crash or not.<li>browser<li>other</ul></dd></dl>
         
         <h2>Listeners</h2>
             <details>
@@ -2318,6 +2353,12 @@
         <dl><dt>destinationLanguageCode</dt><dd><pre>string</pre><p>The destination language code.</dd></dl>
         <dl><dt>sourceText</dt><dd><p>The strings to translate.<p><code>Array</code> of:
         <ul><li>string</ul></dd></dl>
+        <h3 id='importSSLCertificate'><a href='utilities.html#importSSLCertificate'>#</a>importSSLCertificate</h3><p>Import an SSL certificate from a specified certificate store. Opens a file import dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window to use as the parent of the import dialog.</dd></dl>
+        <dl><dt>cert_store</dt><dd><pre>string</pre><p>Name of the certificate store.</dd></dl>
+        <h3 id='exportSSLCertificates'><a href='utilities.html#exportSSLCertificates'>#</a>exportSSLCertificates</h3><p>Export SSL certificates from a specified certificate store.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window to use as the parent of the export dialog.</dd></dl>
+        <dl><dt>cert_store</dt><dd><pre>string</pre><p>Name of the certificate store.</dd></dl>
+        <h3 id='getSSLCertificates'><a href='utilities.html#getSSLCertificates'>#</a>getSSLCertificates</h3><p>Get a list of SSL certificates from the specified certificate store.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window to use as the parent of the import dialog.</dd></dl>
+        <dl><dt>cert_store</dt><dd><pre>string</pre><p>Name of the certificate store.</dd></dl>
         <h3 id='showManageSSLCertificates'><a href='utilities.html#showManageSSLCertificates'>#</a>showManageSSLCertificates</h3><p>Show the OS manage certificates dialog.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window to use as parent window for the dialog</dd></dl>
         <h3 id='setProtocolHandling'><a href='utilities.html#setProtocolHandling'>#</a>setProtocolHandling</h3><p>Turn on/off protocol handling for web pages.<p>Parameters:<dl><dt>enabled</dt><dd><pre>boolean</pre><p>Turn on/off protocol handling for web pages.</dd></dl>
         <h3 id='browserWindowReady'><a href='utilities.html#browserWindowReady'>#</a>browserWindowReady</h3><p>Signals that JS has fully set up browser window and its event listeners.<p>Parameters:<dl><dt>windowId</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -2333,6 +2374,7 @@
         <h3 id='allowVPNIncognito'><a href='utilities.html#allowVPNIncognito'>#</a>allowVPNIncognito</h3><p>A single-purpose call that grants incognito access to ProtonVPN extension.<h3 id='requestVivaldiSyncStatus'><a href='utilities.html#requestVivaldiSyncStatus'>#</a>requestVivaldiSyncStatus</h3><p>Looks up status. Status can be returned in callback, but if not, arrive later as an onVivaldiSyncStatusChange event.<h3 id='openPrivacyReportDialog'><a href='utilities.html#openPrivacyReportDialog'>#</a>openPrivacyReportDialog</h3><p>Opens privacy report dialog<h3 id='updatePrimarySelection'><a href='utilities.html#updatePrimarySelection'>#</a>updatePrimarySelection</h3><p>Writes text to the primary selection buffer. This buffer is only used on Linux and allows pasting with middle mouse button.<p>Parameters:<dl><dt>text</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='showAdditionalStartupPages'><a href='utilities.html#showAdditionalStartupPages'>#</a>showAdditionalStartupPages</h3><p>Checks whether should show additional startup pages.<h3 id='copyToClipboard'><a href='utilities.html#copyToClipboard'>#</a>copyToClipboard</h3><p>Copy text to clipboard using ScopedClipboardWriter.<p>Parameters:<dl><dt>text</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>options</dt><dd><pre><a href="#CopyToClipboardOptions">CopyToClipboardOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='detectNewCrashes'><a href='utilities.html#detectNewCrashes'>#</a>detectNewCrashes</h3><p>Checks to see if there are any new crash reports since the last function call.<h3 id='acceptMixedDownload'><a href='utilities.html#acceptMixedDownload'>#</a>acceptMixedDownload</h3><p>Accept a mixed-content download, https->http, via DownloadItem::ValidateMixedContentDownload.<p>Parameters:<dl><dt>downloadId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h1><a href='pipPrivate.html'>pipPrivate</a></h1>
 
     
@@ -2384,17 +2426,22 @@
         <dl><dt>vivExtData</dt><dd>(optional) <pre>string</pre><p>Extra data to attach to the window.</dd></dl>
         <dl><dt>windowKey</dt><dd>(optional) <pre>string</pre><p>Id to identify the window. If a window with a given id is created while another window with the same id already exists, the currently opened window will be focused instead of creating a new window.</dd></dl>
         </dl>
-        <h3 id='WindowType'><a href='windowPrivate.html#WindowType'>#</a>WindowType</h3><dl><dt><code>ENUM</code></dt><dd><p>The type of this browser window.<li>normal: This is a normal browser window.<li>settings: This is a settings window.<li>popup: This is a popup window.<li>devtools: This is a devtools window.</ul></dd></dl>
+        <h3 id='WindowType'><a href='windowPrivate.html#WindowType'>#</a>WindowType</h3><dl><dt><code>ENUM</code></dt><dd><p>The type of this browser window.<li>normal: This is a normal browser window.<li>settings: This is a settings window.<li>popup: This is a popup window.<li>mail-composer: This is a mail composer window<li>devtools: This is a devtools window.</ul></dd></dl>
+        <h3 id='MouseEdgeType'><a href='windowPrivate.html#MouseEdgeType'>#</a>MouseEdgeType</h3><dl><dt><code>ENUM</code></dt><dd><p>Relative position of mouse to this window.<li>left:  ⚠ NO DESCRIPTION PROVIDED<li>right:  ⚠ NO DESCRIPTION PROVIDED<li>top:  ⚠ NO DESCRIPTION PROVIDED<li>bottom:  ⚠ NO DESCRIPTION PROVIDED</ul></dd></dl>
         <h3 id='FocusedElementInfo'><a href='windowPrivate.html#FocusedElementInfo'>#</a>FocusedElementInfo</h3><p>Information about the HTML element having focus.<p>Properties:<dl><dl><dt>tagName</dt><dd><pre>string</pre><p>Element tag name</dd></dl>
         <dl><dt>type</dt><dd><pre>string</pre><p>Element type</dd></dl>
         <dl><dt>editable</dt><dd><pre>boolean</pre><p>True if element is editable.</dd></dl>
         <dl><dt>role</dt><dd><pre>string</pre><p>Element role</dd></dl>
         </dl>
-        <h3 id='ControlButtonsPosition'><a href='windowPrivate.html#ControlButtonsPosition'>#</a>ControlButtonsPosition</h3><dl><dt><code>ENUM</code></dt><dd><p>The control buttons position. (used only on macOS for 'traffic lights')<li>hidden:  ⚠ NO DESCRIPTION PROVIDED<li>native:  ⚠ NO DESCRIPTION PROVIDED<li>lightPadding:  ⚠ NO DESCRIPTION PROVIDED<li>mediumPadding:  ⚠ NO DESCRIPTION PROVIDED<li>heavyPadding:  ⚠ NO DESCRIPTION PROVIDED</ul></dd></dl>
+        <h3 id='ControlButtonsPosition'><a href='windowPrivate.html#ControlButtonsPosition'>#</a>ControlButtonsPosition</h3><dl><dt><code>ENUM</code></dt><dd><p>The control buttons position. (used only on macOS for 'traffic lights')<li>hidden:  ⚠ NO DESCRIPTION PROVIDED<li>native:  ⚠ NO DESCRIPTION PROVIDED<li>lightPadding:  ⚠ NO DESCRIPTION PROVIDED<li>mediumPadding:  ⚠ NO DESCRIPTION PROVIDED<li>heavyPadding:  ⚠ NO DESCRIPTION PROVIDED<li>autohideHeavyPadding:  ⚠ NO DESCRIPTION PROVIDED</ul></dd></dl>
         <h3 id='ToastParameters'><a href='windowPrivate.html#ToastParameters'>#</a>ToastParameters</h3><p>Parameters used to create a toast notification, typically showed as an overlay above the browser window.<p>Properties:<dl><dl><dt>body</dt><dd><pre>string</pre><p>Message to present.</dd></dl>
         <dl><dt>action</dt><dd>(optional) <pre>string</pre><p>If an action button is needed, this is the buttone text.</dd></dl>
         <dl><dt>image</dt><dd><pre>string</pre><p>Image to show as base64 encoded.</dd></dl>
         </dl>
+        <h3 id='EdgeMouseParameters'><a href='windowPrivate.html#EdgeMouseParameters'>#</a>EdgeMouseParameters</h3><p>Event member for mouse vincinity events.<p>Properties:<dl><dl><dt>mousePosition</dt><dd><pre><a href="#MouseEdgeType">MouseEdgeType</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='HotSpotStatus'><a href='windowPrivate.html#HotSpotStatus'>#</a>HotSpotStatus</h3><dl><dt><code>ENUM</code></dt><dd><p>Status for hot spot set via windowPrivate.setHotSpot.<li>away:  ⚠ NO DESCRIPTION PROVIDED<li>above:  ⚠ NO DESCRIPTION PROVIDED</ul></dd></dl>
+        <h3 id='HotSpotLocation'><a href='windowPrivate.html#HotSpotLocation'>#</a>HotSpotLocation</h3><dl><dt><code>ENUM</code></dt><dd><p>Position in window used to calculate a rect based on width and height.<li>left<li>right<li>top<li>bottom</ul></dd></dl>
         
         <h2>Listeners</h2>
             <details>
@@ -2438,12 +2485,17 @@
         <h3 id='onActiveTabStatusText'><a href='windowPrivate.html#onActiveTabStatusText'>#</a>onActiveTabStatusText</h3><p>Fired when the active tab has new loadstate text. Will reset to <empty> string<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>statusText</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='onWebContentsHasWindow'><a href='windowPrivate.html#onWebContentsHasWindow'>#</a>onWebContentsHasWindow</h3><p>Fired when the webcontents has a window object. chrome.windows.getviews find this now.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='onToastMessage'><a href='windowPrivate.html#onToastMessage'>#</a>onToastMessage</h3><p>Fire .<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onToastMessage'><a href='windowPrivate.html#onToastMessage'>#</a>onToastMessage</h3><p>Fired when the browser should show a toast message.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>params</dt><dd><pre><a href="#ToastParameters">ToastParameters</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onMouseCloseToEdge'><a href='windowPrivate.html#onMouseCloseToEdge'>#</a>onMouseCloseToEdge</h3><p>Fires when the mousecursor is close to the window edge.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>params</dt><dd><pre><a href="#EdgeMouseParameters">EdgeMouseParameters</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onMouseInHotSpot'><a href='windowPrivate.html#onMouseInHotSpot'>#</a>onMouseInHotSpot</h3><p>Fires when the mousecursor is over specified rect in |setHotSpot|.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>params</dt><dd><pre><a href="#HotSpotStatus">HotSpotStatus</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onFullscreenMenubarVisibilityChanged'><a href='windowPrivate.html#onFullscreenMenubarVisibilityChanged'>#</a>onFullscreenMenubarVisibilityChanged</h3><p>Fired when the macOS menu bar is shown/hidden in fullscreen.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>visible</dt><dd><pre>boolean</pre><p>MacOS menubar is visible or not.</dd></dl>
         
         <h2>Methods</h2>
-        <h3 id='create'><a href='windowPrivate.html#create'>#</a>create</h3><p>Create a window with additional Vivaldi specific properties.<p>Parameters:<dl><dt>url</dt><dd><pre>string</pre><p>Url to page to show as the full window UI of the new window.</dd></dl>
-        <dl><dt>options</dt><dd><pre><a href="#CreateWindowOptions">CreateWindowOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='create'><a href='windowPrivate.html#create'>#</a>create</h3><p>Create a window with additional Vivaldi specific properties.<p>Parameters:<dl><dt>options</dt><dd><pre><a href="#CreateWindowOptions">CreateWindowOptions</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>type</dt><dd>(optional) <pre><a href="#WindowType">WindowType</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='getCurrentId'><a href='windowPrivate.html#getCurrentId'>#</a>getCurrentId</h3><p>Returns the window id of the window we are currently running inside.<h3 id='setState'><a href='windowPrivate.html#setState'>#</a>setState</h3><p>Sets the window state.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>The window id of the window to change the state for.</dd></dl>
         <dl><dt>state</dt><dd><pre><a href="#WindowState">WindowState</a></pre><p>The state to set the window to.</dd></dl>
@@ -2456,7 +2508,11 @@
         <h3 id='isOnScreenWithNotch'><a href='windowPrivate.html#isOnScreenWithNotch'>#</a>isOnScreenWithNotch</h3><p>Returns true if the screen the window is on has a notch.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <h3 id='setControlButtonsPosition'><a href='windowPrivate.html#setControlButtonsPosition'>#</a>setControlButtonsPosition</h3><p>Request a new control buttons position.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>position</dt><dd><pre><a href="#ControlButtonsPosition">ControlButtonsPosition</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='performHapticFeedback'><a href='windowPrivate.html#performHapticFeedback'>#</a>performHapticFeedback</h3><p>Performs a haptic feedback.<h1><a href='menuContent.html'>menuContent</a></h1>
+        <h3 id='performHapticFeedback'><a href='windowPrivate.html#performHapticFeedback'>#</a>performHapticFeedback</h3><p>Performs a haptic feedback.<h3 id='setHotSpot'><a href='windowPrivate.html#setHotSpot'>#</a>setHotSpot</h3><p>Update or set the hot-spot that will be used to compare current mouseposition and report in event onMouseInHotSpot.<p>Parameters:<dl><dt>windowId</dt><dd><pre>integer</pre><p>Used to identify target window.</dd></dl>
+        <dl><dt>location</dt><dd><pre><a href="#HotSpotLocation">HotSpotLocation</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>width</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>height</dt><dd><pre>number</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h1><a href='menuContent.html'>menuContent</a></h1>
 
     
         <h2>Types</h2>
@@ -2723,6 +2779,7 @@
         <dl><dt>keyboardShortcut</dt><dd>(optional) <pre>string</pre><p>Keyboard shortcut to toggle this extension.</dd></dl>
         <dl><dt>sidePanel</dt><dd>(optional) <pre><a href="#SidePanelInfo">SidePanelInfo</a></pre><p>contains sidepanel URL.</dd></dl>
         <dl><dt>blocked</dt><dd>(optional) <pre>boolean</pre><p>Whether the extension is blocked or not.</dd></dl>
+        <dl><dt>explicitly_set_icon_path</dt><dd>(optional) <pre>string</pre><p>Path to icon set via action.setIcon.</dd></dl>
         </dl>
         <h3 id='ExtensionInstallError'><a href='extensionActionUtils.html#ExtensionInstallError'>#</a>ExtensionInstallError</h3><p>Extension error.<p>Properties:<dl><dl><dt>id</dt><dd><pre>string</pre><p>The unique extension identifier.</dd></dl>
         <dl><dt>name</dt><dd><pre>string</pre><p>Extension name.</dd></dl>
@@ -3112,13 +3169,11 @@
         <dl><dt>contacts</dt><dd><pre>boolean</pre><p>Does profile support contacts.</dd></dl>
         <dl><dt>extensions</dt><dd><pre>boolean</pre><p>Does profile support extensions import.</dd></dl>
         <dl><dt>tabs</dt><dd><pre>boolean</pre><p>Does profile support open tab import.</dd></dl>
-        <dl><dt>hasDefaultInstall</dt><dd><pre>boolean</pre><p>Is a default installation detected.</dd></dl>
-        <dl><dt>detectedProfilePath</dt><dd><pre>string</pre><p>Is the path on disk to the detected profile.</dd></dl>
-        <dl><dt>requiresInteractiveImport</dt><dd><pre>boolean</pre><p>Does the profile require interactive (file/directory picker dialog) selection by the user.</dd></dl>
+        <dl><dt>profilePath</dt><dd><pre>string</pre><p>Path on disk to the profile, empty if the profile was not detected.</dd></dl>
         <dl><dt>requiresAccessPermission</dt><dd><pre>boolean</pre><p>Does the profile require explicit access permission to the profile folder/file.</dd></dl>
         <dl><dt>suggestedProfilePath</dt><dd><pre>string</pre><p>Suggested default profile path for profile selection dialog.</dd></dl>
         <dl><dt>dialogType</dt><dd><pre>string</pre><p>What type of dialog should be used for interactive import. Possible values are 'file' or 'folder'.</dd></dl>
-        <dl><dt>mailPath</dt><dd><pre>string</pre><p>The path on disk to the detected mail profile</dd></dl>
+        <dl><dt>mailPath</dt><dd><pre>string</pre><p>The path on disk to the detected mail profile, empty if the profile was not detected.</dd></dl>
         <dl><dt>UserProfiles</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>UserProfileItem</ul></dd></dl>
         </dl>
@@ -3158,7 +3213,6 @@
         
         <h2>Methods</h2>
         <h3 id='getProfiles'><a href='importData.html#getProfiles'>#</a>getProfiles</h3><p>Retrieves import data profiles.<h3 id='startImport'><a href='importData.html#startImport'>#</a>startImport</h3><p>Start import process.<p>Parameters:<dl><dt>profileIndex</dt><dd><pre>integer</pre><p>Index of the profile we want to import. This is a null based index of results from getProfiles.</dd></dl>
-        <dl><dt>askUserForFileLocation</dt><dd><pre>boolean</pre><p>Show file dialog to user.</dd></dl>
         <dl><dt>profileName</dt><dd><pre>string</pre><p>Name of profile.</dd></dl>
         <dl><dt>typesToImport</dt><dd><pre>object</pre><p> ⚠ NO DESCRIPTION PROVIDED<p>Object Properties:<dl><dt>history</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>favorites</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
@@ -3337,8 +3391,10 @@
 
     
         <h2>Types</h2>
-        <h3 id='PermissionSetting'><a href='sitePermissions.html#PermissionSetting'>#</a>PermissionSetting</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>allow<li>block<li>ask<li>sessionOnly</ul></dd></dl>
+        <h3 id='PermissionSetting'><a href='sitePermissions.html#PermissionSetting'>#</a>PermissionSetting</h3><dl><dt><code>ENUM</code></dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<li>allow<li>block<li>ask<li>sessionOnly<li>default</ul></dd></dl>
+        <h3 id='CookieSetting'><a href='sitePermissions.html#CookieSetting'>#</a>CookieSetting</h3><dl><dt><code>ENUM</code></dt><dd><p>Cookie retention setting: 'allow' (persistent), 'session_only' (deleted on exit), 'block' (no cookies).<li>allow<li>session_only<li>block</ul></dd></dl>
         <h3 id='Permission'><a href='sitePermissions.html#Permission'>#</a>Permission</h3><p> ⚠ NO DESCRIPTION PROVIDED<p>Properties:<dl><dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>secondaryOrigin</dt><dd>(optional) <pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>setting</dt><dd><pre><a href="#PermissionSetting">PermissionSetting</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
@@ -3346,9 +3402,69 @@
         <dl><dt>options</dt><dd><p> ⚠ NO DESCRIPTION PROVIDED<p><code>Array</code> of:
         <ul><li>PermissionSetting</ul></dd></dl>
         <dl><dt>default</dt><dd><pre><a href="#PermissionSetting">PermissionSetting</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>requiresSecondaryOrigin</dt><dd><pre>boolean</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='SitePermissionInfo'><a href='sitePermissions.html#SitePermissionInfo'>#</a>SitePermissionInfo</h3><p>Information about a site with overridden permissions.<p>Properties:<dl><dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>count</dt><dd><pre>integer</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         </dl>
         <h3 id='PermissionChangeEvent'><a href='sitePermissions.html#PermissionChangeEvent'>#</a>PermissionChangeEvent</h3><p>Fired when site permission changes.<p>Properties:<dl><dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='DeviceGrantChangeEvent'><a href='sitePermissions.html#DeviceGrantChangeEvent'>#</a>DeviceGrantChangeEvent</h3><p>Fired when device grants change for an origin.<p>Properties:<dl><dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        </dl>
+        <h3 id='DeviceInfo'><a href='sitePermissions.html#DeviceInfo'>#</a>DeviceInfo</h3><p>Information about a device available for chooser selection.<p>Properties:<dl><dl><dt>index</dt><dd><pre>integer</pre><p>The index of this device in the chooser's device list.</dd></dl>
+        <dl><dt>name</dt><dd><pre>string</pre><p>The display name of the device (e.g., 'USB Device #1').</dd></dl>
+        <dl><dt>isPaired</dt><dd><pre>boolean</pre><p>Whether the device is already paired (for Bluetooth devices).</dd></dl>
+        </dl>
+        <h3 id='PermissionRequestEvent'><a href='sitePermissions.html#PermissionRequestEvent'>#</a>PermissionRequestEvent</h3><p>Fired when a page requests permission (e.g., geolocation, camera, notifications).<p>Properties:<dl><dl><dt>requestId</dt><dd><pre>string</pre><p>Unique identifier for this request. Use with respondToPermissionRequest().</dd></dl>
+        <dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID where the permission was requested.</dd></dl>
+        <dl><dt>permission</dt><dd><pre>string</pre><p>The permission type being requested (e.g., 'geolocation', 'camera', 'notifications').</dd></dl>
+        <dl><dt>origin</dt><dd><pre>string</pre><p>The origin requesting the permission.</dd></dl>
+        <dl><dt>embeddingOrigin</dt><dd>(optional) <pre>string</pre><p>For two-origin permissions like storage-access, the top-level origin embedding the requesting origin.</dd></dl>
+        <dl><dt>protocolName</dt><dd>(optional) <pre>string</pre><p>For protocol handler requests, the protocol being registered (e.g., 'web+permissionsite').</dd></dl>
+        <dl><dt>protocolUrl</dt><dd>(optional) <pre>string</pre><p>For protocol handler requests, the URL template (e.g., 'https://permission.site/%s').</dd></dl>
+        <dl><dt>deviceChooserPending</dt><dd>(optional) <pre>boolean</pre><p>For device chooser requests (USB, Serial, HID, Bluetooth), whether devices will arrive asynchronously. When true, devices will be sent via onDeviceChooserUpdate events.</dd></dl>
+        <dl><dt>allowMultipleSelection</dt><dd>(optional) <pre>boolean</pre><p>For device chooser requests, whether multiple devices can be selected. Defaults to false (single selection).</dd></dl>
+        <dl><dt>devices</dt><dd>(optional) <p>For device chooser requests, list of initially available devices. Additional devices may come via onDeviceChooserUpdate if deviceChooserPending is true.<p><code>Array</code> of:
+        <ul><li>DeviceInfo</ul></dd></dl>
+        </dl>
+        <h3 id='DeviceChooserUpdate'><a href='sitePermissions.html#DeviceChooserUpdate'>#</a>DeviceChooserUpdate</h3><p>Update for a device chooser request with devices and completion status.<p>Properties:<dl><dl><dt>requestId</dt><dd><pre>string</pre><p>The request ID from the original onPermissionRequest event.</dd></dl>
+        <dl><dt>devices</dt><dd><p>List of available devices discovered so far.<p><code>Array</code> of:
+        <ul><li>DeviceInfo</ul></dd></dl>
+        <dl><dt>isComplete</dt><dd><pre>boolean</pre><p>Whether device enumeration is complete. When true, no more devices will be added.</dd></dl>
+        </dl>
+        <h3 id='PermissionRequestResponse'><a href='sitePermissions.html#PermissionRequestResponse'>#</a>PermissionRequestResponse</h3><dl><dt><code>ENUM</code></dt><dd><p>Permission decision: 'allow' (remember), 'allow_this_time' (one-time), 'deny' (block), 'ask' (cancel/dismiss).<li>allow<li>allow_this_time<li>deny<li>ask</ul></dd></dl>
+        <h3 id='PermissionAccessedEvent'><a href='sitePermissions.html#PermissionAccessedEvent'>#</a>PermissionAccessedEvent</h3><p>Fired when a page accesses a resource controlled by a permission.<p>Properties:<dl><dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID where the permission was accessed.</dd></dl>
+        <dl><dt>permission</dt><dd><pre>string</pre><p>The permission type that was accessed.</dd></dl>
+        <dl><dt>origin</dt><dd><pre>string</pre><p>The origin that accessed the permission.</dd></dl>
+        <dl><dt>setting</dt><dd><pre>string</pre><p>Current permission setting: 'allow', 'block', 'ask', or 'default'.</dd></dl>
+        <dl><dt>devices</dt><dd>(optional) <p>Device names accessed for device chooser permissions.<p><code>Array</code> of:
+        <ul><li>string</ul></dd></dl>
+        </dl>
+        <h3 id='ConnectionStatus'><a href='sitePermissions.html#ConnectionStatus'>#</a>ConnectionStatus</h3><dl><dt><code>ENUM</code></dt><dd><p>The security status of the connection.<li>encrypted<li>insecure_passive<li>insecure_active<li>unencrypted<li>error<li>internal<li>isolated_web_app</ul></dd></dl>
+        <h3 id='SafeBrowsingStatus'><a href='sitePermissions.html#SafeBrowsingStatus'>#</a>SafeBrowsingStatus</h3><dl><dt><code>ENUM</code></dt><dd><p>Describes whether the page contains malicious resources such as malware or phishing attacks.<li>malware<li>unwanted_software<li>social_engineering<li>saved_password_reuse<li>signed_in_sync_password_reuse<li>signed_in_non_sync_password_reuse<li>enterprise_password_reuse<li>billing<li>managed_policy_warn<li>managed_policy_block</ul></dd></dl>
+        <h3 id='IdentityStatus'><a href='sitePermissions.html#IdentityStatus'>#</a>IdentityStatus</h3><dl><dt><code>ENUM</code></dt><dd><p>The identity verification status of the certificate.<li>cert<li>ev_cert<li>qwac_cert<li>no_cert<li>error<li>internal<li>deprecated_signature</ul></dd></dl>
+        <h3 id='SecurityInfo'><a href='sitePermissions.html#SecurityInfo'>#</a>SecurityInfo</h3><p>Security and certificate information for a page.<p>Properties:<dl><dl><dt>connectionStatus</dt><dd><pre><a href="#ConnectionStatus">ConnectionStatus</a></pre><p>The security status of the connection.</dd></dl>
+        <dl><dt>identityStatus</dt><dd><pre><a href="#IdentityStatus">IdentityStatus</a></pre><p>The identity verification status of the certificate.</dd></dl>
+        <dl><dt>issuerName</dt><dd><pre>string</pre><p>The issuer name from the certificate.</dd></dl>
+        <dl><dt>isSecure</dt><dd><pre>boolean</pre><p>Whether the connection is considered secure.</dd></dl>
+        <dl><dt>safeBrowsingStatus</dt><dd><pre><a href="#SafeBrowsingStatus">SafeBrowsingStatus</a></pre><p>The status of safe browsing evaluation for the page.</dd></dl>
+        </dl>
+        <h3 id='SiteDataSummary'><a href='sitePermissions.html#SiteDataSummary'>#</a>SiteDataSummary</h3><p>Summary of site data (cookies and storage).<p>Properties:<dl><dl><dt>cookieCount</dt><dd><pre>integer</pre><p>Number of cookies.</dd></dl>
+        <dl><dt>storageCount</dt><dd><pre>integer</pre><p>Number of storage entries (localStorage, sessionStorage, indexedDB, etc.).</dd></dl>
+        <dl><dt>totalSize</dt><dd><pre>integer</pre><p>Total size of all site data in bytes.</dd></dl>
+        <dl><dt>thirdPartyCookiesAllowed</dt><dd><pre>boolean</pre><p>Whether third-party cookies are allowed globally (i.e. not blocked by the user's cookie mode setting).</dd></dl>
+        <dl><dt>thirdPartyCookiesBypassActive</dt><dd>(optional) <pre>boolean</pre><p>Whether a per-site exception is active that overrides the global third-party cookie block for this page.</dd></dl>
+        <dl><dt>thirdPartyCookiesBypassExpiration</dt><dd>(optional) <pre>number</pre><p>Expiration of the temporary third-party cookie bypass in milliseconds since the Unix epoch. Only present when thirdPartyCookiesBypassActive is true and the exception is time-limited.</dd></dl>
+        <dl><dt>cookieSetting</dt><dd><pre><a href="#CookieSetting">CookieSetting</a></pre><p>Cookie retention setting.</dd></dl>
+        </dl>
+        <h3 id='SiteDataSettings'><a href='sitePermissions.html#SiteDataSettings'>#</a>SiteDataSettings</h3><p>Settings to configure for a site.<p>Properties:<dl><dl><dt>thirdPartyCookiesAllowed</dt><dd>(optional) <pre>boolean</pre><p>Whether third-party cookies are allowed for this site.</dd></dl>
+        </dl>
+        <h3 id='DeviceGrant'><a href='sitePermissions.html#DeviceGrant'>#</a>DeviceGrant</h3><p>Information about a granted device permission.<p>Properties:<dl><dl><dt>name</dt><dd><pre>string</pre><p>Display name of the device.</dd></dl>
+        <dl><dt>key</dt><dd><pre>string</pre><p>Unique key identifying this grant (for revocation).</dd></dl>
+        <dl><dt>origin</dt><dd><pre>string</pre><p>The origin this grant belongs to.</dd></dl>
+        <dl><dt>permissionType</dt><dd><pre>string</pre><p>The permission type (e.g. 'usb-guard').</dd></dl>
+        <dl><dt>isPolicy</dt><dd><pre>boolean</pre><p>Whether this grant is enforced by policy.</dd></dl>
         </dl>
         
         <h2>Listeners</h2>
@@ -3379,13 +3495,38 @@
             </div>
         </details>
         <h3 id='onPermissionChanged'><a href='sitePermissions.html#onPermissionChanged'>#</a>onPermissionChanged</h3><p>Fired when a site permission changes.<p>Parameters:<dl><dt>event</dt><dd><pre><a href="#PermissionChangeEvent">PermissionChangeEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onPermissionRequest'><a href='sitePermissions.html#onPermissionRequest'>#</a>onPermissionRequest</h3><p>Fired when a page requests permission. The UI should show a permission prompt and call respondToPermissionRequest() with the decision.<p>Parameters:<dl><dt>event</dt><dd><pre><a href="#PermissionRequestEvent">PermissionRequestEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onPermissionAccessed'><a href='sitePermissions.html#onPermissionAccessed'>#</a>onPermissionAccessed</h3><p>Fired when a page accesses a resource controlled by a permission.<p>Parameters:<dl><dt>event</dt><dd><pre><a href="#PermissionAccessedEvent">PermissionAccessedEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onPermissionCleared'><a href='sitePermissions.html#onPermissionCleared'>#</a>onPermissionCleared</h3><p>Fired when permissions should be cleared for a tab (e.g., due to navigation).<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID whose permissions should be cleared.</dd></dl>
+        <h3 id='onDeviceGrantChanged'><a href='sitePermissions.html#onDeviceGrantChanged'>#</a>onDeviceGrantChanged</h3><p>Fired when device grants change for an origin (granted or revoked).<p>Parameters:<dl><dt>event</dt><dd><pre><a href="#DeviceGrantChangeEvent">DeviceGrantChangeEvent</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='onDeviceChooserUpdate'><a href='sitePermissions.html#onDeviceChooserUpdate'>#</a>onDeviceChooserUpdate</h3><p>Fired when devices become available for a device chooser request. Sent after onPermissionRequest with deviceChooserPending=true.<p>Parameters:<dl><dt>event</dt><dd><pre><a href="#DeviceChooserUpdate">DeviceChooserUpdate</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         
         <h2>Methods</h2>
-        <h3 id='getAvailablePermissions'><a href='sitePermissions.html#getAvailablePermissions'>#</a>getAvailablePermissions</h3><p>Returns all available site permissions and their possible settings, including the default.<h3 id='getOverriddenSites'><a href='sitePermissions.html#getOverriddenSites'>#</a>getOverriddenSites</h3><p>Returns a list of all sites with overridden permissions.<h3 id='getOverridesForSite'><a href='sitePermissions.html#getOverridesForSite'>#</a>getOverridesForSite</h3><p>Returns a list of permission overrides for a specific site.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='setSitePermission'><a href='sitePermissions.html#setSitePermission'>#</a>setSitePermission</h3><p>Sets the permission override for a given site.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getAvailablePermissions'><a href='sitePermissions.html#getAvailablePermissions'>#</a>getAvailablePermissions</h3><p>Returns all available site permissions and their possible settings, including the default.<h3 id='getOverriddenSites'><a href='sitePermissions.html#getOverriddenSites'>#</a>getOverriddenSites</h3><p>Returns a list of all sites with overridden permissions, including the count of overridden permissions for each site.<h3 id='getOverridesForSite'><a href='sitePermissions.html#getOverridesForSite'>#</a>getOverridesForSite</h3><p>Returns a list of effective permission settings for a specific site. For permissions with secondary origins, all secondary origins are included in the result array.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='getOverridesForPattern'><a href='sitePermissions.html#getOverridesForPattern'>#</a>getOverridesForPattern</h3><p>Returns a list of permission overrides for a specific pattern returned from getOverridenSites. For permissions with secondary origins, all secondary origins are included in the result array.<p>Parameters:<dl><dt>pattern</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='setSitePermission'><a href='sitePermissions.html#setSitePermission'>#</a>setSitePermission</h3><p>Sets the permission override for a given site. For permissions that support secondary origins, secondaryOrigin must be provided.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>secondaryOrigin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>permission</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
         <dl><dt>setting</dt><dd><pre><a href="#PermissionSetting">PermissionSetting</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
-        <h3 id='resetSitePermissions'><a href='sitePermissions.html#resetSitePermissions'>#</a>resetSitePermissions</h3><p>Resets all site permissions to default.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='resetSitePermissions'><a href='sitePermissions.html#resetSitePermissions'>#</a>resetSitePermissions</h3><p>Resets all site permissions to default. This includes all permissions where the primary pattern matches the origin, including all secondary origins (wildcard match).<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <h3 id='respondToPermissionRequest'><a href='sitePermissions.html#respondToPermissionRequest'>#</a>respondToPermissionRequest</h3><p>Respond to a permission request from onPermissionRequest event.<p>Parameters:<dl><dt>requestId</dt><dd><pre>string</pre><p>The request ID from onPermissionRequest.</dd></dl>
+        <dl><dt>setting</dt><dd><pre><a href="#PermissionRequestResponse">PermissionRequestResponse</a></pre><p> ⚠ NO DESCRIPTION PROVIDED</dd></dl>
+        <dl><dt>deviceIndices</dt><dd>(optional) <p>For device chooser requests, indices of devices to allow (only used when setting='allow'). Empty array means allow request without device selection.<p><code>Array</code> of:
+        <ul><li>integer</ul></dd></dl>
+        <h3 id='getAllowedDevices'><a href='sitePermissions.html#getAllowedDevices'>#</a>getAllowedDevices</h3><p>Get the list of allowed device names for a device chooser permission type on an origin.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p>The origin (e.g., 'https://example.com').</dd></dl>
+        <dl><dt>permissionType</dt><dd><pre>string</pre><p>The permission type (e.g., 'usb-guard', 'serial-guard', 'hid-guard', 'bluetooth-guard').</dd></dl>
+        <h3 id='getDeviceGrants'><a href='sitePermissions.html#getDeviceGrants'>#</a>getDeviceGrants</h3><p>Get detailed device grant information for an origin. If permissionType is omitted, returns grants across all device types.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p>The origin (e.g., 'https://example.com').</dd></dl>
+        <dl><dt>permissionType</dt><dd>(optional) <pre>string</pre><p>The permission type (e.g., 'usb-guard'). If omitted, returns grants for all device types.</dd></dl>
+        <h3 id='revokeDeviceGrant'><a href='sitePermissions.html#revokeDeviceGrant'>#</a>revokeDeviceGrant</h3><p>Revoke a single device grant by key.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p>The origin (e.g., 'https://example.com').</dd></dl>
+        <dl><dt>permissionType</dt><dd><pre>string</pre><p>The permission type (e.g., 'usb-guard').</dd></dl>
+        <dl><dt>key</dt><dd><pre>string</pre><p>The unique key identifying the grant to revoke.</dd></dl>
+        <h3 id='getDeviceGrantSites'><a href='sitePermissions.html#getDeviceGrantSites'>#</a>getDeviceGrantSites</h3><p>Get a list of origins that have device grants. If permissionType is omitted, checks all device types.<p>Parameters:<dl><dt>permissionType</dt><dd>(optional) <pre>string</pre><p>The permission type (e.g., 'usb-guard'). If omitted, checks all device types.</dd></dl>
+        <h3 id='getSecurityInfo'><a href='sitePermissions.html#getSecurityInfo'>#</a>getSecurityInfo</h3><p>Get security and certificate information for a tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID.</dd></dl>
+        <h3 id='getSiteData'><a href='sitePermissions.html#getSiteData'>#</a>getSiteData</h3><p>Get summary of cookies and site data for a tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID.</dd></dl>
+        <h3 id='setSiteData'><a href='sitePermissions.html#setSiteData'>#</a>setSiteData</h3><p>Set data and settings for a specific site.<p>Parameters:<dl><dt>origin</dt><dd><pre>string</pre><p>The site origin (e.g., 'https://example.com').</dd></dl>
+        <dl><dt>settings</dt><dd><pre><a href="#SiteDataSettings">SiteDataSettings</a></pre><p>The site settings to apply.</dd></dl>
+        <h3 id='showCertificateDialog'><a href='sitePermissions.html#showCertificateDialog'>#</a>showCertificateDialog</h3><p>Show Chromium's certificate viewer for a tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID.</dd></dl>
+        <h3 id='showSiteDataDialog'><a href='sitePermissions.html#showSiteDataDialog'>#</a>showSiteDataDialog</h3><p>Show Chromium's on-device site data dialog for a tab.<p>Parameters:<dl><dt>tabId</dt><dd><pre>integer</pre><p>The tab ID.</dd></dl>
         <h1><a href='editcommand.html'>editcommand</a></h1>
 
     
